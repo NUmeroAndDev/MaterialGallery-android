@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.FabActivity" />
+        <activity
+            android:name=".activity.FabActivity"
+            android:label="@string/fab" />
 
     </application>
 
