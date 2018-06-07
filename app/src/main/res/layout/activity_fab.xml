@@ -30,7 +30,7 @@
             android:id="@+id/fabSizeTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="FAB Size"
+            android:text="Size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
