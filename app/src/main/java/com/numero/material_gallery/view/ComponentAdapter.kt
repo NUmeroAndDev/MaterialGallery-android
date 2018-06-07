@@ -11,6 +11,12 @@ import kotlinx.android.synthetic.main.view_holder_component.*
 
 class ComponentAdapter : RecyclerView.Adapter<ComponentAdapter.ComponentViewHolder>() {
 
+    private var listener: ((component: DesignComponent) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: ((component: DesignComponent) -> Unit)) {
+        this.listener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComponentViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_component, parent, false)
         return ComponentViewHolder(view)
@@ -21,6 +27,9 @@ class ComponentAdapter : RecyclerView.Adapter<ComponentAdapter.ComponentViewHold
     override fun onBindViewHolder(holder: ComponentViewHolder, position: Int) {
         val component = DesignComponent.values()[position]
         holder.setComponent(component)
+        holder.itemView.setOnClickListener {
+            listener?.invoke(component)
+        }
     }
 
     class ComponentViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
