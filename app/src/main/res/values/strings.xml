@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MaterialGallery</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="backdrop">Backdrop</string>
+    <string name="bottom_app_bar">Bottom app bar</string>
+    <string name="bottom_navigation">Bottom navigation</string>
+    <string name="bottom_sheet_modal">Bottom sheet (Modal)</string>
+    <string name="bottom_sheet_persistent">Bottom sheet (Persistent)</string>
+    <string name="button">Button</string>
+    <string name="fab">Floating Action Button</string>
+    <string name="card">Card</string>
+    <string name="chips">Chips</string>
+    <string name="navigation_drawer">Navigation drawer</string>
+    <string name="snachbar">Snackbar</string>
+    <string name="tab">Tab</string>
+    <string name="text_field">Text field</string>
+</resources>
