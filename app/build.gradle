@@ -5,7 +5,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "com.numero.material_gallery"
         minSdkVersion 19
@@ -14,11 +16,16 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    androidExtensions {
+        experimental = true
     }
 }
 
@@ -27,6 +34,7 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     implementation 'androidx.appcompat:appcompat:1.0.0-alpha3'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-alpha3'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.0'
 
     implementation 'com.google.android.material:material:1.0.0-alpha1'
