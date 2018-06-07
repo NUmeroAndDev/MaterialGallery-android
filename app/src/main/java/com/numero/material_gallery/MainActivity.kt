@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.numero.material_gallery.activity.BottomSheetModalActivity
 import com.numero.material_gallery.activity.FabActivity
 import com.numero.material_gallery.model.DesignComponent
 import com.numero.material_gallery.view.ComponentAdapter
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.BOTTOM_NAVIGATION -> {
             }
             DesignComponent.BOTTOM_SHEET_MODAL -> {
+                startActivity(BottomSheetModalActivity.createIntent(this))
             }
             DesignComponent.BOTTOM_SHEET_PERSISTENT -> {
             }

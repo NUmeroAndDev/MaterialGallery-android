@@ -4,7 +4,7 @@
     package="com.numero.material_gallery">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.BottomSheetModalActivity"
+            android:label="@string/bottom_sheet_modal" />
 
         <activity
             android:name=".activity.FabActivity"
