@@ -46,7 +46,7 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
     ),
 
     CHIPS(
-            R.string.backdrop,
+            R.string.chips,
             true
     ),
 
