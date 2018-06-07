@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.numero.material_gallery.activity.FabActivity
 import com.numero.material_gallery.model.DesignComponent
 import com.numero.material_gallery.view.ComponentAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.BUTTON -> {
             }
             DesignComponent.FAB -> {
+                startActivity(FabActivity.createIntent(this))
             }
             DesignComponent.CARD -> {
             }
