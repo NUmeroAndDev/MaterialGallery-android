@@ -7,7 +7,7 @@
     <string name="bottom_navigation">Bottom navigation</string>
     <string name="bottom_sheet_modal">Bottom sheet (Modal)</string>
     <string name="bottom_sheet_persistent">Bottom sheet (Persistent)</string>
-    <string name="button">Button</string>
+    <string name="material_button">Material Button</string>
     <string name="fab">Floating Action Button</string>
     <string name="card">Card</string>
     <string name="chips">Chips</string>

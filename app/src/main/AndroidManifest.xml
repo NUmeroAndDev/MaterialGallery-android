@@ -27,6 +27,10 @@
             android:label="@string/bottom_sheet_modal" />
 
         <activity
+            android:name=".activity.MaterialButtonActivity"
+            android:label="@string/material_button" />
+
+        <activity
             android:name=".activity.FabActivity"
             android:label="@string/fab" />
 

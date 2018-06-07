@@ -30,8 +30,8 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
             true
     ),
 
-    BUTTON(
-            R.string.button,
+    MATERIAL_BUTTON(
+            R.string.material_button,
             true
     ),
 

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MaterialButtonActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/raisedButtonTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Raised Button"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/raisedButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/raisedButtonTextView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/disableRaisedButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:enabled="false"
+                android:text="Button"
+                app:layout_constraintStart_toEndOf="@+id/raisedButton"
+                app:layout_constraintTop_toTopOf="@+id/raisedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/iconRaisedButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Button"
+                app:icon="@drawable/ic_add"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/raisedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/disableIconRaisedButton"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:enabled="false"
+                android:text="Button"
+                app:icon="@drawable/ic_add"
+                app:layout_constraintStart_toEndOf="@+id/iconRaisedButton"
+                app:layout_constraintTop_toTopOf="@+id/iconRaisedButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/unelevatedButtonTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Unelevated Button"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iconRaisedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/unelevatedButton"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/unelevatedButtonTextView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/disableUnelevatedButton"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:enabled="false"
+                android:text="Button"
+                app:layout_constraintStart_toEndOf="@+id/unelevatedButton"
+                app:layout_constraintTop_toTopOf="@+id/unelevatedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/iconUnelevatedButton"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Button"
+                app:icon="@drawable/ic_add"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/unelevatedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/disabelIconUnelevatedButton"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:enabled="false"
+                android:text="Button"
+                app:icon="@drawable/ic_add"
+                app:layout_constraintStart_toEndOf="@+id/iconUnelevatedButton"
+                app:layout_constraintTop_toTopOf="@+id/iconUnelevatedButton" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textButtonTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Text Button"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iconUnelevatedButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/textButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textButtonTextView" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/disableTextButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:enabled="false"
+                android:text="Button"
+                app:layout_constraintStart_toEndOf="@+id/textButton"
+                app:layout_constraintTop_toTopOf="@+id/textButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/iconTextButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Button"
+                app:icon="@drawable/ic_add"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textButton" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/disabelIconTextButton"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:enabled="false"
+                android:text="Button"
+                app:icon="@drawable/ic_add"
+                app:layout_constraintStart_toEndOf="@+id/iconTextButton"
+                app:layout_constraintTop_toTopOf="@+id/iconTextButton" />
+
+            <!--TODO  add custom button-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
