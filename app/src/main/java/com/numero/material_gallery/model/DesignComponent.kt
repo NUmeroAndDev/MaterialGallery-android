@@ -10,23 +10,28 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
             false
     ),
 
-    BOTTOM_APP_BAR(
-            R.string.bottom_app_bar,
-            true
-    ),
-
     BOTTOM_NAVIGATION(
             R.string.bottom_navigation,
+            false
+    ),
+
+    BOTTOM_APP_BAR(
+            R.string.bottom_app_bar,
+            false
+    ),
+
+    BOTTOM_SHEET(
+            R.string.bottom_sheet,
             true
     ),
 
-    BOTTOM_SHEET_MODAL(
-            R.string.bottom_sheet_modal,
-            true
+    CHIPS(
+            R.string.chips,
+            false
     ),
 
-    BOTTOM_SHEET_PERSISTENT(
-            R.string.bottom_sheet_persistent,
+    FAB(
+            R.string.fab,
             true
     ),
 
@@ -35,38 +40,33 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
             true
     ),
 
-    FAB(
-            R.string.fab,
-            true
+    MATERIAL_CARD(
+            R.string.material_card,
+            false
     ),
 
-    CARD(
-            R.string.card,
-            true
-    ),
-
-    CHIPS(
-            R.string.chips,
+    MODAL_BOTTOM_SHEET(
+            R.string.modal_bottom_sheet,
             true
     ),
 
     NAVIGATION_DRAWER(
             R.string.navigation_drawer,
-            true
+            false
     ),
 
     SNACKBAR(
             R.string.snachbar,
-            true
+            false
     ),
 
     TAB(
             R.string.tab,
-            true
+            false
     ),
 
     TEXT_FIELDS(
             R.string.text_field,
-            true
+            false
     )
 }

@@ -23,8 +23,8 @@
         </activity>
 
         <activity
-            android:name=".activity.BottomSheetModalActivity"
-            android:label="@string/bottom_sheet_modal" />
+            android:name=".activity.ModalBottomSheetActivity"
+            android:label="@string/modal_bottom_sheet" />
 
         <activity
             android:name=".activity.MaterialButtonActivity"

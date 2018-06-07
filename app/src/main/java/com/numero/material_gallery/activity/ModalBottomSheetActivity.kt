@@ -7,13 +7,13 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.BottomSheetModalFragment
-import kotlinx.android.synthetic.main.activity_bottom_sheet_modal.*
+import kotlinx.android.synthetic.main.activity_modal_bottom_sheet.*
 
-class BottomSheetModalActivity : AppCompatActivity() {
+class ModalBottomSheetActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bottom_sheet_modal)
+        setContentView(R.layout.activity_modal_bottom_sheet)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {
@@ -37,6 +37,6 @@ class BottomSheetModalActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, BottomSheetModalActivity::class.java)
+        fun createIntent(context: Context): Intent = Intent(context, ModalBottomSheetActivity::class.java)
     }
 }

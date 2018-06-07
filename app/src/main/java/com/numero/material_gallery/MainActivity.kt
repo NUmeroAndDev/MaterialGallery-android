@@ -5,7 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.numero.material_gallery.activity.BottomSheetModalActivity
+import com.numero.material_gallery.activity.ModalBottomSheetActivity
 import com.numero.material_gallery.activity.MaterialButtonActivity
 import com.numero.material_gallery.activity.FabActivity
 import com.numero.material_gallery.model.DesignComponent
@@ -58,10 +58,10 @@ class MainActivity : AppCompatActivity() {
             }
             DesignComponent.BOTTOM_NAVIGATION -> {
             }
-            DesignComponent.BOTTOM_SHEET_MODAL -> {
-                startActivity(BottomSheetModalActivity.createIntent(this))
+            DesignComponent.MODAL_BOTTOM_SHEET -> {
+                startActivity(ModalBottomSheetActivity.createIntent(this))
             }
-            DesignComponent.BOTTOM_SHEET_PERSISTENT -> {
+            DesignComponent.BOTTOM_SHEET -> {
             }
             DesignComponent.MATERIAL_BUTTON -> {
                 startActivity(MaterialButtonActivity.createIntent(this))
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.FAB -> {
                 startActivity(FabActivity.createIntent(this))
             }
-            DesignComponent.CARD -> {
+            DesignComponent.MATERIAL_CARD -> {
             }
             DesignComponent.CHIPS -> {
             }
