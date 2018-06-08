@@ -5,10 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.numero.material_gallery.activity.ModalBottomSheetActivity
-import com.numero.material_gallery.activity.MaterialButtonActivity
-import com.numero.material_gallery.activity.FabActivity
-import com.numero.material_gallery.activity.TextFieldActivity
+import com.numero.material_gallery.activity.*
 import com.numero.material_gallery.model.DesignComponent
 import com.numero.material_gallery.view.ComponentAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -58,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.BOTTOM_APP_BAR -> {
             }
             DesignComponent.BOTTOM_NAVIGATION -> {
+                startActivity(BottomNavigationActivity.createIntent(this))
             }
             DesignComponent.MODAL_BOTTOM_SHEET -> {
                 startActivity(ModalBottomSheetActivity.createIntent(this))

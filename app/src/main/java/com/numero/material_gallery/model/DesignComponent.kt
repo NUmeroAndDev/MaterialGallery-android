@@ -12,7 +12,7 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
 
     BOTTOM_NAVIGATION(
             R.string.bottom_navigation,
-            false
+            true
     ),
 
     BOTTOM_APP_BAR(
