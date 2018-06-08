@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.numero.material_gallery.activity.*
 import com.numero.material_gallery.model.DesignComponent
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         componentRecyclerView.apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
             setHasFixedSize(true)
+            addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
             adapter = ComponentAdapter().apply {
                 setOnItemClickListener {
                     selectedComponent(it)

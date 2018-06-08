@@ -4,6 +4,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
         <item name="colorAccent">@color/colorSecondary</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
