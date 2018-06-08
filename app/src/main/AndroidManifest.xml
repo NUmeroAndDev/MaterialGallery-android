@@ -47,6 +47,10 @@
             android:label="@string/fab" />
 
         <activity
+            android:name=".activity.SnackbarActivity"
+            android:label="@string/snachbar" />
+
+        <activity
             android:name=".activity.TextFieldActivity"
             android:label="@string/text_field" />
 

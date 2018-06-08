@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.NAVIGATION_DRAWER -> {
             }
             DesignComponent.SNACKBAR -> {
+                startActivity(SnackbarActivity.createIntent(this))
             }
             DesignComponent.TAB -> {
             }

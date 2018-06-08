@@ -57,7 +57,7 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
 
     SNACKBAR(
             R.string.snachbar,
-            false
+            true
     ),
 
     TAB(
