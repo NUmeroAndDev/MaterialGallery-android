@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.numero.material_gallery.activity.ModalBottomSheetActivity
 import com.numero.material_gallery.activity.MaterialButtonActivity
 import com.numero.material_gallery.activity.FabActivity
+import com.numero.material_gallery.activity.TextFieldActivity
 import com.numero.material_gallery.model.DesignComponent
 import com.numero.material_gallery.view.ComponentAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -80,6 +81,7 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.TAB -> {
             }
             DesignComponent.TEXT_FIELDS -> {
+                startActivity(TextFieldActivity.createIntent(this))
             }
         }
     }
