@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(ModalBottomSheetActivity.createIntent(this))
             }
             DesignComponent.BOTTOM_SHEET -> {
+                startActivity(BottomSheetActivity.createIntent(this))
             }
             DesignComponent.MATERIAL_BUTTON -> {
                 startActivity(MaterialButtonActivity.createIntent(this))
