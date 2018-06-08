@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.BACKDROP -> {
             }
             DesignComponent.BOTTOM_APP_BAR -> {
+                startActivity(BottomAppBarActivity.createIntent(this))
             }
             DesignComponent.BOTTOM_NAVIGATION -> {
                 startActivity(BottomNavigationActivity.createIntent(this))

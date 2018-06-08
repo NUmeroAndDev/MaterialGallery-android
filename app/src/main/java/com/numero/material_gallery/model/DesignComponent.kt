@@ -17,7 +17,7 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
 
     BOTTOM_APP_BAR(
             R.string.bottom_app_bar,
-            false
+            true
     ),
 
     BOTTOM_SHEET(
