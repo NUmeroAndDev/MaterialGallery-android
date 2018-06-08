@@ -68,11 +68,13 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!--Fixme best practice of change BottomAppBar's icon color-->
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:theme="@style/BottomAppBarTheme"
         app:backgroundTint="@color/colorPrimary" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
