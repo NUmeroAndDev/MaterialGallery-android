@@ -71,6 +71,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(FabActivity.createIntent(this))
             }
             DesignComponent.MATERIAL_CARD -> {
+                startActivity(MaterialCardActivity.createIntent(this))
             }
             DesignComponent.CHIPS -> {
             }

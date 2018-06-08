@@ -42,7 +42,7 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
 
     MATERIAL_CARD(
             R.string.material_card,
-            false
+            true
     ),
 
     MODAL_BOTTOM_SHEET(
