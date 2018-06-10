@@ -51,6 +51,10 @@
             android:label="@string/modal_bottom_sheet" />
 
         <activity
+            android:name=".activity.NavigationDrawerActivity"
+            android:label="@string/navigation_drawer" />
+
+        <activity
             android:name=".activity.SnackbarActivity"
             android:label="@string/snachbar" />
 

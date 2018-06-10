@@ -52,7 +52,7 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
 
     NAVIGATION_DRAWER(
             R.string.navigation_drawer,
-            false
+            true
     ),
 
     SNACKBAR(

@@ -78,6 +78,7 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.CHIPS -> {
             }
             DesignComponent.NAVIGATION_DRAWER -> {
+                startActivity(NavigationDrawerActivity.createIntent(this))
             }
             DesignComponent.SNACKBAR -> {
                 startActivity(SnackbarActivity.createIntent(this))
