@@ -66,6 +66,47 @@
 
         </RadioGroup>
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fabVisiblyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="FAB Visibly"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="12sp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fabPositionRadioGroup" />
+
+        <RadioGroup
+            android:id="@+id/fabVisiblyRadioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checkedButton="@+id/showRadioButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fabVisiblyTextView">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/showRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Show"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/hideRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Hide"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!--Fixme best practice of change BottomAppBar's icon color-->

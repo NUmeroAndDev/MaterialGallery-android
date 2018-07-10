@@ -33,6 +33,13 @@ class BottomAppBarActivity : AppCompatActivity() {
             }
         }
 
+        fabVisiblyRadioGroup.setOnCheckedChangeListener { _, id ->
+            when(id) {
+                R.id.showRadioButton -> fab.show()
+                R.id.hideRadioButton -> fab.hide()
+            }
+        }
+
         bottomAppBar.replaceMenu(R.menu.bottom_app_bar)
     }
 
