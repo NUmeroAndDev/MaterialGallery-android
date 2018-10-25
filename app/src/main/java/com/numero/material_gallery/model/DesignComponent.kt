@@ -4,77 +4,62 @@ import androidx.annotation.StringRes
 import com.numero.material_gallery.R
 
 enum class DesignComponent(
-        @StringRes override val titleRes: Int,
-        val isEnable: Boolean
+        @StringRes override val titleRes: Int
 ) : IListItem {
 
-    BACKDROP(
-            R.string.backdrop,
-            false
-    ),
+//    BACKDROP(
+//            R.string.backdrop
+//    ),
 
     BOTTOM_NAVIGATION(
-            R.string.bottom_navigation,
-            true
+            R.string.bottom_navigation
     ),
 
     BOTTOM_APP_BAR(
-            R.string.bottom_app_bar,
-            true
+            R.string.bottom_app_bar
     ),
 
     BOTTOM_SHEET(
-            R.string.bottom_sheet,
-            true
+            R.string.bottom_sheet
     ),
 
-    CHIPS(
-            R.string.chips,
-            false
-    ),
+//    CHIPS(
+//            R.string.chips
+//    ),
 
     FAB(
-            R.string.fab,
-            true
+            R.string.fab
     ),
 
     MATERIAL_BUTTON(
-            R.string.material_button,
-            true
+            R.string.material_button
     ),
 
     MATERIAL_CARD(
-            R.string.material_card,
-            true
+            R.string.material_card
     ),
 
     MODAL_BOTTOM_SHEET(
-            R.string.modal_bottom_sheet,
-            true
+            R.string.modal_bottom_sheet
     ),
 
     NAVIGATION_DRAWER(
-            R.string.navigation_drawer,
-            true
+            R.string.navigation_drawer
     ),
 
     SNACKBAR(
-            R.string.snachbar,
-            true
+            R.string.snachbar
     ),
 
-    TAB(
-            R.string.tab,
-            false
-    ),
+//    TAB(
+//            R.string.tab
+//    ),
 
     TEXT_FIELDS(
-            R.string.text_field,
-            true
+            R.string.text_field
     ),
 
     TOP_APP_BAR(
-            R.string.top_app_bar,
-            true
+            R.string.top_app_bar
     )
 }
