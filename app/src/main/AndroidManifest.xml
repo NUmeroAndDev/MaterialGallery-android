@@ -62,6 +62,10 @@
             android:name=".activity.TextFieldActivity"
             android:label="@string/text_field" />
 
+        <activity
+            android:name=".activity.toolbar.ToolbarTypeActivity"
+            android:label="@string/toolbar" />
+
     </application>
 
 </manifest>

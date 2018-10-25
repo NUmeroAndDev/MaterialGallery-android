@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.numero.material_gallery.activity.*
+import com.numero.material_gallery.activity.toolbar.ToolbarTypeActivity
 import com.numero.material_gallery.model.DesignComponent
 import com.numero.material_gallery.view.ComponentAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -87,6 +88,9 @@ class MainActivity : AppCompatActivity() {
             }
             DesignComponent.TEXT_FIELDS -> {
                 startActivity(TextFieldActivity.createIntent(this))
+            }
+            DesignComponent.TOOLBAR -> {
+                startActivity(ToolbarTypeActivity.createIntent(this))
             }
         }
     }
