@@ -70,10 +70,10 @@
             android:id="@+id/fabVisiblyTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:text="FAB Visibly"
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="12sp"
-            android:layout_marginTop="32dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fabPositionRadioGroup" />
 
@@ -109,14 +109,21 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--Fixme best practice of change BottomAppBar's icon color-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bab_linear_shadow" />
+
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:theme="@style/BottomAppBarTheme"
-        app:backgroundTint="@color/colorPrimary" />
+        app:backgroundTint="@color/colorSurface" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

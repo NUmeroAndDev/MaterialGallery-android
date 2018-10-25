@@ -17,7 +17,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
     <style name="BottomAppBarTheme" parent="AppTheme">
-        <item name="android:textColorSecondary">#FFFFFF</item>
+        <item name="android:textColorSecondary">@color/colorOnSurface</item>
     </style>
 
 </resources>
