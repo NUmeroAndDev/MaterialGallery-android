@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".activity.toolbar.CollapsingActivity">
+    tools:context=".activity.top_app_bar.CollapsingActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"

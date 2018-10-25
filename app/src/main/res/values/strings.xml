@@ -24,7 +24,7 @@
     <string name="snachbar">Snackbar</string>
     <string name="tab">Tab</string>
     <string name="text_field">Text field</string>
-    <string name="toolbar">Toolbar</string>
+    <string name="top_app_bar">Top App Bar</string>
 
     <string name="actionbar">ActionBar</string>
     <string name="lift_on_scroll">LiftOnScroll</string>

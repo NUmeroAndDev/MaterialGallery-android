@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity.toolbar
+package com.numero.material_gallery.activity.top_app_bar
 
 import android.content.Context
 import android.content.Intent
@@ -8,15 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.numero.material_gallery.R
-import com.numero.material_gallery.model.ToolbarType
+import com.numero.material_gallery.model.TopAppBarType
 import com.numero.material_gallery.view.ToolbarTypeAdapter
-import kotlinx.android.synthetic.main.activity_toolbar_type.*
+import kotlinx.android.synthetic.main.activity_top_app_bar_type.*
 
-class ToolbarTypeActivity : AppCompatActivity() {
+class TopAppBarTypeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_toolbar_type)
+        setContentView(R.layout.activity_top_app_bar_type)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {
@@ -25,9 +25,9 @@ class ToolbarTypeActivity : AppCompatActivity() {
         }
 
         toolbarTypeRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this@ToolbarTypeActivity)
+            layoutManager = LinearLayoutManager(this@TopAppBarTypeActivity)
             setHasFixedSize(true)
-            addItemDecoration(DividerItemDecoration(this@ToolbarTypeActivity, DividerItemDecoration.VERTICAL))
+            addItemDecoration(DividerItemDecoration(this@TopAppBarTypeActivity, DividerItemDecoration.VERTICAL))
             adapter = ToolbarTypeAdapter().apply {
                 setOnItemClickListener {
                     selectedToolbarType(it)
@@ -46,16 +46,16 @@ class ToolbarTypeActivity : AppCompatActivity() {
         }
     }
 
-    private fun selectedToolbarType(toolbarType: ToolbarType) {
-        val intent = when (toolbarType) {
-            ToolbarType.ACTION_BAR -> ActionBarActivity.createIntent(this)
-            ToolbarType.LIFT_ON_SCROLL -> LiftOnScrollActivity.createIntent(this)
-            ToolbarType.COLLAPSING -> CollapsingActivity.createIntent(this)
+    private fun selectedToolbarType(topAppBarType: TopAppBarType) {
+        val intent = when (topAppBarType) {
+            TopAppBarType.ACTION_BAR -> ActionBarActivity.createIntent(this)
+            TopAppBarType.LIFT_ON_SCROLL -> LiftOnScrollActivity.createIntent(this)
+            TopAppBarType.COLLAPSING -> CollapsingActivity.createIntent(this)
         }
         startActivity(intent)
     }
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, ToolbarTypeActivity::class.java)
+        fun createIntent(context: Context): Intent = Intent(context, TopAppBarTypeActivity::class.java)
     }
 }

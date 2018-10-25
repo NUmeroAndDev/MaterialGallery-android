@@ -70,8 +70,8 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
             true
     ),
 
-    TOOLBAR(
-            R.string.toolbar,
+    TOP_APP_BAR(
+            R.string.top_app_bar,
             true
     )
 }

@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity.toolbar
+package com.numero.material_gallery.activity.top_app_bar
 
 import android.content.Context
 import android.content.Intent
@@ -7,13 +7,13 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
-import kotlinx.android.synthetic.main.activity_action_bar.*
+import kotlinx.android.synthetic.main.activity_collapsing.*
 
-class ActionBarActivity : AppCompatActivity() {
+class CollapsingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_action_bar)
+        setContentView(R.layout.activity_collapsing)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {
@@ -23,7 +23,7 @@ class ActionBarActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_action_bar, menu)
+        menuInflater.inflate(R.menu.menu_collapsing, menu)
         return true
     }
 
@@ -38,7 +38,7 @@ class ActionBarActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, ActionBarActivity::class.java)
+        fun createIntent(context: Context): Intent = Intent(context, CollapsingActivity::class.java)
     }
 
 }
