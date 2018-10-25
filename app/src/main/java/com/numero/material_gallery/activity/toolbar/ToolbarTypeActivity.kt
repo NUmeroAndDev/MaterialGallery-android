@@ -49,7 +49,7 @@ class ToolbarTypeActivity : AppCompatActivity() {
     private fun selectedToolbarType(toolbarType: ToolbarType) {
         val intent = when (toolbarType) {
             ToolbarType.ACTION_BAR -> TODO()
-            ToolbarType.LIFT_ON_SCROLL -> TODO()
+            ToolbarType.LIFT_ON_SCROLL -> LiftOnScrollActivity.createIntent(this)
             ToolbarType.COLLAPSING -> CollapsingActivity.createIntent(this)
         }
         startActivity(intent)

@@ -67,8 +67,12 @@
             android:label="@string/toolbar" />
 
         <activity
+            android:name=".activity.toolbar.LiftOnScrollActivity"
+            android:label="@string/lift_on_scroll" />
+
+        <activity
             android:name=".activity.toolbar.CollapsingActivity"
-            android:label="@string/toolbar" />
+            android:label="@string/collapsing" />
 
     </application>
 
