@@ -67,6 +67,10 @@
             android:label="@string/toolbar" />
 
         <activity
+            android:name=".activity.toolbar.ActionBarActivity"
+            android:label="@string/actionbar" />
+
+        <activity
             android:name=".activity.toolbar.LiftOnScrollActivity"
             android:label="@string/lift_on_scroll" />
 
