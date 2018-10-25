@@ -9,7 +9,7 @@ import com.numero.material_gallery.model.TopAppBarType
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.view_holder_component.*
 
-class ToolbarTypeAdapter : RecyclerView.Adapter<ToolbarTypeAdapter.ComponentViewHolder>() {
+class TopAppBarTypeAdapter : RecyclerView.Adapter<TopAppBarTypeAdapter.ComponentViewHolder>() {
 
     private var listener: ((topAppBarType: TopAppBarType) -> Unit)? = null
 

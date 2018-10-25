@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.numero.material_gallery.R
 import com.numero.material_gallery.model.TopAppBarType
-import com.numero.material_gallery.view.ToolbarTypeAdapter
+import com.numero.material_gallery.view.TopAppBarTypeAdapter
 import kotlinx.android.synthetic.main.activity_top_app_bar_type.*
 
 class TopAppBarTypeActivity : AppCompatActivity() {
@@ -28,7 +28,7 @@ class TopAppBarTypeActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@TopAppBarTypeActivity)
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(this@TopAppBarTypeActivity, DividerItemDecoration.VERTICAL))
-            adapter = ToolbarTypeAdapter().apply {
+            adapter = TopAppBarTypeAdapter().apply {
                 setOnItemClickListener {
                     selectedToolbarType(it)
                 }
