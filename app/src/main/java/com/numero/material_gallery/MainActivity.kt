@@ -7,9 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.numero.material_gallery.activity.*
+import com.numero.material_gallery.activity.bottom_app_bar.BottomAppBarTypeActivity
 import com.numero.material_gallery.activity.top_app_bar.TopAppBarTypeActivity
 import com.numero.material_gallery.model.DesignComponent
-import com.numero.material_gallery.view.ComponentAdapter
+import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
-            adapter = ComponentAdapter().apply {
+            adapter = ListItemAdapter(DesignComponent.values().toList()).apply {
                 setOnItemClickListener {
                     selectedComponent(it)
                 }
@@ -49,14 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun selectedComponent(component: DesignComponent) {
-        if (component.isEnable.not()) {
-            return
-        }
         when (component) {
-            DesignComponent.BACKDROP -> {
-            }
             DesignComponent.BOTTOM_APP_BAR -> {
-                startActivity(BottomAppBarActivity.createIntent(this))
+                startActivity(BottomAppBarTypeActivity.createIntent(this))
             }
             DesignComponent.BOTTOM_NAVIGATION -> {
                 startActivity(BottomNavigationActivity.createIntent(this))
@@ -76,15 +72,11 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.MATERIAL_CARD -> {
                 startActivity(MaterialCardActivity.createIntent(this))
             }
-            DesignComponent.CHIPS -> {
-            }
             DesignComponent.NAVIGATION_DRAWER -> {
                 startActivity(NavigationDrawerActivity.createIntent(this))
             }
             DesignComponent.SNACKBAR -> {
                 startActivity(SnackbarActivity.createIntent(this))
-            }
-            DesignComponent.TAB -> {
             }
             DesignComponent.TEXT_FIELDS -> {
                 startActivity(TextFieldActivity.createIntent(this))

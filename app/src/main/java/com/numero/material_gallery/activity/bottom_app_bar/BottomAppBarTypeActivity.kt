@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity.top_app_bar
+package com.numero.material_gallery.activity.bottom_app_bar
 
 import android.content.Context
 import android.content.Intent
@@ -8,15 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.numero.material_gallery.R
-import com.numero.material_gallery.model.TopAppBarType
+import com.numero.material_gallery.model.BottomAppBarType
 import com.numero.material_gallery.view.ListItemAdapter
-import kotlinx.android.synthetic.main.activity_top_app_bar_type.*
+import kotlinx.android.synthetic.main.activity_bottom_app_bar_type.*
 
-class TopAppBarTypeActivity : AppCompatActivity() {
+class BottomAppBarTypeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_top_app_bar_type)
+        setContentView(R.layout.activity_bottom_app_bar_type)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {
@@ -24,13 +24,13 @@ class TopAppBarTypeActivity : AppCompatActivity() {
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        toolbarTypeRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this@TopAppBarTypeActivity)
+        bottomAppBarTypeRecyclerView.apply {
+            layoutManager = LinearLayoutManager(this@BottomAppBarTypeActivity)
             setHasFixedSize(true)
-            addItemDecoration(DividerItemDecoration(this@TopAppBarTypeActivity, DividerItemDecoration.VERTICAL))
-            adapter = ListItemAdapter(TopAppBarType.values().toList()).apply {
+            addItemDecoration(DividerItemDecoration(this@BottomAppBarTypeActivity, DividerItemDecoration.VERTICAL))
+            adapter = ListItemAdapter(BottomAppBarType.values().toList()).apply {
                 setOnItemClickListener {
-                    selectedToolbarType(it)
+                    selectedType(it)
                 }
             }
         }
@@ -46,16 +46,15 @@ class TopAppBarTypeActivity : AppCompatActivity() {
         }
     }
 
-    private fun selectedToolbarType(topAppBarType: TopAppBarType) {
-        val intent = when (topAppBarType) {
-            TopAppBarType.ACTION_BAR -> ActionBarActivity.createIntent(this)
-            TopAppBarType.LIFT_ON_SCROLL -> LiftOnScrollActivity.createIntent(this)
-            TopAppBarType.COLLAPSING -> CollapsingActivity.createIntent(this)
+    private fun selectedType(type: BottomAppBarType) {
+        val intent = when (type) {
+            BottomAppBarType.BOTTOM_APP_BAR -> BottomAppBarActivity.createIntent(this)
+            BottomAppBarType.HIDE_ON_SCROLL -> HideOnScrollActivity.createIntent(this)
         }
         startActivity(intent)
     }
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, TopAppBarTypeActivity::class.java)
+        fun createIntent(context: Context): Intent = Intent(context, BottomAppBarTypeActivity::class.java)
     }
 }
