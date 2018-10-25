@@ -68,5 +68,10 @@ enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
     TEXT_FIELDS(
             R.string.text_field,
             true
+    ),
+
+    TOP_APP_BAR(
+            R.string.top_app_bar,
+            true
     )
 }

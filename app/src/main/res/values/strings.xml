@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">MaterialGallery</string>
+    <string name="action_search">Search</string>
+    <string name="action_like">Like</string>
     <string name="action_settings">Settings</string>
+    <string name="action_help">Help</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -21,4 +24,9 @@
     <string name="snachbar">Snackbar</string>
     <string name="tab">Tab</string>
     <string name="text_field">Text field</string>
+    <string name="top_app_bar">Top App Bar</string>
+
+    <string name="actionbar">ActionBar</string>
+    <string name="lift_on_scroll">LiftOnScroll</string>
+    <string name="collapsing">Collapsing</string>
 </resources>

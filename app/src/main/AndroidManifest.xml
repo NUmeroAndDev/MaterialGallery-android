@@ -62,6 +62,22 @@
             android:name=".activity.TextFieldActivity"
             android:label="@string/text_field" />
 
+        <activity
+            android:name=".activity.top_app_bar.TopAppBarTypeActivity"
+            android:label="@string/top_app_bar" />
+
+        <activity
+            android:name=".activity.top_app_bar.ActionBarActivity"
+            android:label="@string/actionbar" />
+
+        <activity
+            android:name=".activity.top_app_bar.LiftOnScrollActivity"
+            android:label="@string/lift_on_scroll" />
+
+        <activity
+            android:name=".activity.top_app_bar.CollapsingActivity"
+            android:label="@string/collapsing" />
+
     </application>
 
 </manifest>
