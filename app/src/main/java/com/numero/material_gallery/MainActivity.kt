@@ -7,8 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.numero.material_gallery.activity.*
-import com.numero.material_gallery.activity.bottom_app_bar.BottomAppBarActivity
-import com.numero.material_gallery.activity.bottom_app_bar.HideOnScrollActivity
+import com.numero.material_gallery.activity.bottom_app_bar.BottomAppBarTypeActivity
 import com.numero.material_gallery.activity.top_app_bar.TopAppBarTypeActivity
 import com.numero.material_gallery.model.DesignComponent
 import com.numero.material_gallery.view.ListItemAdapter
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     private fun selectedComponent(component: DesignComponent) {
         when (component) {
             DesignComponent.BOTTOM_APP_BAR -> {
-                startActivity(BottomAppBarActivity.createIntent(this))
+                startActivity(BottomAppBarTypeActivity.createIntent(this))
             }
             DesignComponent.BOTTOM_NAVIGATION -> {
                 startActivity(BottomNavigationActivity.createIntent(this))
