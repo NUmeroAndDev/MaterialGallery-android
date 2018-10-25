@@ -66,6 +66,10 @@
             android:name=".activity.toolbar.ToolbarTypeActivity"
             android:label="@string/toolbar" />
 
+        <activity
+            android:name=".activity.toolbar.CollapsingActivity"
+            android:label="@string/toolbar" />
+
     </application>
 
 </manifest>

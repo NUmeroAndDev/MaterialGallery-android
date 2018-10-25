@@ -39,7 +39,7 @@ class ToolbarTypeActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
-                finish()
+                onBackPressed()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -47,7 +47,12 @@ class ToolbarTypeActivity : AppCompatActivity() {
     }
 
     private fun selectedToolbarType(toolbarType: ToolbarType) {
-
+        val intent = when (toolbarType) {
+            ToolbarType.ACTION_BAR -> TODO()
+            ToolbarType.LIFT_ON_SCROLL -> TODO()
+            ToolbarType.COLLAPSING -> CollapsingActivity.createIntent(this)
+        }
+        startActivity(intent)
     }
 
     companion object {
