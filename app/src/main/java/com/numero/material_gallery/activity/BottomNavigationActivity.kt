@@ -4,14 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import kotlinx.android.synthetic.main.activity_bottom_navgation.*
 
 class BottomNavigationActivity : AppCompatActivity() {
-
-    private var style: BottomNavigationStyle = BottomNavigationStyle.DEFAULT
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,16 +19,6 @@ class BottomNavigationActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
-
-        styleRadioGroup.setOnCheckedChangeListener { _, id ->
-            style = when (id) {
-                R.id.styleColoredRadioButton -> BottomNavigationStyle.COLORED
-                else -> BottomNavigationStyle.DEFAULT
-            }
-            switchBottomNavigation(style)
-        }
-
-        switchBottomNavigation(style)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -42,24 +29,6 @@ class BottomNavigationActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun switchBottomNavigation(style: BottomNavigationStyle) {
-        when (style) {
-            BottomNavigationStyle.DEFAULT -> {
-                bottomNavigation.visibility = View.VISIBLE
-                coloredBottomNavigation.visibility = View.GONE
-            }
-            BottomNavigationStyle.COLORED -> {
-                bottomNavigation.visibility = View.GONE
-                coloredBottomNavigation.visibility = View.VISIBLE
-            }
-        }
-    }
-
-    enum class BottomNavigationStyle {
-        DEFAULT,
-        COLORED
     }
 
     companion object {
