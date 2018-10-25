@@ -35,7 +35,7 @@ class ComponentAdapter : RecyclerView.Adapter<ComponentAdapter.ComponentViewHold
     class ComponentViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun setComponent(component: DesignComponent) {
             nameTextView.isEnabled = component.isEnable
-            nameTextView.setText(component.nameRes)
+            nameTextView.setText(component.titleRes)
         }
     }
 }

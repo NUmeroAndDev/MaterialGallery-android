@@ -3,7 +3,9 @@ package com.numero.material_gallery.model
 import androidx.annotation.StringRes
 import com.numero.material_gallery.R
 
-enum class TopAppBarType(@StringRes val titleRes: Int) {
+enum class TopAppBarType(
+        @StringRes override val titleRes: Int
+) : IListItem {
     ACTION_BAR(
             R.string.actionbar
     ),

@@ -23,8 +23,12 @@
         </activity>
 
         <activity
-            android:name=".activity.BottomAppBarActivity"
+            android:name=".activity.bottom_app_bar.BottomAppBarActivity"
             android:label="@string/bottom_app_bar" />
+
+        <activity
+            android:name=".activity.bottom_app_bar.HideOnScrollActivity"
+            android:label="@string/hide_on_scroll" />
 
         <activity
             android:name=".activity.BottomNavigationActivity"

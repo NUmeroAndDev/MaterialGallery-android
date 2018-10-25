@@ -3,7 +3,10 @@ package com.numero.material_gallery.model
 import androidx.annotation.StringRes
 import com.numero.material_gallery.R
 
-enum class DesignComponent(@StringRes val nameRes: Int, val isEnable: Boolean) {
+enum class DesignComponent(
+        @StringRes override val titleRes: Int,
+        val isEnable: Boolean
+) : IListItem {
 
     BACKDROP(
             R.string.backdrop,

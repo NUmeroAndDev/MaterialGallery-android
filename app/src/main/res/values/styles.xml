@@ -20,4 +20,8 @@
         <item name="android:textColorSecondary">@color/colorOnSurface</item>
     </style>
 
+    <style name="HideOnScrollBottomAppBarTheme" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/colorSurface</item>
+    </style>
+
 </resources>
