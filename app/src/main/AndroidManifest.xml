@@ -63,6 +63,10 @@
             android:label="@string/navigation_drawer" />
 
         <activity
+            android:name=".activity.ProgressBarActivity"
+            android:label="@string/progress_bar" />
+
+        <activity
             android:name=".activity.SnackbarActivity"
             android:label="@string/snachbar" />
 
