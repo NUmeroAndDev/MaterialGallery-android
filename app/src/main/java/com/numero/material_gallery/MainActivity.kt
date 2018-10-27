@@ -75,6 +75,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.NAVIGATION_DRAWER -> {
                 startActivity(NavigationDrawerActivity.createIntent(this))
             }
+            DesignComponent.PROGRESS_BAR -> {
+                startActivity(ProgressBarActivity.createIntent(this))
+            }
             DesignComponent.SNACKBAR -> {
                 startActivity(SnackbarActivity.createIntent(this))
             }

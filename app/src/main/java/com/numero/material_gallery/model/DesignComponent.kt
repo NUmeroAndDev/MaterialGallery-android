@@ -47,6 +47,10 @@ enum class DesignComponent(
             R.string.navigation_drawer
     ),
 
+    PROGRESS_BAR(
+            R.string.progress_bar
+    ),
+
     SNACKBAR(
             R.string.snachbar
     ),

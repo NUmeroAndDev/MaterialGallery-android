@@ -21,6 +21,7 @@
     <string name="material_card">Material Card</string>
     <string name="modal_bottom_sheet">Modal Bottom Sheet</string>
     <string name="navigation_drawer">Navigation drawer</string>
+    <string name="progress_bar">ProgressBar</string>
     <string name="snachbar">Snackbar</string>
     <string name="tab">Tab</string>
     <string name="text_field">Text field</string>
