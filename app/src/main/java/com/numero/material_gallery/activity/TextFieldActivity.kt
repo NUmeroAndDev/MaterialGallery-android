@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
-import kotlinx.android.synthetic.main.activity_fab.*
+import kotlinx.android.synthetic.main.activity_text_field.*
 
 class TextFieldActivity : AppCompatActivity() {
 
