@@ -5,7 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.numero.material_gallery.R
+import com.numero.material_gallery.extension.setCheckedItem
+import com.numero.material_gallery.extension.setVisibleItem
+import com.numero.material_gallery.extension.visibleItemCount
 import kotlinx.android.synthetic.main.activity_bottom_navgation.*
 
 class BottomNavigationActivity : AppCompatActivity() {
@@ -19,6 +23,8 @@ class BottomNavigationActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+
+        initViews()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -31,7 +37,50 @@ class BottomNavigationActivity : AppCompatActivity() {
         }
     }
 
+    private fun initViews() {
+        val listener = BottomNavigationView.OnNavigationItemSelectedListener {
+            bottomNavigation.setCheckedItem(it.itemId, true)
+            coloredBottomNavigation.setCheckedItem(it.itemId, true)
+            false
+        }
+        bottomNavigation.setOnNavigationItemSelectedListener(listener)
+        coloredBottomNavigation.setOnNavigationItemSelectedListener(listener)
+
+        removeItemButton.setOnClickListener {
+            updateBottomNavigationItemCount(MenuItemAction.REMOVE)
+        }
+        addItemButton.setOnClickListener {
+            updateBottomNavigationItemCount(MenuItemAction.ADD)
+        }
+    }
+
+    private fun updateBottomNavigationItemCount(action: MenuItemAction) {
+        val currentItemCount = bottomNavigation.visibleItemCount
+        when (action) {
+            MenuItemAction.ADD -> {
+                bottomNavigation.setVisibleItem(currentItemCount, true)
+                coloredBottomNavigation.setVisibleItem(currentItemCount, true)
+                removeItemButton.isEnabled = true
+                addItemButton.isEnabled = currentItemCount + 1 < MAX_ITEM_COUNT
+            }
+            MenuItemAction.REMOVE -> {
+                bottomNavigation.setVisibleItem(currentItemCount - 1, false)
+                coloredBottomNavigation.setVisibleItem(currentItemCount - 1, false)
+                removeItemButton.isEnabled = currentItemCount - 1 > MIN_ITEM_COUNT
+                addItemButton.isEnabled = true
+            }
+        }
+    }
+
+    private enum class MenuItemAction {
+        ADD, REMOVE
+    }
+
     companion object {
+
+        private const val MIN_ITEM_COUNT = 3
+        private const val MAX_ITEM_COUNT = 5
+
         fun createIntent(context: Context): Intent = Intent(context, BottomNavigationActivity::class.java)
     }
 }
