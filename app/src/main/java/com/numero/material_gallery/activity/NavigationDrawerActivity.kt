@@ -3,6 +3,7 @@ package com.numero.material_gallery.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.numero.material_gallery.R
+import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
 import kotlinx.android.synthetic.main.activity_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
 
@@ -49,13 +51,18 @@ class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigatio
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_common, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
+        return when (item.itemId) {
+            R.id.action_info -> {
+                ColorInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

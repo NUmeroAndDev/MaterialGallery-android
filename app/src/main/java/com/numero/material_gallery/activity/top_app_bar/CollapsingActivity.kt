@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
+import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
 import kotlinx.android.synthetic.main.activity_collapsing.*
 
 class CollapsingActivity : AppCompatActivity() {
@@ -29,6 +30,10 @@ class CollapsingActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.action_info -> {
+                ColorInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
+                true
+            }
             android.R.id.home -> {
                 onBackPressed()
                 true
