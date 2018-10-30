@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="hoge" />
+        app:text="colorPrimary" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorPrimaryVariant" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorSecondary" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorSecondaryVariant" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorBackground" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorError" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorSurface" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorOnPrimary" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorOnSecondary" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorOnBackground" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorOnError" />
+
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:text="colorOnSurface" />
+
 
 </LinearLayout>
