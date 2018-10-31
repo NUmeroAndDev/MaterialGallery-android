@@ -4,4 +4,8 @@
     <style name="DefaultTheme.LightWindow">
         <item name="android:windowLightStatusBar">true</item>
     </style>
+
+    <style name="DebugTheme.LightWindow">
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>
