@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
+import com.numero.material_gallery.fragment.SettingsFragment
 import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : AppCompatActivity() {
@@ -19,6 +20,8 @@ class SettingsActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+
+        supportFragmentManager.beginTransaction().replace(R.id.container, SettingsFragment.newInstance()).commit()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

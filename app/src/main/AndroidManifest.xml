@@ -24,7 +24,8 @@
 
         <activity
             android:name=".activity.SettingsActivity"
-            android:label="@string/label_settings" />
+            android:label="@string/label_settings"
+            android:theme="@style/DefaultTheme.LightWindow" />
 
         <activity
             android:name=".activity.bottom_app_bar.BottomAppBarTypeActivity"
