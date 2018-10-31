@@ -3,6 +3,7 @@
     <string name="action_search">Search</string>
     <string name="action_like">Like</string>
     <string name="action_settings">Settings</string>
+    <string name="action_info">Info</string>
     <string name="action_help">Help</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
