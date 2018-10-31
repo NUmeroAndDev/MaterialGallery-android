@@ -1,27 +1,49 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryVariant</item>
-        <item name="colorAccent">@color/colorSecondary</item>
-        <item name="android:windowBackground">@color/colorBackground</item>
+    <style name="DefaultTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariant</item>
+        <item name="colorBackground">@color/background</item>
+        <item name="colorSurface">?android:attr/windowBackground</item>
+
+        <item name="colorOnPrimary">@color/onPrimary</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+        <item name="colorOnBackground">@color/onBackground</item>
+        <item name="colorOnError">@color/onError</item>
+        <item name="colorOnSurface">@color/onSurface</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="DebugTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/debugPrimary</item>
+        <item name="colorPrimaryVariant">@color/debugPrimaryVariant</item>
+        <item name="colorSecondary">@color/debugSecondary</item>
+        <item name="colorSecondaryVariant">@color/debugSecondaryVariant</item>
+        <item name="colorBackground">@color/debugBackground</item>
+        <item name="colorSurface">@color/debugSurface</item>
+
+        <item name="colorOnPrimary">@color/onPrimary</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
+        <item name="colorOnBackground">@color/onBackground</item>
+        <item name="colorOnError">@color/onError</item>
+        <item name="colorOnSurface">@color/onSurface</item>
     </style>
+
+    <style name="DefaultTheme.LightWindow" />
+
+    <style name="DebugTheme.LightWindow" />
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
     <style name="BottomAppBarTheme" parent="AppTheme">
-        <item name="android:textColorSecondary">@color/colorOnSurface</item>
+        <item name="android:textColorSecondary">@color/onSurface</item>
     </style>
 
     <style name="HideOnScrollBottomAppBarTheme" parent="AppTheme">
-        <item name="android:textColorSecondary">@color/colorSurface</item>
+        <item name="android:textColorSecondary">@color/surface</item>
     </style>
 
 </resources>

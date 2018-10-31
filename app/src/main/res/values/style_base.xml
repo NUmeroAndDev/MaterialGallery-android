@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--FIXME MaterialComponentsのと入れ替える-->
+    <attr name="colorPrimaryVariant" format="reference" />
+    <attr name="colorSecondary" format="reference" />
+    <attr name="colorSecondaryVariant" format="reference" />
+    <attr name="colorBackground" format="reference" />
+    <attr name="colorSurface" format="reference" />
+
+    <attr name="colorOnPrimary" format="reference" />
+    <attr name="colorOnSecondary" format="reference" />
+    <attr name="colorOnBackground" format="reference" />
+    <attr name="colorOnError" format="reference" />
+    <attr name="colorOnSurface" format="reference" />
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="dialogCornerRadius">8dp</item>
+
+        <item name="colorPrimaryDark">?attr/colorPrimaryVariant</item>
+        <item name="colorAccent">?attr/colorSecondary</item>
+
+        <item name="android:windowBackground">?attr/colorBackground</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>
