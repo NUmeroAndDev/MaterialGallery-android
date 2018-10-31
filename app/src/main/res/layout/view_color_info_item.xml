@@ -19,5 +19,8 @@
         android:id="@+id/cardView"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        app:cardBackgroundColor="#AABBCC" />
+        app:cardCornerRadius="4dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#DEDEDE"
+        app:strokeWidth="1dp" />
 </LinearLayout>
