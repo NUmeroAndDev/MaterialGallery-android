@@ -5,65 +5,72 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.numero.material_gallery.view.ColorInfoItemView
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:text="colorPrimary" />
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bottom_sheet_controll_bar" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorPrimaryVariant" />
+        app:itemColor="?attr/colorPrimary"
+        app:title="colorPrimary" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorSecondary" />
+        app:title="colorPrimaryVariant" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorSecondaryVariant" />
+        app:title="colorSecondary" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorBackground" />
+        app:title="colorSecondaryVariant" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorError" />
+        app:title="colorBackground" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorSurface" />
+        app:title="colorError" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorOnPrimary" />
+        app:title="colorSurface" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorOnSecondary" />
+        app:title="colorOnPrimary" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorOnBackground" />
+        app:title="colorOnSecondary" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorOnError" />
+        app:title="colorOnBackground" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:text="colorOnSurface" />
+        app:title="colorOnError" />
 
+    <com.numero.material_gallery.view.ColorInfoItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="colorOnSurface" />
 
 </LinearLayout>

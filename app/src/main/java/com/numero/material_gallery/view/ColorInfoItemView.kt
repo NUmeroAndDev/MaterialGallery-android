@@ -1,6 +1,7 @@
 package com.numero.material_gallery.view
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
@@ -13,8 +14,16 @@ class ColorInfoItemView @JvmOverloads constructor(context: Context, attrs: Attri
         View.inflate(context, R.layout.view_color_info_item, this)
 
         context.withStyledAttributes(attrs, R.styleable.ColorInfoItemView) {
-            titleTextView.text = getString(R.styleable.ColorInfoItemView_title)
+            setTitle(getString(R.styleable.ColorInfoItemView_title))
+            setItemColor(getColor(R.styleable.ColorInfoItemView_itemColor, Color.WHITE))
         }
+    }
 
+    fun setTitle(title: String?) {
+        titleTextView.text = title
+    }
+
+    fun setItemColor(color: Int) {
+        cardView.setCardBackgroundColor(color)
     }
 }
