@@ -12,14 +12,19 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_sheet.*
+import org.koin.android.ext.android.inject
 
 class BottomSheetActivity : AppCompatActivity() {
+
+    private val configRepository by inject<IConfigRepository>()
 
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(configRepository.themeRes)
         setContentView(R.layout.activity_bottom_sheet)
         setSupportActionBar(toolbar)
 

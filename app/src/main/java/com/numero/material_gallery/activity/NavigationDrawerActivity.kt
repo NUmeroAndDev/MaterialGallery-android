@@ -12,13 +12,18 @@ import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
+import org.koin.android.ext.android.inject
 
 class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    private val configRepository by inject<IConfigRepository>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(configRepository.themeRes)
         setContentView(R.layout.activity_navigation_drawer)
         setSupportActionBar(toolbar)
 

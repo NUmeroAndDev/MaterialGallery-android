@@ -9,12 +9,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.BottomSheetModalFragment
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_modal_bottom_sheet.*
+import org.koin.android.ext.android.inject
 
 class ModalBottomSheetActivity : AppCompatActivity() {
 
+    private val configRepository by inject<IConfigRepository>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(configRepository.themeRes)
         setContentView(R.layout.activity_modal_bottom_sheet)
         setSupportActionBar(toolbar)
 

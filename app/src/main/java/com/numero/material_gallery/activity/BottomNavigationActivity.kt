@@ -12,12 +12,17 @@ import com.numero.material_gallery.extension.setCheckedItem
 import com.numero.material_gallery.extension.setVisibleItem
 import com.numero.material_gallery.extension.visibleItemCount
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_navgation.*
+import org.koin.android.ext.android.inject
 
 class BottomNavigationActivity : AppCompatActivity() {
 
+    private val configRepository by inject<IConfigRepository>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(configRepository.themeRes)
         setContentView(R.layout.activity_bottom_navgation)
         setSupportActionBar(toolbar)
 
