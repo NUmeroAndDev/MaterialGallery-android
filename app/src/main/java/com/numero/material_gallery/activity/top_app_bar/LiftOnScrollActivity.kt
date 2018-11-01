@@ -8,12 +8,17 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_lift_on_scroll.*
+import org.koin.android.ext.android.inject
 
 class LiftOnScrollActivity : AppCompatActivity() {
 
+    private val configRepository by inject<IConfigRepository>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(configRepository.themeRes)
         setContentView(R.layout.activity_lift_on_scroll)
         setSupportActionBar(toolbar)
 

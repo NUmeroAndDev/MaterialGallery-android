@@ -10,12 +10,17 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_snackbar.*
+import org.koin.android.ext.android.inject
 
 class SnackbarActivity : AppCompatActivity() {
 
+    private val configRepository by inject<IConfigRepository>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(configRepository.themeRes)
         setContentView(R.layout.activity_snackbar)
         setSupportActionBar(toolbar)
 
