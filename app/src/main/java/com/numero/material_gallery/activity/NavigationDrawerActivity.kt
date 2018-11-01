@@ -46,6 +46,10 @@ class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigatio
         fab.setOnClickListener {
             Toast.makeText(this@NavigationDrawerActivity, "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
+
+        showDrawerButton.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
     }
 
     override fun onBackPressed() {
@@ -67,30 +71,27 @@ class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigatio
                 ColorInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
                 true
             }
+            android.R.id.home -> {
+                onBackPressed()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_camera -> {
-                // Handle the camera action
             }
             R.id.nav_gallery -> {
-
             }
             R.id.nav_slideshow -> {
-
             }
             R.id.nav_manage -> {
-
             }
             R.id.nav_share -> {
-
             }
             R.id.nav_send -> {
-
             }
         }
 
