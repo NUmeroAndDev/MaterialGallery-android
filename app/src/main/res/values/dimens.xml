@@ -2,4 +2,9 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="nav_header_height">176dp</dimen>
+
+    <dimen name="elevation_0dp">0dp</dimen>
+    <dimen name="elevation_2dp">2dp</dimen>
+    <dimen name="elevation_4dp">4dp</dimen>
+    <dimen name="elevation_8dp">8dp</dimen>
 </resources>

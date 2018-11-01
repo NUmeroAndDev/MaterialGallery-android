@@ -5,9 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.model.Elevation
 import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_material_card.*
 import org.koin.android.ext.android.inject
@@ -26,6 +28,23 @@ class MaterialCardActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+
+        elevationSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                if (progress >= Elevation.values().size) {
+                    return
+                }
+                updateElevation(Elevation.values()[progress])
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+            }
+        })
+
+        updateElevation(Elevation.values()[elevationSeekBar.progress])
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -45,6 +64,17 @@ class MaterialCardActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun updateElevation(elevation: Elevation) {
+        val elevationSize = resources.getDimension(elevation.dimenRes)
+        materialCardView.cardElevation = elevationSize
+        elevationInfoTextView.text = getString(R.string.elevation_info_format).format(convertPxToDp(elevationSize).toInt())
+    }
+
+    private fun convertPxToDp(px: Float): Float {
+        val metrics = resources.displayMetrics
+        return px / metrics.density
     }
 
     companion object {
