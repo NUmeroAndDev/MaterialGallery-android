@@ -23,3 +23,37 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+enum VersionSuffix {
+    ALPHA(0, "alpha"), BETA(1, "beta"), PRODUCT(9, "")
+
+    private final int code
+    private final String name
+
+    VersionSuffix(int code, String name) {
+        this.code = code
+        this.name = name
+    }
+
+    int getCode() {
+        code
+    }
+
+    String getName() {
+        name
+    }
+}
+
+ext{
+    def appMajor = 1
+    def appMinor = 0
+    def appPatch = 0
+    def appBuild = 0
+
+    def suffix = VersionSuffix.ALPHA
+
+    appVersionCode = appMajor * 1000000 + appMinor * 10000 + appPatch * 1000 + suffix.code * 100 + appBuild
+    appVersionName = suffix == VersionSuffix.PRODUCT ?
+            "${appMajor}.${appMinor}.${appPatch}" :
+            "${appMajor}.${appMinor}.${appPatch}-${suffix.name} ${appBuild}"
+}
