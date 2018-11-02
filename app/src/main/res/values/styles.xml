@@ -30,11 +30,7 @@
         <item name="colorOnSurface">@color/debugOnSurface</item>
     </style>
 
-    <style name="DefaultTheme.LightWindow" />
-
-    <style name="DebugTheme.LightWindow" />
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 

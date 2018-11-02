@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="DefaultTheme.LightWindow">
-        <item name="android:windowLightStatusBar">true</item>
-    </style>
-
-    <style name="DebugTheme.LightWindow">
-        <item name="android:windowLightStatusBar">true</item>
-    </style>
 </resources>

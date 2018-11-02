@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="debugPrimary">#FFDE03</color>
-    <color name="debugPrimaryVariant">#FBC02D</color>
+    <color name="debugPrimary">#4CAF50</color>
+    <color name="debugPrimaryVariant">#388E3C</color>
     <color name="debugSecondary">#0336FF</color>
     <color name="debugSecondaryVariant">#1976D2</color>
     <color name="debugBackground">#FFFFFF</color>
@@ -10,7 +10,7 @@
 
     <color name="debugOnPrimary">#000000</color>
     <color name="debugOnSecondary">#FFFFFF</color>
-    <color name="debugOnBackground">#727272</color>
+    <color name="debugOnBackground">#FFCA28</color>
     <color name="debugOnError">#FFFFFF</color>
     <color name="debugOnSurface">#00838F</color>
 </resources>
