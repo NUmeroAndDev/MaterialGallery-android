@@ -77,6 +77,10 @@
             android:label="@string/snachbar" />
 
         <activity
+            android:name=".activity.TabActivity"
+            android:label="@string/tab" />
+
+        <activity
             android:name=".activity.TextFieldActivity"
             android:label="@string/text_field" />
 
