@@ -88,6 +88,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.SNACKBAR -> {
                 startActivity(SnackbarActivity.createIntent(this))
             }
+            DesignComponent.TAB -> {
+                startActivity(TabActivity.createIntent(this))
+            }
             DesignComponent.TEXT_FIELDS -> {
                 startActivity(TextFieldActivity.createIntent(this))
             }

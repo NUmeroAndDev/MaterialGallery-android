@@ -55,9 +55,9 @@ enum class DesignComponent(
             R.string.snachbar
     ),
 
-//    TAB(
-//            R.string.tab
-//    ),
+    TAB(
+            R.string.tab
+    ),
 
     TEXT_FIELDS(
             R.string.text_field
