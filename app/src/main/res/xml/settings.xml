@@ -3,7 +3,7 @@
     <SwitchPreference
         android:defaultValue="false"
         android:key="is_debug_mode"
-        android:title="Debug Mode" />
+        android:title="Use clear color" />
     <PreferenceScreen
         android:key="material_components_version"
         android:title="Material Components Version" />

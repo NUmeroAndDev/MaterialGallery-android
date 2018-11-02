@@ -12,9 +12,9 @@ class ConfigRepository(context: Context) : IConfigRepository {
         get() {
             val isDebugMode = settingsPreference.getBoolean(KEY_IS_DEBUG_MODE, false)
             return if (isDebugMode) {
-                R.style.DebugTheme_LightWindow
+                R.style.DebugTheme
             } else {
-                R.style.DefaultTheme_LightWindow
+                R.style.DefaultTheme
             }
         }
 
