@@ -67,6 +67,47 @@
         </RadioGroup>
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fabAnimationTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="FAB Animation"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fabPositionRadioGroup" />
+
+        <RadioGroup
+            android:id="@+id/fabAnimationRadioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checkedButton="@+id/scaleRadioButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fabAnimationTextView">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/scaleRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Scale"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/slideRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="Slide"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp" />
+
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/fabVisiblyTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -75,7 +116,7 @@
             android:textColor="?android:attr/textColorPrimary"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fabPositionRadioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/fabAnimationRadioGroup" />
 
         <RadioGroup
             android:id="@+id/fabVisiblyRadioGroup"
@@ -113,11 +154,11 @@
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom" />
+        android:layout_gravity="bottom"
+        app:fabAnimationMode="scale" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        style="@style/Widget.MaterialComponents.FloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_add"

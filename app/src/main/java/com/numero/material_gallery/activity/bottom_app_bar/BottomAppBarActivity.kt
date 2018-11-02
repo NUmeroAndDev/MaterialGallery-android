@@ -40,6 +40,13 @@ class BottomAppBarActivity : AppCompatActivity() {
             }
         }
 
+        fabAnimationRadioGroup.setOnCheckedChangeListener { _, id ->
+            when (id) {
+                R.id.scaleRadioButton -> bottomAppBar.fabAnimationMode = BottomAppBar.FAB_ANIMATION_MODE_SCALE
+                R.id.slideRadioButton -> bottomAppBar.fabAnimationMode = BottomAppBar.FAB_ANIMATION_MODE_SLIDE
+            }
+        }
+
         fabVisiblyRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
                 R.id.showRadioButton -> fab.show()
