@@ -38,12 +38,4 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 
-    <style name="BottomAppBarTheme" parent="AppTheme">
-        <item name="android:textColorSecondary">@color/onSurface</item>
-    </style>
-
-    <style name="HideOnScrollBottomAppBarTheme" parent="AppTheme">
-        <item name="android:textColorSecondary">@color/surface</item>
-    </style>
-
 </resources>
