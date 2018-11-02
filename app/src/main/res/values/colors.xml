@@ -9,7 +9,7 @@
     <color name="surface">#FFFFFF</color>
 
     <color name="onPrimary">#000000</color>
-    <color name="onSecondary">#000000</color>
+    <color name="onSecondary">#FFFFFF</color>
     <color name="onBackground">#000000</color>
     <color name="onError">#FFFFFF</color>
     <color name="onSurface">#000000</color>
