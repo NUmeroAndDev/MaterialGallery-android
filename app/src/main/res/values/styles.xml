@@ -5,7 +5,7 @@
         <item name="colorPrimaryVariant">@color/primaryVariant</item>
         <item name="colorSecondary">@color/secondary</item>
         <item name="colorSecondaryVariant">@color/secondaryVariant</item>
-        <item name="colorBackground">@color/background</item>
+        <item name="android:windowBackground">@color/background</item>
         <item name="colorSurface">?android:attr/windowBackground</item>
 
         <item name="colorOnPrimary">@color/onPrimary</item>
@@ -20,7 +20,7 @@
         <item name="colorPrimaryVariant">@color/debugPrimaryVariant</item>
         <item name="colorSecondary">@color/debugSecondary</item>
         <item name="colorSecondaryVariant">@color/debugSecondaryVariant</item>
-        <item name="colorBackground">@color/debugBackground</item>
+        <item name="android:windowBackground">@color/debugBackground</item>
         <item name="colorSurface">@color/debugSurface</item>
 
         <item name="colorOnPrimary">@color/onPrimary</item>

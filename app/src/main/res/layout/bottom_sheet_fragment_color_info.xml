@@ -39,7 +39,7 @@
     <com.numero.material_gallery.view.ColorInfoItemView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemColor="?attr/colorBackground"
+        app:itemColor="?android:attr/windowBackground"
         app:title="colorBackground" />
 
     <com.numero.material_gallery.view.ColorInfoItemView
