@@ -34,12 +34,12 @@ class SnackbarActivity : AppCompatActivity() {
         }
 
         showSnackbarButton.setOnClickListener {
-            Snackbar.make(it, "Message", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(it, "Message", Snackbar.LENGTH_SHORT).setAnchorView(fab).show()
         }
         showActionSnackbarButton.setOnClickListener {
             Snackbar.make(it, "Message", Snackbar.LENGTH_LONG).setAction("Action", {
                 Toast.makeText(this@SnackbarActivity, "Clicked Snackbar action", Toast.LENGTH_SHORT).show()
-            }).show()
+            }).setAnchorView(fab).show()
         }
     }
 
