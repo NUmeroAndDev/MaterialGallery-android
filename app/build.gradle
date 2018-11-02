@@ -12,8 +12,8 @@ android {
         applicationId "com.numero.material_gallery"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode rootProject.appVersionCode
+        versionName rootProject.appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "MATERIAL_COMPONENTS_VERSION", "\"$material_version\"")
