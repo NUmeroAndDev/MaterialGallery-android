@@ -30,6 +30,7 @@
     <string name="modal_bottom_sheet">Modal Bottom Sheet</string>
     <string name="navigation_drawer">Navigation Drawer</string>
     <string name="progress_bar">ProgressBar</string>
+    <string name="radio_button">Radio Button</string>
     <string name="snachbar">Snackbar</string>
     <string name="material_switch">Switch</string>
     <string name="tab">Tab</string>
