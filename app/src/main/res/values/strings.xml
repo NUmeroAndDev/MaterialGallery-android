@@ -22,12 +22,13 @@
     <string name="bottom_app_bar">Bottom App Bar</string>
     <string name="bottom_navigation">Bottom Navigation</string>
     <string name="bottom_sheet">Bottom Sheet</string>
+    <string name="checkbox">Checkbox</string>
     <string name="chips">Chips</string>
     <string name="fab">Floating Action Button</string>
     <string name="material_button">Material Button</string>
     <string name="material_card">Material Card</string>
     <string name="modal_bottom_sheet">Modal Bottom Sheet</string>
-    <string name="navigation_drawer">Navigation drawer</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
     <string name="progress_bar">ProgressBar</string>
     <string name="snachbar">Snackbar</string>
     <string name="tab">Tab</string>
