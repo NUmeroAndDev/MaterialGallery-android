@@ -70,6 +70,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.BOTTOM_SHEET -> {
                 startActivity(BottomSheetActivity.createIntent(this))
             }
+            DesignComponent.CHECKBOX -> {
+                startActivity(CheckboxActivity.createIntent(this))
+            }
             DesignComponent.CHIPS -> {
                 startActivity(ChipActivity.createIntent(this))
             }

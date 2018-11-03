@@ -23,6 +23,10 @@ enum class DesignComponent(
             R.string.bottom_sheet
     ),
 
+    CHECKBOX(
+            R.string.checkbox
+    ),
+
     CHIPS(
             R.string.chips
     ),
