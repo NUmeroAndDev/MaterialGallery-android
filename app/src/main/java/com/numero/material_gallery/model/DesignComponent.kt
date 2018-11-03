@@ -59,6 +59,10 @@ enum class DesignComponent(
             R.string.snachbar
     ),
 
+    SWITCH(
+            R.string.material_switch
+    ),
+
     TAB(
             R.string.tab
     ),

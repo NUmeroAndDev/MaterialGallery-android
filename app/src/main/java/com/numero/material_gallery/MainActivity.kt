@@ -94,6 +94,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.SNACKBAR -> {
                 startActivity(SnackbarActivity.createIntent(this))
             }
+            DesignComponent.SWITCH -> {
+                startActivity(SwitchActivity.createIntent(this))
+            }
             DesignComponent.TAB -> {
                 startActivity(TabActivity.createIntent(this))
             }

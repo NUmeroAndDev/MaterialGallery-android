@@ -85,6 +85,10 @@
             android:label="@string/snachbar" />
 
         <activity
+            android:name=".activity.SwitchActivity"
+            android:label="@string/material_switch" />
+
+        <activity
             android:name=".activity.TabActivity"
             android:label="@string/tab" />
 

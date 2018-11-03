@@ -31,6 +31,7 @@
     <string name="navigation_drawer">Navigation Drawer</string>
     <string name="progress_bar">ProgressBar</string>
     <string name="snachbar">Snackbar</string>
+    <string name="material_switch">Switch</string>
     <string name="tab">Tab</string>
     <string name="text_field">Text field</string>
     <string name="top_app_bar">Top App Bar</string>
