@@ -49,6 +49,10 @@
             android:label="@string/bottom_sheet" />
 
         <activity
+            android:name=".activity.ChipActivity"
+            android:label="@string/chips" />
+
+        <activity
             android:name=".activity.FabActivity"
             android:label="@string/fab" />
 
