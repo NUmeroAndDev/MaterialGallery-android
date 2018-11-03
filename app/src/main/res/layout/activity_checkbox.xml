@@ -31,9 +31,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Enable"
-
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:useMaterialThemeColors="true" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/disableCheckedCheckBox"
@@ -44,7 +44,8 @@
             android:enabled="false"
             android:text="Disable"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enableCheckBox" />
+            app:layout_constraintTop_toBottomOf="@+id/enableCheckBox"
+            app:useMaterialThemeColors="true" />
 
         <com.google.android.material.checkbox.MaterialCheckBox
             android:id="@+id/disableNonCheckedCheckBox"
@@ -54,7 +55,8 @@
             android:enabled="false"
             android:text="Disable"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/disableCheckedCheckBox" />
+            app:layout_constraintTop_toBottomOf="@id/disableCheckedCheckBox"
+            app:useMaterialThemeColors="true" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
