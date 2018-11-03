@@ -26,6 +26,8 @@ class TextFieldActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
+        filledErrorTextInputLayout.error = "Error"
+        outlineErrorTextInputLayout.error = "Error"
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
