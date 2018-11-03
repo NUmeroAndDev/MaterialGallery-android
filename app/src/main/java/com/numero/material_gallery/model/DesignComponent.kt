@@ -55,6 +55,10 @@ enum class DesignComponent(
             R.string.progress_bar
     ),
 
+    RADIO_BUTTON(
+            R.string.radio_button
+    ),
+
     SNACKBAR(
             R.string.snachbar
     ),

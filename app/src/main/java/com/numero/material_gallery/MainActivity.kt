@@ -91,6 +91,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.PROGRESS_BAR -> {
                 startActivity(ProgressBarActivity.createIntent(this))
             }
+            DesignComponent.RADIO_BUTTON -> {
+                startActivity(RadioButtonActivity.createIntent(this))
+            }
             DesignComponent.SNACKBAR -> {
                 startActivity(SnackbarActivity.createIntent(this))
             }
