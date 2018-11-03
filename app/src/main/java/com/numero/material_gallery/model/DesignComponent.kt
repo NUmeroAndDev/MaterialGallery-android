@@ -23,9 +23,9 @@ enum class DesignComponent(
             R.string.bottom_sheet
     ),
 
-//    CHIPS(
-//            R.string.chips
-//    ),
+    CHIPS(
+            R.string.chips
+    ),
 
     FAB(
             R.string.fab
