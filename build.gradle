@@ -50,7 +50,7 @@ ext{
     def appPatch = 0
     def appBuild = 0
 
-    def suffix = VersionSuffix.ALPHA
+    def suffix = VersionSuffix.PRODUCT
 
     appVersionCode = appMajor * 1000000 + appMinor * 10000 + appPatch * 1000 + suffix.code * 100 + appBuild
     appVersionName = suffix == VersionSuffix.PRODUCT ?
