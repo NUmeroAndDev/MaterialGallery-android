@@ -25,5 +25,23 @@ class ColorInfoItemView @JvmOverloads constructor(context: Context, attrs: Attri
 
     fun setItemColor(color: Int) {
         cardView.setCardBackgroundColor(color)
+        colorTextView.apply {
+            text = Integer.toHexString(color).toUpperCase()
+            setTextColor(color.adjustTextColor())
+        }
+    }
+
+    /**
+     * @return Color.BLACK or Color.WHITE
+     */
+    private fun Int.adjustTextColor(): Int {
+        val red = Color.red(this)
+        val green = Color.green(this)
+        val blue = Color.blue(this)
+        return if (red * 0.299 + green * 0.587 + blue * 0.114 > 186) {
+            Color.BLACK
+        } else {
+            Color.WHITE
+        }
     }
 }
