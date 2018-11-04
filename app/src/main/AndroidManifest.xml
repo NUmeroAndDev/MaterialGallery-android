@@ -110,7 +110,8 @@
 
         <activity
             android:name=".activity.top_app_bar.LiftOnScrollActivity"
-            android:label="@string/lift_on_scroll" />
+            android:label="@string/lift_on_scroll"
+            android:theme="@style/DefaultTheme.LightWindow" />
 
         <activity
             android:name=".activity.top_app_bar.CollapsingActivity"
