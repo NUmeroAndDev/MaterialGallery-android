@@ -20,135 +20,142 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
+        android:layout_marginBottom="?attr/actionBarSize"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/fabPositionTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="FAB Position"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
-        <RadioGroup
-            android:id="@+id/fabPositionRadioGroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:checkedButton="@+id/attachedCenterRadioButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fabPositionTextView">
-
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/attachedCenterRadioButton"
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fabPositionTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Center"
+                android:text="FAB Position"
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/attachedEndRadioButton"
-                android:layout_width="match_parent"
+            <RadioGroup
+                android:id="@+id/fabPositionRadioGroup"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="End"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:layout_marginTop="16dp"
+                android:checkedButton="@+id/attachedCenterRadioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabPositionTextView">
 
-        </RadioGroup>
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/attachedCenterRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Center"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/fabAnimationTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="FAB Animation"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fabPositionRadioGroup" />
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/attachedEndRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="End"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
 
-        <RadioGroup
-            android:id="@+id/fabAnimationRadioGroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:checkedButton="@+id/scaleRadioButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fabAnimationTextView">
+            </RadioGroup>
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/scaleRadioButton"
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fabAnimationTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Scale"
+                android:layout_marginTop="32dp"
+                android:text="FAB Animation"
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabPositionRadioGroup" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/slideRadioButton"
-                android:layout_width="match_parent"
+            <RadioGroup
+                android:id="@+id/fabAnimationRadioGroup"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Slide"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:layout_marginTop="16dp"
+                android:checkedButton="@+id/scaleRadioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabAnimationTextView">
 
-        </RadioGroup>
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/scaleRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Scale"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/fabVisiblyTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="FAB Visibly"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fabAnimationRadioGroup" />
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/slideRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Slide"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
 
-        <RadioGroup
-            android:id="@+id/fabVisiblyRadioGroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:checkedButton="@+id/showRadioButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fabVisiblyTextView">
+            </RadioGroup>
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/showRadioButton"
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fabVisiblyTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Show"
+                android:layout_marginTop="32dp"
+                android:text="FAB Visibly"
                 android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabAnimationRadioGroup" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
-                android:id="@+id/hideRadioButton"
-                android:layout_width="match_parent"
+            <RadioGroup
+                android:id="@+id/fabVisiblyRadioGroup"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Hide"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:layout_marginTop="16dp"
+                android:checkedButton="@+id/showRadioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabVisiblyTextView">
 
-        </RadioGroup>
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/showRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Show"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/hideRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Hide"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
