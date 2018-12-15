@@ -35,7 +35,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Raised Button"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,13 +85,14 @@
                 app:layout_constraintStart_toEndOf="@+id/iconRaisedButton"
                 app:layout_constraintTop_toTopOf="@+id/iconRaisedButton" />
 
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/unelevatedButtonTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="Unelevated Button"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="Outlined Button"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -205,7 +206,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="Text Button"
-                android:textColor="?android:attr/textColorPrimary"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -254,8 +255,6 @@
                 app:icon="@drawable/ic_add"
                 app:layout_constraintStart_toEndOf="@+id/iconTextButton"
                 app:layout_constraintTop_toTopOf="@+id/iconTextButton" />
-
-            <!--TODO  add custom button-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

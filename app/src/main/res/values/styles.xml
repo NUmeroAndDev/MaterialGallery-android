@@ -17,19 +17,19 @@
 
     <style name="DefaultTheme.LightWindow" />
 
-    <style name="DebugTheme" parent="AppTheme">
-        <item name="colorPrimary">@color/debugPrimary</item>
-        <item name="colorPrimaryVariant">@color/debugPrimaryVariant</item>
-        <item name="colorSecondary">@color/debugSecondary</item>
-        <item name="colorSecondaryVariant">@color/debugSecondaryVariant</item>
-        <item name="android:windowBackground">@color/debugBackground</item>
-        <item name="colorSurface">@color/debugSurface</item>
+    <style name="DarkTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/primaryDark</item>
+        <item name="colorPrimaryVariant">@color/primaryVariantDark</item>
+        <item name="colorSecondary">@color/secondaryDark</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariantDark</item>
+        <item name="android:windowBackground">@color/backgroundDark</item>
+        <item name="colorSurface">@color/surfaceDark</item>
 
-        <item name="colorOnPrimary">@color/debugOnPrimary</item>
-        <item name="colorOnSecondary">@color/debugOnSecondary</item>
-        <item name="colorOnBackground">@color/debugOnBackground</item>
-        <item name="colorOnError">@color/debugOnError</item>
-        <item name="colorOnSurface">@color/debugOnSurface</item>
+        <item name="colorOnPrimary">@color/onPrimaryDark</item>
+        <item name="colorOnSecondary">@color/onSecondaryDark</item>
+        <item name="colorOnBackground">@color/onBackgroundDark</item>
+        <item name="colorOnError">@color/onErrorDark</item>
+        <item name="colorOnSurface">@color/onSurfaceDark</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />

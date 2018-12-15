@@ -10,15 +10,15 @@ class ConfigRepository(context: Context) : IConfigRepository {
 
     override val themeRes: Int
         get() {
-            val isDebugMode = settingsPreference.getBoolean(KEY_IS_DEBUG_MODE, false)
-            return if (isDebugMode) {
-                R.style.DebugTheme
+            val isDarkTheme = settingsPreference.getBoolean(KEY_IS_DARK_THEME, false)
+            return if (isDarkTheme) {
+                R.style.DarkTheme
             } else {
                 R.style.DefaultTheme
             }
         }
 
     companion object {
-        private const val KEY_IS_DEBUG_MODE = "is_debug_mode"
+        private const val KEY_IS_DARK_THEME = "is_dark_theme"
     }
 }

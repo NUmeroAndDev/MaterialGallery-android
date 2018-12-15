@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryDark">#313235</color>
+    <color name="primaryVariantDark">#313235</color>
+    <color name="secondaryDark">#03DAC6</color>
+    <color name="secondaryVariantDark">#018786</color>
+    <color name="backgroundDark">#202124</color>
+    <color name="errorDark">#B00020</color>
+    <color name="surfaceDark">#424346</color>
+
+    <color name="onPrimaryDark">#FFFFFF</color>
+    <color name="onSecondaryDark">#000000</color>
+    <color name="onBackgroundDark">#FFFFFF</color>
+    <color name="onErrorDark">#FFFFFF</color>
+    <color name="onSurfaceDark">#FFFFFF</color>
+</resources>
