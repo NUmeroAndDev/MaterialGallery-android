@@ -30,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:textColor="?attr/colorOnBackground"
             android:text="@string/large_text" />
 
     </androidx.core.widget.NestedScrollView>

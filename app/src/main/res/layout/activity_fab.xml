@@ -31,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Size"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="?attr/colorOnBackground"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -46,23 +46,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fabSizeTextView">
 
-            <androidx.appcompat.widget.AppCompatRadioButton
+            <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/fabSizeNormalRadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="Normal"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:useMaterialThemeColors="true" />
 
-            <androidx.appcompat.widget.AppCompatRadioButton
+            <com.google.android.material.radiobutton.MaterialRadioButton
                 android:id="@+id/fabSizeMinRadioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="Mini"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                app:useMaterialThemeColors="true" />
 
         </RadioGroup>
 
