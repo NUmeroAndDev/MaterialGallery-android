@@ -8,12 +8,12 @@ import com.numero.material_gallery.R
 
 class BottomSheetModalFragment : BottomSheetDialogFragment() {
 
-    override fun setupDialog(dialog: Dialog?, style: Int) {
+    override fun setupDialog(dialog: Dialog, style: Int) {
         val view = View.inflate(context, R.layout.fragment_bottom_sheet_modal, null)
-        dialog?.setContentView(view)
+        dialog.setContentView(view)
     }
 
-    fun show(manager: FragmentManager?) {
+    fun show(manager: FragmentManager) {
         show(manager, TAG)
     }
 
