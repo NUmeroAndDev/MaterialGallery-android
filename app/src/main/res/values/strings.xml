@@ -42,4 +42,13 @@
     <string name="actionbar">ActionBar</string>
     <string name="lift_on_scroll">LiftOnScroll</string>
     <string name="collapsing">Collapsing</string>
+
+    <string-array name="shape_theme">
+        <item>Rounded</item>
+        <item>Cut</item>
+    </string-array>
+    <string-array name="shape_theme_value">
+        <item>rounded</item>
+        <item>cut</item>
+    </string-array>
 </resources>

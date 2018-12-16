@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="is_dark_theme"
-        android:title="Dark Theme" />
-    <PreferenceScreen
-        android:key="material_components_version"
-        android:title="Material Components Version" />
-</PreferenceScreen>
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SwitchPreferenceCompat
+        app:defaultValue="false"
+        app:key="is_dark_theme"
+        app:title="Dark Theme" />
+    <ListPreference
+        app:defaultValue="rounded"
+        app:entries="@array/shape_theme"
+        app:entryValues="@array/shape_theme_value"
+        app:key="shape_theme"
+        app:title="Shape Theme"
+        app:useSimpleSummaryProvider="true" />
+    <Preference
+        app:key="material_components_version"
+        app:title="Material Components Version" />
+</androidx.preference.PreferenceScreen>
