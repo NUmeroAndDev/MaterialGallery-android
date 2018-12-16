@@ -4,6 +4,12 @@
         android:defaultValue="false"
         android:key="is_dark_theme"
         android:title="Dark Theme" />
+    <ListPreference
+        android:defaultValue="rounded"
+        android:entries="@array/shape_theme"
+        android:entryValues="@array/shape_theme_value"
+        android:key="shape_theme"
+        android:title="Shape Theme" />
     <PreferenceScreen
         android:key="material_components_version"
         android:title="Material Components Version" />

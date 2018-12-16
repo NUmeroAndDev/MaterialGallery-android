@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="DefaultTheme.LightWindow">
+    <style name="LightTheme.LightWindow">
         <item name="colorPrimaryDark">@android:color/white</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
