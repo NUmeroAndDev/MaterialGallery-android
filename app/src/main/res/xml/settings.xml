@@ -14,4 +14,14 @@
     <Preference
         app:key="material_components_version"
         app:title="Material Components Version" />
+
+    <PreferenceCategory>
+
+        <Preference
+            app:icon="@drawable/ic_github"
+            app:key="view_source"
+            app:title="View source on GitHub" />
+
+    </PreferenceCategory>
+
 </androidx.preference.PreferenceScreen>
