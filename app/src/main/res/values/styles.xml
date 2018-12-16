@@ -18,6 +18,8 @@
         <item name="shapeAppearanceSmallComponent">@style/cutSmallShapeAppearance</item>
         <item name="shapeAppearanceMediumComponent">@style/cutMediumShapeAppearance</item>
         <item name="shapeAppearanceLargeComponent">@style/cutLargeShapeAppearance</item>
+
+        <item name="floatingActionButtonStyle">@style/CutFloatingActionButtonStyle</item>
     </style>
 
     <style name="DarkTheme.Rounded">
@@ -30,6 +32,17 @@
         <item name="shapeAppearanceSmallComponent">@style/cutSmallShapeAppearance</item>
         <item name="shapeAppearanceMediumComponent">@style/cutMediumShapeAppearance</item>
         <item name="shapeAppearanceLargeComponent">@style/cutLargeShapeAppearance</item>
+
+        <item name="floatingActionButtonStyle">@style/CutFloatingActionButtonStyle</item>
+    </style>
+
+    <!--FIXME FABのShapeはライブラリで反映される?-->
+    <style name="CutFloatingActionButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/CutFloatingActionButtonShapeAppearance</item>
+    </style>
+
+    <style name="CutFloatingActionButtonShapeAppearance" parent="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton">
+        <item name="cornerFamily">cut</item>
     </style>
 
 </resources>
