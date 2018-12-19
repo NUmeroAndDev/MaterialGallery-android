@@ -4,5 +4,6 @@
     <style name="LightTheme.LightWindow">
         <item name="colorPrimaryDark">@android:color/white</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle.Light</item>
     </style>
 </resources>

@@ -1,6 +1,8 @@
 <resources>
 
-    <style name="LightTheme.LightWindow" />
+    <style name="LightTheme.LightWindow">
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle.Light</item>
+    </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
@@ -43,6 +45,10 @@
 
     <style name="CutFloatingActionButtonShapeAppearance" parent="ShapeAppearanceOverlay.MaterialComponents.FloatingActionButton">
         <item name="cornerFamily">cut</item>
+    </style>
+
+    <style name="ToolbarNavigationButtonStyle.Light" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="tint">?attr/colorOnSurface</item>
     </style>
 
 </resources>
