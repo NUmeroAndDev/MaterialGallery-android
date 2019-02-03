@@ -3,6 +3,7 @@ package com.numero.material_gallery.fragment
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.net.toUri
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.numero.material_gallery.BuildConfig
 import com.numero.material_gallery.R
@@ -14,8 +15,8 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        findPreference(KEY_MATERIAL_VERSION).summary = BuildConfig.MATERIAL_COMPONENTS_VERSION
-        findPreference(KEY_VIEW_SOURCE).setOnPreferenceClickListener {
+        findPreference<Preference>(KEY_MATERIAL_VERSION).summary = BuildConfig.MATERIAL_COMPONENTS_VERSION
+        findPreference<Preference>(KEY_VIEW_SOURCE).setOnPreferenceClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, sourceUrl.toUri()))
             true
         }
