@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
@@ -13,14 +14,14 @@ import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_app_bar.*
 import org.koin.android.ext.android.inject
 
+@ContentView(R.layout.activity_hide_on_scroll)
 class HideOnScrollActivity : AppCompatActivity() {
 
     private val configRepository by inject<IConfigRepository>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setTheme(configRepository.themeRes)
-        setContentView(R.layout.activity_hide_on_scroll)
+        super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {

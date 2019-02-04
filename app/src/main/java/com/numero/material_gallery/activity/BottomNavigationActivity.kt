@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.numero.material_gallery.R
@@ -16,14 +17,14 @@ import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_navgation.*
 import org.koin.android.ext.android.inject
 
+@ContentView(R.layout.activity_bottom_navgation)
 class BottomNavigationActivity : AppCompatActivity() {
 
     private val configRepository by inject<IConfigRepository>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setTheme(configRepository.themeRes)
-        setContentView(R.layout.activity_bottom_navgation)
+        super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {

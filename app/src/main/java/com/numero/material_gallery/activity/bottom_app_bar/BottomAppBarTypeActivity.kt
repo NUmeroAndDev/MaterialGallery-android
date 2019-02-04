@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,11 +13,11 @@ import com.numero.material_gallery.model.BottomAppBarType
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.activity_bottom_app_bar_type.*
 
+@ContentView(R.layout.activity_bottom_app_bar_type)
 class BottomAppBarTypeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bottom_app_bar_type)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {
