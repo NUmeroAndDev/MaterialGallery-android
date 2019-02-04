@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.numero.material_gallery.R
@@ -16,6 +17,7 @@ import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_sheet.*
 import org.koin.android.ext.android.inject
 
+@ContentView(R.layout.activity_bottom_sheet)
 class BottomSheetActivity : AppCompatActivity() {
 
     private val configRepository by inject<IConfigRepository>()
@@ -23,9 +25,8 @@ class BottomSheetActivity : AppCompatActivity() {
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         setTheme(configRepository.themeRes)
-        setContentView(R.layout.activity_bottom_sheet)
+        super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
 
         supportActionBar?.apply {
