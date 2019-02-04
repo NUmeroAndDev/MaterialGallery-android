@@ -27,6 +27,7 @@
     <string name="fab">Floating Action Button</string>
     <string name="material_button">Material Button</string>
     <string name="material_card">Material Card</string>
+    <string name="material_dialog">Material Dialog</string>
     <string name="modal_bottom_sheet">Modal Bottom Sheet</string>
     <string name="navigation_drawer">Navigation Drawer</string>
     <string name="progress_bar">ProgressBar</string>
