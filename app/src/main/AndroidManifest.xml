@@ -69,6 +69,10 @@
             android:label="@string/material_card" />
 
         <activity
+            android:name=".activity.MaterialDialogActivity"
+            android:label="@string/material_dialog" />
+
+        <activity
             android:name=".activity.ModalBottomSheetActivity"
             android:label="@string/modal_bottom_sheet" />
 

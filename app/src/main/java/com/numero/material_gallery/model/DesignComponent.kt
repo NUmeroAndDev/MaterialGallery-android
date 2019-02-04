@@ -43,6 +43,10 @@ enum class DesignComponent(
             R.string.material_card
     ),
 
+    MATERIAL_DIALOG(
+            R.string.material_dialog
+    ),
+
     MODAL_BOTTOM_SHEET(
             R.string.modal_bottom_sheet
     ),

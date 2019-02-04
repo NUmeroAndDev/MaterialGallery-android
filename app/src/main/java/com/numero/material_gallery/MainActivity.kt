@@ -85,6 +85,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.MATERIAL_CARD -> {
                 startActivity(MaterialCardActivity.createIntent(this))
             }
+            DesignComponent.MATERIAL_DIALOG -> {
+                startActivity(MaterialDialogActivity.createIntent(this))
+            }
             DesignComponent.NAVIGATION_DRAWER -> {
                 startActivity(NavigationDrawerActivity.createIntent(this))
             }
