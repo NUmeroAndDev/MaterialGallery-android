@@ -2,8 +2,6 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="dialogCornerRadius">8dp</item>
-
         <!--FIXME これ必要?-->
         <item name="colorPrimaryDark">?attr/colorPrimaryVariant</item>
 
