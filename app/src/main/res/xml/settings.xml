@@ -27,7 +27,7 @@
 
         <Preference
             app:key="licenses"
-            app:title="Licenses" />
+            app:title="Open source licenses" />
 
     </PreferenceCategory>
 
