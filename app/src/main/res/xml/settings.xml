@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <SwitchPreferenceCompat
         app:defaultValue="false"
         app:key="is_dark_theme"
         app:title="Dark Theme" />
+
     <ListPreference
         app:defaultValue="rounded"
         app:entries="@array/shape_theme"
@@ -11,6 +13,7 @@
         app:key="shape_theme"
         app:title="Shape Theme"
         app:useSimpleSummaryProvider="true" />
+
     <Preference
         app:key="material_components_version"
         app:title="Material Components Version" />
@@ -21,6 +24,10 @@
             app:icon="@drawable/ic_github"
             app:key="view_source"
             app:title="View source on GitHub" />
+
+        <Preference
+            app:key="licenses"
+            app:title="Licenses" />
 
     </PreferenceCategory>
 

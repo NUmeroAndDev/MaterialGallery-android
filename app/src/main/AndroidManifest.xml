@@ -121,6 +121,14 @@
             android:name=".activity.top_app_bar.CollapsingActivity"
             android:label="@string/collapsing" />
 
+        <activity
+            android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
+            android:theme="@style/LightTheme.WithToolbar" />
+
+        <activity
+            android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
+            android:theme="@style/LightTheme.WithToolbar" />
+
     </application>
 
 </manifest>
