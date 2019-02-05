@@ -4,6 +4,11 @@
         <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle.Light</item>
     </style>
 
+    <style name="LightTheme.WithToolbar">
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
     <style name="AppTheme.AppBarOverlay.Light" parent="ThemeOverlay.MaterialComponents.ActionBar" />

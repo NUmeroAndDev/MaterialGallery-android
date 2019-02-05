@@ -11,6 +11,7 @@
         <item name="windowNoTitle">true</item>
 
         <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
     </style>
 
     <style name="ToolbarNavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">

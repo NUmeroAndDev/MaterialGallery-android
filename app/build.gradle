@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'com.google.android.gms.oss-licenses-plugin'
+
 android {
 
     compileSdkVersion 28
@@ -47,9 +49,11 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     implementation 'androidx.core:core-ktx:1.1.0-alpha04'
 
+    implementation "com.google.android.material:material:$material_version"
+
     implementation "org.koin:koin-androidx-scope:$koin_version"
 
-    implementation "com.google.android.material:material:$material_version"
+    implementation "com.google.android.gms:play-services-oss-licenses:$oss_licenses_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'

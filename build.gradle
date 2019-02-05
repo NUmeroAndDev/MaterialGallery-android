@@ -4,6 +4,8 @@ buildscript {
         material_version = '1.1.0-alpha03'
 
         koin_version = '2.0.0-beta-1'
+
+        oss_licenses_version = '16.0.2'
     }
     repositories {
         google()
@@ -12,6 +14,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.0-beta03'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.android.gms:oss-licenses-plugin:0.9.4'
     }
 }
 

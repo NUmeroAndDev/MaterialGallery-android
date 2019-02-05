@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.core.net.toUri
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.numero.material_gallery.BuildConfig
 import com.numero.material_gallery.R
 
@@ -20,11 +21,16 @@ class SettingsFragment : PreferenceFragmentCompat() {
             startActivity(Intent(Intent.ACTION_VIEW, sourceUrl.toUri()))
             true
         }
+        findPreference<Preference>(KEY_LICENSES).setOnPreferenceClickListener {
+            startActivity(Intent(context, OssLicensesMenuActivity::class.java))
+            true
+        }
     }
 
     companion object {
         private const val KEY_MATERIAL_VERSION = "material_components_version"
         private const val KEY_VIEW_SOURCE = "view_source"
+        private const val KEY_LICENSES = "licenses"
 
         private const val sourceUrl = "https://github.com/NUmeroAndDev/MaterialGallery-android"
 
