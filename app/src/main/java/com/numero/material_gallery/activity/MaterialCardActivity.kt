@@ -8,11 +8,14 @@ import android.view.MenuItem
 import android.widget.SeekBar
 import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
 import com.numero.material_gallery.model.Corner
 import com.numero.material_gallery.model.Elevation
 import com.numero.material_gallery.repository.IConfigRepository
+import com.numero.material_gallery.view.SelectionCardAdapter
 import kotlinx.android.synthetic.main.activity_material_card.*
 import org.koin.android.ext.android.inject
 
@@ -58,6 +61,8 @@ class MaterialCardActivity : AppCompatActivity() {
 
         updateElevation(Elevation.values()[elevationSeekBar.progress])
         updateCorner(Corner.values()[cornerSeekBar.progress])
+
+        setupSelectionCardList()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -76,6 +81,14 @@ class MaterialCardActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun setupSelectionCardList() {
+        selectionCardListRecyclerView.apply {
+            layoutManager = LinearLayoutManager(this@MaterialCardActivity, RecyclerView.HORIZONTAL, false)
+            setHasFixedSize(true)
+            adapter = SelectionCardAdapter()
         }
     }
 
