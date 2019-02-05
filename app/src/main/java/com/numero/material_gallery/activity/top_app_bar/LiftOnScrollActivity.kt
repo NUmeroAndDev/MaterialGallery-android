@@ -20,7 +20,6 @@ class LiftOnScrollActivity : AppCompatActivity() {
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(getTintedDrawable(R.drawable.ic_arrow_back, Color.BLACK))
         }
     }
 
