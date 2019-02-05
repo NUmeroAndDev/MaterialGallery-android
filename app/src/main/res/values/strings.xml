@@ -16,6 +16,7 @@
 
     <string name="elevation_info_format">Elevation : %ddp</string>
     <string name="corner_info_format">Corner : %ddp</string>
+    <string name="stroke_info_format">Stroke : %ddp</string>
 
     <string name="backdrop">Backdrop</string>
     <string name="bottom_app_bar">Bottom App Bar</string>

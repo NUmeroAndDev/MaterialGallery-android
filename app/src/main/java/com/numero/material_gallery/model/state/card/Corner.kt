@@ -1,4 +1,4 @@
-package com.numero.material_gallery.model
+package com.numero.material_gallery.model.state.card
 
 import androidx.annotation.DimenRes
 import com.numero.material_gallery.R

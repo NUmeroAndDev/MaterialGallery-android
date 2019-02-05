@@ -13,4 +13,9 @@
     <dimen name="round_4dp">4dp</dimen>
     <dimen name="round_8dp">8dp</dimen>
     <dimen name="round_16dp">16dp</dimen>
+
+    <dimen name="stroke_0dp">0dp</dimen>
+    <dimen name="stroke_1dp">1dp</dimen>
+    <dimen name="stroke_2dp">2dp</dimen>
+    <dimen name="stroke_3dp">3dp</dimen>
 </resources>

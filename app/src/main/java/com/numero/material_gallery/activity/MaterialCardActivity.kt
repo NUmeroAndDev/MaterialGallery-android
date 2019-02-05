@@ -12,8 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
-import com.numero.material_gallery.model.Corner
-import com.numero.material_gallery.model.Elevation
+import com.numero.material_gallery.model.state.card.Corner
+import com.numero.material_gallery.model.state.card.Elevation
+import com.numero.material_gallery.model.state.card.Stroke
 import com.numero.material_gallery.repository.IConfigRepository
 import com.numero.material_gallery.view.SelectionCardAdapter
 import kotlinx.android.synthetic.main.activity_material_card.*
@@ -33,34 +34,28 @@ class MaterialCardActivity : AppCompatActivity() {
             setDisplayHomeAsUpEnabled(true)
         }
 
-        elevationSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                if (progress >= Elevation.values().size) {
-                    return
+        elevationSeekBar.addOnSeekBarChangeListener(
+                onProgressChanged = { _, progress, _ ->
+                    if (progress >= Elevation.values().size) {
+                        return@addOnSeekBarChangeListener
+                    }
+                    updateElevation(Elevation.values()[progress])
                 }
-                updateElevation(Elevation.values()[progress])
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-            }
-        })
-        cornerSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                updateCorner(Corner.values()[progress])
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-            }
-        })
+        )
+        cornerSeekBar.addOnSeekBarChangeListener(
+                onProgressChanged = { _, progress, _ ->
+                    updateCorner(Corner.values()[progress])
+                }
+        )
+        strokeSeekBar.addOnSeekBarChangeListener(
+                onProgressChanged = { _, progress, _ ->
+                    updateStroke(Stroke.values()[progress])
+                }
+        )
 
         updateElevation(Elevation.values()[elevationSeekBar.progress])
         updateCorner(Corner.values()[cornerSeekBar.progress])
+        updateStroke(Stroke.values()[strokeSeekBar.progress])
 
         setupSelectionCardList()
     }
@@ -104,9 +99,45 @@ class MaterialCardActivity : AppCompatActivity() {
         cornerInfoTextView.text = getString(R.string.corner_info_format).format(convertPxToDp(cornerSize).toInt())
     }
 
+    private fun updateStroke(stroke: Stroke) {
+        val strokeSize = resources.getDimensionPixelSize(stroke.dimenRes)
+        materialCardView.strokeWidth = strokeSize
+        strokeInfoTextView.text = getString(R.string.stroke_info_format).format(convertPxToDp(strokeSize).toInt())
+    }
+
     private fun convertPxToDp(px: Float): Float {
         val metrics = resources.displayMetrics
         return px / metrics.density
+    }
+
+    private fun convertPxToDp(px: Int): Float {
+        val metrics = resources.displayMetrics
+        return px / metrics.density
+    }
+
+    private inline fun SeekBar.addOnSeekBarChangeListener(
+            crossinline onProgressChanged: (
+                    seekBar: SeekBar?,
+                    progress: Int,
+                    fromUser: Boolean) -> Unit = { _, _, _ -> },
+            crossinline onStartTrackingTouch: (seekBar: SeekBar?) -> Unit = {},
+            crossinline onStopTrackingTouch: (seekBar: SeekBar?) -> Unit = {}
+    ): SeekBar.OnSeekBarChangeListener {
+        val listener = object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                onProgressChanged(seekBar, progress, fromUser)
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                onStartTrackingTouch(seekBar)
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                onStopTrackingTouch(seekBar)
+            }
+        }
+        setOnSeekBarChangeListener(listener)
+        return listener
     }
 
     companion object {
