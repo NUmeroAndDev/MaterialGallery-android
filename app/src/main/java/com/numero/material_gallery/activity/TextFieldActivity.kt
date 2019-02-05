@@ -25,7 +25,6 @@ class TextFieldActivity : AppCompatActivity() {
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
         filledErrorTextInputLayout.error = "Error"
         outlineErrorTextInputLayout.error = "Error"

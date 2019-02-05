@@ -27,7 +27,6 @@ class FabActivity : AppCompatActivity() {
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
         fabSizeRadioGroup.setOnCheckedChangeListener { _, id ->

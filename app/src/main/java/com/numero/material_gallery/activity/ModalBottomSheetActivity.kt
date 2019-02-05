@@ -26,7 +26,6 @@ class ModalBottomSheetActivity : AppCompatActivity() {
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
         showBottomSheetButton.setOnClickListener {

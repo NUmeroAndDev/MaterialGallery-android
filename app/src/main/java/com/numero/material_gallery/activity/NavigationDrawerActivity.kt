@@ -30,7 +30,6 @@ class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigatio
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
-            setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
         val toggle = ActionBarDrawerToggle(
