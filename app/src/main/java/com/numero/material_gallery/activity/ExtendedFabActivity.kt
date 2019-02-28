@@ -5,9 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
 import com.numero.material_gallery.repository.IConfigRepository
@@ -36,7 +36,7 @@ class ExtendedFabActivity : AppCompatActivity() {
         }
 
         extendedFab.setOnClickListener {
-            Toast.makeText(this@ExtendedFabActivity, "Clicked FAB", Toast.LENGTH_SHORT).show()
+            Snackbar.make(rootLayout, "Clicked FAB", Snackbar.LENGTH_SHORT).setAnchorView(it).show()
         }
     }
 
