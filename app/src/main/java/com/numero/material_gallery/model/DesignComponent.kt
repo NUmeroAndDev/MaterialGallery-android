@@ -31,6 +31,10 @@ enum class DesignComponent(
             R.string.chips
     ),
 
+    EXTENDED_FAB(
+            R.string.extended_fab
+    ),
+
     FAB(
             R.string.fab
     ),

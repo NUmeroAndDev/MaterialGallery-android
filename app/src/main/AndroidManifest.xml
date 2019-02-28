@@ -57,6 +57,10 @@
             android:label="@string/chips" />
 
         <activity
+            android:name=".activity.ExtendedFabActivity"
+            android:label="@string/extended_fab" />
+
+        <activity
             android:name=".activity.FabActivity"
             android:label="@string/fab" />
 
