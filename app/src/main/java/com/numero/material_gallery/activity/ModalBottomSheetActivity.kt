@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.BottomSheetModalFragment
@@ -14,8 +13,7 @@ import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_modal_bottom_sheet.*
 import org.koin.android.ext.android.inject
 
-@ContentView(R.layout.activity_modal_bottom_sheet)
-class ModalBottomSheetActivity : AppCompatActivity() {
+class ModalBottomSheetActivity : AppCompatActivity(R.layout.activity_modal_bottom_sheet) {
 
     private val configRepository by inject<IConfigRepository>()
 

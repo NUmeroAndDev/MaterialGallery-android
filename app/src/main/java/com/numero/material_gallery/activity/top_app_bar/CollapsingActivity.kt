@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
@@ -13,8 +12,7 @@ import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_collapsing.*
 import org.koin.android.ext.android.inject
 
-@ContentView(R.layout.activity_collapsing)
-class CollapsingActivity : AppCompatActivity() {
+class CollapsingActivity : AppCompatActivity(R.layout.activity_collapsing) {
 
     private val configRepository by inject<IConfigRepository>()
 

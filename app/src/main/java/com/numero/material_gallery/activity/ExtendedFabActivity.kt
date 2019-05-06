@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.R
@@ -14,8 +13,7 @@ import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_extended_fab.*
 import org.koin.android.ext.android.inject
 
-@ContentView(R.layout.activity_extended_fab)
-class ExtendedFabActivity : AppCompatActivity() {
+class ExtendedFabActivity : AppCompatActivity(R.layout.activity_extended_fab) {
 
     private val configRepository by inject<IConfigRepository>()
 
