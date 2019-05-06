@@ -16,12 +16,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        findPreference<Preference>(KEY_MATERIAL_VERSION).summary = BuildConfig.MATERIAL_COMPONENTS_VERSION
-        findPreference<Preference>(KEY_VIEW_SOURCE).setOnPreferenceClickListener {
+        findPreference<Preference>(KEY_MATERIAL_VERSION)?.summary = BuildConfig.MATERIAL_COMPONENTS_VERSION
+        findPreference<Preference>(KEY_VIEW_SOURCE)?.setOnPreferenceClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, sourceUrl.toUri()))
             true
         }
-        findPreference<Preference>(KEY_LICENSES).setOnPreferenceClickListener {
+        findPreference<Preference>(KEY_LICENSES)?.setOnPreferenceClickListener {
             startActivity(Intent(context, OssLicensesMenuActivity::class.java))
             true
         }

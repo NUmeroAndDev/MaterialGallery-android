@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.numero.material_gallery.R
@@ -15,8 +14,7 @@ import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_app_bar.*
 import org.koin.android.ext.android.inject
 
-@ContentView(R.layout.activity_bottom_app_bar)
-class BottomAppBarActivity : AppCompatActivity() {
+class BottomAppBarActivity : AppCompatActivity(R.layout.activity_bottom_app_bar) {
 
     private val configRepository by inject<IConfigRepository>()
 

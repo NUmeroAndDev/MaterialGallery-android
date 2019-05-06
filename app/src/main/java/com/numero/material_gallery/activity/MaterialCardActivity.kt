@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SeekBar
-import androidx.annotation.ContentView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,8 +19,7 @@ import com.numero.material_gallery.view.SelectionCardAdapter
 import kotlinx.android.synthetic.main.activity_material_card.*
 import org.koin.android.ext.android.inject
 
-@ContentView(R.layout.activity_material_card)
-class MaterialCardActivity : AppCompatActivity() {
+class MaterialCardActivity : AppCompatActivity(R.layout.activity_material_card) {
 
     private val configRepository by inject<IConfigRepository>()
 
