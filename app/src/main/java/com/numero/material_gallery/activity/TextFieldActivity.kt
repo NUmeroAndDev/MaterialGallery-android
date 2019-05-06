@@ -12,6 +12,7 @@ import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
 import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_text_field.*
 import org.koin.android.ext.android.inject
+import android.widget.ArrayAdapter
 
 class TextFieldActivity : AppCompatActivity(R.layout.activity_text_field) {
 
@@ -34,6 +35,14 @@ class TextFieldActivity : AppCompatActivity(R.layout.activity_text_field) {
         customIconOutlineTextInputLayout.setEndIconOnClickListener {
             Toast.makeText(this, "Clicked end icon", Toast.LENGTH_SHORT).show()
         }
+
+        val adapter = ArrayAdapter(
+                this,
+                android.R.layout.simple_spinner_dropdown_item,
+                arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
+        )
+        filledAutoCompleteTextView.setAdapter(adapter)
+        outlineAutoCompleteTextView.setAdapter(adapter)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
