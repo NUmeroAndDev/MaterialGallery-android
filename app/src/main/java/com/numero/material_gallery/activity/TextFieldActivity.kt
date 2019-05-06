@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
@@ -26,6 +27,13 @@ class TextFieldActivity : AppCompatActivity(R.layout.activity_text_field) {
         }
         filledErrorTextInputLayout.error = "Error"
         outlineErrorTextInputLayout.error = "Error"
+
+        customIconFilledTextInputLayout.setEndIconOnClickListener {
+            Toast.makeText(this, "Clicked end icon", Toast.LENGTH_SHORT).show()
+        }
+        customIconOutlineTextInputLayout.setEndIconOnClickListener {
+            Toast.makeText(this, "Clicked end icon", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
