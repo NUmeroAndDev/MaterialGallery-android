@@ -43,6 +43,10 @@ enum class DesignComponent(
             R.string.material_button
     ),
 
+    MATERIAL_BUTTON_TOGGLE_GROUP(
+            R.string.material_button_toggle_group
+    ),
+
     MATERIAL_CARD(
             R.string.material_card
     ),

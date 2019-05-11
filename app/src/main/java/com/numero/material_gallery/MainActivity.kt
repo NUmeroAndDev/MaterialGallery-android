@@ -79,6 +79,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.MATERIAL_BUTTON -> {
                 startActivity(MaterialButtonActivity.createIntent(this))
             }
+            DesignComponent.MATERIAL_BUTTON_TOGGLE_GROUP -> {
+                startActivity(MaterialButtonToggleGroupActivity.createIntent(this))
+            }
             DesignComponent.EXTENDED_FAB -> {
                 startActivity(ExtendedFabActivity.createIntent(this))
             }
