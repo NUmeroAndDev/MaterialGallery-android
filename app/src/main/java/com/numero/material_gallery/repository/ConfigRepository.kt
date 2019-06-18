@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 import com.numero.material_gallery.R
+import com.numero.material_gallery.model.Theme
 
 class ConfigRepository(context: Context) : IConfigRepository {
 
@@ -11,12 +12,17 @@ class ConfigRepository(context: Context) : IConfigRepository {
 
     override val themeRes: Int
         get() {
-            val isDarkTheme = settingsPreference.getBoolean(KEY_IS_DARK_THEME, false)
             val shapeTheme = settingsPreference.getShapeTheme()
             return when (shapeTheme) {
                 ShapeTheme.ROUNDED -> R.style.AppTheme_Rounded
                 ShapeTheme.CUT -> R.style.AppTheme_Cut
             }
+        }
+
+    override val theme: Theme
+        get() {
+            val value = settingsPreference.getString(KEY_THEME, null) ?: return Theme.SYSTEM_DEFAULT
+            return Theme.find(value)
         }
 
     private fun SharedPreferences.getShapeTheme(): ShapeTheme {
@@ -36,7 +42,7 @@ class ConfigRepository(context: Context) : IConfigRepository {
     }
 
     companion object {
-        private const val KEY_IS_DARK_THEME = "is_dark_theme"
+        private const val KEY_THEME = "select_theme"
         private const val KEY_SHAPE_THEME = "shape_theme"
     }
 }
