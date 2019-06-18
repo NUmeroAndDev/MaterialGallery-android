@@ -1,6 +1,8 @@
 <resources>
 
-    <style name="AppTheme" parent="BaseTheme" />
+    <style name="AppTheme" parent="BaseTheme">
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
 
     <style name="AppTheme.WithToolbar">
         <item name="windowActionBar">true</item>

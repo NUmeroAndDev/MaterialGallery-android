@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.numero.material_gallery"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode rootProject.appVersionCode
         versionName rootProject.appVersionName

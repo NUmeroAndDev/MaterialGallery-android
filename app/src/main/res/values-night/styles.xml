@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="AppTheme" parent="BaseTheme">
+        <item name="android:statusBarColor">?attr/colorSurface</item>
+    </style>
+
+</resources>
