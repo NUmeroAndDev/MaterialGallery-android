@@ -43,6 +43,7 @@
     <string name="hide_on_scroll">Hide On Scroll</string>
 
     <string name="actionbar">ActionBar</string>
+    <string name="toolbar">Toolbar</string>
     <string name="lift_on_scroll">LiftOnScroll</string>
     <string name="collapsing">Collapsing</string>
 

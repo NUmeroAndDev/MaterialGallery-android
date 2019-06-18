@@ -9,6 +9,9 @@ enum class TopAppBarType(
     ACTION_BAR(
             R.string.actionbar
     ),
+    TOOLBAR(
+            R.string.toolbar
+    ),
     LIFT_ON_SCROLL(
             R.string.lift_on_scroll
     ),
