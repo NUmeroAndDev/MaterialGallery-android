@@ -17,6 +17,8 @@
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <item name="toolbarStyle">@style/CustomToolbarStyle</item>
     </style>
 
 </resources>
