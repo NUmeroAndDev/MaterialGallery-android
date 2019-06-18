@@ -1,46 +1,20 @@
 <resources>
 
-    <style name="LightTheme.LightWindow">
-        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle.Light</item>
-    </style>
-
-    <style name="LightTheme.WithToolbar">
+    <style name="AppTheme.WithToolbar">
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
-
-    <style name="AppTheme.AppBarOverlay.Light" parent="ThemeOverlay.MaterialComponents.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
-
-    <style name="LightTheme.Rounded">
+    <style name="AppTheme.Rounded">
         <item name="shapeAppearanceSmallComponent">@style/roundedSmallShapeAppearance</item>
         <item name="shapeAppearanceMediumComponent">@style/roundedMediumShapeAppearance</item>
         <item name="shapeAppearanceLargeComponent">@style/roundedLargeShapeAppearance</item>
     </style>
 
-    <style name="LightTheme.Cut">
+    <style name="AppTheme.Cut">
         <item name="shapeAppearanceSmallComponent">@style/cutSmallShapeAppearance</item>
         <item name="shapeAppearanceMediumComponent">@style/cutMediumShapeAppearance</item>
         <item name="shapeAppearanceLargeComponent">@style/cutLargeShapeAppearance</item>
-    </style>
-
-    <style name="DarkTheme.Rounded">
-        <item name="shapeAppearanceSmallComponent">@style/roundedSmallShapeAppearance</item>
-        <item name="shapeAppearanceMediumComponent">@style/roundedMediumShapeAppearance</item>
-        <item name="shapeAppearanceLargeComponent">@style/roundedLargeShapeAppearance</item>
-    </style>
-
-    <style name="DarkTheme.Cut">
-        <item name="shapeAppearanceSmallComponent">@style/cutSmallShapeAppearance</item>
-        <item name="shapeAppearanceMediumComponent">@style/cutMediumShapeAppearance</item>
-        <item name="shapeAppearanceLargeComponent">@style/cutLargeShapeAppearance</item>
-    </style>
-
-    <style name="ToolbarNavigationButtonStyle.Light" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-        <item name="tint">?attr/colorOnSurface</item>
     </style>
 
 </resources>

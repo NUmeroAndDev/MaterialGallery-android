@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="LightTheme.LightWindow">
-        <item name="colorPrimaryDark">@android:color/white</item>
+    <style name="AppTheme.LightWindow">
         <item name="android:windowLightStatusBar">true</item>
-        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle.Light</item>
     </style>
 </resources>

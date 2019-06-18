@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <SwitchPreferenceCompat
-        app:defaultValue="false"
-        app:key="is_dark_theme"
-        app:title="Dark Theme" />
+    <ListPreference
+        app:defaultValue="system_default"
+        app:entries="@array/theme"
+        app:entryValues="@array/theme_value"
+        app:key="select_theme"
+        app:title="Select Theme"
+        app:useSimpleSummaryProvider="true" />
 
     <ListPreference
         app:defaultValue="rounded"
         app:entries="@array/shape_theme"
         app:entryValues="@array/shape_theme_value"
         app:key="shape_theme"
-        app:title="Shape Theme"
+        app:title="Shape"
         app:useSimpleSummaryProvider="true" />
 
     <Preference

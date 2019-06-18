@@ -46,6 +46,17 @@
     <string name="lift_on_scroll">LiftOnScroll</string>
     <string name="collapsing">Collapsing</string>
 
+    <string-array name="theme">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>System Default</item>
+    </string-array>
+    <string-array name="theme_value">
+        <item>light</item>
+        <item>dark</item>
+        <item>system_default</item>
+    </string-array>
+
     <string-array name="shape_theme">
         <item>Rounded</item>
         <item>Cut</item>
