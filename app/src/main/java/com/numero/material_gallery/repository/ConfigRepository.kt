@@ -14,20 +14,8 @@ class ConfigRepository(context: Context) : IConfigRepository {
             val isDarkTheme = settingsPreference.getBoolean(KEY_IS_DARK_THEME, false)
             val shapeTheme = settingsPreference.getShapeTheme()
             return when (shapeTheme) {
-                ShapeTheme.ROUNDED -> {
-                    if (isDarkTheme) {
-                        R.style.DarkTheme_Rounded
-                    } else {
-                        R.style.LightTheme_Rounded
-                    }
-                }
-                ShapeTheme.CUT -> {
-                    if (isDarkTheme) {
-                        R.style.DarkTheme_Cut
-                    } else {
-                        R.style.LightTheme_Cut
-                    }
-                }
+                ShapeTheme.ROUNDED -> R.style.AppTheme_Rounded
+                ShapeTheme.CUT -> R.style.AppTheme_Cut
             }
         }
 

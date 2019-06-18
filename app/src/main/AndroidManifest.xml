@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/LightTheme"
+        android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
@@ -26,7 +26,7 @@
         <activity
             android:name=".activity.SettingsActivity"
             android:label="@string/label_settings"
-            android:theme="@style/LightTheme" />
+            android:theme="@style/AppTheme" />
 
         <activity
             android:name=".activity.bottom_app_bar.BottomAppBarTypeActivity"
@@ -123,7 +123,7 @@
         <activity
             android:name=".activity.top_app_bar.LiftOnScrollActivity"
             android:label="@string/lift_on_scroll"
-            android:theme="@style/LightTheme.LightWindow" />
+            android:theme="@style/AppTheme.LightWindow" />
 
         <activity
             android:name=".activity.top_app_bar.CollapsingActivity"
@@ -131,11 +131,11 @@
 
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
-            android:theme="@style/LightTheme.WithToolbar" />
+            android:theme="@style/AppTheme.WithToolbar" />
 
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
-            android:theme="@style/LightTheme.WithToolbar" />
+            android:theme="@style/AppTheme.WithToolbar" />
 
     </application>
 
