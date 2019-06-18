@@ -24,6 +24,8 @@ class TabActivity : AppCompatActivity(R.layout.activity_tab) {
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
         }
+
+        setupTab()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -42,6 +44,28 @@ class TabActivity : AppCompatActivity(R.layout.activity_tab) {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun setupTab() {
+        withBadgeTabLayout.getTabAt(0)?.apply {
+            showBadge()
+        }
+        withBadgeTabLayout.getTabAt(1)?.apply {
+            showBadge().apply {
+                number = 10
+            }
+        }
+        withBadgeTabLayout.getTabAt(2)?.apply {
+            showBadge().apply {
+                number = 1000
+            }
+        }
+        withBadgeTabLayout.getTabAt(3)?.apply {
+            showBadge().apply {
+                maxCharacterCount = 5
+                number = 5000
+            }
         }
     }
 
