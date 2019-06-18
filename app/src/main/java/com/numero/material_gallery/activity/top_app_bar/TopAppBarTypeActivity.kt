@@ -47,6 +47,7 @@ class TopAppBarTypeActivity : AppCompatActivity(R.layout.activity_top_app_bar_ty
     private fun selectedToolbarType(topAppBarType: TopAppBarType) {
         val intent = when (topAppBarType) {
             TopAppBarType.ACTION_BAR -> ActionBarActivity.createIntent(this)
+            TopAppBarType.TOOLBAR -> ToolbarActivity.createIntent(this)
             TopAppBarType.LIFT_ON_SCROLL -> LiftOnScrollActivity.createIntent(this)
             TopAppBarType.COLLAPSING -> CollapsingActivity.createIntent(this)
         }
