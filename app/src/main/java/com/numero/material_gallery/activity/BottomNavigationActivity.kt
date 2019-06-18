@@ -66,6 +66,16 @@ class BottomNavigationActivity : AppCompatActivity(R.layout.activity_bottom_navg
         addItemButton.setOnClickListener {
             updateBottomNavigationItemCount(MenuItemAction.ADD)
         }
+
+        withBadgeBottomNavigation.apply {
+            showBadge(R.id.navigation_item_1)
+            showBadge(R.id.navigation_item_2).apply {
+                number = 10
+            }
+            showBadge(R.id.navigation_item_3).apply {
+                number = 1000
+            }
+        }
     }
 
     private fun updateBottomNavigationItemCount(action: MenuItemAction) {
