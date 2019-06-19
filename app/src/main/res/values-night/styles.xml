@@ -9,6 +9,8 @@
         <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.ActionBar.Surface</item>
     </style>
 
+    <style name="AppTheme.SurfaceStatus" />
+
     <style name="CustomAppBarLayoutTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Surface" />
 
 </resources>
