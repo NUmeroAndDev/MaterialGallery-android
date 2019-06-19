@@ -9,3 +9,4 @@
 .externalNativeBuild
 *.apk
 output.json
+*.aab
