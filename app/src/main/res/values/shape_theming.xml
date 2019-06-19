@@ -2,7 +2,7 @@
 <resources>
     <style name="roundedSmallShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">8dp</item>
+        <item name="cornerSize">4dp</item>
     </style>
 
     <style name="roundedMediumShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
@@ -17,7 +17,7 @@
 
     <style name="cutSmallShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">cut</item>
-        <item name="cornerSize">8dp</item>
+        <item name="cornerSize">4dp</item>
     </style>
 
     <style name="cutMediumShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
