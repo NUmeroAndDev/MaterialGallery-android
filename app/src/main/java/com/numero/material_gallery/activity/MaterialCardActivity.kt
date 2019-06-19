@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
-import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.model.state.card.Corner
 import com.numero.material_gallery.model.state.card.Elevation
 import com.numero.material_gallery.model.state.card.Stroke
@@ -66,7 +66,7 @@ class MaterialCardActivity : AppCompatActivity(R.layout.activity_material_card) 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_info -> {
-                ColorInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
+                ThemeInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
                 true
             }
             android.R.id.home -> {

@@ -11,7 +11,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.extension.setCheckedItem
 import com.numero.material_gallery.extension.setVisibleItem
 import com.numero.material_gallery.extension.visibleItemCount
-import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_navgation.*
 import org.koin.android.ext.android.inject
@@ -40,7 +40,7 @@ class BottomNavigationActivity : AppCompatActivity(R.layout.activity_bottom_navg
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_info -> {
-                ColorInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
+                ThemeInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
                 true
             }
             android.R.id.home -> {

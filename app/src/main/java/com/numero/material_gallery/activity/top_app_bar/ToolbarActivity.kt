@@ -7,7 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
-import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import kotlinx.android.synthetic.main.activity_toolbar.*
 
 class ToolbarActivity : AppCompatActivity(R.layout.activity_toolbar) {
@@ -31,7 +31,7 @@ class ToolbarActivity : AppCompatActivity(R.layout.activity_toolbar) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_info -> {
-                ColorInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
+                ThemeInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
                 true
             }
             android.R.id.home -> {

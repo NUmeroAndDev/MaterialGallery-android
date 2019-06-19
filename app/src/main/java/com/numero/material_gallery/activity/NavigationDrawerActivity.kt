@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import com.google.android.material.navigation.NavigationView
 import com.numero.material_gallery.R
-import com.numero.material_gallery.fragment.ColorInfoBottomSheetDialog
+import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.IConfigRepository
 import kotlinx.android.synthetic.main.activity_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
@@ -66,7 +66,7 @@ class NavigationDrawerActivity : AppCompatActivity(R.layout.activity_navigation_
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_info -> {
-                ColorInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
+                ThemeInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
                 true
             }
             android.R.id.home -> {

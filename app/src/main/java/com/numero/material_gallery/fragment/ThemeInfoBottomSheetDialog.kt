@@ -6,10 +6,10 @@ import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.numero.material_gallery.R
 
-class ColorInfoBottomSheetDialog : BottomSheetDialogFragment() {
+class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
 
     override fun setupDialog(dialog: Dialog, style: Int) {
-        val view = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_fragment_color_info, null)
+        val view = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_fragment_theme_info, null)
         dialog.setContentView(view)
     }
 
@@ -21,8 +21,8 @@ class ColorInfoBottomSheetDialog : BottomSheetDialogFragment() {
     }
 
     companion object {
-        private const val TAG = "ColorInfoBottomSheetDialog"
+        private const val TAG = "ThemeInfoBottomSheetDialog"
 
-        fun newInstance(): ColorInfoBottomSheetDialog = ColorInfoBottomSheetDialog()
+        fun newInstance(): ThemeInfoBottomSheetDialog = ThemeInfoBottomSheetDialog()
     }
 }
