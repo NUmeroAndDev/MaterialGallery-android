@@ -43,7 +43,7 @@ class ToolbarActivity : AppCompatActivity(R.layout.activity_toolbar) {
     }
 
     private fun initViews() {
-        val toolbarList = listOf(primaryToolbar, surfaceToolbar)
+        val toolbarList = listOf(primaryToolbar, surfaceToolbar, primarySurfaceToolbar)
         toolbarList.forEach {
             it.inflateMenu(R.menu.menu_action_bar)
         }
