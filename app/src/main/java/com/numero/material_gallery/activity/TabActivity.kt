@@ -49,20 +49,20 @@ class TabActivity : AppCompatActivity(R.layout.activity_tab) {
 
     private fun setupTab() {
         withBadgeTabLayout.getTabAt(0)?.apply {
-            showBadge()
+            orCreateBadge
         }
         withBadgeTabLayout.getTabAt(1)?.apply {
-            showBadge().apply {
+            orCreateBadge.apply {
                 number = 10
             }
         }
         withBadgeTabLayout.getTabAt(2)?.apply {
-            showBadge().apply {
+            orCreateBadge.apply {
                 number = 1000
             }
         }
         withBadgeTabLayout.getTabAt(3)?.apply {
-            showBadge().apply {
+            orCreateBadge.apply {
                 maxCharacterCount = 5
                 number = 5000
             }
