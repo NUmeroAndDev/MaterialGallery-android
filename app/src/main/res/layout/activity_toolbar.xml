@@ -51,12 +51,27 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/primaryToolbar"
                 app:navigationIcon="?attr/homeAsUpIndicator"
                 app:title="Surface" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/primarySurfaceToolbar"
+                style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/surfaceToolbar"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:title="PrimarySurface" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
