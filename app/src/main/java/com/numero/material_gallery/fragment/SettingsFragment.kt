@@ -1,5 +1,6 @@
 package com.numero.material_gallery.fragment
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.net.toUri
@@ -7,11 +8,24 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import com.google.android.play.core.appupdate.AppUpdateInfo
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.model.UpdateAvailability
 import com.numero.material_gallery.BuildConfig
 import com.numero.material_gallery.R
 import com.numero.material_gallery.model.Theme
 
 class SettingsFragment : PreferenceFragmentCompat() {
+
+    private var listener: SettingsFragmentListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is SettingsFragmentListener) {
+            listener = context
+        }
+    }
+
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
     }
@@ -33,6 +47,29 @@ class SettingsFragment : PreferenceFragmentCompat() {
             startActivity(Intent(context, OssLicensesMenuActivity::class.java))
             true
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        checkUpdate()
+    }
+
+    private fun checkUpdate() {
+        AppUpdateManagerFactory.create(requireActivity()).appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
+                findPreference<Preference>("update_notification")?.apply {
+                    isVisible = true
+                    setOnPreferenceClickListener {
+                        listener?.doUpdate(appUpdateInfo)
+                        true
+                    }
+                }
+            }
+        }
+    }
+
+    interface SettingsFragmentListener {
+        fun doUpdate(appUpdateInfo: AppUpdateInfo)
     }
 
     companion object {
