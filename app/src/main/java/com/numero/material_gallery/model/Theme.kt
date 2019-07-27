@@ -3,7 +3,7 @@ package com.numero.material_gallery.model
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 
-enum class Theme(private val value: String) {
+enum class Theme(val value: String) {
     LIGHT("light"),
     DARK("dark"),
     SYSTEM_DEFAULT("system_default");

@@ -17,7 +17,7 @@ class MaterialGalleryApplication : Application() {
             modules(appModule)
         }
         val configRepository: IConfigRepository = get()
-        configRepository.theme.apply()
+        configRepository.getCurrentTheme().apply()
     }
 
     private val appModule = module {

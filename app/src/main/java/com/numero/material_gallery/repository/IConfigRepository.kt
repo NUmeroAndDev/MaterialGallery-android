@@ -5,5 +5,7 @@ import com.numero.material_gallery.model.Theme
 interface IConfigRepository {
     val themeRes: Int
 
-    val theme: Theme
+    fun getCurrentTheme(): Theme
+
+    fun updateAndApplyTheme(theme: Theme)
 }
