@@ -12,6 +12,37 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/bottom_sheet_controll_bar" />
 
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/selectThemeToggleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/lightThemeButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Light" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/darkThemeButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dark" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/systemThemeButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
