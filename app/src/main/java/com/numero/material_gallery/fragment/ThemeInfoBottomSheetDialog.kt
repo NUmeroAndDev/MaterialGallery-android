@@ -23,7 +23,7 @@ class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
 
     private fun setupViews(view: View) {
         val toggleGroup = view.selectThemeToggleGroup
-        toggleGroup.check(configRepository.theme.getToggleButtonId())
+        toggleGroup.check(configRepository.getCurrentTheme().getToggleButtonId())
         toggleGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
             if (group.checkedButtonId == View.NO_ID) {
                 group.check(checkedId)
@@ -36,8 +36,7 @@ class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
                     R.id.systemThemeButton -> Theme.SYSTEM_DEFAULT
                     else -> throw IllegalArgumentException()
                 }
-                // TODO update config
-                theme.apply()
+                configRepository.updateAndApplyTheme(theme)
             }
         }
     }
