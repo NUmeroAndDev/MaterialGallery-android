@@ -3,7 +3,7 @@
 
     <string name="label_settings">Settings</string>
 
-    <string name="update_message">"Newer version is available.</string>
+    <string name="update_message">"Newer version is available</string>
     <string name="update_button">Update</string>
 
     <string name="action_search">Search</string>
