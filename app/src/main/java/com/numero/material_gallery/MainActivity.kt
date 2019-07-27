@@ -62,9 +62,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkUpdate() {
         appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
-                Snackbar.make(rootLayout, "There is an update.", Snackbar.LENGTH_LONG).setAction("Update") {
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
+                Snackbar.make(rootLayout, R.string.update_message, Snackbar.LENGTH_INDEFINITE).setAction(R.string.update_button) {
                     doUpdate(appUpdateInfo)
                 }.show()
             }
