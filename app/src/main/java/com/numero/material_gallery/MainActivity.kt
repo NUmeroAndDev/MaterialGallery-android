@@ -6,6 +6,12 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.play.core.appupdate.AppUpdateInfo
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability
 import com.numero.material_gallery.activity.*
 import com.numero.material_gallery.activity.bottom_app_bar.BottomAppBarTypeActivity
 import com.numero.material_gallery.activity.top_app_bar.TopAppBarTypeActivity
@@ -16,12 +22,27 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var appUpdateManager: AppUpdateManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+        appUpdateManager = AppUpdateManagerFactory.create(this)
+
         initViews()
+        checkUpdate()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        appUpdateManager.appUpdateInfo
+                .addOnSuccessListener { appUpdateInfo ->
+                    if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                        doUpdate(appUpdateInfo)
+                    }
+                }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -37,6 +58,21 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun checkUpdate() {
+        appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                    && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)) {
+                Snackbar.make(rootLayout, "There is an update.", Snackbar.LENGTH_LONG).setAction("Update") {
+                    doUpdate(appUpdateInfo)
+                }.show()
+            }
+        }
+    }
+
+    private fun doUpdate(info: AppUpdateInfo) {
+        appUpdateManager.startUpdateFlowForResult(info, AppUpdateType.IMMEDIATE, this, UPDATE_REQUEST_CODE)
     }
 
     private fun showSettingsScreen() {
@@ -119,5 +155,9 @@ class MainActivity : AppCompatActivity() {
                 startActivity(TopAppBarTypeActivity.createIntent(this))
             }
         }
+    }
+
+    companion object {
+        private const val UPDATE_REQUEST_CODE = 1
     }
 }

@@ -60,6 +60,7 @@ dependencies {
     implementation "org.koin:koin-androidx-scope:$koin_version"
 
     implementation "com.google.android.gms:play-services-oss-licenses:$oss_licenses_version"
+    implementation "com.google.android.play:core:1.6.1"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'
