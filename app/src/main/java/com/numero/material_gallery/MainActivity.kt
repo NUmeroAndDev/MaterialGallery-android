@@ -32,17 +32,11 @@ class MainActivity : AppCompatActivity() {
         appUpdateManager = AppUpdateManagerFactory.create(this)
 
         initViews()
-        checkUpdate()
     }
 
     override fun onResume() {
         super.onResume()
-        appUpdateManager.appUpdateInfo
-                .addOnSuccessListener { appUpdateInfo ->
-                    if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                        doUpdate(appUpdateInfo)
-                    }
-                }
+        checkUpdate()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -61,13 +55,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUpdate() {
-        appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
-            if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
-                Snackbar.make(rootLayout, R.string.update_message, Snackbar.LENGTH_INDEFINITE).setAction(R.string.update_button) {
-                    doUpdate(appUpdateInfo)
-                }.show()
-            }
-        }
+        appUpdateManager.appUpdateInfo
+                .addOnSuccessListener { appUpdateInfo ->
+                    when (appUpdateInfo.updateAvailability()) {
+                        UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS -> {
+                            doUpdate(appUpdateInfo)
+                        }
+                        UpdateAvailability.UPDATE_AVAILABLE -> {
+                            Snackbar.make(rootLayout, R.string.update_message, Snackbar.LENGTH_LONG)
+                                    .setAction(R.string.update_button) {
+                                        doUpdate(appUpdateInfo)
+                                    }
+                                    .show()
+                        }
+                    }
+                }
     }
 
     private fun doUpdate(info: AppUpdateInfo) {
