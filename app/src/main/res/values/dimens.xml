@@ -7,6 +7,8 @@
     <dimen name="elevation_2dp">2dp</dimen>
     <dimen name="elevation_4dp">4dp</dimen>
     <dimen name="elevation_8dp">8dp</dimen>
+    <dimen name="elevation_16dp">16dp</dimen>
+    <dimen name="elevation_24dp">24dp</dimen>
 
     <dimen name="round_0dp">0dp</dimen>
     <dimen name="round_2dp">2dp</dimen>

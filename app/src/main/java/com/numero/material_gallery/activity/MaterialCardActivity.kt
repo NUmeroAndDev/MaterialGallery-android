@@ -34,9 +34,6 @@ class MaterialCardActivity : AppCompatActivity(R.layout.activity_material_card) 
 
         elevationSeekBar.addOnSeekBarChangeListener(
                 onProgressChanged = { _, progress, _ ->
-                    if (progress >= Elevation.values().size) {
-                        return@addOnSeekBarChangeListener
-                    }
                     updateElevation(Elevation.values()[progress])
                 }
         )
@@ -51,6 +48,7 @@ class MaterialCardActivity : AppCompatActivity(R.layout.activity_material_card) 
                 }
         )
 
+        elevationSeekBar.max = Elevation.values().size - 1
         updateElevation(Elevation.values()[elevationSeekBar.progress])
         updateCorner(Corner.values()[cornerSeekBar.progress])
         updateStroke(Stroke.values()[strokeSeekBar.progress])
