@@ -113,6 +113,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.CHIPS -> {
                 startActivity(ChipActivity.createIntent(this))
             }
+            DesignComponent.DATE_PICKER -> {
+                startActivity(DatePickerActivity.createIntent(this))
+            }
             DesignComponent.MATERIAL_BUTTON -> {
                 startActivity(MaterialButtonActivity.createIntent(this))
             }
