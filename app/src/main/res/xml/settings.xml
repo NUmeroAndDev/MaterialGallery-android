@@ -24,10 +24,8 @@
     <PreferenceCategory>
 
         <Preference
-            app:icon="@drawable/ic_attention"
-            app:isPreferenceVisible="false"
-            app:key="update_notification"
-            app:title="@string/update_message" />
+            app:key="app_version"
+            app:title="Application Version" />
 
         <Preference
             app:icon="@drawable/ic_github"
