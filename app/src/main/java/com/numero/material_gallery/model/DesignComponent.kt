@@ -31,6 +31,10 @@ enum class DesignComponent(
             R.string.chips
     ),
 
+    DATE_PICKER(
+            R.string.date_picker
+    ),
+
     EXTENDED_FAB(
             R.string.extended_fab
     ),
