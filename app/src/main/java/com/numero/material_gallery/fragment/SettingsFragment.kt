@@ -18,6 +18,7 @@ import com.numero.material_gallery.model.Theme
 class SettingsFragment : PreferenceFragmentCompat() {
 
     private var listener: SettingsFragmentListener? = null
+    private lateinit var appVersionPreference: Preference
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -47,6 +48,9 @@ class SettingsFragment : PreferenceFragmentCompat() {
             startActivity(Intent(context, OssLicensesMenuActivity::class.java))
             true
         }
+        appVersionPreference = findPreference<Preference>(KEY_APP_VERSION)!!.apply {
+            summary = BuildConfig.VERSION_NAME
+        }
     }
 
     override fun onResume() {
@@ -57,8 +61,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private fun checkUpdate() {
         AppUpdateManagerFactory.create(requireActivity()).appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
             if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
-                findPreference<Preference>("update_notification")?.apply {
-                    isVisible = true
+                appVersionPreference.apply {
+                    setIcon(R.drawable.ic_attention)
+                    setTitle(R.string.update_message)
+                    summary = ""
                     setOnPreferenceClickListener {
                         listener?.doUpdate(appUpdateInfo)
                         true
@@ -77,6 +83,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         private const val KEY_MATERIAL_VERSION = "material_components_version"
         private const val KEY_VIEW_SOURCE = "view_source"
         private const val KEY_LICENSES = "licenses"
+        private const val KEY_APP_VERSION = "app_version"
 
         private const val sourceUrl = "https://github.com/NUmeroAndDev/MaterialGallery-android"
 
