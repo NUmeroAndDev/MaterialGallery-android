@@ -12,13 +12,13 @@ import com.numero.material_gallery.extension.setCheckedItem
 import com.numero.material_gallery.extension.setVisibleItem
 import com.numero.material_gallery.extension.visibleItemCount
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
-import com.numero.material_gallery.repository.IConfigRepository
+import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_navgation.*
 import org.koin.android.ext.android.inject
 
 class BottomNavigationActivity : AppCompatActivity(R.layout.activity_bottom_navgation) {
 
-    private val configRepository by inject<IConfigRepository>()
+    private val configRepository by inject<ConfigRepository>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(configRepository.themeRes)

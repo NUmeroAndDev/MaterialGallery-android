@@ -14,14 +14,14 @@ import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.model.state.card.Corner
 import com.numero.material_gallery.model.state.card.Elevation
 import com.numero.material_gallery.model.state.card.Stroke
-import com.numero.material_gallery.repository.IConfigRepository
+import com.numero.material_gallery.repository.ConfigRepository
 import com.numero.material_gallery.view.SelectionCardAdapter
 import kotlinx.android.synthetic.main.activity_material_card.*
 import org.koin.android.ext.android.inject
 
 class MaterialCardActivity : AppCompatActivity(R.layout.activity_material_card) {
 
-    private val configRepository by inject<IConfigRepository>()
+    private val configRepository by inject<ConfigRepository>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(configRepository.themeRes)

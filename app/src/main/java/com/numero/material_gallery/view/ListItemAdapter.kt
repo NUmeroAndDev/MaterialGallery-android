@@ -5,11 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
-import com.numero.material_gallery.model.IListItem
+import com.numero.material_gallery.model.ListItem
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.view_holder_item.*
 
-class ListItemAdapter<T : IListItem>(
+class ListItemAdapter<T : ListItem>(
         private val itemList: List<T>
 ) : RecyclerView.Adapter<ListItemAdapter.ItemViewHolder<T>>() {
 
@@ -34,7 +34,7 @@ class ListItemAdapter<T : IListItem>(
         }
     }
 
-    class ItemViewHolder<T : IListItem>(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    class ItemViewHolder<T : ListItem>(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun setItem(item: T) {
             titleTextView.setText(item.titleRes)
         }

@@ -1,5 +1,5 @@
 package com.numero.material_gallery.model
 
-interface IListItem {
+interface ListItem {
     val titleRes: Int
 }

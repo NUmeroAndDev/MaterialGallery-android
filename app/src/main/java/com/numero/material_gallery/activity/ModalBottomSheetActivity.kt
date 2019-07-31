@@ -9,13 +9,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.BottomSheetModalFragment
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
-import com.numero.material_gallery.repository.IConfigRepository
+import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.activity_modal_bottom_sheet.*
 import org.koin.android.ext.android.inject
 
 class ModalBottomSheetActivity : AppCompatActivity(R.layout.activity_modal_bottom_sheet) {
 
-    private val configRepository by inject<IConfigRepository>()
+    private val configRepository by inject<ConfigRepository>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(configRepository.themeRes)

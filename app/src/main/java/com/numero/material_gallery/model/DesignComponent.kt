@@ -5,7 +5,7 @@ import com.numero.material_gallery.R
 
 enum class DesignComponent(
         @StringRes override val titleRes: Int
-) : IListItem {
+) : ListItem {
 
 //    BACKDROP(
 //            R.string.backdrop
