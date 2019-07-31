@@ -7,13 +7,13 @@ import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.numero.material_gallery.R
 import com.numero.material_gallery.model.Theme
-import com.numero.material_gallery.repository.IConfigRepository
+import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.bottom_sheet_fragment_theme_info.view.*
 import org.koin.android.ext.android.inject
 
 class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
 
-    private val configRepository by inject<IConfigRepository>()
+    private val configRepository by inject<ConfigRepository>()
 
     override fun setupDialog(dialog: Dialog, style: Int) {
         val view = LayoutInflater.from(requireContext()).inflate(R.layout.bottom_sheet_fragment_theme_info, null)

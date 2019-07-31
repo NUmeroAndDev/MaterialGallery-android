@@ -9,13 +9,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
-import com.numero.material_gallery.repository.IConfigRepository
+import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_app_bar.*
 import org.koin.android.ext.android.inject
 
 class HideOnScrollActivity : AppCompatActivity(R.layout.activity_hide_on_scroll) {
 
-    private val configRepository by inject<IConfigRepository>()
+    private val configRepository by inject<ConfigRepository>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(configRepository.themeRes)

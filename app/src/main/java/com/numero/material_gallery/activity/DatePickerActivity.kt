@@ -13,13 +13,13 @@ import androidx.core.util.Pair
 import com.google.android.material.picker.MaterialDatePicker
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
-import com.numero.material_gallery.repository.IConfigRepository
+import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.activity_date_picker.*
 import org.koin.android.ext.android.inject
 
 class DatePickerActivity : AppCompatActivity(R.layout.activity_date_picker) {
 
-    private val configRepository by inject<IConfigRepository>()
+    private val configRepository by inject<ConfigRepository>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(configRepository.themeRes)
