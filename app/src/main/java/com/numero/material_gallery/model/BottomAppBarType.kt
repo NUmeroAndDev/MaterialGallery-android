@@ -5,7 +5,7 @@ import com.numero.material_gallery.R
 
 enum class BottomAppBarType(
         @StringRes override val titleRes: Int
-):IListItem {
+):ListItem {
     BOTTOM_APP_BAR(
             R.string.bottom_app_bar
     ),

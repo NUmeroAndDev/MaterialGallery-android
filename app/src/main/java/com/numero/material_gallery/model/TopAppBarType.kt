@@ -5,7 +5,7 @@ import com.numero.material_gallery.R
 
 enum class TopAppBarType(
         @StringRes override val titleRes: Int
-) : IListItem {
+) : ListItem {
     ACTION_BAR(
             R.string.actionbar
     ),
