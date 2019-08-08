@@ -45,22 +45,22 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation kotlinAndroid.stdlib
 
-    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
-    implementation 'androidx.activity:activity:1.1.0-alpha01'
-    implementation 'androidx.fragment:fragment:1.2.0-alpha01'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta01'
-    implementation 'androidx.preference:preference:1.1.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
-    implementation 'androidx.core:core-ktx:1.2.0-alpha02'
+    implementation androidx.appcompat
+    implementation androidx.activity
+    implementation androidx.fragment
+    implementation androidx.recyclerview
+    implementation androidx.preference
+    implementation androidx.constraintlayout
+    implementation androidx.ktx
 
-    implementation "com.google.android.material:material:$material_version"
+    implementation google.material
 
-    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation koin
 
-    implementation "com.google.android.gms:play-services-oss-licenses:$oss_licenses_version"
-    implementation "com.google.android.play:core:1.6.1"
+    implementation google.oss
+    implementation google.playcore
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'
