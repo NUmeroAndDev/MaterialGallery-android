@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.util.Pair
-import com.google.android.material.picker.MaterialDatePicker
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
