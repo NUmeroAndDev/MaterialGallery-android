@@ -26,7 +26,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp">
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="?attr/actionBarSize">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/fabPositionTextView"
