@@ -101,6 +101,10 @@
             android:label="@string/radio_button" />
 
         <activity
+            android:name=".activity.SliderActivity"
+            android:label="@string/slider" />
+
+        <activity
             android:name=".activity.SnackbarActivity"
             android:label="@string/snachbar" />
 
