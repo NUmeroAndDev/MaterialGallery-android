@@ -143,6 +143,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.RADIO_BUTTON -> {
                 startActivity(RadioButtonActivity.createIntent(this))
             }
+            DesignComponent.SLIDER -> {
+                startActivity(SliderActivity.createIntent(this))
+            }
             DesignComponent.SNACKBAR -> {
                 startActivity(SnackbarActivity.createIntent(this))
             }

@@ -75,6 +75,10 @@ enum class DesignComponent(
             R.string.radio_button
     ),
 
+    SLIDER(
+            R.string.slider
+    ),
+
     SNACKBAR(
             R.string.snachbar
     ),
