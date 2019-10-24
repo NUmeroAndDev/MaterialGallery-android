@@ -140,7 +140,9 @@
                     android:layout_height="wrap_content"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
-                    android:text="Select1" />
+                    android:minWidth="@dimen/mtrl_min_touch_target_size"
+                    app:icon="@drawable/ic_android"
+                    app:iconPadding="0dp" />
 
                 <com.google.android.material.button.MaterialButton
                     style="?attr/materialButtonOutlinedStyle"
@@ -148,7 +150,9 @@
                     android:layout_height="wrap_content"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
-                    android:text="Select2" />
+                    android:minWidth="@dimen/mtrl_min_touch_target_size"
+                    app:icon="@drawable/ic_android"
+                    app:iconPadding="0dp" />
 
                 <com.google.android.material.button.MaterialButton
                     style="?attr/materialButtonOutlinedStyle"
@@ -156,7 +160,9 @@
                     android:layout_height="wrap_content"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
-                    android:text="Select3" />
+                    android:minWidth="@dimen/mtrl_min_touch_target_size"
+                    app:icon="@drawable/ic_android"
+                    app:iconPadding="0dp" />
 
             </com.google.android.material.button.MaterialButtonToggleGroup>
 
