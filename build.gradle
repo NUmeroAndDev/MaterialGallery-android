@@ -22,7 +22,7 @@ buildscript {
         google = [
                 material: "com.google.android.material:material:$material_version",
 
-                playcore: "com.google.android.play:core:1.6.1",
+                playcore: "com.google.android.play:core:1.6.4",
 
                 oss     : "com.google.android.gms:play-services-oss-licenses:17.0.0"
         ]
