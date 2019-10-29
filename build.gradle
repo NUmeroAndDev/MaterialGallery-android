@@ -19,13 +19,14 @@ buildscript {
 
         koin = "org.koin:koin-androidx-scope:2.0.1"
 
-        google = [
-                material: "com.google.android.material:material:$material_version",
+        material = "com.google.android.material:material:$material_version"
 
-                playcore: "com.google.android.play:core:1.6.4",
-
-                oss     : "com.google.android.gms:play-services-oss-licenses:17.0.0"
+        play = [
+                core: "com.google.android.play:core:1.6.4",
+                ktx : "com.google.android.play:core-ktx:1.6.4"
         ]
+
+        licenses = "com.google.android.gms:play-services-oss-licenses:17.0.0"
     }
     repositories {
         google()
