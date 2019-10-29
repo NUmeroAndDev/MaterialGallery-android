@@ -59,6 +59,10 @@ dependencies {
     implementation androidx.constraintlayout
     implementation androidx.ktx
 
+    implementation androidx.lifecycle.runtime
+    implementation androidx.lifecycle.runtimektx
+    implementation androidx.lifecycle.extensions
+
     implementation material
 
     implementation koin
