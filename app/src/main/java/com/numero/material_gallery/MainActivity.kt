@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
-import com.google.android.play.core.install.model.AppUpdateType
-import com.google.android.play.core.install.model.UpdateAvailability
+import com.google.android.play.core.ktx.AppUpdateResult
+import com.google.android.play.core.ktx.requestUpdateFlow
 import com.numero.material_gallery.activity.*
 import com.numero.material_gallery.activity.bottom_app_bar.BottomAppBarTypeActivity
 import com.numero.material_gallery.activity.top_app_bar.TopAppBarTypeActivity
@@ -19,6 +19,8 @@ import com.numero.material_gallery.model.DesignComponent
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -55,25 +57,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUpdate() {
-        appUpdateManager.appUpdateInfo
-                .addOnSuccessListener { appUpdateInfo ->
-                    when (appUpdateInfo.updateAvailability()) {
-                        UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS -> {
-                            doUpdate(appUpdateInfo)
-                        }
-                        UpdateAvailability.UPDATE_AVAILABLE -> {
+        lifecycleScope.launch {
+            try {
+                appUpdateManager.requestUpdateFlow().collect { updateResult ->
+                    when (updateResult) {
+                        is AppUpdateResult.Available -> {
                             Snackbar.make(rootLayout, R.string.update_message, Snackbar.LENGTH_LONG)
                                     .setAction(R.string.update_button) {
-                                        doUpdate(appUpdateInfo)
+                                        doUpdate(updateResult)
                                     }
                                     .show()
                         }
                     }
                 }
+            } catch (e: Exception) {
+            }
+        }
     }
 
-    private fun doUpdate(info: AppUpdateInfo) {
-        appUpdateManager.startUpdateFlowForResult(info, AppUpdateType.IMMEDIATE, this, UPDATE_REQUEST_CODE)
+    private fun doUpdate(updateResult: AppUpdateResult.Available) {
+        updateResult.startImmediateUpdate(this, UPDATE_REQUEST_CODE)
     }
 
     private fun showSettingsScreen() {
