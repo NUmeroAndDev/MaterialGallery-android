@@ -59,12 +59,14 @@ dependencies {
     implementation androidx.constraintlayout
     implementation androidx.ktx
 
-    implementation google.material
+    implementation material
 
     implementation koin
 
-    implementation google.oss
-    implementation google.playcore
+    implementation licenses
+
+    implementation play.core
+    implementation play.ktx
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'
