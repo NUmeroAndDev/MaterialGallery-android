@@ -2,7 +2,7 @@ buildscript {
     ext {
 
         kotlin_version = '1.3.60'
-        material_version = '1.2.0-alpha01'
+        material_version = '1.2.0-alpha02'
 
         kotlinAndroid = [
                 stdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
