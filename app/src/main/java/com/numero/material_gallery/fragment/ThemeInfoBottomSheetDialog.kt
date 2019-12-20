@@ -24,11 +24,7 @@ class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
     private fun setupViews(view: View) {
         val toggleGroup = view.selectThemeToggleGroup
         toggleGroup.check(configRepository.getCurrentTheme().getToggleButtonId())
-        toggleGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
-            if (group.checkedButtonId == View.NO_ID) {
-                group.check(checkedId)
-                return@addOnButtonCheckedListener
-            }
+        toggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked) {
                 val theme = when (checkedId) {
                     R.id.lightThemeButton -> Theme.LIGHT
