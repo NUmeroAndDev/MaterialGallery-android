@@ -128,6 +128,9 @@ class MainActivity : AppCompatActivity() {
             DesignComponent.FAB -> {
                 startActivity(FabActivity.createIntent(this))
             }
+            DesignComponent.IMAGE_VIEW -> {
+                startActivity(ShapeableImageViewActivity.createIntent(this))
+            }
             DesignComponent.MATERIAL_CARD -> {
                 startActivity(MaterialCardActivity.createIntent(this))
             }

@@ -43,6 +43,10 @@ enum class DesignComponent(
             R.string.fab
     ),
 
+    IMAGE_VIEW(
+            R.string.shapeable_image_view
+    ),
+
     MATERIAL_BUTTON(
             R.string.material_button
     ),
