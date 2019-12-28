@@ -30,6 +30,7 @@
     <string name="date_picker">Date Picker</string>
     <string name="extended_fab">Extended Floating Action Button</string>
     <string name="fab">Floating Action Button</string>
+    <string name="shapeable_image_view">Shapeable Image View</string>
     <string name="material_button">Material Button</string>
     <string name="material_button_toggle_group">Material Button Toggle Group</string>
     <string name="material_card">Material Card</string>
