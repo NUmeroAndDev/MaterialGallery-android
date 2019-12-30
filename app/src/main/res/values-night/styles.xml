@@ -1,9 +1,5 @@
 <resources>
 
-    <style name="AppTheme" parent="BaseTheme">
-        <item name="android:statusBarColor">?attr/colorSurface</item>
-    </style>
-
     <style name="CustomToolbarStyle" parent="@style/Widget.MaterialComponents.Toolbar.Surface">
         <item name="android:elevation">4dp</item>
         <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.ActionBar.Surface</item>
