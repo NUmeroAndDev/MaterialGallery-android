@@ -11,11 +11,10 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:theme="@style/CustomAppBarLayoutTheme">
+        android:theme="@style/ThemeOverlay.MaterialGallery.AppBarLayout">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
-            style="@style/CustomToolbarStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"

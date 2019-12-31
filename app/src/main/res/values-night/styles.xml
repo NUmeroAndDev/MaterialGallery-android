@@ -1,10 +1,8 @@
 <resources>
 
-    <style name="CustomToolbarStyle" parent="@style/Widget.MaterialComponents.Toolbar.Surface">
+    <style name="Widget.MaterialGallery.Toolbar.PrimarySurface" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
         <item name="android:elevation">4dp</item>
-        <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.ActionBar.Surface</item>
     </style>
 
-    <style name="CustomAppBarLayoutTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Surface" />
-
+    <style name="ThemeOverlay.MaterialGallery.AppBarLayout" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Surface" />
 </resources>

@@ -1,7 +1,6 @@
 <resources>
 
-    <style name="CustomToolbarStyle" parent="@style/Widget.MaterialComponents.Toolbar.Primary" />
+    <style name="Widget.MaterialGallery.Toolbar.PrimarySurface" parent="Widget.MaterialComponents.Toolbar.PrimarySurface" />
 
-    <style name="CustomAppBarLayoutTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Primary" />
-
+    <style name="ThemeOverlay.MaterialGallery.AppBarLayout" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Primary" />
 </resources>
