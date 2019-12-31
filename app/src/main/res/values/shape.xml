@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="roundedSmallShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearance.MaterialGallery.Small.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">4dp</item>
     </style>
 
-    <style name="roundedMediumShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+    <style name="ShapeAppearance.MaterialGallery.Medium.Rounded" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
 
-    <style name="roundedLargeShapeAppearance" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+    <style name="ShapeAppearance.MaterialGallery.Large.Rounded" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
 
-    <style name="cutSmallShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearance.MaterialGallery.Small.Cut" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">4dp</item>
     </style>
 
-    <style name="cutMediumShapeAppearance" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+    <style name="ShapeAppearance.MaterialGallery.Medium.Cut" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">8dp</item>
     </style>
 
-    <style name="cutLargeShapeAppearance" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+    <style name="ShapeAppearance.MaterialGallery.Large.Cut" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">8dp</item>
     </style>
