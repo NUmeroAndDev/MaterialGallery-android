@@ -1,28 +1,5 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialGallery.DayNight">
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-    </style>
-
-    <style name="AppTheme.WithToolbar">
-        <item name="windowActionBar">true</item>
-        <item name="windowNoTitle">false</item>
-    </style>
-
-    <style name="AppTheme.Rounded">
-        <item name="shapeAppearanceSmallComponent">@style/roundedSmallShapeAppearance</item>
-        <item name="shapeAppearanceMediumComponent">@style/roundedMediumShapeAppearance</item>
-        <item name="shapeAppearanceLargeComponent">@style/roundedLargeShapeAppearance</item>
-    </style>
-
-    <style name="AppTheme.Cut">
-        <item name="shapeAppearanceSmallComponent">@style/cutSmallShapeAppearance</item>
-        <item name="shapeAppearanceMediumComponent">@style/cutMediumShapeAppearance</item>
-        <item name="shapeAppearanceLargeComponent">@style/cutLargeShapeAppearance</item>
-    </style>
-
-    <style name="AppTheme.SurfaceStatus" />
-
     <style name="CustomToolbarStyle" parent="@style/Widget.MaterialComponents.Toolbar.Primary" />
 
     <style name="CustomAppBarLayoutTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Primary" />
