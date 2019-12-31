@@ -36,15 +36,15 @@
     <style name="Theme.MaterialGallery.DayNight.SurfaceStatus" />
 
     <style name="Theme.MaterialGallery.DayNight.Rounded">
-        <item name="shapeAppearanceSmallComponent">@style/roundedSmallShapeAppearance</item>
-        <item name="shapeAppearanceMediumComponent">@style/roundedMediumShapeAppearance</item>
-        <item name="shapeAppearanceLargeComponent">@style/roundedLargeShapeAppearance</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MaterialGallery.Small.Rounded</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MaterialGallery.Medium.Rounded</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MaterialGallery.Large.Rounded</item>
     </style>
 
     <style name="Theme.MaterialGallery.DayNight.Cut">
-        <item name="shapeAppearanceSmallComponent">@style/cutSmallShapeAppearance</item>
-        <item name="shapeAppearanceMediumComponent">@style/cutMediumShapeAppearance</item>
-        <item name="shapeAppearanceLargeComponent">@style/cutLargeShapeAppearance</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MaterialGallery.Small.Cut</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MaterialGallery.Medium.Cut</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MaterialGallery.Large.Cut</item>
     </style>
 
 </resources>
