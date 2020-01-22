@@ -50,18 +50,18 @@ class SliderActivity : AppCompatActivity(R.layout.activity_slider) {
 
     private fun setupViews() {
         val valueFormat = "%.0f"
-        defaultSlider.setOnChangeListener { _, value ->
+        defaultSlider.addOnChangeListener { _, value, _ ->
             defaultSliderValueText.text = valueFormat.format(value)
         }
         defaultSliderValueText.text = valueFormat.format(defaultSlider.value)
 
-        discreteSlider.setOnChangeListener { _, value ->
+        discreteSlider.addOnChangeListener { _, value, _ ->
             discreteSliderValueText.text = valueFormat.format(value)
         }
         discreteSliderValueText.text = valueFormat.format(discreteSlider.value)
         discreteSlider.setLabelFormatter(Slider.BasicLabelFormatter())
 
-        labelFormatterSlider.setOnChangeListener { _, value ->
+        labelFormatterSlider.addOnChangeListener { _, value, _ ->
             labelFormatterSliderValueText.text = valueFormat.format(value)
         }
         labelFormatterSliderValueText.text = valueFormat.format(labelFormatterSlider.value)
