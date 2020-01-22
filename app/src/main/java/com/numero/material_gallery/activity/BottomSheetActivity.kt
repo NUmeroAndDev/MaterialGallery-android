@@ -41,7 +41,7 @@ class BottomSheetActivity : AppCompatActivity(R.layout.activity_bottom_sheet) {
 
         behavior = BottomSheetBehavior.from(bottomSheetLayout).apply {
             state = BottomSheetBehavior.STATE_HIDDEN
-            setBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
+            addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
                 override fun onSlide(p0: View, p1: Float) {
                 }
 
