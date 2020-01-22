@@ -44,10 +44,7 @@ class BottomSheetActivity : AppCompatActivity(R.layout.activity_bottom_sheet) {
                 }
 
                 override fun onStateChanged(view: View, state: Int) {
-                    showBottomSheetButton.isEnabled = when (state) {
-                        BottomSheetBehavior.STATE_EXPANDED -> false
-                        else -> true
-                    }
+                    showBottomSheetButton.isEnabled = state == BottomSheetBehavior.STATE_HIDDEN
                 }
             })
         }
