@@ -7,7 +7,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.numero.material_gallery.R
@@ -33,10 +32,6 @@ class BottomSheetActivity : AppCompatActivity(R.layout.activity_bottom_sheet) {
 
         showBottomSheetButton.setOnClickListener {
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
-        }
-
-        fab.setOnClickListener {
-            Toast.makeText(this@BottomSheetActivity, "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
 
         behavior = BottomSheetBehavior.from(bottomSheetLayout).apply {
