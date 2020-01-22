@@ -64,7 +64,7 @@
             android:paddingTop="32dp"
             android:paddingEnd="16dp"
             android:paddingBottom="32dp"
-            android:text="This is modal bottom sheet."
+            android:text="This is bottom sheet."
             android:textColor="?attr/colorOnSurface"
             android:textSize="16sp" />
 
