@@ -33,6 +33,9 @@ class BottomSheetActivity : AppCompatActivity(R.layout.activity_bottom_sheet) {
         showBottomSheetButton.setOnClickListener {
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
+        draggableSwitch.setOnCheckedChangeListener { _, isChecked ->
+            behavior.isDraggable = isChecked
+        }
 
         behavior = BottomSheetBehavior.from(bottomSheetLayout).apply {
             state = BottomSheetBehavior.STATE_HIDDEN
