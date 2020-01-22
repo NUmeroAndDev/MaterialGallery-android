@@ -24,6 +24,17 @@
         android:padding="16dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/draggableSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Draggable"
+            android:textColor="?attr/colorOnBackground"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/showBottomSheetButton"
             android:layout_width="wrap_content"
@@ -36,34 +47,25 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_add"
-        app:layout_anchor="@+id/bottomSheetLayout"
-        app:layout_anchorGravity="end|top" />
-
     <LinearLayout
         android:id="@+id/bottomSheetLayout"
+        style="@style/Widget.MaterialComponents.BottomSheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:behavior_hideable="true"
-        app:behavior_skipCollapsed="true"
+        app:behavior_peekHeight="96dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:paddingStart="16dp"
             android:paddingTop="32dp"
             android:paddingEnd="16dp"
             android:paddingBottom="32dp"
             android:text="This is modal bottom sheet."
-            android:textColor="?attr/colorOnBackground"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="16sp" />
 
     </LinearLayout>
