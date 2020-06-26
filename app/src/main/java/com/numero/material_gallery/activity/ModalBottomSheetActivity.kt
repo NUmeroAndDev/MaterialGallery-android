@@ -27,7 +27,7 @@ class ModalBottomSheetActivity : AppCompatActivity(R.layout.activity_modal_botto
         }
 
         showBottomSheetButton.setOnClickListener {
-            BottomSheetModalFragment.newInstance().show(supportFragmentManager)
+            BottomSheetModalFragment.newInstance().showIfNeeded(supportFragmentManager)
         }
     }
 
@@ -39,7 +39,7 @@ class ModalBottomSheetActivity : AppCompatActivity(R.layout.activity_modal_botto
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_info -> {
-                ThemeInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
+                ThemeInfoBottomSheetDialog.newInstance().showIfNeeded(supportFragmentManager)
                 true
             }
             android.R.id.home -> {

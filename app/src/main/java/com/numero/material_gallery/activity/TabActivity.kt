@@ -36,7 +36,7 @@ class TabActivity : AppCompatActivity(R.layout.activity_tab) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_info -> {
-                ThemeInfoBottomSheetDialog.newInstance().showIfNeed(supportFragmentManager)
+                ThemeInfoBottomSheetDialog.newInstance().showIfNeeded(supportFragmentManager)
                 true
             }
             android.R.id.home -> {
