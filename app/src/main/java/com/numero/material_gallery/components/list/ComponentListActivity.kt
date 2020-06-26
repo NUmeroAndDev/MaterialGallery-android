@@ -1,4 +1,4 @@
-package com.numero.material_gallery
+package com.numero.material_gallery.components.list
 
 import android.os.Bundle
 import android.view.Menu
@@ -12,15 +12,16 @@ import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
+import com.numero.material_gallery.R
 import com.numero.material_gallery.activity.*
 import com.numero.material_gallery.activity.bottom_app_bar.BottomAppBarTypeActivity
 import com.numero.material_gallery.activity.top_app_bar.TopAppBarTypeActivity
-import com.numero.material_gallery.model.DesignComponent
+import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : AppCompatActivity() {
+class ComponentListActivity : AppCompatActivity() {
 
     private lateinit var appUpdateManager: AppUpdateManager
 
@@ -82,9 +83,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         componentRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = LinearLayoutManager(this@ComponentListActivity)
             setHasFixedSize(true)
-            addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
+            addItemDecoration(DividerItemDecoration(this@ComponentListActivity, DividerItemDecoration.VERTICAL))
             adapter = ListItemAdapter(DesignComponent.values().toList()).apply {
                 setOnItemClickListener {
                     selectedComponent(it)

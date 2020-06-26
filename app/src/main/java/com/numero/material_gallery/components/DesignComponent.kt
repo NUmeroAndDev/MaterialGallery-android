@@ -1,7 +1,8 @@
-package com.numero.material_gallery.model
+package com.numero.material_gallery.components
 
 import androidx.annotation.StringRes
 import com.numero.material_gallery.R
+import com.numero.material_gallery.model.ListItem
 
 enum class DesignComponent(
         @StringRes override val titleRes: Int
