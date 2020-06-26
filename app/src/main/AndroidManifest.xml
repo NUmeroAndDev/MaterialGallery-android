@@ -84,7 +84,7 @@
             android:label="@string/material_card" />
 
         <activity
-            android:name=".activity.MaterialDialogActivity"
+            android:name=".components.dialog.MaterialDialogActivity"
             android:label="@string/material_dialog" />
 
         <activity
