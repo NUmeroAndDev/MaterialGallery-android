@@ -68,7 +68,7 @@
             android:label="@string/fab" />
 
         <activity
-            android:name=".activity.ShapeableImageViewActivity"
+            android:name=".components.image.ShapeableImageViewActivity"
             android:label="@string/shapeable_image_view" />
 
         <activity

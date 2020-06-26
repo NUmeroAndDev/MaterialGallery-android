@@ -22,6 +22,7 @@ import com.numero.material_gallery.components.button.MaterialButtonToggleGroupAc
 import com.numero.material_gallery.components.card.MaterialCardActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
+import com.numero.material_gallery.components.image.ShapeableImageViewActivity
 import com.numero.material_gallery.components.selection.CheckboxActivity
 import com.numero.material_gallery.components.selection.RadioButtonActivity
 import com.numero.material_gallery.components.selection.SwitchActivity
