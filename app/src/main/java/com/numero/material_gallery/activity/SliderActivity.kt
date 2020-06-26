@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.slider.Slider
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
@@ -70,6 +69,12 @@ class SliderActivity : AppCompatActivity(R.layout.activity_slider) {
         }
         labelFormatterSliderValueText.text = valueFormat.format(labelFormatterSlider.value)
         //labelFormatterSlider.setLabelFormatter(Slider.BasicLabelFormatter())
+
+        val rangeValueFormat = "From:%.0f\nTo:%.0f"
+        rangeSlider.addOnChangeListener { slider, _, _ ->
+            rangeSliderValueText.text = rangeValueFormat.format(slider.values.first(), slider.values.last())
+        }
+        rangeSliderValueText.text = rangeValueFormat.format(rangeSlider.values.first(), rangeSlider.values.last())
     }
 
     companion object {
