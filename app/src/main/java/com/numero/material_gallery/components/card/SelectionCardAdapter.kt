@@ -1,4 +1,4 @@
-package com.numero.material_gallery.view
+package com.numero.material_gallery.components.card
 
 import android.view.LayoutInflater
 import android.view.View

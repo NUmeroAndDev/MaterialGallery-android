@@ -15,7 +15,6 @@ import com.numero.material_gallery.components.card.state.Corner
 import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
 import com.numero.material_gallery.repository.ConfigRepository
-import com.numero.material_gallery.view.SelectionCardAdapter
 import kotlinx.android.synthetic.main.activity_material_card.*
 import org.koin.android.ext.android.inject
 
