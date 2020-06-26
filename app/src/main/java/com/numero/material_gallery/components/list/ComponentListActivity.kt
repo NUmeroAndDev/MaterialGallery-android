@@ -20,6 +20,7 @@ import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.components.button.MaterialButtonActivity
 import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
 import com.numero.material_gallery.components.card.MaterialCardActivity
+import com.numero.material_gallery.components.chip.ChipActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.image.ShapeableImageViewActivity

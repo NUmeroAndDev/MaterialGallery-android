@@ -52,7 +52,7 @@
             android:label="@string/checkbox" />
 
         <activity
-            android:name=".activity.ChipActivity"
+            android:name=".components.chip.ChipActivity"
             android:label="@string/chips" />
 
         <activity
