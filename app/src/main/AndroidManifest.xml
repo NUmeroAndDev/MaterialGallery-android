@@ -44,7 +44,7 @@
             android:label="@string/bottom_navigation" />
 
         <activity
-            android:name=".activity.BottomSheetActivity"
+            android:name=".components.sheet.BottomSheetActivity"
             android:label="@string/bottom_sheet" />
 
         <activity
@@ -88,7 +88,7 @@
             android:label="@string/material_dialog" />
 
         <activity
-            android:name=".activity.ModalBottomSheetActivity"
+            android:name=".components.sheet.ModalBottomSheetActivity"
             android:label="@string/modal_bottom_sheet" />
 
         <activity

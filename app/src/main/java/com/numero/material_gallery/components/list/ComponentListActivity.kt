@@ -25,6 +25,8 @@ import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.selection.CheckboxActivity
 import com.numero.material_gallery.components.selection.RadioButtonActivity
 import com.numero.material_gallery.components.selection.SwitchActivity
+import com.numero.material_gallery.components.sheet.BottomSheetActivity
+import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.components.slider.SliderActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*
