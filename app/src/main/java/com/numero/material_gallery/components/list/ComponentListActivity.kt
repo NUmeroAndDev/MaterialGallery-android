@@ -14,8 +14,8 @@ import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.numero.material_gallery.R
 import com.numero.material_gallery.activity.*
-import com.numero.material_gallery.activity.bottom_app_bar.BottomAppBarTypeActivity
-import com.numero.material_gallery.activity.top_app_bar.TopAppBarTypeActivity
+import com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity
+import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*

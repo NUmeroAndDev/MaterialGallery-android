@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity.top_app_bar
+package com.numero.material_gallery.components.appbar.top
 
 import android.content.Context
 import android.content.Intent
