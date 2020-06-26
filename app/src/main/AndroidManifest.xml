@@ -80,7 +80,7 @@
             android:label="@string/material_button_toggle_group" />
 
         <activity
-            android:name=".activity.MaterialCardActivity"
+            android:name=".components.card.MaterialCardActivity"
             android:label="@string/material_card" />
 
         <activity

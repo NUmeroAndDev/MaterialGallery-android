@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity
+package com.numero.material_gallery.components.card
 
 import android.content.Context
 import android.content.Intent
@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
-import com.numero.material_gallery.model.state.card.Corner
-import com.numero.material_gallery.model.state.card.Elevation
-import com.numero.material_gallery.model.state.card.Stroke
+import com.numero.material_gallery.components.card.state.Corner
+import com.numero.material_gallery.components.card.state.Elevation
+import com.numero.material_gallery.components.card.state.Stroke
 import com.numero.material_gallery.repository.ConfigRepository
 import com.numero.material_gallery.view.SelectionCardAdapter
 import kotlinx.android.synthetic.main.activity_material_card.*
