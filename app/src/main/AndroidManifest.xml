@@ -40,7 +40,7 @@
             android:label="@string/hide_on_scroll" />
 
         <activity
-            android:name=".activity.BottomNavigationActivity"
+            android:name=".components.bottomnavigation.BottomNavigationActivity"
             android:label="@string/bottom_navigation" />
 
         <activity

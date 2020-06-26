@@ -17,6 +17,7 @@ import com.numero.material_gallery.activity.*
 import com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity
 import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.components.DesignComponent
+import com.numero.material_gallery.components.bottomnavigation.BottomNavigationActivity
 import com.numero.material_gallery.components.button.MaterialButtonActivity
 import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
 import com.numero.material_gallery.components.card.MaterialCardActivity
