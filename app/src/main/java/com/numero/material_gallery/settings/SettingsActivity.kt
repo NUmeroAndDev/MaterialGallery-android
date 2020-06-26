@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity
+package com.numero.material_gallery.settings
 
 import android.content.Context
 import android.content.Intent
@@ -11,7 +11,6 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
 import com.numero.material_gallery.R
-import com.numero.material_gallery.fragment.SettingsFragment
 import kotlinx.android.synthetic.main.activity_settings.*
 
 class SettingsActivity : AppCompatActivity(R.layout.activity_settings), SettingsFragment.SettingsFragmentListener {

@@ -1,4 +1,4 @@
-package com.numero.material_gallery.fragment
+package com.numero.material_gallery.settings
 
 import android.content.Context
 import android.content.Intent
