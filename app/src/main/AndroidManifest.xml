@@ -14,7 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".components.list.ComponentListActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,124 +24,124 @@
         </activity>
 
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name=".settings.SettingsActivity"
             android:label="@string/label_settings" />
 
         <activity
-            android:name=".activity.bottom_app_bar.BottomAppBarTypeActivity"
+            android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity"
             android:label="@string/bottom_app_bar" />
 
         <activity
-            android:name=".activity.bottom_app_bar.BottomAppBarActivity"
+            android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarActivity"
             android:label="@string/bottom_app_bar" />
 
         <activity
-            android:name=".activity.bottom_app_bar.HideOnScrollActivity"
+            android:name="com.numero.material_gallery.components.appbar.bottom.HideOnScrollActivity"
             android:label="@string/hide_on_scroll" />
 
         <activity
-            android:name=".activity.BottomNavigationActivity"
+            android:name=".components.bottomnavigation.BottomNavigationActivity"
             android:label="@string/bottom_navigation" />
 
         <activity
-            android:name=".activity.BottomSheetActivity"
+            android:name=".components.sheet.BottomSheetActivity"
             android:label="@string/bottom_sheet" />
 
         <activity
-            android:name=".activity.CheckboxActivity"
+            android:name=".components.selection.CheckboxActivity"
             android:label="@string/checkbox" />
 
         <activity
-            android:name=".activity.ChipActivity"
+            android:name=".components.chip.ChipActivity"
             android:label="@string/chips" />
 
         <activity
-            android:name=".activity.DatePickerActivity"
+            android:name=".components.picker.DatePickerActivity"
             android:label="@string/date_picker" />
 
         <activity
-            android:name=".activity.ExtendedFabActivity"
+            android:name=".components.fab.ExtendedFabActivity"
             android:label="@string/extended_fab" />
 
         <activity
-            android:name=".activity.FabActivity"
+            android:name=".components.fab.FabActivity"
             android:label="@string/fab" />
 
         <activity
-            android:name=".activity.ShapeableImageViewActivity"
+            android:name=".components.image.ShapeableImageViewActivity"
             android:label="@string/shapeable_image_view" />
 
         <activity
-            android:name=".activity.MaterialButtonActivity"
+            android:name=".components.button.MaterialButtonActivity"
             android:label="@string/material_button" />
 
         <activity
-            android:name=".activity.MaterialButtonToggleGroupActivity"
+            android:name=".components.button.MaterialButtonToggleGroupActivity"
             android:label="@string/material_button_toggle_group" />
 
         <activity
-            android:name=".activity.MaterialCardActivity"
+            android:name=".components.card.MaterialCardActivity"
             android:label="@string/material_card" />
 
         <activity
-            android:name=".activity.MaterialDialogActivity"
+            android:name=".components.dialog.MaterialDialogActivity"
             android:label="@string/material_dialog" />
 
         <activity
-            android:name=".activity.ModalBottomSheetActivity"
+            android:name=".components.sheet.ModalBottomSheetActivity"
             android:label="@string/modal_bottom_sheet" />
 
         <activity
-            android:name=".activity.NavigationDrawerActivity"
+            android:name=".components.navigationdrawer.NavigationDrawerActivity"
             android:label="@string/navigation_drawer" />
 
         <activity
-            android:name=".activity.ProgressBarActivity"
+            android:name=".components.progressindicator.ProgressBarActivity"
             android:label="@string/progress_bar" />
 
         <activity
-            android:name=".activity.RadioButtonActivity"
+            android:name=".components.selection.RadioButtonActivity"
             android:label="@string/radio_button" />
 
         <activity
-            android:name=".activity.SliderActivity"
+            android:name=".components.slider.SliderActivity"
             android:label="@string/slider" />
 
         <activity
-            android:name=".activity.SnackbarActivity"
+            android:name=".components.snackbar.SnackbarActivity"
             android:label="@string/snachbar" />
 
         <activity
-            android:name=".activity.SwitchActivity"
+            android:name=".components.selection.SwitchActivity"
             android:label="@string/material_switch" />
 
         <activity
-            android:name=".activity.TabActivity"
+            android:name=".components.tab.TabActivity"
             android:label="@string/tab" />
 
         <activity
-            android:name=".activity.TextFieldActivity"
+            android:name=".components.textfield.TextFieldActivity"
             android:label="@string/text_field" />
 
         <activity
-            android:name=".activity.top_app_bar.TopAppBarTypeActivity"
+            android:name="com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity"
             android:label="@string/top_app_bar" />
 
         <activity
-            android:name=".activity.top_app_bar.ActionBarActivity"
+            android:name="com.numero.material_gallery.components.appbar.top.ActionBarActivity"
             android:label="@string/actionbar" />
 
         <activity
-            android:name=".activity.top_app_bar.ToolbarActivity"
+            android:name="com.numero.material_gallery.components.appbar.top.ToolbarActivity"
             android:label="@string/toolbar" />
 
         <activity
-            android:name=".activity.top_app_bar.LiftOnScrollActivity"
+            android:name="com.numero.material_gallery.components.appbar.top.LiftOnScrollActivity"
             android:label="@string/lift_on_scroll"
             android:theme="@style/Theme.MaterialGallery.DayNight.SurfaceStatus" />
 
         <activity
-            android:name=".activity.top_app_bar.CollapsingActivity"
+            android:name="com.numero.material_gallery.components.appbar.top.CollapsingActivity"
             android:label="@string/collapsing" />
 
         <activity

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".activity.top_app_bar.LiftOnScrollActivity">
+    tools:context=".components.appbar.top.LiftOnScrollActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         style="@style/Widget.MaterialComponents.AppBarLayout.Surface"
