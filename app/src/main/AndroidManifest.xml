@@ -92,7 +92,7 @@
             android:label="@string/modal_bottom_sheet" />
 
         <activity
-            android:name=".activity.NavigationDrawerActivity"
+            android:name=".components.navigationdrawer.NavigationDrawerActivity"
             android:label="@string/navigation_drawer" />
 
         <activity
