@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity
+package com.numero.material_gallery.components.selection
 
 import android.content.Context
 import android.content.Intent
@@ -9,10 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
-import kotlinx.android.synthetic.main.activity_fab.*
+import kotlinx.android.synthetic.main.activity_radio_button.*
 import org.koin.android.ext.android.inject
 
-class MaterialButtonActivity : AppCompatActivity(R.layout.activity_material_button) {
+class RadioButtonActivity : AppCompatActivity(R.layout.activity_radio_button) {
 
     private val configRepository by inject<ConfigRepository>()
 
@@ -46,6 +46,6 @@ class MaterialButtonActivity : AppCompatActivity(R.layout.activity_material_butt
     }
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, MaterialButtonActivity::class.java)
+        fun createIntent(context: Context): Intent = Intent(context, RadioButtonActivity::class.java)
     }
 }

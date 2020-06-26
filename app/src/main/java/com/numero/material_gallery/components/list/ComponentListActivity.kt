@@ -17,8 +17,13 @@ import com.numero.material_gallery.activity.*
 import com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity
 import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.components.DesignComponent
+import com.numero.material_gallery.components.button.MaterialButtonActivity
+import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
+import com.numero.material_gallery.components.selection.CheckboxActivity
+import com.numero.material_gallery.components.selection.RadioButtonActivity
+import com.numero.material_gallery.components.selection.SwitchActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*

@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity
+package com.numero.material_gallery.components.button
 
 import android.content.Context
 import android.content.Intent
@@ -9,10 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
-import kotlinx.android.synthetic.main.activity_material_button_toggle_group.*
+import kotlinx.android.synthetic.main.activity_fab.*
 import org.koin.android.ext.android.inject
 
-class MaterialButtonToggleGroupActivity : AppCompatActivity(R.layout.activity_material_button_toggle_group) {
+class MaterialButtonActivity : AppCompatActivity(R.layout.activity_material_button) {
 
     private val configRepository by inject<ConfigRepository>()
 
@@ -46,6 +46,6 @@ class MaterialButtonToggleGroupActivity : AppCompatActivity(R.layout.activity_ma
     }
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, MaterialButtonToggleGroupActivity::class.java)
+        fun createIntent(context: Context): Intent = Intent(context, MaterialButtonActivity::class.java)
     }
 }

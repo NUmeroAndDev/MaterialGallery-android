@@ -48,7 +48,7 @@
             android:label="@string/bottom_sheet" />
 
         <activity
-            android:name=".activity.CheckboxActivity"
+            android:name=".components.selection.CheckboxActivity"
             android:label="@string/checkbox" />
 
         <activity
@@ -72,11 +72,11 @@
             android:label="@string/shapeable_image_view" />
 
         <activity
-            android:name=".activity.MaterialButtonActivity"
+            android:name=".components.button.MaterialButtonActivity"
             android:label="@string/material_button" />
 
         <activity
-            android:name=".activity.MaterialButtonToggleGroupActivity"
+            android:name=".components.button.MaterialButtonToggleGroupActivity"
             android:label="@string/material_button_toggle_group" />
 
         <activity
@@ -100,7 +100,7 @@
             android:label="@string/progress_bar" />
 
         <activity
-            android:name=".activity.RadioButtonActivity"
+            android:name=".components.selection.RadioButtonActivity"
             android:label="@string/radio_button" />
 
         <activity
@@ -112,7 +112,7 @@
             android:label="@string/snachbar" />
 
         <activity
-            android:name=".activity.SwitchActivity"
+            android:name=".components.selection.SwitchActivity"
             android:label="@string/material_switch" />
 
         <activity
