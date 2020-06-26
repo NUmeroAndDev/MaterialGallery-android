@@ -60,11 +60,11 @@
             android:label="@string/date_picker" />
 
         <activity
-            android:name=".activity.ExtendedFabActivity"
+            android:name=".components.fab.ExtendedFabActivity"
             android:label="@string/extended_fab" />
 
         <activity
-            android:name=".activity.FabActivity"
+            android:name=".components.fab.FabActivity"
             android:label="@string/fab" />
 
         <activity
