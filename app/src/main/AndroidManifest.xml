@@ -56,7 +56,7 @@
             android:label="@string/chips" />
 
         <activity
-            android:name=".activity.DatePickerActivity"
+            android:name=".components.picker.DatePickerActivity"
             android:label="@string/date_picker" />
 
         <activity

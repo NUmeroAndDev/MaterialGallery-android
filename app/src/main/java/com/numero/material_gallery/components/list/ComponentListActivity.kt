@@ -25,6 +25,7 @@ import com.numero.material_gallery.components.chip.ChipActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.image.ShapeableImageViewActivity
+import com.numero.material_gallery.components.picker.DatePickerActivity
 import com.numero.material_gallery.components.selection.CheckboxActivity
 import com.numero.material_gallery.components.selection.RadioButtonActivity
 import com.numero.material_gallery.components.selection.SwitchActivity
