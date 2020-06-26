@@ -120,7 +120,7 @@
             android:label="@string/tab" />
 
         <activity
-            android:name=".activity.TextFieldActivity"
+            android:name=".components.textfield.TextFieldActivity"
             android:label="@string/text_field" />
 
         <activity
