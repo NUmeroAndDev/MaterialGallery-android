@@ -59,13 +59,17 @@ class SliderActivity : AppCompatActivity(R.layout.activity_slider) {
             discreteSliderValueText.text = valueFormat.format(value)
         }
         discreteSliderValueText.text = valueFormat.format(discreteSlider.value)
-        discreteSlider.setLabelFormatter(Slider.BasicLabelFormatter())
+        /**
+         * FIXME : Can't resolve
+         * https://github.com/material-components/material-components-android/issues/1342
+         */
+        //discreteSlider.setLabelFormatter(Slider.BasicLabelFormatter())
 
         labelFormatterSlider.addOnChangeListener { _, value, _ ->
             labelFormatterSliderValueText.text = valueFormat.format(value)
         }
         labelFormatterSliderValueText.text = valueFormat.format(labelFormatterSlider.value)
-        labelFormatterSlider.setLabelFormatter(Slider.BasicLabelFormatter())
+        //labelFormatterSlider.setLabelFormatter(Slider.BasicLabelFormatter())
     }
 
     companion object {
