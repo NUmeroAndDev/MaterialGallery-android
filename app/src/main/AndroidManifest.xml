@@ -116,7 +116,7 @@
             android:label="@string/material_switch" />
 
         <activity
-            android:name=".activity.TabActivity"
+            android:name=".components.tab.TabActivity"
             android:label="@string/tab" />
 
         <activity

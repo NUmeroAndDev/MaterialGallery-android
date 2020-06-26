@@ -1,4 +1,4 @@
-package com.numero.material_gallery.activity
+package com.numero.material_gallery.components.tab
 
 import android.content.Context
 import android.content.Intent

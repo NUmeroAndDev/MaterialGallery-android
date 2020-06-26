@@ -36,6 +36,7 @@ import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.components.slider.SliderActivity
 import com.numero.material_gallery.components.snackbar.SnackbarActivity
+import com.numero.material_gallery.components.tab.TabActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
