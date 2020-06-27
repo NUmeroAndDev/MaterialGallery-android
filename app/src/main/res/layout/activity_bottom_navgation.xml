@@ -35,8 +35,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="Default"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -60,8 +59,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:text="Colored"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/bottomNavigation" />
@@ -107,8 +105,7 @@
                 android:layout_marginTop="64dp"
                 android:layout_marginEnd="16dp"
                 android:text="with badge"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/removeItemButton" />

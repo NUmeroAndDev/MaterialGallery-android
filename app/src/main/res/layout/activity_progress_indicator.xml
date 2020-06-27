@@ -33,8 +33,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Indeterminate Progress Indicator"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -64,8 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="Inverse Progress Indicator"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/indeterminateLinearProgressIndicator" />
@@ -97,8 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="Determinate Progress Indicator"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/inverseLinearProgressIndicator" />
@@ -127,8 +124,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Progress"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:textAppearance="?attr/textAppearanceOverline"
                 app:layout_constraintBottom_toBottomOf="@id/progressSlider"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/progressSlider" />
