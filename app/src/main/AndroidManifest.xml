@@ -96,7 +96,7 @@
             android:label="@string/navigation_drawer" />
 
         <activity
-            android:name=".components.progressindicator.ProgressBarActivity"
+            android:name=".components.progressindicator.ProgressIndicatorActivity"
             android:label="@string/progress_bar" />
 
         <activity

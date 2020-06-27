@@ -12,7 +12,7 @@ import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.activity_progress_bar.*
 import org.koin.android.ext.android.inject
 
-class ProgressBarActivity : AppCompatActivity(R.layout.activity_progress_bar) {
+class ProgressIndicatorActivity : AppCompatActivity(R.layout.activity_progress_bar) {
 
     private val configRepository by inject<ConfigRepository>()
 
@@ -46,6 +46,6 @@ class ProgressBarActivity : AppCompatActivity(R.layout.activity_progress_bar) {
     }
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, ProgressBarActivity::class.java)
+        fun createIntent(context: Context): Intent = Intent(context, ProgressIndicatorActivity::class.java)
     }
 }
