@@ -5,15 +5,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
-import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.components.card.state.Corner
 import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
+import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.activity_material_card.*
 import org.koin.android.ext.android.inject
@@ -31,26 +30,21 @@ class MaterialCardActivity : AppCompatActivity(R.layout.activity_material_card) 
             setDisplayHomeAsUpEnabled(true)
         }
 
-        elevationSeekBar.addOnSeekBarChangeListener(
-                onProgressChanged = { _, progress, _ ->
-                    updateElevation(Elevation.values()[progress])
-                }
-        )
-        cornerSeekBar.addOnSeekBarChangeListener(
-                onProgressChanged = { _, progress, _ ->
-                    updateCorner(Corner.values()[progress])
-                }
-        )
-        strokeSeekBar.addOnSeekBarChangeListener(
-                onProgressChanged = { _, progress, _ ->
-                    updateStroke(Stroke.values()[progress])
-                }
-        )
+        elevationSlider.addOnChangeListener { _, value, _ ->
+            updateElevation(Elevation.values()[value.toInt()])
+        }
+        cornerSlider.addOnChangeListener { _, value, _ ->
+            updateCorner(Corner.values()[value.toInt()])
+        }
+        strokeSlider.addOnChangeListener { _, value, _ ->
+            updateStroke(Stroke.values()[value.toInt()])
+        }
 
-        elevationSeekBar.max = Elevation.values().size - 1
-        updateElevation(Elevation.values()[elevationSeekBar.progress])
-        updateCorner(Corner.values()[cornerSeekBar.progress])
-        updateStroke(Stroke.values()[strokeSeekBar.progress])
+        setupSlidersLabelFormatter()
+
+        updateElevation(Elevation.values()[elevationSlider.value.toInt()])
+        updateCorner(Corner.values()[cornerSlider.value.toInt()])
+        updateStroke(Stroke.values()[strokeSlider.value.toInt()])
 
         setupSelectionCardList()
     }
@@ -71,6 +65,24 @@ class MaterialCardActivity : AppCompatActivity(R.layout.activity_material_card) 
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun setupSlidersLabelFormatter() {
+        elevationSlider.setLabelFormatter {
+            val elevation = Elevation.values()[it.toInt()]
+            val elevationSize = resources.getDimension(elevation.dimenRes)
+            "%ddp".format(convertPxToDp(elevationSize).toInt())
+        }
+        cornerSlider.setLabelFormatter {
+            val corner = Corner.values()[it.toInt()]
+            val cornerSize = resources.getDimension(corner.dimenRes)
+            "%ddp".format(convertPxToDp(cornerSize).toInt())
+        }
+        strokeSlider.setLabelFormatter {
+            val stroke = Stroke.values()[it.toInt()]
+            val strokeSize = resources.getDimensionPixelSize(stroke.dimenRes)
+            "%ddp".format(convertPxToDp(strokeSize).toInt())
         }
     }
 
@@ -108,31 +120,6 @@ class MaterialCardActivity : AppCompatActivity(R.layout.activity_material_card) 
     private fun convertPxToDp(px: Int): Float {
         val metrics = resources.displayMetrics
         return px / metrics.density
-    }
-
-    private inline fun SeekBar.addOnSeekBarChangeListener(
-            crossinline onProgressChanged: (
-                    seekBar: SeekBar?,
-                    progress: Int,
-                    fromUser: Boolean) -> Unit = { _, _, _ -> },
-            crossinline onStartTrackingTouch: (seekBar: SeekBar?) -> Unit = {},
-            crossinline onStopTrackingTouch: (seekBar: SeekBar?) -> Unit = {}
-    ): SeekBar.OnSeekBarChangeListener {
-        val listener = object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                onProgressChanged(seekBar, progress, fromUser)
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-                onStartTrackingTouch(seekBar)
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                onStopTrackingTouch(seekBar)
-            }
-        }
-        setOnSeekBarChangeListener(listener)
-        return listener
     }
 
     companion object {
