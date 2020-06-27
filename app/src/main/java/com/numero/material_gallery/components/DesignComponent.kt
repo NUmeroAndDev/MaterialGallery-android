@@ -72,8 +72,8 @@ enum class DesignComponent(
             R.string.navigation_drawer
     ),
 
-    PROGRESS_BAR(
-            R.string.progress_bar
+    PROGRESS_INDICATOR(
+            R.string.progress_indicator
     ),
 
     RADIO_BUTTON(

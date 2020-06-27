@@ -97,7 +97,7 @@
 
         <activity
             android:name=".components.progressindicator.ProgressIndicatorActivity"
-            android:label="@string/progress_bar" />
+            android:label="@string/progress_indicator" />
 
         <activity
             android:name=".components.selection.RadioButtonActivity"

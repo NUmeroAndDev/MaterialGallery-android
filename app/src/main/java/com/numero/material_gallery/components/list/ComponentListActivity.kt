@@ -162,7 +162,7 @@ class ComponentListActivity : AppCompatActivity() {
             DesignComponent.NAVIGATION_DRAWER -> {
                 startActivity(NavigationDrawerActivity.createIntent(this))
             }
-            DesignComponent.PROGRESS_BAR -> {
+            DesignComponent.PROGRESS_INDICATOR -> {
                 startActivity(ProgressIndicatorActivity.createIntent(this))
             }
             DesignComponent.RADIO_BUTTON -> {
