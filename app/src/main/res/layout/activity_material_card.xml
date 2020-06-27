@@ -118,14 +118,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/materialCardView" />
 
-            <androidx.appcompat.widget.AppCompatSeekBar
-                android:id="@+id/elevationSeekBar"
+            <com.google.android.material.slider.Slider
+                android:id="@+id/elevationSlider"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:progress="2"
+                android:stepSize="1"
+                android:value="2"
+                android:valueFrom="0"
+                android:valueTo="5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/elevationTitleTextView" />
@@ -142,17 +145,19 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/elevationSeekBar" />
+                app:layout_constraintTop_toBottomOf="@id/elevationSlider" />
 
-            <androidx.appcompat.widget.AppCompatSeekBar
-                android:id="@+id/cornerSeekBar"
+            <com.google.android.material.slider.Slider
+                android:id="@+id/cornerSlider"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:max="4"
-                android:progress="1"
+                android:stepSize="1"
+                android:value="1"
+                android:valueFrom="0"
+                android:valueTo="4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cornerTitleTextView" />
@@ -169,17 +174,19 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cornerSeekBar" />
+                app:layout_constraintTop_toBottomOf="@id/cornerSlider" />
 
-            <androidx.appcompat.widget.AppCompatSeekBar
-                android:id="@+id/strokeSeekBar"
+            <com.google.android.material.slider.Slider
+                android:id="@+id/strokeSlider"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:max="3"
-                android:progress="0"
+                android:stepSize="1"
+                android:value="0"
+                android:valueFrom="0"
+                android:valueTo="3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/strokeTitleTextView" />
@@ -196,7 +203,7 @@
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/strokeSeekBar" />
+                app:layout_constraintTop_toBottomOf="@id/strokeSlider" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/selectionCardListRecyclerView"
