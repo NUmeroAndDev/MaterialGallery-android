@@ -36,8 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="FAB Position"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,8 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="FAB Animation"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fabPositionRadioGroup" />
 
@@ -118,8 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:text="FAB Visibly"
-                android:textColor="?attr/colorOnBackground"
-                android:textSize="12sp"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fabAnimationRadioGroup" />
 
