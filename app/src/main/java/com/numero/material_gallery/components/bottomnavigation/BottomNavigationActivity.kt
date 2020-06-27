@@ -8,9 +8,6 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.numero.material_gallery.R
-import com.numero.material_gallery.extension.setCheckedItem
-import com.numero.material_gallery.extension.setVisibleItem
-import com.numero.material_gallery.extension.visibleItemCount
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.activity_bottom_navgation.*

@@ -28,15 +28,15 @@
             android:label="@string/label_settings" />
 
         <activity
-            android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity"
+            android:name=".components.appbar.bottom.BottomAppBarTypeActivity"
             android:label="@string/bottom_app_bar" />
 
         <activity
-            android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarActivity"
+            android:name=".components.appbar.bottom.BottomAppBarActivity"
             android:label="@string/bottom_app_bar" />
 
         <activity
-            android:name="com.numero.material_gallery.components.appbar.bottom.HideOnScrollActivity"
+            android:name=".components.appbar.bottom.HideOnScrollActivity"
             android:label="@string/hide_on_scroll" />
 
         <activity
@@ -124,24 +124,24 @@
             android:label="@string/text_field" />
 
         <activity
-            android:name="com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity"
+            android:name=".components.appbar.top.TopAppBarTypeActivity"
             android:label="@string/top_app_bar" />
 
         <activity
-            android:name="com.numero.material_gallery.components.appbar.top.ActionBarActivity"
+            android:name=".components.appbar.top.ActionBarActivity"
             android:label="@string/actionbar" />
 
         <activity
-            android:name="com.numero.material_gallery.components.appbar.top.ToolbarActivity"
+            android:name=".components.appbar.top.ToolbarActivity"
             android:label="@string/toolbar" />
 
         <activity
-            android:name="com.numero.material_gallery.components.appbar.top.LiftOnScrollActivity"
+            android:name=".components.appbar.top.LiftOnScrollActivity"
             android:label="@string/lift_on_scroll"
             android:theme="@style/Theme.MaterialGallery.DayNight.SurfaceStatus" />
 
         <activity
-            android:name="com.numero.material_gallery.components.appbar.top.CollapsingActivity"
+            android:name=".components.appbar.top.CollapsingActivity"
             android:label="@string/collapsing" />
 
         <activity

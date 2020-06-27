@@ -1,4 +1,4 @@
-package com.numero.material_gallery.extension
+package com.numero.material_gallery.components.bottomnavigation
 
 import androidx.annotation.IdRes
 import com.google.android.material.bottomnavigation.BottomNavigationView
