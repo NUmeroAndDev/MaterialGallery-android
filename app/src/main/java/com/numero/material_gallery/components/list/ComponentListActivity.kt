@@ -27,7 +27,7 @@ import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.image.ShapeableImageViewActivity
 import com.numero.material_gallery.components.navigationdrawer.NavigationDrawerActivity
 import com.numero.material_gallery.components.picker.DatePickerActivity
-import com.numero.material_gallery.components.progressindicator.ProgressBarActivity
+import com.numero.material_gallery.components.progressindicator.ProgressIndicatorActivity
 import com.numero.material_gallery.components.selection.CheckboxActivity
 import com.numero.material_gallery.components.selection.RadioButtonActivity
 import com.numero.material_gallery.components.selection.SwitchActivity
@@ -162,8 +162,8 @@ class ComponentListActivity : AppCompatActivity() {
             DesignComponent.NAVIGATION_DRAWER -> {
                 startActivity(NavigationDrawerActivity.createIntent(this))
             }
-            DesignComponent.PROGRESS_BAR -> {
-                startActivity(ProgressBarActivity.createIntent(this))
+            DesignComponent.PROGRESS_INDICATOR -> {
+                startActivity(ProgressIndicatorActivity.createIntent(this))
             }
             DesignComponent.RADIO_BUTTON -> {
                 startActivity(RadioButtonActivity.createIntent(this))
