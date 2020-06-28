@@ -11,5 +11,15 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_component_list">
 
+        <action
+            android:id="@+id/action_ComponentList_to_Settings"
+            app:destination="@id/SettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SettingsFragment"
+        android:name="com.numero.material_gallery.settings.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_settings">
+
     </fragment>
 </navigation>

@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.view.ViewCompat
 import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateInfo
@@ -38,7 +39,6 @@ import com.numero.material_gallery.components.slider.SliderActivity
 import com.numero.material_gallery.components.snackbar.SnackbarActivity
 import com.numero.material_gallery.components.tab.TabActivity
 import com.numero.material_gallery.components.textfield.TextFieldActivity
-import com.numero.material_gallery.settings.SettingsActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.fragment_component_list.*
 
@@ -93,7 +93,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     }
 
     private fun showSettingsScreen() {
-        startActivity(SettingsActivity.createIntent(requireContext()))
+        findNavController().navigate(R.id.action_ComponentList_to_Settings)
     }
 
     private fun initViews() {
