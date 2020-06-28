@@ -58,6 +58,8 @@ dependencies {
     implementation androidx.preference
     implementation androidx.constraintlayout
     implementation androidx.ktx
+    implementation androidx.navigation.fragment
+    implementation androidx.navigation.ui
 
     implementation material
 
