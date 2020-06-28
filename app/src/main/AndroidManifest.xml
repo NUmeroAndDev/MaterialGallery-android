@@ -92,10 +92,6 @@
             android:label="@string/navigation_drawer" />
 
         <activity
-            android:name=".components.progressindicator.ProgressIndicatorActivity"
-            android:label="@string/progress_indicator" />
-
-        <activity
             android:name=".components.selection.RadioButtonActivity"
             android:label="@string/radio_button" />
 

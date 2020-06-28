@@ -29,7 +29,6 @@ import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.image.ShapeableImageViewActivity
 import com.numero.material_gallery.components.navigationdrawer.NavigationDrawerActivity
 import com.numero.material_gallery.components.picker.DatePickerActivity
-import com.numero.material_gallery.components.progressindicator.ProgressIndicatorActivity
 import com.numero.material_gallery.components.selection.CheckboxActivity
 import com.numero.material_gallery.components.selection.RadioButtonActivity
 import com.numero.material_gallery.components.selection.SwitchActivity
@@ -168,7 +167,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(NavigationDrawerActivity.createIntent(requireContext()))
             }
             DesignComponent.PROGRESS_INDICATOR -> {
-                startActivity(ProgressIndicatorActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_ProgressIndicator)
             }
             DesignComponent.RADIO_BUTTON -> {
                 startActivity(RadioButtonActivity.createIntent(requireContext()))
