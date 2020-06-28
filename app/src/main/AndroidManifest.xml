@@ -112,10 +112,6 @@
             android:label="@string/tab" />
 
         <activity
-            android:name=".components.textfield.TextFieldActivity"
-            android:label="@string/text_field" />
-
-        <activity
             android:name=".components.appbar.top.TopAppBarTypeActivity"
             android:label="@string/top_app_bar" />
 

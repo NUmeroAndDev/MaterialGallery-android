@@ -37,7 +37,6 @@ import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.components.slider.SliderActivity
 import com.numero.material_gallery.components.snackbar.SnackbarActivity
 import com.numero.material_gallery.components.tab.TabActivity
-import com.numero.material_gallery.components.textfield.TextFieldActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.fragment_component_list.*
 
@@ -185,7 +184,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(TabActivity.createIntent(requireContext()))
             }
             DesignComponent.TEXT_FIELDS -> {
-                startActivity(TextFieldActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_TextField)
             }
             DesignComponent.TOP_APP_BAR -> {
                 startActivity(TopAppBarTypeActivity.createIntent(requireContext()))

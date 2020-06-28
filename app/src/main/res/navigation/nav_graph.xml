@@ -16,16 +16,24 @@
         <action
             android:id="@+id/action_ComponentList_to_ProgressIndicator"
             app:destination="@id/ProgressIndicatorScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_TextField"
+            app:destination="@id/TextFieldScreen" />
     </fragment>
 
     <fragment
         android:id="@+id/ProgressIndicatorScreen"
         android:name="com.numero.material_gallery.components.progressindicator.ProgressIndicatorFragment"
-        tools:layout="@layout/fragment_component_list">
-        <action
-            android:id="@+id/action_show_ThemeInfoDialog"
-            app:destination="@id/ThemeInfoDialog" />
-    </fragment>
+        tools:layout="@layout/fragment_progress_indicator" />
+
+    <fragment
+        android:id="@+id/TextFieldScreen"
+        android:name="com.numero.material_gallery.components.textfield.TextFieldFragment"
+        tools:layout="@layout/fragment_text_field" />
+
+    <action
+        android:id="@+id/action_show_ThemeInfoDialog"
+        app:destination="@id/ThemeInfoDialog" />
 
     <dialog
         android:id="@+id/ThemeInfoDialog"
