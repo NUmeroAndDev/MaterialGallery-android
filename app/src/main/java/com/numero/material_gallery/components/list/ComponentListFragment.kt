@@ -1,21 +1,22 @@
 package com.numero.material_gallery.components.list
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
+import androidx.core.view.ViewCompat
+import androidx.core.view.updatePadding
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
+import com.google.android.play.core.ktx.startUpdateFlowForResult
 import com.numero.material_gallery.R
+import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity
 import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
-import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.components.bottomnavigation.BottomNavigationActivity
 import com.numero.material_gallery.components.button.MaterialButtonActivity
 import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
@@ -39,41 +40,34 @@ import com.numero.material_gallery.components.tab.TabActivity
 import com.numero.material_gallery.components.textfield.TextFieldActivity
 import com.numero.material_gallery.settings.SettingsActivity
 import com.numero.material_gallery.view.ListItemAdapter
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.fragment_component_list.*
 
-class ComponentListActivity : AppCompatActivity() {
+class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
     private lateinit var appUpdateManager: AppUpdateManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        appUpdateManager = AppUpdateManagerFactory.create(requireContext())
+    }
 
-        appUpdateManager = AppUpdateManagerFactory.create(this)
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initViews()
+        ViewCompat.setOnApplyWindowInsetsListener(view) { _, insetsCompat ->
+            componentRecyclerView.updatePadding(
+                    left = 0,
+                    top = 0,
+                    right = 0,
+                    bottom = insetsCompat.systemWindowInsetBottom
+            )
+            insetsCompat
+        }
     }
 
     override fun onResume() {
         super.onResume()
         checkUpdate()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> {
-                showSettingsScreen()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     private fun checkUpdate() {
@@ -99,14 +93,25 @@ class ComponentListActivity : AppCompatActivity() {
     }
 
     private fun showSettingsScreen() {
-        startActivity(SettingsActivity.createIntent(this))
+        startActivity(SettingsActivity.createIntent(requireContext()))
     }
 
     private fun initViews() {
+        toolbar.apply {
+            inflateMenu(R.menu.menu_main)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.action_settings -> {
+                        showSettingsScreen()
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
         componentRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this@ComponentListActivity)
             setHasFixedSize(true)
-            addItemDecoration(DividerItemDecoration(this@ComponentListActivity, DividerItemDecoration.VERTICAL))
+            addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
             adapter = ListItemAdapter(DesignComponent.values().toList()).apply {
                 setOnItemClickListener {
                     selectedComponent(it)
@@ -118,73 +123,73 @@ class ComponentListActivity : AppCompatActivity() {
     private fun selectedComponent(component: DesignComponent) {
         when (component) {
             DesignComponent.BOTTOM_APP_BAR -> {
-                startActivity(BottomAppBarTypeActivity.createIntent(this))
+                startActivity(BottomAppBarTypeActivity.createIntent(requireContext()))
             }
             DesignComponent.BOTTOM_NAVIGATION -> {
-                startActivity(BottomNavigationActivity.createIntent(this))
+                startActivity(BottomNavigationActivity.createIntent(requireContext()))
             }
             DesignComponent.MODAL_BOTTOM_SHEET -> {
-                startActivity(ModalBottomSheetActivity.createIntent(this))
+                startActivity(ModalBottomSheetActivity.createIntent(requireContext()))
             }
             DesignComponent.BOTTOM_SHEET -> {
-                startActivity(BottomSheetActivity.createIntent(this))
+                startActivity(BottomSheetActivity.createIntent(requireContext()))
             }
             DesignComponent.CHECKBOX -> {
-                startActivity(CheckboxActivity.createIntent(this))
+                startActivity(CheckboxActivity.createIntent(requireContext()))
             }
             DesignComponent.CHIPS -> {
-                startActivity(ChipActivity.createIntent(this))
+                startActivity(ChipActivity.createIntent(requireContext()))
             }
             DesignComponent.DATE_PICKER -> {
-                startActivity(DatePickerActivity.createIntent(this))
+                startActivity(DatePickerActivity.createIntent(requireContext()))
             }
             DesignComponent.MATERIAL_BUTTON -> {
-                startActivity(MaterialButtonActivity.createIntent(this))
+                startActivity(MaterialButtonActivity.createIntent(requireContext()))
             }
             DesignComponent.MATERIAL_BUTTON_TOGGLE_GROUP -> {
-                startActivity(MaterialButtonToggleGroupActivity.createIntent(this))
+                startActivity(MaterialButtonToggleGroupActivity.createIntent(requireContext()))
             }
             DesignComponent.EXTENDED_FAB -> {
-                startActivity(ExtendedFabActivity.createIntent(this))
+                startActivity(ExtendedFabActivity.createIntent(requireContext()))
             }
             DesignComponent.FAB -> {
-                startActivity(FabActivity.createIntent(this))
+                startActivity(FabActivity.createIntent(requireContext()))
             }
             DesignComponent.IMAGE_VIEW -> {
-                startActivity(ShapeableImageViewActivity.createIntent(this))
+                startActivity(ShapeableImageViewActivity.createIntent(requireContext()))
             }
             DesignComponent.MATERIAL_CARD -> {
-                startActivity(MaterialCardActivity.createIntent(this))
+                startActivity(MaterialCardActivity.createIntent(requireContext()))
             }
             DesignComponent.MATERIAL_DIALOG -> {
-                startActivity(MaterialDialogActivity.createIntent(this))
+                startActivity(MaterialDialogActivity.createIntent(requireContext()))
             }
             DesignComponent.NAVIGATION_DRAWER -> {
-                startActivity(NavigationDrawerActivity.createIntent(this))
+                startActivity(NavigationDrawerActivity.createIntent(requireContext()))
             }
             DesignComponent.PROGRESS_INDICATOR -> {
-                startActivity(ProgressIndicatorActivity.createIntent(this))
+                startActivity(ProgressIndicatorActivity.createIntent(requireContext()))
             }
             DesignComponent.RADIO_BUTTON -> {
-                startActivity(RadioButtonActivity.createIntent(this))
+                startActivity(RadioButtonActivity.createIntent(requireContext()))
             }
             DesignComponent.SLIDER -> {
-                startActivity(SliderActivity.createIntent(this))
+                startActivity(SliderActivity.createIntent(requireContext()))
             }
             DesignComponent.SNACKBAR -> {
-                startActivity(SnackbarActivity.createIntent(this))
+                startActivity(SnackbarActivity.createIntent(requireContext()))
             }
             DesignComponent.SWITCH -> {
-                startActivity(SwitchActivity.createIntent(this))
+                startActivity(SwitchActivity.createIntent(requireContext()))
             }
             DesignComponent.TAB -> {
-                startActivity(TabActivity.createIntent(this))
+                startActivity(TabActivity.createIntent(requireContext()))
             }
             DesignComponent.TEXT_FIELDS -> {
-                startActivity(TextFieldActivity.createIntent(this))
+                startActivity(TextFieldActivity.createIntent(requireContext()))
             }
             DesignComponent.TOP_APP_BAR -> {
-                startActivity(TopAppBarTypeActivity.createIntent(this))
+                startActivity(TopAppBarTypeActivity.createIntent(requireContext()))
             }
         }
     }
