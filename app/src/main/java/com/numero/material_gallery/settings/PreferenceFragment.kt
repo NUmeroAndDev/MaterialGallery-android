@@ -4,10 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.core.net.toUri
+import androidx.navigation.fragment.findNavController
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.model.UpdateAvailability
@@ -46,7 +46,7 @@ class PreferenceFragment : PreferenceFragmentCompat() {
             true
         }
         findPreference<Preference>(KEY_LICENSES)?.setOnPreferenceClickListener {
-            startActivity(Intent(context, OssLicensesMenuActivity::class.java))
+            findNavController().navigate(R.id.action_Settings_to_Licenses)
             true
         }
         appVersionPreference = findPreference<Preference>(KEY_APP_VERSION)!!.apply {

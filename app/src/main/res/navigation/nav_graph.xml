@@ -3,23 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/ComponentListFragment">
+    app:startDestination="@id/ComponentListScreen">
 
     <fragment
-        android:id="@+id/ComponentListFragment"
+        android:id="@+id/ComponentListScreen"
         android:name="com.numero.material_gallery.components.list.ComponentListFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_component_list">
-
         <action
             android:id="@+id/action_ComponentList_to_Settings"
-            app:destination="@id/SettingsFragment" />
+            app:destination="@id/SettingsScreen" />
     </fragment>
+
     <fragment
-        android:id="@+id/SettingsFragment"
+        android:id="@+id/SettingsScreen"
         android:name="com.numero.material_gallery.settings.SettingsFragment"
         android:label="@string/action_settings"
         tools:layout="@layout/fragment_settings">
-
+        <action
+            android:id="@+id/action_Settings_to_Licenses"
+            app:destination="@id/LicensesScreen" />
     </fragment>
+
+    <activity
+        android:id="@+id/LicensesScreen"
+        android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity" />
+
 </navigation>
