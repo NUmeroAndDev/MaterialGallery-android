@@ -17,6 +17,9 @@
             android:id="@+id/action_ComponentList_to_ProgressIndicator"
             app:destination="@id/ProgressIndicatorScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_RadioButton"
+            app:destination="@id/RadioButtonScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_Switch"
             app:destination="@id/SwitchScreen" />
         <action
@@ -37,6 +40,11 @@
         android:id="@+id/ProgressIndicatorScreen"
         android:name="com.numero.material_gallery.components.progressindicator.ProgressIndicatorFragment"
         tools:layout="@layout/fragment_progress_indicator" />
+
+    <fragment
+        android:id="@+id/RadioButtonScreen"
+        android:name="com.numero.material_gallery.components.selection.RadioButtonFragment"
+        tools:layout="@layout/fragment_radio_button" />
 
     <fragment
         android:id="@+id/SwitchScreen"
@@ -66,7 +74,6 @@
     <action
         android:id="@+id/action_show_ThemeInfoDialog"
         app:destination="@id/ThemeInfoDialog" />
-
     <dialog
         android:id="@+id/ThemeInfoDialog"
         android:name="com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog"

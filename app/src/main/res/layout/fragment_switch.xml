@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="@string/material_switch"/>
+            app:title="@string/material_switch" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

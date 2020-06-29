@@ -92,10 +92,6 @@
             android:label="@string/navigation_drawer" />
 
         <activity
-            android:name=".components.selection.RadioButtonActivity"
-            android:label="@string/radio_button" />
-
-        <activity
             android:name=".components.appbar.top.TopAppBarTypeActivity"
             android:label="@string/top_app_bar" />
 

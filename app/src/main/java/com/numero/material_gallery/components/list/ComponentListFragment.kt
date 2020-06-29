@@ -30,7 +30,6 @@ import com.numero.material_gallery.components.image.ShapeableImageViewActivity
 import com.numero.material_gallery.components.navigationdrawer.NavigationDrawerActivity
 import com.numero.material_gallery.components.picker.DatePickerActivity
 import com.numero.material_gallery.components.selection.CheckboxActivity
-import com.numero.material_gallery.components.selection.RadioButtonActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
@@ -165,7 +164,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 findNavController().navigate(R.id.action_ComponentList_to_ProgressIndicator)
             }
             DesignComponent.RADIO_BUTTON -> {
-                startActivity(RadioButtonActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_RadioButton)
             }
             DesignComponent.SLIDER -> {
                 findNavController().navigate(R.id.action_ComponentList_to_Slider)
