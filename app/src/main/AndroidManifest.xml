@@ -96,10 +96,6 @@
             android:label="@string/radio_button" />
 
         <activity
-            android:name=".components.selection.SwitchActivity"
-            android:label="@string/material_switch" />
-
-        <activity
             android:name=".components.appbar.top.TopAppBarTypeActivity"
             android:label="@string/top_app_bar" />
 

@@ -31,7 +31,6 @@ import com.numero.material_gallery.components.navigationdrawer.NavigationDrawerA
 import com.numero.material_gallery.components.picker.DatePickerActivity
 import com.numero.material_gallery.components.selection.CheckboxActivity
 import com.numero.material_gallery.components.selection.RadioButtonActivity
-import com.numero.material_gallery.components.selection.SwitchActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
@@ -175,7 +174,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 findNavController().navigate(R.id.action_ComponentList_to_Snackbar)
             }
             DesignComponent.SWITCH -> {
-                startActivity(SwitchActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_Switch)
             }
             DesignComponent.TAB -> {
                 findNavController().navigate(R.id.action_ComponentList_to_Tab)
