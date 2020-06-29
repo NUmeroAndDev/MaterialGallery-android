@@ -34,7 +34,6 @@ import com.numero.material_gallery.components.selection.RadioButtonActivity
 import com.numero.material_gallery.components.selection.SwitchActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
-import com.numero.material_gallery.components.slider.SliderActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.fragment_component_list.*
 
@@ -170,7 +169,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(RadioButtonActivity.createIntent(requireContext()))
             }
             DesignComponent.SLIDER -> {
-                startActivity(SliderActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_Slider)
             }
             DesignComponent.SNACKBAR -> {
                 findNavController().navigate(R.id.action_ComponentList_to_Snackbar)

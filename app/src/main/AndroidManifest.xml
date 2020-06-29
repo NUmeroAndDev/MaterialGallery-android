@@ -96,10 +96,6 @@
             android:label="@string/radio_button" />
 
         <activity
-            android:name=".components.slider.SliderActivity"
-            android:label="@string/slider" />
-
-        <activity
             android:name=".components.selection.SwitchActivity"
             android:label="@string/material_switch" />
 

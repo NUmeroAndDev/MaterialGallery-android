@@ -17,6 +17,9 @@
             android:id="@+id/action_ComponentList_to_ProgressIndicator"
             app:destination="@id/ProgressIndicatorScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_Slider"
+            app:destination="@id/SliderScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_Snackbar"
             app:destination="@id/SnackbarScreen" />
         <action
@@ -31,6 +34,11 @@
         android:id="@+id/ProgressIndicatorScreen"
         android:name="com.numero.material_gallery.components.progressindicator.ProgressIndicatorFragment"
         tools:layout="@layout/fragment_progress_indicator" />
+
+    <fragment
+        android:id="@+id/SliderScreen"
+        android:name="com.numero.material_gallery.components.slider.SliderFragment"
+        tools:layout="@layout/fragment_slider" />
 
     <fragment
         android:id="@+id/SnackbarScreen"

@@ -1,53 +1,50 @@
 package com.numero.material_gallery.components.slider
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import android.view.ContextThemeWrapper
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
-import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
-import kotlinx.android.synthetic.main.activity_slider.*
+import kotlinx.android.synthetic.main.fragment_slider.*
 import org.koin.android.ext.android.inject
 
-class SliderActivity : AppCompatActivity(R.layout.activity_slider) {
+class SliderFragment : Fragment() {
 
     private val configRepository by inject<ConfigRepository>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(configRepository.themeRes)
-        super.onCreate(savedInstanceState)
-        setSupportActionBar(toolbar)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return LayoutInflater
+                .from(ContextThemeWrapper(context, configRepository.themeRes))
+                .inflate(R.layout.fragment_slider, container, false)
+    }
 
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         setupViews()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_common, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_info -> {
-                ThemeInfoBottomSheetDialog.newInstance().showIfNeeded(supportFragmentManager)
-                true
-            }
-            android.R.id.home -> {
-                finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
     private fun setupViews() {
+        toolbar.apply {
+            setNavigationOnClickListener {
+                findNavController().popBackStack()
+            }
+            inflateMenu(R.menu.menu_common)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.action_info -> {
+                        findNavController().navigate(R.id.action_show_ThemeInfoDialog)
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
+
         val valueFormat = "%.0f"
         defaultSlider.addOnChangeListener { _, value, _ ->
             defaultSliderValueText.text = valueFormat.format(value)
@@ -75,9 +72,5 @@ class SliderActivity : AppCompatActivity(R.layout.activity_slider) {
             rangeSliderValueText.text = rangeValueFormat.format(slider.values.first(), slider.values.last())
         }
         rangeSliderValueText.text = rangeValueFormat.format(rangeSlider.values.first(), rangeSlider.values.last())
-    }
-
-    companion object {
-        fun createIntent(context: Context): Intent = Intent(context, SliderActivity::class.java)
     }
 }
