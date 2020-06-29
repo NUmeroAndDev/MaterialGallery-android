@@ -85,7 +85,7 @@ enum class DesignComponent(
     ),
 
     SNACKBAR(
-            R.string.snachbar
+            R.string.snackbar
     ),
 
     SWITCH(

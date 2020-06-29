@@ -40,7 +40,7 @@
     <string name="progress_indicator">Progress Indicator</string>
     <string name="radio_button">Radio Button</string>
     <string name="slider">Slider</string>
-    <string name="snachbar">Snackbar</string>
+    <string name="snackbar">Snackbar</string>
     <string name="material_switch">Switch</string>
     <string name="tab">Tab</string>
     <string name="text_field">Text Field</string>

@@ -100,10 +100,6 @@
             android:label="@string/slider" />
 
         <activity
-            android:name=".components.snackbar.SnackbarActivity"
-            android:label="@string/snachbar" />
-
-        <activity
             android:name=".components.selection.SwitchActivity"
             android:label="@string/material_switch" />
 
