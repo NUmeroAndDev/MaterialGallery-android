@@ -108,10 +108,6 @@
             android:label="@string/material_switch" />
 
         <activity
-            android:name=".components.tab.TabActivity"
-            android:label="@string/tab" />
-
-        <activity
             android:name=".components.appbar.top.TopAppBarTypeActivity"
             android:label="@string/top_app_bar" />
 

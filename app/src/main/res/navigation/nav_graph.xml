@@ -17,6 +17,9 @@
             android:id="@+id/action_ComponentList_to_ProgressIndicator"
             app:destination="@id/ProgressIndicatorScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_Tab"
+            app:destination="@id/TabScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_TextField"
             app:destination="@id/TextFieldScreen" />
     </fragment>
@@ -25,6 +28,11 @@
         android:id="@+id/ProgressIndicatorScreen"
         android:name="com.numero.material_gallery.components.progressindicator.ProgressIndicatorFragment"
         tools:layout="@layout/fragment_progress_indicator" />
+
+    <fragment
+        android:id="@+id/TabScreen"
+        android:name="com.numero.material_gallery.components.tab.TabFragment"
+        tools:layout="@layout/fragment_tab" />
 
     <fragment
         android:id="@+id/TextFieldScreen"
