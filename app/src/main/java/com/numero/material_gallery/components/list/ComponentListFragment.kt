@@ -28,7 +28,6 @@ import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.image.ShapeableImageViewActivity
 import com.numero.material_gallery.components.navigationdrawer.NavigationDrawerActivity
-import com.numero.material_gallery.components.picker.DatePickerActivity
 import com.numero.material_gallery.components.selection.CheckboxActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
@@ -134,7 +133,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(ChipActivity.createIntent(requireContext()))
             }
             DesignComponent.DATE_PICKER -> {
-                startActivity(DatePickerActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_DatePicker)
             }
             DesignComponent.MATERIAL_BUTTON -> {
                 startActivity(MaterialButtonActivity.createIntent(requireContext()))

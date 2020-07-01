@@ -52,10 +52,6 @@
             android:label="@string/chips" />
 
         <activity
-            android:name=".components.picker.DatePickerActivity"
-            android:label="@string/date_picker" />
-
-        <activity
             android:name=".components.fab.ExtendedFabActivity"
             android:label="@string/extended_fab" />
 
