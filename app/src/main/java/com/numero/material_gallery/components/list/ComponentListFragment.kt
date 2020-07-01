@@ -28,7 +28,6 @@ import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.image.ShapeableImageViewActivity
 import com.numero.material_gallery.components.navigationdrawer.NavigationDrawerActivity
-import com.numero.material_gallery.components.selection.CheckboxActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
@@ -127,7 +126,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(BottomSheetActivity.createIntent(requireContext()))
             }
             DesignComponent.CHECKBOX -> {
-                startActivity(CheckboxActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_Checkbox)
             }
             DesignComponent.CHIPS -> {
                 startActivity(ChipActivity.createIntent(requireContext()))

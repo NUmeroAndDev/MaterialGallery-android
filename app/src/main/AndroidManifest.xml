@@ -44,10 +44,6 @@
             android:label="@string/bottom_sheet" />
 
         <activity
-            android:name=".components.selection.CheckboxActivity"
-            android:label="@string/checkbox" />
-
-        <activity
             android:name=".components.chip.ChipActivity"
             android:label="@string/chips" />
 

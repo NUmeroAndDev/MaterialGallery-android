@@ -20,6 +20,9 @@
             android:id="@+id/action_ComponentList_to_ProgressIndicator"
             app:destination="@id/ProgressIndicatorScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_Checkbox"
+            app:destination="@id/CheckboxScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_RadioButton"
             app:destination="@id/RadioButtonScreen" />
         <action
@@ -48,6 +51,11 @@
         android:id="@+id/ProgressIndicatorScreen"
         android:name="com.numero.material_gallery.components.progressindicator.ProgressIndicatorFragment"
         tools:layout="@layout/fragment_progress_indicator" />
+
+    <fragment
+        android:id="@+id/CheckboxScreen"
+        android:name="com.numero.material_gallery.components.selection.CheckboxFragment"
+        tools:layout="@layout/fragment_checkbox" />
 
     <fragment
         android:id="@+id/RadioButtonScreen"
