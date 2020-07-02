@@ -27,7 +27,6 @@ import com.numero.material_gallery.components.dialog.MaterialDialogActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.image.ShapeableImageViewActivity
-import com.numero.material_gallery.components.navigationdrawer.NavigationDrawerActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
@@ -156,7 +155,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(MaterialDialogActivity.createIntent(requireContext()))
             }
             DesignComponent.NAVIGATION_DRAWER -> {
-                startActivity(NavigationDrawerActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_NavigationDrawer)
             }
             DesignComponent.PROGRESS_INDICATOR -> {
                 findNavController().navigate(R.id.action_ComponentList_to_ProgressIndicator)
