@@ -23,7 +23,6 @@ import com.numero.material_gallery.components.button.MaterialButtonActivity
 import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
 import com.numero.material_gallery.components.chip.ChipActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
-import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
@@ -140,7 +139,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(ExtendedFabActivity.createIntent(requireContext()))
             }
             DesignComponent.FAB -> {
-                startActivity(FabActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_Fab)
             }
             DesignComponent.IMAGE_VIEW -> {
                 findNavController().navigate(R.id.action_ComponentList_to_ShapeableImage)

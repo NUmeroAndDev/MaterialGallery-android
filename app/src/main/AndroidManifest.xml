@@ -52,10 +52,6 @@
             android:label="@string/extended_fab" />
 
         <activity
-            android:name=".components.fab.FabActivity"
-            android:label="@string/fab" />
-
-        <activity
             android:name=".components.button.MaterialButtonActivity"
             android:label="@string/material_button" />
 

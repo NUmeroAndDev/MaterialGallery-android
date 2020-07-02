@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.numero.material_gallery.R
 import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
-import kotlinx.android.synthetic.main.activity_fab.*
+import kotlinx.android.synthetic.main.activity_material_button.*
 import org.koin.android.ext.android.inject
 
 class MaterialButtonActivity : AppCompatActivity(R.layout.activity_material_button) {
