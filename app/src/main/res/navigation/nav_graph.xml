@@ -20,6 +20,9 @@
             android:id="@+id/action_ComponentList_to_Fab"
             app:destination="@id/FabScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_ExtendedFab"
+            app:destination="@id/ExtendedFabScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_ShapeableImage"
             app:destination="@id/ShapeableImageScreen" />
         <action
@@ -66,6 +69,11 @@
         android:id="@+id/FabScreen"
         android:name="com.numero.material_gallery.components.fab.FabFragment"
         tools:layout="@layout/fragment_fab" />
+
+    <fragment
+        android:id="@+id/ExtendedFabScreen"
+        android:name="com.numero.material_gallery.components.fab.ExtendedFabFragment"
+        tools:layout="@layout/fragment_extended_fab" />
 
     <fragment
         android:id="@+id/ShapeableImageScreen"

@@ -22,7 +22,6 @@ import com.numero.material_gallery.components.bottomnavigation.BottomNavigationA
 import com.numero.material_gallery.components.button.MaterialButtonActivity
 import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
 import com.numero.material_gallery.components.chip.ChipActivity
-import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
@@ -136,7 +135,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(MaterialButtonToggleGroupActivity.createIntent(requireContext()))
             }
             DesignComponent.EXTENDED_FAB -> {
-                startActivity(ExtendedFabActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_ExtendedFab)
             }
             DesignComponent.FAB -> {
                 findNavController().navigate(R.id.action_ComponentList_to_Fab)
