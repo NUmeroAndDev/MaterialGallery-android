@@ -21,7 +21,6 @@ import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.components.bottomnavigation.BottomNavigationActivity
 import com.numero.material_gallery.components.button.MaterialButtonActivity
 import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
-import com.numero.material_gallery.components.card.MaterialCardActivity
 import com.numero.material_gallery.components.chip.ChipActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
@@ -147,7 +146,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 findNavController().navigate(R.id.action_ComponentList_to_ShapeableImage)
             }
             DesignComponent.MATERIAL_CARD -> {
-                startActivity(MaterialCardActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_MaterialCard)
             }
             DesignComponent.MATERIAL_DIALOG -> {
                 findNavController().navigate(R.id.action_ComponentList_to_MaterialDialog)

@@ -20,6 +20,9 @@
             android:id="@+id/action_ComponentList_to_ShapeableImage"
             app:destination="@id/ShapeableImageScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_MaterialCard"
+            app:destination="@id/MaterialCardScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_MaterialDialog"
             app:destination="@id/MaterialDialogScreen" />
         <action
@@ -60,6 +63,11 @@
         android:id="@+id/ShapeableImageScreen"
         android:name="com.numero.material_gallery.components.image.ShapeableImageViewFragment"
         tools:layout="@layout/fragment_shapeable_image_view" />
+
+    <fragment
+        android:id="@+id/MaterialCardScreen"
+        android:name="com.numero.material_gallery.components.card.MaterialCardFragment"
+        tools:layout="@layout/fragment_material_card" />
 
     <fragment
         android:id="@+id/MaterialDialogScreen"
