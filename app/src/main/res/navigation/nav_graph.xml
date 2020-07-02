@@ -17,6 +17,9 @@
             android:id="@+id/action_ComponentList_to_DatePicker"
             app:destination="@id/DatePickerScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_ShapeableImage"
+            app:destination="@id/ShapeableImageScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_NavigationDrawer"
             app:destination="@id/NavigationDrawerScreen" />
         <action
@@ -49,6 +52,11 @@
         android:id="@+id/DatePickerScreen"
         android:name="com.numero.material_gallery.components.picker.DatePickerFragment"
         tools:layout="@layout/fragment_date_picker" />
+
+    <fragment
+        android:id="@+id/ShapeableImageScreen"
+        android:name="com.numero.material_gallery.components.image.ShapeableImageViewFragment"
+        tools:layout="@layout/fragment_shapeable_image_view" />
 
     <fragment
         android:id="@+id/NavigationDrawerScreen"

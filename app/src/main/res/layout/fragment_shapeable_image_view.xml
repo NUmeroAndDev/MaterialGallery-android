@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".components.image.ShapeableImageViewActivity">
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.MaterialGallery.AppBarLayout">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="@string/shapeable_image_view" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -67,10 +69,10 @@
                 android:layout_marginTop="16dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/android"
-                app:shapeAppearance="@style/ShapeAppearance.MaterialGallery.Image.Diamond"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/diamondImageTextView" />
+                app:layout_constraintTop_toBottomOf="@id/diamondImageTextView"
+                app:shapeAppearance="@style/ShapeAppearance.MaterialGallery.Image.Diamond" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/circleImageTextView"
@@ -90,10 +92,10 @@
                 android:layout_marginTop="16dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/android"
-                app:shapeAppearance="@style/ShapeAppearance.MaterialGallery.Image.Circle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/circleImageTextView" />
+                app:layout_constraintTop_toBottomOf="@id/circleImageTextView"
+                app:shapeAppearance="@style/ShapeAppearance.MaterialGallery.Image.Circle" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

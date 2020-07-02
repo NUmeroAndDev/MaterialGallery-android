@@ -56,10 +56,6 @@
             android:label="@string/fab" />
 
         <activity
-            android:name=".components.image.ShapeableImageViewActivity"
-            android:label="@string/shapeable_image_view" />
-
-        <activity
             android:name=".components.button.MaterialButtonActivity"
             android:label="@string/material_button" />
 

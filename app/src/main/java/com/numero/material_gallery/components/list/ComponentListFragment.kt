@@ -26,7 +26,6 @@ import com.numero.material_gallery.components.chip.ChipActivity
 import com.numero.material_gallery.components.dialog.MaterialDialogActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
-import com.numero.material_gallery.components.image.ShapeableImageViewActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
@@ -146,7 +145,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(FabActivity.createIntent(requireContext()))
             }
             DesignComponent.IMAGE_VIEW -> {
-                startActivity(ShapeableImageViewActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_ShapeableImage)
             }
             DesignComponent.MATERIAL_CARD -> {
                 startActivity(MaterialCardActivity.createIntent(requireContext()))
