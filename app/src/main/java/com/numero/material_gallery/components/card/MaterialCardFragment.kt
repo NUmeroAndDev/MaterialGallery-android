@@ -1,7 +1,5 @@
 package com.numero.material_gallery.components.card
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
@@ -114,9 +112,5 @@ class MaterialCardFragment : Fragment() {
     private fun convertPxToDp(px: Int): Float {
         val metrics = resources.displayMetrics
         return px / metrics.density
-    }
-
-    companion object {
-        fun createIntent(context: Context): Intent = Intent(context, MaterialCardFragment::class.java)
     }
 }

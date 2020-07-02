@@ -1,7 +1,5 @@
 package com.numero.material_gallery.components.dialog
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
@@ -56,9 +54,5 @@ class MaterialDialogFragment : Fragment() {
                 .setPositiveButton("OK", null)
                 .setNegativeButton("Cancel", null)
                 .show()
-    }
-
-    companion object {
-        fun createIntent(context: Context): Intent = Intent(context, MaterialDialogFragment::class.java)
     }
 }
