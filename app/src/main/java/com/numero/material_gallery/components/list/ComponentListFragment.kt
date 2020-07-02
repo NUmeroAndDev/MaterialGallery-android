@@ -23,7 +23,6 @@ import com.numero.material_gallery.components.button.MaterialButtonActivity
 import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
 import com.numero.material_gallery.components.card.MaterialCardActivity
 import com.numero.material_gallery.components.chip.ChipActivity
-import com.numero.material_gallery.components.dialog.MaterialDialogActivity
 import com.numero.material_gallery.components.fab.ExtendedFabActivity
 import com.numero.material_gallery.components.fab.FabActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
@@ -151,7 +150,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(MaterialCardActivity.createIntent(requireContext()))
             }
             DesignComponent.MATERIAL_DIALOG -> {
-                startActivity(MaterialDialogActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_MaterialDialog)
             }
             DesignComponent.NAVIGATION_DRAWER -> {
                 findNavController().navigate(R.id.action_ComponentList_to_NavigationDrawer)
