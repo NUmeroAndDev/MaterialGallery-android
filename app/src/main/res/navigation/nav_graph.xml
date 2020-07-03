@@ -29,6 +29,9 @@
             android:id="@+id/action_ComponentList_to_MaterialButton"
             app:destination="@id/MaterialButtonScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_MaterialButtonToggleGroup"
+            app:destination="@id/MaterialButtonToggleGroupScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_MaterialCard"
             app:destination="@id/MaterialCardScreen" />
         <action
@@ -87,6 +90,11 @@
         android:id="@+id/MaterialButtonScreen"
         android:name="com.numero.material_gallery.components.button.MaterialButtonFragment"
         tools:layout="@layout/fragment_material_button" />
+
+    <fragment
+        android:id="@+id/MaterialButtonToggleGroupScreen"
+        android:name="com.numero.material_gallery.components.button.MaterialButtonToggleGroupFragment"
+        tools:layout="@layout/fragment_material_button_toggle_group" />
 
     <fragment
         android:id="@+id/MaterialCardScreen"
