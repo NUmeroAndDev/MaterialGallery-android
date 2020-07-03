@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="@string/extended_fab"/>
+            app:title="@string/extended_fab" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

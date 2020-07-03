@@ -26,6 +26,9 @@
             android:id="@+id/action_ComponentList_to_ShapeableImage"
             app:destination="@id/ShapeableImageScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_MaterialButton"
+            app:destination="@id/MaterialButtonScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_MaterialCard"
             app:destination="@id/MaterialCardScreen" />
         <action
@@ -79,6 +82,11 @@
         android:id="@+id/ShapeableImageScreen"
         android:name="com.numero.material_gallery.components.image.ShapeableImageViewFragment"
         tools:layout="@layout/fragment_shapeable_image_view" />
+
+    <fragment
+        android:id="@+id/MaterialButtonScreen"
+        android:name="com.numero.material_gallery.components.button.MaterialButtonFragment"
+        tools:layout="@layout/fragment_material_button" />
 
     <fragment
         android:id="@+id/MaterialCardScreen"

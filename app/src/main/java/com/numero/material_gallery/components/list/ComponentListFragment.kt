@@ -19,7 +19,6 @@ import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity
 import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.components.bottomnavigation.BottomNavigationActivity
-import com.numero.material_gallery.components.button.MaterialButtonActivity
 import com.numero.material_gallery.components.button.MaterialButtonToggleGroupActivity
 import com.numero.material_gallery.components.chip.ChipActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
@@ -129,7 +128,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 findNavController().navigate(R.id.action_ComponentList_to_DatePicker)
             }
             DesignComponent.MATERIAL_BUTTON -> {
-                startActivity(MaterialButtonActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_MaterialButton)
             }
             DesignComponent.MATERIAL_BUTTON_TOGGLE_GROUP -> {
                 startActivity(MaterialButtonToggleGroupActivity.createIntent(requireContext()))

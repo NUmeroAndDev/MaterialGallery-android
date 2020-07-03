@@ -48,14 +48,6 @@
             android:label="@string/chips" />
 
         <activity
-            android:name=".components.fab.ExtendedFabActivity"
-            android:label="@string/extended_fab" />
-
-        <activity
-            android:name=".components.button.MaterialButtonActivity"
-            android:label="@string/material_button" />
-
-        <activity
             android:name=".components.button.MaterialButtonToggleGroupActivity"
             android:label="@string/material_button_toggle_group" />
 
