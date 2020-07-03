@@ -19,7 +19,6 @@ import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity
 import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.components.bottomnavigation.BottomNavigationActivity
-import com.numero.material_gallery.components.chip.ChipActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
 import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
@@ -121,7 +120,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 findNavController().navigate(R.id.action_ComponentList_to_Checkbox)
             }
             DesignComponent.CHIPS -> {
-                startActivity(ChipActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_Chip)
             }
             DesignComponent.DATE_PICKER -> {
                 findNavController().navigate(R.id.action_ComponentList_to_DatePicker)
