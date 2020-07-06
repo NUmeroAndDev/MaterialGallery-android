@@ -14,7 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".components.list.ComponentListActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,108 +24,12 @@
         </activity>
 
         <activity
-            android:name=".settings.SettingsActivity"
-            android:label="@string/label_settings" />
-
-        <activity
-            android:name=".components.appbar.bottom.BottomAppBarTypeActivity"
-            android:label="@string/bottom_app_bar" />
-
-        <activity
             android:name=".components.appbar.bottom.BottomAppBarActivity"
             android:label="@string/bottom_app_bar" />
 
         <activity
             android:name=".components.appbar.bottom.HideOnScrollActivity"
             android:label="@string/hide_on_scroll" />
-
-        <activity
-            android:name=".components.bottomnavigation.BottomNavigationActivity"
-            android:label="@string/bottom_navigation" />
-
-        <activity
-            android:name=".components.sheet.BottomSheetActivity"
-            android:label="@string/bottom_sheet" />
-
-        <activity
-            android:name=".components.selection.CheckboxActivity"
-            android:label="@string/checkbox" />
-
-        <activity
-            android:name=".components.chip.ChipActivity"
-            android:label="@string/chips" />
-
-        <activity
-            android:name=".components.picker.DatePickerActivity"
-            android:label="@string/date_picker" />
-
-        <activity
-            android:name=".components.fab.ExtendedFabActivity"
-            android:label="@string/extended_fab" />
-
-        <activity
-            android:name=".components.fab.FabActivity"
-            android:label="@string/fab" />
-
-        <activity
-            android:name=".components.image.ShapeableImageViewActivity"
-            android:label="@string/shapeable_image_view" />
-
-        <activity
-            android:name=".components.button.MaterialButtonActivity"
-            android:label="@string/material_button" />
-
-        <activity
-            android:name=".components.button.MaterialButtonToggleGroupActivity"
-            android:label="@string/material_button_toggle_group" />
-
-        <activity
-            android:name=".components.card.MaterialCardActivity"
-            android:label="@string/material_card" />
-
-        <activity
-            android:name=".components.dialog.MaterialDialogActivity"
-            android:label="@string/material_dialog" />
-
-        <activity
-            android:name=".components.sheet.ModalBottomSheetActivity"
-            android:label="@string/modal_bottom_sheet" />
-
-        <activity
-            android:name=".components.navigationdrawer.NavigationDrawerActivity"
-            android:label="@string/navigation_drawer" />
-
-        <activity
-            android:name=".components.progressindicator.ProgressIndicatorActivity"
-            android:label="@string/progress_indicator" />
-
-        <activity
-            android:name=".components.selection.RadioButtonActivity"
-            android:label="@string/radio_button" />
-
-        <activity
-            android:name=".components.slider.SliderActivity"
-            android:label="@string/slider" />
-
-        <activity
-            android:name=".components.snackbar.SnackbarActivity"
-            android:label="@string/snachbar" />
-
-        <activity
-            android:name=".components.selection.SwitchActivity"
-            android:label="@string/material_switch" />
-
-        <activity
-            android:name=".components.tab.TabActivity"
-            android:label="@string/tab" />
-
-        <activity
-            android:name=".components.textfield.TextFieldActivity"
-            android:label="@string/text_field" />
-
-        <activity
-            android:name=".components.appbar.top.TopAppBarTypeActivity"
-            android:label="@string/top_app_bar" />
 
         <activity
             android:name=".components.appbar.top.ActionBarActivity"

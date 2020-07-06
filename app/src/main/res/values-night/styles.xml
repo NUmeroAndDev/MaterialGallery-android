@@ -1,8 +1,4 @@
 <resources>
 
-    <style name="Widget.MaterialGallery.Toolbar.PrimarySurface" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
-        <item name="android:elevation">4dp</item>
-    </style>
-
     <style name="ThemeOverlay.MaterialGallery.AppBarLayout" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Surface" />
 </resources>

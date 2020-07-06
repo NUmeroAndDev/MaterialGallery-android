@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ComponentListScreen">
+
+    <fragment
+        android:id="@+id/ComponentListScreen"
+        android:name="com.numero.material_gallery.components.list.ComponentListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_component_list">
+        <action
+            android:id="@+id/action_ComponentList_to_Settings"
+            app:destination="@id/SettingsScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_BottomAppBarType"
+            app:destination="@id/BottomAppBarTypeScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_BottomNavigation"
+            app:destination="@id/BottomNavigationScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_BottomSheet"
+            app:destination="@id/BottomSheetScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_Chip"
+            app:destination="@id/ChipScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_DatePicker"
+            app:destination="@id/DatePickerScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_Fab"
+            app:destination="@id/FabScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_ExtendedFab"
+            app:destination="@id/ExtendedFabScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_ShapeableImage"
+            app:destination="@id/ShapeableImageScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_MaterialButton"
+            app:destination="@id/MaterialButtonScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_MaterialButtonToggleGroup"
+            app:destination="@id/MaterialButtonToggleGroupScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_MaterialCard"
+            app:destination="@id/MaterialCardScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_MaterialDialog"
+            app:destination="@id/MaterialDialogScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_NavigationDrawer"
+            app:destination="@id/NavigationDrawerScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_ProgressIndicator"
+            app:destination="@id/ProgressIndicatorScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_Checkbox"
+            app:destination="@id/CheckboxScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_RadioButton"
+            app:destination="@id/RadioButtonScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_ModalBottomSheet"
+            app:destination="@id/ModalBottomSheetScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_Switch"
+            app:destination="@id/SwitchScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_Slider"
+            app:destination="@id/SliderScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_Snackbar"
+            app:destination="@id/SnackbarScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_Tab"
+            app:destination="@id/TabScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_TextField"
+            app:destination="@id/TextFieldScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_TopAppBar"
+            app:destination="@id/TopAppBarTypeScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/BottomAppBarTypeScreen"
+        android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeFragment"
+        tools:layout="@layout/fragment_bottom_app_bar_type" />
+
+    <fragment
+        android:id="@+id/BottomNavigationScreen"
+        android:name="com.numero.material_gallery.components.bottomnavigation.BottomNavigationFragment"
+        tools:layout="@layout/fragment_bottom_navigation" />
+
+    <fragment
+        android:id="@+id/BottomSheetScreen"
+        android:name="com.numero.material_gallery.components.sheet.BottomSheetFragment"
+        tools:layout="@layout/fragment_bottom_sheet" />
+
+    <fragment
+        android:id="@+id/ChipScreen"
+        android:name="com.numero.material_gallery.components.chip.ChipFragment"
+        tools:layout="@layout/fragment_chip" />
+
+    <fragment
+        android:id="@+id/DatePickerScreen"
+        android:name="com.numero.material_gallery.components.picker.DatePickerFragment"
+        tools:layout="@layout/fragment_date_picker" />
+
+    <fragment
+        android:id="@+id/FabScreen"
+        android:name="com.numero.material_gallery.components.fab.FabFragment"
+        tools:layout="@layout/fragment_fab" />
+
+    <fragment
+        android:id="@+id/ExtendedFabScreen"
+        android:name="com.numero.material_gallery.components.fab.ExtendedFabFragment"
+        tools:layout="@layout/fragment_extended_fab" />
+
+    <fragment
+        android:id="@+id/ShapeableImageScreen"
+        android:name="com.numero.material_gallery.components.image.ShapeableImageViewFragment"
+        tools:layout="@layout/fragment_shapeable_image_view" />
+
+    <fragment
+        android:id="@+id/MaterialButtonScreen"
+        android:name="com.numero.material_gallery.components.button.MaterialButtonFragment"
+        tools:layout="@layout/fragment_material_button" />
+
+    <fragment
+        android:id="@+id/MaterialButtonToggleGroupScreen"
+        android:name="com.numero.material_gallery.components.button.MaterialButtonToggleGroupFragment"
+        tools:layout="@layout/fragment_material_button_toggle_group" />
+
+    <fragment
+        android:id="@+id/MaterialCardScreen"
+        android:name="com.numero.material_gallery.components.card.MaterialCardFragment"
+        tools:layout="@layout/fragment_material_card" />
+
+    <fragment
+        android:id="@+id/MaterialDialogScreen"
+        android:name="com.numero.material_gallery.components.dialog.MaterialDialogFragment"
+        tools:layout="@layout/fragment_material_dialog" />
+
+    <fragment
+        android:id="@+id/NavigationDrawerScreen"
+        android:name="com.numero.material_gallery.components.navigationdrawer.NavigationDrawerFragment"
+        tools:layout="@layout/fragment_progress_indicator" />
+
+    <fragment
+        android:id="@+id/ProgressIndicatorScreen"
+        android:name="com.numero.material_gallery.components.progressindicator.ProgressIndicatorFragment"
+        tools:layout="@layout/fragment_progress_indicator" />
+
+    <fragment
+        android:id="@+id/CheckboxScreen"
+        android:name="com.numero.material_gallery.components.selection.CheckboxFragment"
+        tools:layout="@layout/fragment_checkbox" />
+
+    <fragment
+        android:id="@+id/RadioButtonScreen"
+        android:name="com.numero.material_gallery.components.selection.RadioButtonFragment"
+        tools:layout="@layout/fragment_radio_button" />
+
+    <fragment
+        android:id="@+id/ModalBottomSheetScreen"
+        android:name="com.numero.material_gallery.components.sheet.ModalBottomSheetFragment"
+        tools:layout="@layout/fragment_modal_bottom_sheet" />
+
+    <fragment
+        android:id="@+id/SwitchScreen"
+        android:name="com.numero.material_gallery.components.selection.SwitchFragment"
+        tools:layout="@layout/fragment_switch" />
+
+    <fragment
+        android:id="@+id/SliderScreen"
+        android:name="com.numero.material_gallery.components.slider.SliderFragment"
+        tools:layout="@layout/fragment_slider" />
+
+    <fragment
+        android:id="@+id/SnackbarScreen"
+        android:name="com.numero.material_gallery.components.snackbar.SnackbarFragment"
+        tools:layout="@layout/fragment_snackbar" />
+
+    <fragment
+        android:id="@+id/TabScreen"
+        android:name="com.numero.material_gallery.components.tab.TabFragment"
+        tools:layout="@layout/fragment_tab" />
+
+    <fragment
+        android:id="@+id/TextFieldScreen"
+        android:name="com.numero.material_gallery.components.textfield.TextFieldFragment"
+        tools:layout="@layout/fragment_text_field" />
+
+    <fragment
+        android:id="@+id/TopAppBarTypeScreen"
+        android:name="com.numero.material_gallery.components.appbar.top.TopAppBarTypeFragment"
+        tools:layout="@layout/fragment_top_app_bar_type" />
+
+    <action
+        android:id="@+id/action_show_ThemeInfoDialog"
+        app:destination="@id/ThemeInfoDialog" />
+    <dialog
+        android:id="@+id/ThemeInfoDialog"
+        android:name="com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog"
+        tools:layout="@layout/bottom_sheet_fragment_theme_info" />
+
+    <fragment
+        android:id="@+id/SettingsScreen"
+        android:name="com.numero.material_gallery.settings.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_Settings_to_Licenses"
+            app:destination="@id/LicensesScreen" />
+    </fragment>
+
+    <activity
+        android:id="@+id/LicensesScreen"
+        android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity" />
+
+</navigation>
