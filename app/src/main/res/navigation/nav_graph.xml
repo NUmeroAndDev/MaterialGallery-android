@@ -79,6 +79,9 @@
         <action
             android:id="@+id/action_ComponentList_to_TextField"
             app:destination="@id/TextFieldScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_TopAppBar"
+            app:destination="@id/TopAppBarTypeScreen" />
     </fragment>
 
     <fragment
@@ -190,6 +193,11 @@
         android:id="@+id/TextFieldScreen"
         android:name="com.numero.material_gallery.components.textfield.TextFieldFragment"
         tools:layout="@layout/fragment_text_field" />
+
+    <fragment
+        android:id="@+id/TopAppBarTypeScreen"
+        android:name="com.numero.material_gallery.components.appbar.top.TopAppBarTypeFragment"
+        tools:layout="@layout/fragment_top_app_bar_type" />
 
     <action
         android:id="@+id/action_show_ThemeInfoDialog"

@@ -16,7 +16,6 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.ktx.startUpdateFlowForResult
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.DesignComponent
-import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.fragment_component_list.*
 
@@ -167,7 +166,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 findNavController().navigate(R.id.action_ComponentList_to_TextField)
             }
             DesignComponent.TOP_APP_BAR -> {
-                startActivity(TopAppBarTypeActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_TopAppBar)
             }
         }
     }
