@@ -40,10 +40,6 @@
             android:label="@string/bottom_navigation" />
 
         <activity
-            android:name=".components.sheet.BottomSheetActivity"
-            android:label="@string/bottom_sheet" />
-
-        <activity
             android:name=".components.appbar.top.TopAppBarTypeActivity"
             android:label="@string/top_app_bar" />
 
