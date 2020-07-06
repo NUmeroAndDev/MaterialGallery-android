@@ -53,6 +53,9 @@
             android:id="@+id/action_ComponentList_to_RadioButton"
             app:destination="@id/RadioButtonScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_ModalBottomSheet"
+            app:destination="@id/ModalBottomSheetScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_Switch"
             app:destination="@id/SwitchScreen" />
         <action
@@ -133,6 +136,11 @@
         android:id="@+id/RadioButtonScreen"
         android:name="com.numero.material_gallery.components.selection.RadioButtonFragment"
         tools:layout="@layout/fragment_radio_button" />
+
+    <fragment
+        android:id="@+id/ModalBottomSheetScreen"
+        android:name="com.numero.material_gallery.components.sheet.ModalBottomSheetFragment"
+        tools:layout="@layout/fragment_modal_bottom_sheet" />
 
     <fragment
         android:id="@+id/SwitchScreen"

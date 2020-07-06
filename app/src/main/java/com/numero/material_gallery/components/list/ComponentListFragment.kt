@@ -20,7 +20,6 @@ import com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActi
 import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.components.bottomnavigation.BottomNavigationActivity
 import com.numero.material_gallery.components.sheet.BottomSheetActivity
-import com.numero.material_gallery.components.sheet.ModalBottomSheetActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.fragment_component_list.*
 
@@ -111,7 +110,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                 startActivity(BottomNavigationActivity.createIntent(requireContext()))
             }
             DesignComponent.MODAL_BOTTOM_SHEET -> {
-                startActivity(ModalBottomSheetActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_ModalBottomSheet)
             }
             DesignComponent.BOTTOM_SHEET -> {
                 startActivity(BottomSheetActivity.createIntent(requireContext()))
