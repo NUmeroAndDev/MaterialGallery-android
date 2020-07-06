@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.repository.ConfigRepository
-import kotlinx.android.synthetic.main.fragment_bottom_navgation.*
+import kotlinx.android.synthetic.main.fragment_bottom_navigation.*
 import org.koin.android.ext.android.inject
 
 class BottomNavigationFragment : Fragment() {
@@ -20,7 +20,7 @@ class BottomNavigationFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return LayoutInflater
                 .from(ContextThemeWrapper(context, configRepository.themeRes))
-                .inflate(R.layout.fragment_bottom_navgation, container, false)
+                .inflate(R.layout.fragment_bottom_navigation, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

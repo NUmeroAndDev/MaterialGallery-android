@@ -89,7 +89,7 @@
     <fragment
         android:id="@+id/BottomNavigationScreen"
         android:name="com.numero.material_gallery.components.bottomnavigation.BottomNavigationFragment"
-        tools:layout="@layout/fragment_bottom_navgation" />
+        tools:layout="@layout/fragment_bottom_navigation" />
 
     <fragment
         android:id="@+id/BottomSheetScreen"
