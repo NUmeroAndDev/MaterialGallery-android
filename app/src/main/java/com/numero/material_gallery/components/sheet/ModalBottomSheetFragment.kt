@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.numero.material_gallery.R
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_modal_bottom_sheet.*
@@ -42,6 +44,24 @@ class ModalBottomSheetFragment : Fragment() {
 
         showBottomSheetButton.setOnClickListener {
             BottomSheetModalFragment.newInstance().showIfNeeded(childFragmentManager)
+        }
+    }
+
+    class BottomSheetModalFragment : BottomSheetDialogFragment() {
+
+        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+            return inflater.inflate(R.layout.fragment_bottom_sheet_modal, container, false)
+        }
+
+        fun showIfNeeded(fragmentManager: FragmentManager) {
+            if (fragmentManager.findFragmentByTag(TAG) != null) return
+            showNow(fragmentManager, TAG)
+        }
+
+        companion object {
+            private const val TAG: String = "BottomSheetModalFragment"
+
+            fun newInstance(): BottomSheetModalFragment = BottomSheetModalFragment()
         }
     }
 }
