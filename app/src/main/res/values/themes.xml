@@ -6,6 +6,7 @@
         <item name="windowNoTitle">true</item>
 
         <item name="toolbarStyle">@style/Widget.MaterialGallery.Toolbar</item>
+        <item name="appBarLayoutStyle">@style/Widget.MaterialGallery.AppBarLayout</item>
     </style>
 
     <style name="Theme.MaterialGallery" parent="Base.MaterialGallery">
