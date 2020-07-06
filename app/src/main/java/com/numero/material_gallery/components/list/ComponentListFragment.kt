@@ -16,7 +16,6 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.ktx.startUpdateFlowForResult
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.DesignComponent
-import com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeActivity
 import com.numero.material_gallery.components.appbar.top.TopAppBarTypeActivity
 import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.fragment_component_list.*
@@ -102,7 +101,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     private fun selectedComponent(component: DesignComponent) {
         when (component) {
             DesignComponent.BOTTOM_APP_BAR -> {
-                startActivity(BottomAppBarTypeActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_ComponentList_to_BottomAppBarType)
             }
             DesignComponent.BOTTOM_NAVIGATION -> {
                 findNavController().navigate(R.id.action_ComponentList_to_BottomNavigation)

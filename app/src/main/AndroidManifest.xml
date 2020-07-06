@@ -24,10 +24,6 @@
         </activity>
 
         <activity
-            android:name=".components.appbar.bottom.BottomAppBarTypeActivity"
-            android:label="@string/bottom_app_bar" />
-
-        <activity
             android:name=".components.appbar.bottom.BottomAppBarActivity"
             android:label="@string/bottom_app_bar" />
 
