@@ -36,10 +36,6 @@
             android:label="@string/hide_on_scroll" />
 
         <activity
-            android:name=".components.bottomnavigation.BottomNavigationActivity"
-            android:label="@string/bottom_navigation" />
-
-        <activity
             android:name=".components.appbar.top.TopAppBarTypeActivity"
             android:label="@string/top_app_bar" />
 

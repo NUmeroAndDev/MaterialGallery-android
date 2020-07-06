@@ -14,6 +14,9 @@
             android:id="@+id/action_ComponentList_to_Settings"
             app:destination="@id/SettingsScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_BottomNavigation"
+            app:destination="@id/BottomNavigationScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_BottomSheet"
             app:destination="@id/BottomSheetScreen" />
         <action
@@ -74,6 +77,11 @@
             android:id="@+id/action_ComponentList_to_TextField"
             app:destination="@id/TextFieldScreen" />
     </fragment>
+
+    <fragment
+        android:id="@+id/BottomNavigationScreen"
+        android:name="com.numero.material_gallery.components.bottomnavigation.BottomNavigationFragment"
+        tools:layout="@layout/fragment_bottom_navgation" />
 
     <fragment
         android:id="@+id/BottomSheetScreen"

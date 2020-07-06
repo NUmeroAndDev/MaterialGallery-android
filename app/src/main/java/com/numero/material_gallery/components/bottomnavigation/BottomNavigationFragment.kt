@@ -1,51 +1,47 @@
 package com.numero.material_gallery.components.bottomnavigation
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import android.view.ContextThemeWrapper
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.numero.material_gallery.R
-import com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.repository.ConfigRepository
-import kotlinx.android.synthetic.main.activity_bottom_navgation.*
+import kotlinx.android.synthetic.main.fragment_bottom_navgation.*
 import org.koin.android.ext.android.inject
 
-class BottomNavigationActivity : AppCompatActivity(R.layout.activity_bottom_navgation) {
+class BottomNavigationFragment : Fragment() {
 
     private val configRepository by inject<ConfigRepository>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(configRepository.themeRes)
-        super.onCreate(savedInstanceState)
-        setSupportActionBar(toolbar)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return LayoutInflater
+                .from(ContextThemeWrapper(context, configRepository.themeRes))
+                .inflate(R.layout.fragment_bottom_navgation, container, false)
+    }
 
-        supportActionBar?.apply {
-            setDisplayHomeAsUpEnabled(true)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        toolbar.apply {
+            setNavigationOnClickListener {
+                findNavController().popBackStack()
+            }
+            inflateMenu(R.menu.menu_common)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.action_info -> {
+                        findNavController().navigate(R.id.action_show_ThemeInfoDialog)
+                        true
+                    }
+                    else -> false
+                }
+            }
         }
 
         initViews()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_common, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_info -> {
-                ThemeInfoBottomSheetDialog.newInstance().showIfNeeded(supportFragmentManager)
-                true
-            }
-            android.R.id.home -> {
-                finish()
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
     private fun initViews() {
@@ -98,10 +94,7 @@ class BottomNavigationActivity : AppCompatActivity(R.layout.activity_bottom_navg
     }
 
     companion object {
-
         private const val MIN_ITEM_COUNT = 3
         private const val MAX_ITEM_COUNT = 5
-
-        fun createIntent(context: Context): Intent = Intent(context, BottomNavigationActivity::class.java)
     }
 }
