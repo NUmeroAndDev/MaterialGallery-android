@@ -5,15 +5,15 @@ import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.numero.material_gallery.R
+import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_material_dialog.*
 import org.koin.android.ext.android.inject
 
-class MaterialDialogFragment : Fragment() {
+class MaterialDialogFragment : MaterialContainerTransformFragment() {
 
     private val configRepository by inject<ConfigRepository>()
 

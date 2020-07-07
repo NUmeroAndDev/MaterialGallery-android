@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
+import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_text_field.*
 import org.koin.android.ext.android.inject
 
-class TextFieldFragment : Fragment() {
+class TextFieldFragment : MaterialContainerTransformFragment() {
 
     private val configRepository by inject<ConfigRepository>()
 

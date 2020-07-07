@@ -5,14 +5,14 @@ import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
+import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_shapeable_image_view.*
 import org.koin.android.ext.android.inject
 
-class ShapeableImageViewFragment : Fragment() {
+class ShapeableImageViewFragment : MaterialContainerTransformFragment() {
 
     private val configRepository by inject<ConfigRepository>()
 
