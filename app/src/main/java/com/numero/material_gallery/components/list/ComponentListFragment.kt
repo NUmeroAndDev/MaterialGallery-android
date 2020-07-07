@@ -16,7 +16,6 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.ktx.startUpdateFlowForResult
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.DesignComponent
-import com.numero.material_gallery.view.ListItemAdapter
 import kotlinx.android.synthetic.main.fragment_component_list.*
 
 class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
@@ -89,9 +88,9 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
         componentRecyclerView.apply {
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
-            adapter = ListItemAdapter(DesignComponent.values().toList()).apply {
-                setOnItemClickListener {
-                    selectedComponent(it)
+            adapter = ComponentListAdapter().apply {
+                setOnItemClickListener { view, component ->
+                    selectedComponent(component)
                 }
             }
         }
