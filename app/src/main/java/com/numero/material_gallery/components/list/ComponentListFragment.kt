@@ -10,6 +10,8 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.transition.Hold
+import com.google.android.material.transition.MaterialSharedAxis
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
@@ -74,6 +76,9 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     }
 
     private fun showSettingsScreen() {
+        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, false)
+        exitTransition = MaterialSharedAxis(MaterialSharedAxis.Z, true)
+
         findNavController().navigate(R.id.action_ComponentList_to_Settings)
     }
 
@@ -102,6 +107,9 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     }
 
     private fun selectedComponent(view: View, component: DesignComponent) {
+        exitTransition = Hold()
+        reenterTransition = null
+
         val extras = FragmentNavigatorExtras(view to view.transitionName)
         findNavController().navigate(component.navigationId, null, null, extras)
     }
