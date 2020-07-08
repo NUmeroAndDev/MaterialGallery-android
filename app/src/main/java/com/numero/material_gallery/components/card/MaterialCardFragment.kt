@@ -5,9 +5,9 @@ import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
+import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.components.card.state.Corner
 import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
@@ -15,7 +15,7 @@ import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_material_card.*
 import org.koin.android.ext.android.inject
 
-class MaterialCardFragment : Fragment() {
+class MaterialCardFragment : MaterialContainerTransformFragment() {
 
     private val configRepository by inject<ConfigRepository>()
 

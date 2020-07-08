@@ -10,15 +10,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.core.util.Pair
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.numero.material_gallery.R
+import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_date_picker.*
 import org.koin.android.ext.android.inject
 
-class DatePickerFragment : Fragment() {
+class DatePickerFragment : MaterialContainerTransformFragment() {
 
     private val configRepository by inject<ConfigRepository>()
 
