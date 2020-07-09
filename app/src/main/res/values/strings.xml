@@ -46,8 +46,6 @@
     <string name="text_field">Text Field</string>
     <string name="top_app_bar">Top App Bar</string>
 
-    <string name="hide_on_scroll">Hide On Scroll</string>
-
     <string name="actionbar">ActionBar</string>
     <string name="toolbar">Toolbar</string>
     <string name="lift_on_scroll">LiftOnScroll</string>

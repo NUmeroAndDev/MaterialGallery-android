@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".components.appbar.bottom.BottomAppBarActivity">
+    android:fitsSystemWindows="true"
+    android:transitionName="@string/bottom_app_bar_transition_name">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.MaterialGallery.AppBarLayout">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:title="@string/bottom_app_bar" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -25,7 +28,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingTop="16dp"
             android:paddingEnd="16dp"
@@ -37,6 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="FAB Position"
                 android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintBottom_toTopOf="@id/fabPositionRadioGroup"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,9 +50,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:checkedButton="@+id/attachedCenterRadioButton"
+                app:layout_constraintBottom_toTopOf="@id/fabAnimationTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fabPositionTextView">
+                app:layout_constraintTop_toBottomOf="@id/fabPositionTextView">
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/attachedCenterRadioButton"
@@ -77,8 +82,9 @@
                 android:layout_marginTop="32dp"
                 android:text="FAB Animation"
                 android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintBottom_toTopOf="@id/fabAnimationRadioGroup"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fabPositionRadioGroup" />
+                app:layout_constraintTop_toBottomOf="@id/fabPositionRadioGroup" />
 
             <RadioGroup
                 android:id="@+id/fabAnimationRadioGroup"
@@ -86,9 +92,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:checkedButton="@+id/scaleRadioButton"
+                app:layout_constraintBottom_toTopOf="@id/fabVisiblyTextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fabAnimationTextView">
+                app:layout_constraintTop_toBottomOf="@id/fabAnimationTextView">
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/scaleRadioButton"
@@ -117,8 +124,9 @@
                 android:layout_marginTop="32dp"
                 android:text="FAB Visibly"
                 android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintBottom_toTopOf="@id/fabVisiblyRadioGroup"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fabAnimationRadioGroup" />
+                app:layout_constraintTop_toBottomOf="@id/fabAnimationRadioGroup" />
 
             <RadioGroup
                 android:id="@+id/fabVisiblyRadioGroup"
@@ -126,6 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:checkedButton="@+id/showRadioButton"
+                app:layout_constraintBottom_toTopOf="@id/hideOnScrollSwitch"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fabVisiblyTextView">
@@ -150,6 +159,30 @@
 
             </RadioGroup>
 
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/hideOnScrollSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:checked="false"
+                android:text="Hide on scroll"
+                app:layout_constraintBottom_toTopOf="@id/dummyText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fabVisiblyRadioGroup"
+                app:switchTextAppearance="?attr/textAppearanceSubtitle2" />
+
+            <TextView
+                android:id="@+id/dummyText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/large_text"
+                android:textColor="?attr/colorOnBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hideOnScrollSwitch" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -159,7 +192,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:fabAnimationMode="scale" />
+        app:fabAnimationMode="scale"
+        app:paddingBottomSystemWindowInsets="false" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

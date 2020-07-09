@@ -86,8 +86,8 @@
 
     <fragment
         android:id="@+id/BottomAppBarTypeScreen"
-        android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarTypeFragment"
-        tools:layout="@layout/fragment_bottom_app_bar_type" />
+        android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarFragment"
+        tools:layout="@layout/fragment_bottom_app_bar" />
 
     <fragment
         android:id="@+id/BottomNavigationScreen"
