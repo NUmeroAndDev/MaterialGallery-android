@@ -187,11 +187,11 @@
                 app:layout_constraintStart_toEndOf="@id/visibilityProgressIndicatorToggleGroup"
                 app:layout_constraintTop_toBottomOf="@id/progressSlider">
 
-                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/grownModeTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:editable="false" />
+                    android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
