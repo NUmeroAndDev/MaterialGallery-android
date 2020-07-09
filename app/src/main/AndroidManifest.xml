@@ -24,14 +24,6 @@
         </activity>
 
         <activity
-            android:name=".components.appbar.bottom.BottomAppBarActivity"
-            android:label="@string/bottom_app_bar" />
-
-        <activity
-            android:name=".components.appbar.bottom.HideOnScrollActivity"
-            android:label="@string/hide_on_scroll" />
-
-        <activity
             android:name=".components.appbar.top.ActionBarActivity"
             android:label="@string/actionbar" />
 
