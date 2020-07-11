@@ -6,10 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
+import androidx.core.view.doOnPreDraw
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.transition.Hold
 import com.numero.material_gallery.R
+import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.extensions.LayoutContainer
@@ -39,21 +43,29 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment() {
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
             adapter = TopAppBarTypeItemAdapter().apply {
-                setOnItemClickListener { _, type ->
-                    selectedToolbarType(type)
+                setOnItemClickListener { view, type ->
+                    selectedToolbarType(view, type)
                 }
             }
         }
     }
 
-    private fun selectedToolbarType(topAppBarType: TopAppBarType) {
-        val intent = when (topAppBarType) {
-            TopAppBarType.ACTION_BAR -> ActionBarActivity.createIntent(requireContext())
-            TopAppBarType.TOOLBAR -> ToolbarActivity.createIntent(requireContext())
-            TopAppBarType.LIFT_ON_SCROLL -> LiftOnScrollActivity.createIntent(requireContext())
-            TopAppBarType.COLLAPSING -> CollapsingActivity.createIntent(requireContext())
+    private fun selectedToolbarType(view: View, topAppBarType: TopAppBarType) {
+        when (topAppBarType) {
+            TopAppBarType.ACTION_BAR -> {
+                startActivity(ActionBarActivity.createIntent(requireContext()))
+            }
+            TopAppBarType.TOOLBAR -> {
+                val extras = FragmentNavigatorExtras(view to view.transitionName)
+                findNavController().navigate(R.id.action_TopAppBarType_to_Toolbar, null, null, extras)
+            }
+            TopAppBarType.LIFT_ON_SCROLL -> {
+                startActivity(LiftOnScrollActivity.createIntent(requireContext()))
+            }
+            TopAppBarType.COLLAPSING -> {
+                startActivity(CollapsingActivity.createIntent(requireContext()))
+            }
         }
-        startActivity(intent)
     }
 }
 
@@ -92,6 +104,7 @@ class TopAppBarTypeItemAdapter : RecyclerView.Adapter<TopAppBarTypeItemAdapter.V
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun bindType(type: TopAppBarType) {
             titleTextView.setText(type.titleRes)
+            itemView.transitionName = itemView.context.getString(type.transitionNameStringRes)
         }
 
         private val TopAppBarType.titleRes: Int
@@ -101,6 +114,16 @@ class TopAppBarTypeItemAdapter : RecyclerView.Adapter<TopAppBarTypeItemAdapter.V
                 TopAppBarType.TOOLBAR -> R.string.toolbar
                 TopAppBarType.LIFT_ON_SCROLL -> R.string.lift_on_scroll
                 TopAppBarType.COLLAPSING -> R.string.collapsing
+            }
+
+        private val TopAppBarType.transitionNameStringRes: Int
+            get() {
+                return when (this) {
+                    TopAppBarType.ACTION_BAR -> R.string.actionbar_transition_name
+                    TopAppBarType.TOOLBAR -> R.string.toolbar_transition_name
+                    TopAppBarType.LIFT_ON_SCROLL -> R.string.lift_on_scroll_transition_name
+                    TopAppBarType.COLLAPSING -> R.string.collapsing_transition_name
+                }
             }
     }
 }

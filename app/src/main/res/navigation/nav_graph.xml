@@ -197,7 +197,16 @@
     <fragment
         android:id="@+id/TopAppBarTypeScreen"
         android:name="com.numero.material_gallery.components.appbar.top.TopAppBarTypeFragment"
-        tools:layout="@layout/fragment_top_app_bar_type" />
+        tools:layout="@layout/fragment_top_app_bar_type">
+        <action
+            android:id="@+id/action_TopAppBarType_to_Toolbar"
+            app:destination="@id/ToolbarScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ToolbarScreen"
+        android:name="com.numero.material_gallery.components.appbar.top.ToolbarFragment"
+        tools:layout="@layout/fragment_toolbar" />
 
     <action
         android:id="@+id/action_show_ThemeInfoDialog"
