@@ -51,12 +51,12 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment() {
     }
 
     private fun selectedToolbarType(view: View, topAppBarType: TopAppBarType) {
+        val extras = FragmentNavigatorExtras(view to view.transitionName)
         when (topAppBarType) {
             TopAppBarType.ACTION_BAR -> {
-                startActivity(ActionBarActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_TopAppBarType_to_ActionBar, null, null, extras)
             }
             TopAppBarType.TOOLBAR -> {
-                val extras = FragmentNavigatorExtras(view to view.transitionName)
                 findNavController().navigate(R.id.action_TopAppBarType_to_Toolbar, null, null, extras)
             }
             TopAppBarType.LIFT_ON_SCROLL -> {

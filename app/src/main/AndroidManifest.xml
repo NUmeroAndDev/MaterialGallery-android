@@ -24,10 +24,6 @@
         </activity>
 
         <activity
-            android:name=".components.appbar.top.ActionBarActivity"
-            android:label="@string/actionbar" />
-
-        <activity
             android:name=".components.appbar.top.LiftOnScrollActivity"
             android:label="@string/lift_on_scroll"
             android:theme="@style/Theme.MaterialGallery.DayNight.SurfaceStatus" />
