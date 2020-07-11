@@ -117,13 +117,12 @@ class TopAppBarTypeItemAdapter : RecyclerView.Adapter<TopAppBarTypeItemAdapter.V
             }
 
         private val TopAppBarType.transitionNameStringRes: Int
-            get() {
-                return when (this) {
-                    TopAppBarType.ACTION_BAR -> R.string.actionbar_transition_name
-                    TopAppBarType.TOOLBAR -> R.string.toolbar_transition_name
-                    TopAppBarType.LIFT_ON_SCROLL -> R.string.lift_on_scroll_transition_name
-                    TopAppBarType.COLLAPSING -> R.string.collapsing_transition_name
-                }
+            @StringRes
+            get() = when (this) {
+                TopAppBarType.ACTION_BAR -> R.string.actionbar_transition_name
+                TopAppBarType.TOOLBAR -> R.string.toolbar_transition_name
+                TopAppBarType.LIFT_ON_SCROLL -> R.string.lift_on_scroll_transition_name
+                TopAppBarType.COLLAPSING -> R.string.collapsing_transition_name
             }
     }
 }
