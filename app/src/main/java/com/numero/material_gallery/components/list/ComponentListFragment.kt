@@ -117,7 +117,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     private val DesignComponent.navigationId: Int
         get() = when (this) {
             DesignComponent.BOTTOM_NAVIGATION -> R.id.action_ComponentList_to_BottomNavigation
-            DesignComponent.BOTTOM_APP_BAR -> R.id.action_ComponentList_to_BottomAppBarType
+            DesignComponent.BOTTOM_APP_BAR -> R.id.action_ComponentList_to_BottomAppBar
             DesignComponent.BOTTOM_SHEET -> R.id.action_ComponentList_to_BottomSheet
             DesignComponent.CHECKBOX -> R.id.action_ComponentList_to_Checkbox
             DesignComponent.CHIPS -> R.id.action_ComponentList_to_Chip

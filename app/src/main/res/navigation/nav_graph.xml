@@ -14,8 +14,8 @@
             android:id="@+id/action_ComponentList_to_Settings"
             app:destination="@id/SettingsScreen" />
         <action
-            android:id="@+id/action_ComponentList_to_BottomAppBarType"
-            app:destination="@id/BottomAppBarTypeScreen" />
+            android:id="@+id/action_ComponentList_to_BottomAppBar"
+            app:destination="@id/BottomAppBarScreen" />
         <action
             android:id="@+id/action_ComponentList_to_BottomNavigation"
             app:destination="@id/BottomNavigationScreen" />
@@ -85,7 +85,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/BottomAppBarTypeScreen"
+        android:id="@+id/BottomAppBarScreen"
         android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarFragment"
         tools:layout="@layout/fragment_bottom_app_bar" />
 
