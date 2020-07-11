@@ -1,6 +1,7 @@
-name: Android CI
+name: Check build
 
-on: [push]
+on:
+  pull_request:
 
 jobs:
   build:
@@ -14,4 +15,4 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleRelease
