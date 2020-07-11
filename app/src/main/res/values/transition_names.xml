@@ -23,4 +23,9 @@
     <string name="tab_transition_name">tab</string>
     <string name="text_field_transition_name">text_field</string>
     <string name="top_app_bar_transition_name">top_app_bar</string>
+
+    <string name="actionbar_transition_name">actionbar</string>
+    <string name="toolbar_transition_name">toolbar</string>
+    <string name="lift_on_scroll_transition_name">lift_on_scroll</string>
+    <string name="collapsing_transition_name">collapsing</string>
 </resources>

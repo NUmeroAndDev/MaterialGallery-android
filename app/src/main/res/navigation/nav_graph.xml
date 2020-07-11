@@ -14,8 +14,8 @@
             android:id="@+id/action_ComponentList_to_Settings"
             app:destination="@id/SettingsScreen" />
         <action
-            android:id="@+id/action_ComponentList_to_BottomAppBarType"
-            app:destination="@id/BottomAppBarTypeScreen" />
+            android:id="@+id/action_ComponentList_to_BottomAppBar"
+            app:destination="@id/BottomAppBarScreen" />
         <action
             android:id="@+id/action_ComponentList_to_BottomNavigation"
             app:destination="@id/BottomNavigationScreen" />
@@ -85,7 +85,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/BottomAppBarTypeScreen"
+        android:id="@+id/BottomAppBarScreen"
         android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarFragment"
         tools:layout="@layout/fragment_bottom_app_bar" />
 
@@ -197,7 +197,16 @@
     <fragment
         android:id="@+id/TopAppBarTypeScreen"
         android:name="com.numero.material_gallery.components.appbar.top.TopAppBarTypeFragment"
-        tools:layout="@layout/fragment_top_app_bar_type" />
+        tools:layout="@layout/fragment_top_app_bar_type">
+        <action
+            android:id="@+id/action_TopAppBarType_to_Toolbar"
+            app:destination="@id/ToolbarScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ToolbarScreen"
+        android:name="com.numero.material_gallery.components.appbar.top.ToolbarFragment"
+        tools:layout="@layout/fragment_toolbar" />
 
     <action
         android:id="@+id/action_show_ThemeInfoDialog"
