@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="4dp"
         app:cardElevation="0dp"
-        app:strokeColor="#DEDEDE"
+        app:strokeColor="@color/stroke_color"
         app:strokeWidth="1dp">
 
         <androidx.appcompat.widget.AppCompatTextView

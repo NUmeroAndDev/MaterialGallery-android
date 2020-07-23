@@ -136,7 +136,7 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 app:shapeAppearanceOverlay="?attr/shapeAppearanceSmallComponent"
-                app:strokeColor="#DEDEDE"
+                app:strokeColor="@color/stroke_color"
                 app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -157,7 +157,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 app:shapeAppearanceOverlay="?attr/shapeAppearanceMediumComponent"
-                app:strokeColor="#DEDEDE"
+                app:strokeColor="@color/stroke_color"
                 app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -179,7 +179,7 @@
                 android:layout_marginEnd="16dp"
                 app:cardElevation="0dp"
                 app:shapeAppearanceOverlay="?attr/shapeAppearanceLargeComponent"
-                app:strokeColor="#DEDEDE"
+                app:strokeColor="@color/stroke_color"
                 app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
