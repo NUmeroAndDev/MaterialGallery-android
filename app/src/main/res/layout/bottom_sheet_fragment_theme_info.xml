@@ -195,135 +195,83 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Headline1"
-                android:textAppearance="?attr/textAppearanceHeadline1" />
+                app:title="Headline1"
+                app:titleTextAppearance="?attr/textAppearanceHeadline1" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Headline2"
-                android:textAppearance="?attr/textAppearanceHeadline2" />
+                app:title="Headline2"
+                app:titleTextAppearance="?attr/textAppearanceHeadline2" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Headline3"
-                android:textAppearance="?attr/textAppearanceHeadline3" />
+                app:title="Headline3"
+                app:titleTextAppearance="?attr/textAppearanceHeadline3" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Headline4"
-                android:textAppearance="?attr/textAppearanceHeadline4" />
+                app:title="Headline4"
+                app:titleTextAppearance="?attr/textAppearanceHeadline4" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Headline5"
-                android:textAppearance="?attr/textAppearanceHeadline5" />
+                app:title="Headline5"
+                app:titleTextAppearance="?attr/textAppearanceHeadline5" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Headline6"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
+                app:title="Headline6"
+                app:titleTextAppearance="?attr/textAppearanceHeadline6" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Subtitle1"
-                android:textAppearance="?attr/textAppearanceSubtitle1" />
+                app:title="Subtitle1"
+                app:titleTextAppearance="?attr/textAppearanceSubtitle1" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Subtitle2"
-                android:textAppearance="?attr/textAppearanceSubtitle2" />
+                app:title="Subtitle2"
+                app:titleTextAppearance="?attr/textAppearanceSubtitle2" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Body1"
-                android:textAppearance="?attr/textAppearanceBody1" />
+                app:title="Body1"
+                app:titleTextAppearance="?attr/textAppearanceBody1" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Body2"
-                android:textAppearance="?attr/textAppearanceBody2" />
+                app:title="Body2"
+                app:titleTextAppearance="?attr/textAppearanceBody2" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Caption"
-                android:textAppearance="?attr/textAppearanceCaption" />
+                app:title="Caption"
+                app:titleTextAppearance="?attr/textAppearanceCaption" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:maxLines="1"
-                android:text="Button"
-                android:textAppearance="?attr/textAppearanceButton" />
+                app:title="Button"
+                app:titleTextAppearance="?attr/textAppearanceButton" />
 
-            <TextView
+            <com.numero.material_gallery.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:maxLines="1"
-                android:text="Overline"
-                android:textAppearance="?attr/textAppearanceOverline" />
+                app:title="Overline"
+                app:titleTextAppearance="?attr/textAppearanceOverline" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
