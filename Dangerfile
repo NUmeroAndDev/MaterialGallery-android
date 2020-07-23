@@ -11,3 +11,8 @@ warn("Big PR") if git.lines_of_code > 500
 # Don't let testing shortcuts get into master by accident
 fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 fail("fit left in tests") if `grep -r fit specs/ `.length > 1
+
+android_lint.gradle_task = "app:lintRelease"
+android_lint.report_file = "app/build/reports/lint-results-release.xml"
+android_lint.filtering = true
+android_lint.lint(inline_mode: true)
