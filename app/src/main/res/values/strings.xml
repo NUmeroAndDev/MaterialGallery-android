@@ -10,6 +10,7 @@
     <string name="action_settings">@string/label_settings</string>
     <string name="action_info">Info</string>
     <string name="action_help">Help</string>
+    <string name="action_current_theme">Current theme</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

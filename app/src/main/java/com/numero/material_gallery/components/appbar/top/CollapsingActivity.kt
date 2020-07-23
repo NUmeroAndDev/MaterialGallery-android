@@ -33,7 +33,7 @@ class CollapsingActivity : AppCompatActivity(R.layout.activity_collapsing) {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_info -> {
+            R.id.action_current_theme -> {
                 ThemeInfoBottomSheetDialog.newInstance().showIfNeeded(supportFragmentManager)
                 true
             }
