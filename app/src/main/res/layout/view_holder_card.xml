@@ -39,9 +39,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:text="Title"
                 android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textColor="?attr/colorOnSurface"
-                tools:text="Title" />
+                android:textColor="?attr/colorOnSurface" />
 
         </LinearLayout>
 
