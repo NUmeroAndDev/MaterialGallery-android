@@ -219,7 +219,7 @@
         app:destination="@id/ThemeInfoDialog" />
     <dialog
         android:id="@+id/ThemeInfoDialog"
-        android:name="com.numero.material_gallery.fragment.ThemeInfoBottomSheetDialog"
+        android:name="com.numero.material_gallery.themeinfo.ThemeInfoBottomSheetDialog"
         tools:layout="@layout/bottom_sheet_fragment_theme_info" />
 
     <fragment

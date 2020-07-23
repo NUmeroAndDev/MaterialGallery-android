@@ -1,4 +1,4 @@
-package com.numero.material_gallery.fragment
+package com.numero.material_gallery.themeinfo
 
 import android.os.Bundle
 import android.view.LayoutInflater
