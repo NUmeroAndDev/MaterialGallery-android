@@ -55,7 +55,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
 
             <com.numero.material_gallery.view.ColorInfoItemView
                 android:layout_width="match_parent"
@@ -135,8 +137,9 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
+                app:cardElevation="0dp"
                 app:shapeAppearanceOverlay="?attr/shapeAppearanceSmallComponent"
-                app:strokeColor="#DEDEDE"
+                app:strokeColor="@color/stroke_color"
                 app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -154,10 +157,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                app:cardElevation="0dp"
                 app:shapeAppearanceOverlay="?attr/shapeAppearanceMediumComponent"
-                app:strokeColor="#DEDEDE"
+                app:strokeColor="@color/stroke_color"
                 app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -174,9 +178,12 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardElevation="0dp"
                 app:shapeAppearanceOverlay="?attr/shapeAppearanceLargeComponent"
-                app:strokeColor="#DEDEDE"
+                app:strokeColor="@color/stroke_color"
                 app:strokeWidth="1dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -189,6 +196,84 @@
                     android:textColor="?attr/colorOnSurface" />
 
             </com.google.android.material.card.MaterialCardView>
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Headline1"
+                app:titleTextAppearance="?attr/textAppearanceHeadline1" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Headline2"
+                app:titleTextAppearance="?attr/textAppearanceHeadline2" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Headline3"
+                app:titleTextAppearance="?attr/textAppearanceHeadline3" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Headline4"
+                app:titleTextAppearance="?attr/textAppearanceHeadline4" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Headline5"
+                app:titleTextAppearance="?attr/textAppearanceHeadline5" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Headline6"
+                app:titleTextAppearance="?attr/textAppearanceHeadline6" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Subtitle1"
+                app:titleTextAppearance="?attr/textAppearanceSubtitle1" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Subtitle2"
+                app:titleTextAppearance="?attr/textAppearanceSubtitle2" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Body1"
+                app:titleTextAppearance="?attr/textAppearanceBody1" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Body2"
+                app:titleTextAppearance="?attr/textAppearanceBody2" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Caption"
+                app:titleTextAppearance="?attr/textAppearanceCaption" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Button"
+                app:titleTextAppearance="?attr/textAppearanceButton" />
+
+            <com.numero.material_gallery.view.TypographyInfoItemView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:title="Overline"
+                app:titleTextAppearance="?attr/textAppearanceOverline" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -41,7 +41,7 @@ class DatePickerFragment : MaterialContainerTransformFragment() {
             inflateMenu(R.menu.menu_common)
             setOnMenuItemClickListener {
                 when (it.itemId) {
-                    R.id.action_info -> {
+                    R.id.action_current_theme -> {
                         findNavController().navigate(R.id.action_show_ThemeInfoDialog)
                         true
                     }
