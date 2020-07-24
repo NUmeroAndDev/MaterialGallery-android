@@ -3,15 +3,21 @@ package com.numero.material_gallery.repository
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.preference.PreferenceManager
 import com.numero.material_gallery.R
+import com.numero.material_gallery.core.singleLiveData
 import com.numero.material_gallery.model.Theme
 
 class ConfigRepositoryImpl(context: Context) : ConfigRepository {
 
     private val settingsPreference = PreferenceManager.getDefaultSharedPreferences(context)
 
-    override val themeRes: Int
+    private val currentThemeLiveData = singleLiveData<Int>()
+    override val changedTheme: LiveData<Int> = currentThemeLiveData
+
+    override val currentTheme: Int
         get() {
             val shapeTheme = settingsPreference.getShapeTheme()
             return when (shapeTheme) {
@@ -19,6 +25,10 @@ class ConfigRepositoryImpl(context: Context) : ConfigRepository {
                 ShapeTheme.CUT -> R.style.Theme_MaterialGallery_DayNight_Cut
             }
         }
+
+    override fun notifyChangedTheme() {
+        currentThemeLiveData.value = currentTheme
+    }
 
     override fun getCurrentTheme(): Theme {
         val value = settingsPreference.getString(KEY_THEME, null) ?: return Theme.SYSTEM_DEFAULT

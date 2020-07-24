@@ -1,30 +1,17 @@
 package com.numero.material_gallery.components.sheet
 
 import android.os.Bundle
-import android.view.ContextThemeWrapper
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_bottom_sheet.*
-import org.koin.android.ext.android.inject
 
-class BottomSheetFragment : MaterialContainerTransformFragment() {
-
-    private val configRepository by inject<ConfigRepository>()
+class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_sheet) {
 
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return LayoutInflater
-                .from(ContextThemeWrapper(context, configRepository.themeRes))
-                .inflate(R.layout.fragment_bottom_sheet, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

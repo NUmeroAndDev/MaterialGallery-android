@@ -1,35 +1,21 @@
 package com.numero.material_gallery.components.appbar.top
 
 import android.os.Bundle
-import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
-import androidx.core.view.doOnPreDraw
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.transition.Hold
 import com.numero.material_gallery.R
-import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.fragment_top_app_bar_type.*
 import kotlinx.android.synthetic.main.view_holder_item.*
-import org.koin.android.ext.android.inject
 
-class TopAppBarTypeFragment : MaterialContainerTransformFragment() {
-
-    private val configRepository by inject<ConfigRepository>()
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return LayoutInflater
-                .from(ContextThemeWrapper(context, configRepository.themeRes))
-                .inflate(R.layout.fragment_top_app_bar_type, container, false)
-    }
+class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragment_top_app_bar_type) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

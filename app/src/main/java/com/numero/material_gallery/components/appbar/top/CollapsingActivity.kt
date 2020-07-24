@@ -17,7 +17,7 @@ class CollapsingActivity : AppCompatActivity(R.layout.activity_collapsing) {
     private val configRepository by inject<ConfigRepository>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(configRepository.themeRes)
+        setTheme(configRepository.currentTheme)
         super.onCreate(savedInstanceState)
         setSupportActionBar(toolbar)
 

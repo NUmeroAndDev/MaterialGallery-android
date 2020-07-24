@@ -14,11 +14,14 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.numero.material_gallery.BuildConfig
 import com.numero.material_gallery.R
 import com.numero.material_gallery.model.Theme
+import com.numero.material_gallery.repository.ConfigRepository
+import org.koin.android.ext.android.inject
 
 class PreferenceFragment : PreferenceFragmentCompat() {
 
     private var listener: SettingsFragmentListener? = null
     private lateinit var appVersionPreference: Preference
+    private val configRepository by inject<ConfigRepository>()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -38,6 +41,10 @@ class PreferenceFragment : PreferenceFragmentCompat() {
             if (newValue is String) {
                 Theme.find(newValue).apply()
             }
+            true
+        }
+        findPreference<ListPreference>(KEY_SELECT_SHAPE)?.setOnPreferenceChangeListener { preference, newValue ->
+            configRepository.notifyChangedTheme()
             true
         }
         findPreference<Preference>(KEY_MATERIAL_VERSION)?.summary = BuildConfig.MATERIAL_COMPONENTS_VERSION
@@ -81,6 +88,7 @@ class PreferenceFragment : PreferenceFragmentCompat() {
 
     companion object {
         private const val KEY_SELECT_THEME = "select_theme"
+        private const val KEY_SELECT_SHAPE = "shape_theme"
         private const val KEY_MATERIAL_VERSION = "material_components_version"
         private const val KEY_VIEW_SOURCE = "view_source"
         private const val KEY_LICENSES = "licenses"

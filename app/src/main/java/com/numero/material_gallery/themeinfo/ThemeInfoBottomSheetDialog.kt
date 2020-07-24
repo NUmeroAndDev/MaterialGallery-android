@@ -1,7 +1,6 @@
 package com.numero.material_gallery.themeinfo
 
 import android.os.Bundle
-import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,9 +17,7 @@ class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
     private val configRepository by inject<ConfigRepository>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return LayoutInflater
-                .from(ContextThemeWrapper(context, configRepository.themeRes))
-                .inflate(R.layout.bottom_sheet_fragment_theme_info, container, false)
+        return inflater.inflate(R.layout.bottom_sheet_fragment_theme_info, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
