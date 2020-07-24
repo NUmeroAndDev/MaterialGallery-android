@@ -3,10 +3,7 @@ package com.numero.material_gallery.components.picker.date
 import android.content.Context
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.ContextThemeWrapper
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.core.util.Pair
@@ -14,19 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_date_picker.*
-import org.koin.android.ext.android.inject
 
-class DatePickerFragment : MaterialContainerTransformFragment() {
-
-    private val configRepository by inject<ConfigRepository>()
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return LayoutInflater
-                .from(ContextThemeWrapper(context, configRepository.themeRes))
-                .inflate(R.layout.fragment_date_picker, container, false)
-    }
+class DatePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_date_picker) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

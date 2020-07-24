@@ -1,7 +1,8 @@
 package com.numero.material_gallery.components.navigationdrawer
 
 import android.os.Bundle
-import android.view.*
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -11,20 +12,11 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.navigation.NavigationView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
 import kotlinx.android.synthetic.main.fragment_navigation_drawer.*
-import org.koin.android.ext.android.inject
 
-class NavigationDrawerFragment : MaterialContainerTransformFragment(), NavigationView.OnNavigationItemSelectedListener {
-
-    private val configRepository by inject<ConfigRepository>()
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return LayoutInflater
-                .from(ContextThemeWrapper(context, configRepository.themeRes))
-                .inflate(R.layout.fragment_navigation_drawer, container, false)
-    }
+class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fragment_navigation_drawer),
+        NavigationView.OnNavigationItemSelectedListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

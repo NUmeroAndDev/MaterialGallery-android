@@ -1,35 +1,18 @@
 package com.numero.material_gallery.components.picker.time
 
 import android.os.Bundle
-import android.view.ContextThemeWrapper
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.fragment_time_picker.*
-import org.koin.android.ext.android.inject
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TimePickerFragment : MaterialContainerTransformFragment() {
-
-    private val configRepository by inject<ConfigRepository>()
-
-    override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        return LayoutInflater
-                .from(ContextThemeWrapper(context, configRepository.themeRes))
-                .inflate(R.layout.fragment_time_picker, container, false)
-    }
+class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_time_picker) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
