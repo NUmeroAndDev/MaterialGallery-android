@@ -99,6 +99,10 @@ enum class DesignComponent(
             R.string.text_field
     ),
 
+    TIME_PICKER(
+            R.string.time_picker
+    ),
+
     TOP_APP_BAR(
             R.string.top_app_bar
     )

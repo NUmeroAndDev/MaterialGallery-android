@@ -70,6 +70,7 @@ class ComponentItemViewHolder(
             DesignComponent.SWITCH -> R.string.material_switch_transition_name
             DesignComponent.TAB -> R.string.tab_transition_name
             DesignComponent.TEXT_FIELDS -> R.string.text_field_transition_name
+            DesignComponent.TIME_PICKER -> R.string.time_picker_transition_name
             DesignComponent.TOP_APP_BAR -> R.string.top_app_bar_transition_name
         }
 

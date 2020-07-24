@@ -80,6 +80,9 @@
             android:id="@+id/action_ComponentList_to_TextField"
             app:destination="@id/TextFieldScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_TimePicker"
+            app:destination="@id/TimePickerScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_TopAppBar"
             app:destination="@id/TopAppBarTypeScreen" />
     </fragment>
@@ -106,7 +109,7 @@
 
     <fragment
         android:id="@+id/DatePickerScreen"
-        android:name="com.numero.material_gallery.components.picker.DatePickerFragment"
+        android:name="com.numero.material_gallery.components.picker.date.DatePickerFragment"
         tools:layout="@layout/fragment_date_picker" />
 
     <fragment
@@ -193,6 +196,11 @@
         android:id="@+id/TextFieldScreen"
         android:name="com.numero.material_gallery.components.textfield.TextFieldFragment"
         tools:layout="@layout/fragment_text_field" />
+
+    <fragment
+        android:id="@+id/TimePickerScreen"
+        android:name="com.numero.material_gallery.components.picker.time.TimePickerFragment"
+        tools:layout="@layout/fragment_time_picker" />
 
     <fragment
         android:id="@+id/TopAppBarTypeScreen"

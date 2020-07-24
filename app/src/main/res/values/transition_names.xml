@@ -22,6 +22,7 @@
     <string name="material_switch_transition_name">switch</string>
     <string name="tab_transition_name">tab</string>
     <string name="text_field_transition_name">text_field</string>
+    <string name="time_picker_transition_name">time_picker</string>
     <string name="top_app_bar_transition_name">top_app_bar</string>
 
     <string name="actionbar_transition_name">actionbar</string>
