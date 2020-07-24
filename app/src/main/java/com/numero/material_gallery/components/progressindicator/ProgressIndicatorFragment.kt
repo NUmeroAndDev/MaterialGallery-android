@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.progressindicator.ProgressIndicator
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.fragment_progress_indicator.*
 
 class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fragment_progress_indicator) {
@@ -81,5 +82,7 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
             determinateCircularProgressIndicator.growMode = growMode
             determinateLinearProgressIndicator.growMode = growMode
         }
+
+        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 }

@@ -8,6 +8,7 @@ import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.components.card.state.Corner
 import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.fragment_material_card.*
 
 class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragment_material_card) {
@@ -46,6 +47,8 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
         updateStroke(Stroke.values()[strokeSlider.value.toInt()])
 
         setupSelectionCardList()
+
+        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 
     private fun setupSlidersLabelFormatter() {

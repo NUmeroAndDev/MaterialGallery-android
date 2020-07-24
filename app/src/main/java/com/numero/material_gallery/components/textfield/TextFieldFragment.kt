@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.fragment_text_field.*
 
 class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_text_field) {
@@ -47,5 +48,7 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
         )
         filledAutoCompleteTextView.setAdapter(adapter)
         outlineAutoCompleteTextView.setAdapter(adapter)
+
+        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 }
