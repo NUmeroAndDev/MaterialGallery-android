@@ -1,4 +1,4 @@
-package com.numero.material_gallery.components.picker
+package com.numero.material_gallery.components.picker.date
 
 import android.content.Context
 import android.os.Bundle

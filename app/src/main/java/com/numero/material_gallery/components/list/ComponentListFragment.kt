@@ -138,6 +138,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
             DesignComponent.SWITCH -> R.id.action_ComponentList_to_Switch
             DesignComponent.TAB -> R.id.action_ComponentList_to_Tab
             DesignComponent.TEXT_FIELDS -> R.id.action_ComponentList_to_TextField
+            DesignComponent.TIME_PICKER -> R.id.action_ComponentList_to_TimePicker
             DesignComponent.TOP_APP_BAR -> R.id.action_ComponentList_to_TopAppBar
         }
 

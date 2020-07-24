@@ -45,6 +45,7 @@
     <string name="material_switch">Switch</string>
     <string name="tab">Tab</string>
     <string name="text_field">Text Field</string>
+    <string name="time_picker">Time Picker</string>
     <string name="top_app_bar">Top App Bar</string>
 
     <string name="actionbar">ActionBar</string>
@@ -71,4 +72,10 @@
         <item>rounded</item>
         <item>cut</item>
     </string-array>
+
+    <!--  TimePicker  -->
+    <string name="label_time_format">Time format</string>
+    <string name="show_time_picker">Show Time Picker</string>
+    <string name="label_time_format_12h">12H</string>
+    <string name="label_time_format_24h">24H</string>
 </resources>
