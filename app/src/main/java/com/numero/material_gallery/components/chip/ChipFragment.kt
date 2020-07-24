@@ -5,6 +5,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.fragment_chip.*
 
 class ChipFragment : MaterialContainerTransformFragment(R.layout.fragment_chip) {
@@ -26,5 +27,7 @@ class ChipFragment : MaterialContainerTransformFragment(R.layout.fragment_chip) 
                 }
             }
         }
+
+        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 }

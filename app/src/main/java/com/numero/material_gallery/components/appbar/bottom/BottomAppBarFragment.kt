@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.fragment_bottom_app_bar.*
 
 class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_app_bar) {
@@ -52,5 +53,7 @@ class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragmen
         }
 
         bottomAppBar.replaceMenu(R.menu.bottom_app_bar)
+
+        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 }

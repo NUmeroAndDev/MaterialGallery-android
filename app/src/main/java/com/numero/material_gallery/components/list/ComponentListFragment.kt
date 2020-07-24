@@ -2,9 +2,7 @@ package com.numero.material_gallery.components.list
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.ViewCompat
 import androidx.core.view.doOnPreDraw
-import androidx.core.view.updatePadding
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -20,6 +18,7 @@ import com.google.android.play.core.install.model.UpdateAvailability
 import com.google.android.play.core.ktx.startUpdateFlowForResult
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.DesignComponent
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.fragment_component_list.*
 
 class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
@@ -37,15 +36,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
         view.doOnPreDraw { startPostponedEnterTransition() }
 
         initViews()
-        ViewCompat.setOnApplyWindowInsetsListener(view) { _, insetsCompat ->
-            componentRecyclerView.updatePadding(
-                    left = 0,
-                    top = 0,
-                    right = 0,
-                    bottom = insetsCompat.systemWindowInsetBottom
-            )
-            insetsCompat
-        }
+        componentRecyclerView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 
     override fun onResume() {

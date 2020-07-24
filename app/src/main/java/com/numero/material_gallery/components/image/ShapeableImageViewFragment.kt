@@ -5,7 +5,10 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
+import kotlinx.android.synthetic.main.fragment_component_list.*
 import kotlinx.android.synthetic.main.fragment_shapeable_image_view.*
+import kotlinx.android.synthetic.main.fragment_shapeable_image_view.toolbar
 
 class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.fragment_shapeable_image_view) {
 
@@ -26,5 +29,7 @@ class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.f
                 }
             }
         }
+
+        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 }
