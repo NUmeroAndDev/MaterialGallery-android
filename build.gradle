@@ -15,9 +15,15 @@ buildscript {
                 recyclerview    : "androidx.recyclerview:recyclerview:1.2.0-alpha05",
                 constraintlayout: "androidx.constraintlayout:constraintlayout:2.0.0-beta8",
                 preference      : "androidx.preference:preference:1.1.1",
+
                 navigation      : [
                         fragment: 'androidx.navigation:navigation-fragment-ktx:2.3.0',
                         ui      : 'androidx.navigation:navigation-ui-ktx:2.3.0'
+                ],
+
+                lifecycle       : [
+                        livedata: "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-alpha06",
+                        runtime : "androidx.lifecycle:lifecycle-runtime:2.3.0-alpha06"
                 ]
         ]
 

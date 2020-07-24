@@ -60,6 +60,8 @@ dependencies {
     implementation androidx.ktx
     implementation androidx.navigation.fragment
     implementation androidx.navigation.ui
+    implementation androidx.lifecycle.livedata
+    implementation androidx.lifecycle.runtime
 
     implementation material
 
