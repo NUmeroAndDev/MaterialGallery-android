@@ -5,6 +5,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.fragment_collapsing.*
 
 class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_collapsing) {
@@ -27,5 +28,7 @@ class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_
                 }
             }
         }
+
+        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 }
