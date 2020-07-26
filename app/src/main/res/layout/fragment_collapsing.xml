@@ -17,7 +17,12 @@
             android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:expandedTitleGravity="bottom"
+            app:expandedTitleMarginBottom="16dp"
+            app:expandedTitleMarginStart="16dp"
+            app:expandedTitleTextAppearance="?attr/textAppearanceHeadline5"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:maxLines="3"
             app:toolbarId="@+id/toolbar">
 
             <com.google.android.material.appbar.MaterialToolbar
@@ -27,7 +32,7 @@
                 android:elevation="0dp"
                 app:layout_collapseMode="pin"
                 app:navigationIcon="?attr/homeAsUpIndicator"
-                app:title="@string/collapsing" />
+                app:title="@string/long_toolbar_title" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>

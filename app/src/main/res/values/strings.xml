@@ -78,4 +78,7 @@
     <string name="show_time_picker">Show Time Picker</string>
     <string name="label_time_format_12h">12H</string>
     <string name="label_time_format_24h">24H</string>
+
+    <!--  Collapsing  -->
+    <string name="long_toolbar_title">This Collapsing Title is extremely long and thus will be displayed in multiple lines.</string>
 </resources>
