@@ -1,179 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:transitionName="@string/slider_transition_name">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.MaterialGallery.AppBarLayout">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="@string/slider" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:padding="16dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            android:padding="16dp">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/defaultSliderTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="From 0 to 100"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/defaultSliderTitleText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="From 0 to 100"
-                android:textAppearance="?attr/textAppearanceSubtitle2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.slider.Slider
+            android:id="@+id/defaultSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:value="10"
+            android:valueFrom="0.0"
+            android:valueTo="100.0"
+            app:layout_constraintEnd_toStartOf="@id/defaultSliderValueText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/defaultSliderTitleText" />
 
-            <com.google.android.material.slider.Slider
-                android:id="@+id/defaultSlider"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:value="10"
-                android:valueFrom="0.0"
-                android:valueTo="100.0"
-                app:layout_constraintEnd_toStartOf="@id/defaultSliderValueText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/defaultSliderTitleText" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/defaultSliderValueText"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textAppearance="?attr/textAppearanceOverline"
+            app:layout_constraintBottom_toBottomOf="@id/defaultSlider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/defaultSlider"
+            app:layout_constraintTop_toTopOf="@id/defaultSlider" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/defaultSliderValueText"
-                android:layout_width="56dp"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textAppearance="?attr/textAppearanceOverline"
-                app:layout_constraintBottom_toBottomOf="@id/defaultSlider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/defaultSlider"
-                app:layout_constraintTop_toTopOf="@id/defaultSlider" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/discreteSliderTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="From 0 to 100 step 10"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/defaultSlider" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/discreteSliderTitleText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="From 0 to 100 step 10"
-                android:textAppearance="?attr/textAppearanceSubtitle2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/defaultSlider" />
+        <com.google.android.material.slider.Slider
+            android:id="@+id/discreteSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:stepSize="10"
+            android:value="10"
+            android:valueFrom="0.0"
+            android:valueTo="100.0"
+            app:layout_constraintEnd_toStartOf="@id/discreteSliderValueText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/discreteSliderTitleText" />
 
-            <com.google.android.material.slider.Slider
-                android:id="@+id/discreteSlider"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:stepSize="10"
-                android:value="10"
-                android:valueFrom="0.0"
-                android:valueTo="100.0"
-                app:layout_constraintEnd_toStartOf="@id/discreteSliderValueText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/discreteSliderTitleText" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/discreteSliderValueText"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textAppearance="?attr/textAppearanceOverline"
+            app:layout_constraintBottom_toBottomOf="@id/discreteSlider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/discreteSlider"
+            app:layout_constraintTop_toTopOf="@id/discreteSlider" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/discreteSliderValueText"
-                android:layout_width="56dp"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textAppearance="?attr/textAppearanceOverline"
-                app:layout_constraintBottom_toBottomOf="@id/discreteSlider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/discreteSlider"
-                app:layout_constraintTop_toTopOf="@id/discreteSlider" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelFormatterSliderTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="From 1000 to 10000 step 100\nWith label formatter"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/discreteSlider" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/labelFormatterSliderTitleText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="From 1000 to 10000 step 100\nWith label formatter"
-                android:textAppearance="?attr/textAppearanceSubtitle2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/discreteSlider" />
+        <com.google.android.material.slider.Slider
+            android:id="@+id/labelFormatterSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:stepSize="100"
+            android:value="2000.0"
+            android:valueFrom="1000.0"
+            android:valueTo="10000.0"
+            app:layout_constraintEnd_toStartOf="@id/labelFormatterSliderValueText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labelFormatterSliderTitleText" />
 
-            <com.google.android.material.slider.Slider
-                android:id="@+id/labelFormatterSlider"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:stepSize="100"
-                android:value="2000.0"
-                android:valueFrom="1000.0"
-                android:valueTo="10000.0"
-                app:layout_constraintEnd_toStartOf="@id/labelFormatterSliderValueText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/labelFormatterSliderTitleText" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelFormatterSliderValueText"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textAppearance="?attr/textAppearanceOverline"
+            app:layout_constraintBottom_toBottomOf="@id/labelFormatterSlider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/labelFormatterSlider"
+            app:layout_constraintTop_toTopOf="@id/labelFormatterSlider" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/labelFormatterSliderValueText"
-                android:layout_width="56dp"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textAppearance="?attr/textAppearanceOverline"
-                app:layout_constraintBottom_toBottomOf="@id/labelFormatterSlider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/labelFormatterSlider"
-                app:layout_constraintTop_toTopOf="@id/labelFormatterSlider" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rangeSliderTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Range From 0 to 100"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelFormatterSlider" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/rangeSliderTitleText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Range From 0 to 100"
-                android:textAppearance="?attr/textAppearanceSubtitle2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/labelFormatterSlider" />
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/rangeSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:valueFrom="0.0"
+            android:valueTo="100.0"
+            app:layout_constraintEnd_toStartOf="@id/rangeSliderValueText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rangeSliderTitleText"
+            app:values="@array/initial_range_slider_values" />
 
-            <com.google.android.material.slider.RangeSlider
-                android:id="@+id/rangeSlider"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:valueFrom="0.0"
-                android:valueTo="100.0"
-                app:layout_constraintEnd_toStartOf="@id/rangeSliderValueText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rangeSliderTitleText"
-                app:values="@array/initial_range_slider_values" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rangeSliderValueText"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textAppearance="?attr/textAppearanceOverline"
+            app:layout_constraintBottom_toBottomOf="@id/rangeSlider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/rangeSlider"
+            app:layout_constraintTop_toTopOf="@id/rangeSlider"
+            tools:text="From:10\nTo:50" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/rangeSliderValueText"
-                android:layout_width="56dp"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:textAppearance="?attr/textAppearanceOverline"
-                app:layout_constraintBottom_toBottomOf="@id/rangeSlider"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/rangeSlider"
-                app:layout_constraintTop_toTopOf="@id/rangeSlider"
-                tools:text="From:10\nTo:50" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.core.widget.NestedScrollView>

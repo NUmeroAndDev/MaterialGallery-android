@@ -29,9 +29,6 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), PreferenceFragmen
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.setNavigationOnClickListener {
-            findNavController().popBackStack()
-        }
 
         childFragmentManager.beginTransaction().replace(R.id.container, PreferenceFragment.newInstance()).commit()
     }

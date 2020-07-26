@@ -3,6 +3,9 @@ package com.numero.material_gallery.components.picker.date
 import android.content.Context
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.AttrRes
@@ -15,27 +18,32 @@ import kotlinx.android.synthetic.main.fragment_date_picker.*
 
 class DatePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_date_picker) {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViews()
     }
 
-    private fun setupViews() {
-        toolbar.apply {
-            setNavigationOnClickListener {
-                findNavController().popBackStack()
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_common, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_current_theme -> {
+                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
+                true
             }
-            inflateMenu(R.menu.menu_common)
-            setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.action_current_theme -> {
-                        findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                        true
-                    }
-                    else -> false
-                }
-            }
+            else -> false
         }
+    }
+
+    private fun setupViews() {
         showDatePickerButton.setOnClickListener {
             showDatePicker(isFullScreen = false)
         }

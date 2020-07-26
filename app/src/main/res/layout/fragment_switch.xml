@@ -1,67 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:padding="16dp"
     android:transitionName="@string/material_switch_transition_name">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/enableSwitch"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.MaterialGallery.AppBarLayout">
+        android:text="Enable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:switchPadding="8dp"
+        app:useMaterialThemeColors="true" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="@string/material_switch" />
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/disableCheckedSwitch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checked="true"
+        android:enabled="false"
+        android:text="Disable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enableSwitch"
+        app:switchPadding="8dp"
+        app:useMaterialThemeColors="true" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/disableNonCheckedCheckBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        android:text="Disable"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/disableCheckedSwitch"
+        app:switchPadding="8dp"
+        app:useMaterialThemeColors="true" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/enableSwitch"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Enable"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:switchPadding="8dp"
-            app:useMaterialThemeColors="true" />
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/disableCheckedSwitch"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:checked="true"
-            android:enabled="false"
-            android:text="Disable"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enableSwitch"
-            app:switchPadding="8dp"
-            app:useMaterialThemeColors="true" />
-
-        <com.google.android.material.switchmaterial.SwitchMaterial
-            android:id="@+id/disableNonCheckedCheckBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:enabled="false"
-            android:text="Disable"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/disableCheckedSwitch"
-            app:switchPadding="8dp"
-            app:useMaterialThemeColors="true" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

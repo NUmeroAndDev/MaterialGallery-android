@@ -1,13 +1,22 @@
 package com.numero.material_gallery.components.slider
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.fragment_slider.*
 
 class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slider) {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -15,23 +24,22 @@ class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slid
         setupViews()
     }
 
-    private fun setupViews() {
-        toolbar.apply {
-            setNavigationOnClickListener {
-                findNavController().popBackStack()
-            }
-            inflateMenu(R.menu.menu_common)
-            setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.action_current_theme -> {
-                        findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                        true
-                    }
-                    else -> false
-                }
-            }
-        }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_common, menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_current_theme -> {
+                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
+                true
+            }
+            else -> false
+        }
+    }
+
+    private fun setupViews() {
         val valueFormat = "%.0f"
         defaultSlider.addOnChangeListener { _, value, _ ->
             defaultSliderValueText.text = valueFormat.format(value)
@@ -59,5 +67,7 @@ class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slid
             rangeSliderValueText.text = rangeValueFormat.format(slider.values.first(), slider.values.last())
         }
         rangeSliderValueText.text = rangeValueFormat.format(rangeSlider.values.first(), rangeSlider.values.last())
+
+        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 }

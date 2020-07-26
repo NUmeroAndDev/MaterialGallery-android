@@ -17,11 +17,12 @@ open class MaterialContainerTransformFragment : Fragment {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedElementEnterTransition = MaterialContainerTransform().apply {
-            containerColor = MaterialColors.getColor(
+            val backgroundColor = MaterialColors.getColor(
                     requireContext(),
                     android.R.attr.colorBackground,
                     "The attribute is not set in the current theme"
             )
+            setAllContainerColors(backgroundColor)
         }
         exitTransition = Hold()
         reenterTransition = null
