@@ -15,7 +15,6 @@ import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 
-
 class MainActivity : AppCompatActivity() {
 
     private val configRepository by inject<ConfigRepository>()
@@ -41,10 +40,14 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        navController.addOnDestinationChangedListener { controller, destination, _ ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
             if (destination.id != R.id.ThemeInfoDialog) {
-                appbar.setHide(isHideAppBar)
+                if (isHideAppBar) {
+                    appbar.gone()
+                } else {
+                    appbar.visible()
+                }
             }
         }
 
@@ -57,9 +60,15 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.container)
     ).findNavController().navigateUp()
 
-    private fun AppBarLayout.setHide(isHide: Boolean) {
+    private fun AppBarLayout.gone() {
         updateLayoutParams<CoordinatorLayout.LayoutParams> {
-            height = if (isHide) 0 else CoordinatorLayout.LayoutParams.WRAP_CONTENT
+            height = 0
+        }
+    }
+
+    private fun AppBarLayout.visible() {
+        updateLayoutParams<CoordinatorLayout.LayoutParams> {
+            height = CoordinatorLayout.LayoutParams.WRAP_CONTENT
         }
     }
 }
