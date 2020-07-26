@@ -1,8 +1,6 @@
 package com.numero.material_gallery.components.navigationdrawer
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -21,13 +19,24 @@ import kotlinx.android.synthetic.main.fragment_navigation_drawer.*
 class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fragment_navigation_drawer),
         NavigationView.OnNavigationItemSelectedListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        toolbar.apply {
+            setNavigationOnClickListener {
+                findNavController().popBackStack()
+            }
+            inflateMenu(R.menu.menu_common)
+            setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.action_current_theme -> {
+                        findNavController().navigate(R.id.action_show_ThemeInfoDialog)
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }
 
         val toggle = ActionBarDrawerToggle(
                 requireActivity(),
@@ -92,20 +101,5 @@ class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fra
 
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
-        }
     }
 }
