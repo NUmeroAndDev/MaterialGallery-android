@@ -1,5 +1,6 @@
 package com.numero.material_gallery.components
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
@@ -23,6 +24,7 @@ open class MaterialContainerTransformFragment : Fragment {
                     "The attribute is not set in the current theme"
             )
             setAllContainerColors(backgroundColor)
+            scrimColor = Color.TRANSPARENT
         }
         exitTransition = Hold()
         reenterTransition = null
