@@ -234,6 +234,9 @@
             android:id="@+id/action_TopAppBarType_to_ActionBar"
             app:destination="@id/ActionBarScreen" />
         <action
+            android:id="@+id/action_TopAppBarType_to_Collapsing"
+            app:destination="@id/CollapsingScreen" />
+        <action
             android:id="@+id/action_TopAppBarType_to_Toolbar"
             app:destination="@id/ToolbarScreen" />
     </fragment>
@@ -242,6 +245,11 @@
         android:name="com.numero.material_gallery.components.appbar.top.ActionBarFragment"
         android:label="@string/actionbar"
         tools:layout="@layout/fragment_action_bar" />
+    <fragment
+        android:id="@+id/CollapsingScreen"
+        android:name="com.numero.material_gallery.components.appbar.top.CollapsingFragment"
+        android:label="@string/collapsing"
+        tools:layout="@layout/fragment_collapsing" />
     <fragment
         android:id="@+id/ToolbarScreen"
         android:name="com.numero.material_gallery.components.appbar.top.ToolbarFragment"

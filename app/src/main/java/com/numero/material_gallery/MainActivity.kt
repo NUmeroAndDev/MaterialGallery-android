@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
     private val configRepository by inject<ConfigRepository>()
 
     private val hideAppBarDestinationIds = setOf(
-            R.id.NavigationDrawerScreen
+            R.id.NavigationDrawerScreen,
+            R.id.CollapsingScreen
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -29,10 +29,6 @@
             android:theme="@style/Theme.MaterialGallery.DayNight.SurfaceStatus" />
 
         <activity
-            android:name=".components.appbar.top.CollapsingActivity"
-            android:label="@string/collapsing" />
-
-        <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
             android:theme="@style/Theme.MaterialGallery.DayNight.WithActionBar" />
 

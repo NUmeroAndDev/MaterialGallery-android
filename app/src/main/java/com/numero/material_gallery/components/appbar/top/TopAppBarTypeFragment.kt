@@ -44,7 +44,7 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragme
                 startActivity(LiftOnScrollActivity.createIntent(requireContext()))
             }
             TopAppBarType.COLLAPSING -> {
-                startActivity(CollapsingActivity.createIntent(requireContext()))
+                findNavController().navigate(R.id.action_TopAppBarType_to_Collapsing, null, null, extras)
             }
         }
     }
