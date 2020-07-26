@@ -1,90 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
+    android:padding="16dp"
     android:transitionName="@string/radio_button_transition_name">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
+    <RadioGroup
+        android:id="@+id/enableRadioGroup"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.MaterialGallery.AppBarLayout">
+        android:checkedButton="@id/radioButton1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="@string/radio_button" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <RadioGroup
-            android:id="@+id/enableRadioGroup"
-            android:layout_width="0dp"
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checkedButton="@id/radioButton1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:text="Radio Button 1"
+            app:useMaterialThemeColors="true" />
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Radio Button 1"
-                app:useMaterialThemeColors="true" />
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Radio Button 2"
-                app:useMaterialThemeColors="true" />
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/radioButton3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Radio Button 3"
-                app:useMaterialThemeColors="true" />
-
-        </RadioGroup>
-
-        <RadioGroup
-            android:id="@+id/disableRadioGroup"
-            android:layout_width="0dp"
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:checkedButton="@id/disableRadioButton1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enableRadioGroup">
+            android:text="Radio Button 2"
+            app:useMaterialThemeColors="true" />
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/disableRadioButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:text="Radio Button 1"
-                app:useMaterialThemeColors="true" />
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Radio Button 3"
+            app:useMaterialThemeColors="true" />
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/disableRadioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:text="Radio Button 2"
-                app:useMaterialThemeColors="true" />
+    </RadioGroup>
 
-        </RadioGroup>
+    <RadioGroup
+        android:id="@+id/disableRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:checkedButton="@id/disableRadioButton1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enableRadioGroup">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/disableRadioButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Radio Button 1"
+            app:useMaterialThemeColors="true" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/disableRadioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="Radio Button 2"
+            app:useMaterialThemeColors="true" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

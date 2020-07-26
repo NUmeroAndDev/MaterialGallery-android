@@ -1,6 +1,9 @@
 package com.numero.material_gallery.components.appbar.bottom
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
@@ -12,13 +15,13 @@ import kotlinx.android.synthetic.main.fragment_bottom_app_bar.*
 
 class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_app_bar) {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.apply {
-            setNavigationOnClickListener {
-                findNavController().popBackStack()
-            }
-        }
 
         fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
@@ -55,5 +58,20 @@ class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragmen
         bottomAppBar.replaceMenu(R.menu.bottom_app_bar)
 
         scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_common, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_current_theme -> {
+                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
+                true
+            }
+            else -> false
+        }
     }
 }

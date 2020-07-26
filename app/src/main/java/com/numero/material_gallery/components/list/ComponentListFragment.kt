@@ -1,6 +1,9 @@
 package com.numero.material_gallery.components.list
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
@@ -27,6 +30,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
         appUpdateManager = AppUpdateManagerFactory.create(requireContext())
     }
 
@@ -42,6 +46,21 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     override fun onResume() {
         super.onResume()
         checkUpdate()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_main, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                showSettingsScreen()
+                true
+            }
+            else -> false
+        }
     }
 
     private fun checkUpdate() {
@@ -74,18 +93,6 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     }
 
     private fun initViews() {
-        toolbar.apply {
-            inflateMenu(R.menu.menu_main)
-            setOnMenuItemClickListener {
-                when (it.itemId) {
-                    R.id.action_settings -> {
-                        showSettingsScreen()
-                        true
-                    }
-                    else -> false
-                }
-            }
-        }
         componentRecyclerView.apply {
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))

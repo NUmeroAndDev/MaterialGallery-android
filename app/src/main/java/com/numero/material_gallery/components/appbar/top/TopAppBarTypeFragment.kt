@@ -19,11 +19,6 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragme
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.apply {
-            setNavigationOnClickListener {
-                findNavController().popBackStack()
-            }
-        }
 
         toolbarTypeRecyclerView.apply {
             setHasFixedSize(true)
