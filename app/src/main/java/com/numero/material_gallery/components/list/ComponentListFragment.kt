@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import androidx.core.view.ViewGroupCompat
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
@@ -38,6 +39,8 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
         super.onViewCreated(view, savedInstanceState)
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
+
+        ViewGroupCompat.setTransitionGroup(rootLayout, true)
 
         initViews()
         componentRecyclerView.applySystemWindowInsetsPadding(applyBottom = true)
