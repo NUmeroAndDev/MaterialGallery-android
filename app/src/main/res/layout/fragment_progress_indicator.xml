@@ -40,6 +40,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/indeterminateCircularProgressIndicator" />
 
+        <com.google.android.material.chip.Chip
+            android:id="@+id/indeterminateProgressChip"
+            style="@style/Widget.MaterialComponents.Chip.Action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Chip with progress indicator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/indeterminateLinearProgressIndicator" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/inverseProgressTitleTextView"
             android:layout_width="0dp"
@@ -49,7 +59,7 @@
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/indeterminateLinearProgressIndicator" />
+            app:layout_constraintTop_toBottomOf="@id/indeterminateProgressChip" />
 
         <com.google.android.material.progressindicator.ProgressIndicator
             android:id="@+id/inverseCircularProgressIndicator"
