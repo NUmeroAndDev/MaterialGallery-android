@@ -27,7 +27,7 @@ buildscript {
                 ]
         ]
 
-        koin = "org.koin:koin-androidx-scope:2.0.1"
+        koin = "org.koin:koin-androidx-scope:2.1.6"
 
         material = "com.google.android.material:material:$material_version"
 
