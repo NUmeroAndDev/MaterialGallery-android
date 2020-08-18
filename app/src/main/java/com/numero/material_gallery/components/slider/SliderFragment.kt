@@ -6,6 +6,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.slider.BasicLabelFormatter
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
@@ -50,17 +51,13 @@ class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slid
             discreteSliderValueText.text = valueFormat.format(value)
         }
         discreteSliderValueText.text = valueFormat.format(discreteSlider.value)
-        /**
-         * FIXME : Can't resolve
-         * https://github.com/material-components/material-components-android/issues/1342
-         */
-        //discreteSlider.setLabelFormatter(Slider.BasicLabelFormatter())
+        discreteSlider.setLabelFormatter(BasicLabelFormatter())
 
         labelFormatterSlider.addOnChangeListener { _, value, _ ->
             labelFormatterSliderValueText.text = valueFormat.format(value)
         }
         labelFormatterSliderValueText.text = valueFormat.format(labelFormatterSlider.value)
-        //labelFormatterSlider.setLabelFormatter(Slider.BasicLabelFormatter())
+        labelFormatterSlider.setLabelFormatter(BasicLabelFormatter())
 
         val rangeValueFormat = "From:%.0f\nTo:%.0f"
         rangeSlider.addOnChangeListener { slider, _, _ ->
