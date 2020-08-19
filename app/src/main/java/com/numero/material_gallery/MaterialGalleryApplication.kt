@@ -21,6 +21,6 @@ class MaterialGalleryApplication : Application() {
     }
 
     private val appModule = module {
-        single { ConfigRepositoryImpl(androidContext()) as ConfigRepository }
+        single<ConfigRepository> { ConfigRepositoryImpl(androidContext()) }
     }
 }
