@@ -5,8 +5,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <item name="android:statusBarColor">@android:color/transparent</item>
-
         <item name="toolbarStyle">@style/Widget.MaterialGallery.Toolbar</item>
         <item name="appBarLayoutStyle">@style/Widget.MaterialGallery.AppBarLayout</item>
     </style>
@@ -25,6 +23,8 @@
         <item name="colorOnBackground">@color/pure_black</item>
         <item name="colorOnError">@color/white</item>
         <item name="colorOnSurface">@color/pure_black</item>
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
     </style>
 
     <style name="Theme.MaterialGallery.DayNight" parent="Theme.MaterialGallery" />
