@@ -8,12 +8,12 @@ apply plugin: 'com.google.android.gms.oss-licenses-plugin'
 
 android {
 
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.numero.material_gallery"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode rootProject.appVersionCode
         versionName rootProject.appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
