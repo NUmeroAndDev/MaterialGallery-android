@@ -1,5 +1,6 @@
 package com.numero.material_gallery
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
+        window.statusBarColor = Color.TRANSPARENT
 
         val navController = checkNotNull(
                 supportFragmentManager.findFragmentById(R.id.container)
