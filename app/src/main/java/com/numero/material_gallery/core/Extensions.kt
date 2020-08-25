@@ -2,6 +2,7 @@ package com.numero.material_gallery.core
 
 import android.view.View
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
@@ -30,10 +31,13 @@ fun View.applySystemWindowInsetsPadding(
         applyBottom: Boolean = false
 ) {
     ViewCompat.setOnApplyWindowInsetsListener(this) { view, insetsCompat ->
-        val leftInset = if (applyLeft) insetsCompat.systemWindowInsetLeft else 0
-        val topInset = if (applyTop) insetsCompat.systemWindowInsetTop else 0
-        val rightInset = if (applyRight) insetsCompat.systemWindowInsetRight else 0
-        val bottomInset = if (applyBottom) insetsCompat.systemWindowInsetBottom else 0
+        val sysWindow = insetsCompat.getInsets(
+                WindowInsetsCompat.Type.navigationBars() or WindowInsetsCompat.Type.statusBars()
+        )
+        val leftInset = if (applyLeft) sysWindow.left else 0
+        val topInset = if (applyTop) sysWindow.top else 0
+        val rightInset = if (applyRight) sysWindow.right else 0
+        val bottomInset = if (applyBottom) sysWindow.bottom else 0
         view.updatePadding(
                 left = leftInset,
                 top = topInset,
