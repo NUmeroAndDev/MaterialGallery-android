@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.navigation.NavigationView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
 import kotlinx.android.synthetic.main.fragment_navigation_drawer.*
@@ -80,6 +81,7 @@ class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fra
             }
         })
 
+        bottomAppBar.applyFloatingActionButtonEdgeTreatment(fab)
         rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
     }
 
