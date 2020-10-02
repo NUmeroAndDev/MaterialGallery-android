@@ -1,5 +1,6 @@
 package com.numero.material_gallery.components.progressindicator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -22,6 +23,7 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
         setHasOptionsMenu(true)
     }
 
+    @SuppressLint("ResourceType")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
