@@ -50,18 +50,21 @@ class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_
 
     private fun showTimePicker() {
         val isClock12H = timeFormatToggleGroup.checkedButtonId == R.id.timeFormat12HButton
-        MaterialTimePicker.newInstance()
-                .apply {
-                    setTimeFormat(if (isClock12H) {
-                        TimeFormat.CLOCK_12H
-                    } else {
-                        TimeFormat.CLOCK_24H
-                    })
-                    setListener {
-                        showSelectedTime(it.hour, it.minute, isClock12H)
-                    }
-                }
-                .show(childFragmentManager, TIME_PICKER_FRAGMENT_TAG)
+        val timePicker = MaterialTimePicker.Builder()
+                .setTimeFormat(if (isClock12H) {
+                    TimeFormat.CLOCK_12H
+                } else {
+                    TimeFormat.CLOCK_24H
+                })
+                .build()
+        timePicker.addOnPositiveButtonClickListener {
+            showSelectedTime(
+                    timePicker.hour,
+                    timePicker.minute,
+                    isClock12H
+            )
+        }
+        timePicker.show(childFragmentManager, TIME_PICKER_FRAGMENT_TAG)
     }
 
     private fun showSelectedTime(hour: Int, min: Int, isClock12H: Boolean) {
