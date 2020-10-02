@@ -7,7 +7,9 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.progressindicator.*
+import com.google.android.material.progressindicator.IndeterminateDrawable
+import com.google.android.material.progressindicator.ProgressIndicator
+import com.google.android.material.progressindicator.ProgressIndicatorSpec
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
@@ -32,13 +34,11 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
             circularInset = 0
             circularRadius = resources.getDimensionPixelSize(R.dimen.indicator_in_chip_circular_radius)
         }
-        val progressIndicatorDrawable = IndeterminateDrawable(
+        val indeterminateDrawable = IndeterminateDrawable(
                 requireContext(),
-                progressIndicatorSpec,
-                CircularDrawingDelegate(),
-                CircularIndeterminateAnimatorDelegate()
+                progressIndicatorSpec
         )
-        indeterminateProgressChip.chipIcon = progressIndicatorDrawable
+        indeterminateProgressChip.chipIcon = indeterminateDrawable
 
         progressSlider.addOnChangeListener { _, value, _ ->
             determinateCircularProgressIndicator.progress = value.toInt()
