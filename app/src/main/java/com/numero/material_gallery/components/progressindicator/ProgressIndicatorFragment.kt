@@ -30,7 +30,7 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
         val progressIndicatorSpec = ProgressIndicatorSpec().apply {
             loadFromAttributes(
                     requireContext(),
-                    null,
+                    null, 0,
                     R.style.Widget_MaterialComponents_ProgressIndicator_Circular_Indeterminate
             )
             circularInset = 0
