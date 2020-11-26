@@ -6,51 +6,97 @@
     android:layout_height="match_parent"
     android:transitionName="@string/extended_fab_transition_name">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/fabStyleTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Style"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
-        <RadioGroup
-            android:id="@+id/fabStyleRadioGroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:checkedButton="@+id/fabStyleExtendRadioButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fabStyleTextView">
-
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/fabStyleExtendRadioButton"
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fabStyleTextView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Extend"
-                android:textSize="16sp"
-                app:useMaterialThemeColors="true" />
+                android:text="Style"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.radiobutton.MaterialRadioButton
-                android:id="@+id/fabStyleShrinkRadioButton"
-                android:layout_width="match_parent"
+            <RadioGroup
+                android:id="@+id/fabStyleRadioGroup"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="Shrink"
-                android:textSize="16sp"
-                app:useMaterialThemeColors="true" />
+                android:layout_marginTop="16dp"
+                android:checkedButton="@+id/fabStyleExtendRadioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabStyleTextView">
 
-        </RadioGroup>
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/fabStyleExtendRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Extend"
+                    android:textSize="16sp"
+                    app:useMaterialThemeColors="true" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/fabStyleShrinkRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Shrink"
+                    android:textSize="16sp"
+                    app:useMaterialThemeColors="true" />
+
+            </RadioGroup>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/fabVisibilityTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Show / Hide"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fabStyleRadioGroup" />
+
+            <RadioGroup
+                android:id="@+id/fabVisibilityRadioGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checkedButton="@+id/fabShowRadioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fabVisibilityTextView">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/fabShowRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Show"
+                    android:textSize="16sp"
+                    app:useMaterialThemeColors="true" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/fabHideRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Hide"
+                    android:textSize="16sp"
+                    app:useMaterialThemeColors="true" />
+
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/extendedFab"
