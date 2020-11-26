@@ -2,7 +2,9 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <dimen name="nav_header_height">176dp</dimen>
-    <dimen name="indicator_in_chip_circular_radius">10dp</dimen>
+    <dimen name="circular_progress_in_chip_indicator_inset">2dp</dimen>
+    <dimen name="circular_progress_in_chip_indicator_size">20dp</dimen>
+    <dimen name="circular_progress_in_chip_track_thickness">2.5dp</dimen>
 
     <dimen name="elevation_0dp">0dp</dimen>
     <dimen name="elevation_2dp">2dp</dimen>
