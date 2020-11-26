@@ -29,6 +29,13 @@ class ExtendedFabFragment : MaterialContainerTransformFragment(R.layout.fragment
             }
         }
 
+        fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
+            when (id) {
+                R.id.fabShowRadioButton -> extendedFab.show()
+                else -> extendedFab.hide()
+            }
+        }
+
         extendedFab.setOnClickListener {
             Snackbar.make(rootLayout, "Clicked FAB", Snackbar.LENGTH_SHORT).setAnchorView(it).show()
         }

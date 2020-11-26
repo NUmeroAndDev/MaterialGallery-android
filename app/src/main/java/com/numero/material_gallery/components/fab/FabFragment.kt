@@ -29,6 +29,12 @@ class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
                 else -> FloatingActionButton.SIZE_NORMAL
             }
         }
+        fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
+            when (id) {
+                R.id.fabShowRadioButton -> fab.show()
+                else -> fab.hide()
+            }
+        }
 
         fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
