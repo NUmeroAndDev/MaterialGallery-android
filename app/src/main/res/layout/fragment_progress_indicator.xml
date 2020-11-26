@@ -21,21 +21,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.progressindicator.ProgressIndicator
+        <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/indeterminateCircularProgressIndicator"
-            style="@style/Widget.MaterialComponents.ProgressIndicator.Circular.Indeterminate"
+            style="@style/Widget.MaterialComponents.CircularProgressIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:indeterminate="true"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/indeterminateProgressTitleTextView" />
 
-        <com.google.android.material.progressindicator.ProgressIndicator
+        <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/indeterminateLinearProgressIndicator"
-            style="@style/Widget.MaterialComponents.ProgressIndicator.Linear.Indeterminate"
+            style="@style/Widget.MaterialComponents.LinearProgressIndicator"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:indeterminate="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/indeterminateCircularProgressIndicator" />
@@ -51,6 +53,40 @@
             app:layout_constraintTop_toBottomOf="@id/indeterminateLinearProgressIndicator" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/roundedProgressTitleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Rounded Progress Indicator"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/indeterminateProgressChip" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/roundedCircularProgressIndicator"
+            style="@style/Widget.MaterialComponents.CircularProgressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:indeterminate="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/roundedProgressTitleTextView"
+            app:trackCornerRadius="2dp" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/roundedLinearProgressIndicator"
+            style="@style/Widget.MaterialComponents.LinearProgressIndicator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:indeterminate="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/roundedCircularProgressIndicator"
+            app:trackCornerRadius="2dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/inverseProgressTitleTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -59,25 +95,27 @@
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/indeterminateProgressChip" />
+            app:layout_constraintTop_toBottomOf="@id/roundedLinearProgressIndicator" />
 
-        <com.google.android.material.progressindicator.ProgressIndicator
+        <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/inverseCircularProgressIndicator"
-            style="@style/Widget.MaterialComponents.ProgressIndicator.Circular.Indeterminate"
+            style="@style/Widget.MaterialComponents.CircularProgressIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:inverse="true"
+            android:indeterminate="true"
+            app:indicatorDirectionCircular="counterclockwise"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inverseProgressTitleTextView" />
 
-        <com.google.android.material.progressindicator.ProgressIndicator
+        <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/inverseLinearProgressIndicator"
-            style="@style/Widget.MaterialComponents.ProgressIndicator.Linear.Indeterminate"
+            style="@style/Widget.MaterialComponents.LinearProgressIndicator"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:inverse="true"
+            android:indeterminate="true"
+            app:indicatorDirectionLinear="endToStart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inverseCircularProgressIndicator" />
@@ -93,21 +131,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/inverseLinearProgressIndicator" />
 
-        <com.google.android.material.progressindicator.ProgressIndicator
+        <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/determinateCircularProgressIndicator"
-            style="@style/Widget.MaterialComponents.ProgressIndicator.Circular.Determinate"
+            style="@style/Widget.MaterialComponents.CircularProgressIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:indeterminate="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/determinateProgressTitleTextView" />
 
-        <com.google.android.material.progressindicator.ProgressIndicator
+        <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/determinateLinearProgressIndicator"
-            style="@style/Widget.MaterialComponents.ProgressIndicator.Linear.Determinate"
+            style="@style/Widget.MaterialComponents.LinearProgressIndicator"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:indeterminate="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/determinateCircularProgressIndicator" />
@@ -172,7 +212,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
-            android:hint="GrowMode"
+            android:hint="Show/Hide animation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/visibilityProgressIndicatorToggleGroup"
             app:layout_constraintTop_toBottomOf="@id/progressSlider">

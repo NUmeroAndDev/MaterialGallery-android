@@ -1,6 +1,5 @@
 package com.numero.material_gallery.components.progressindicator
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -8,9 +7,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.progressindicator.IndeterminateDrawable
-import com.google.android.material.progressindicator.ProgressIndicator
-import com.google.android.material.progressindicator.ProgressIndicatorSpec
+import com.google.android.material.progressindicator.*
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
@@ -23,20 +20,19 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
         setHasOptionsMenu(true)
     }
 
-    @SuppressLint("ResourceType")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val progressIndicatorSpec = ProgressIndicatorSpec().apply {
-            loadFromAttributes(
-                    requireContext(),
-                    null, 0,
-                    R.style.Widget_MaterialComponents_ProgressIndicator_Circular_Indeterminate
-            )
-            circularInset = 0
-            circularRadius = resources.getDimensionPixelSize(R.dimen.indicator_in_chip_circular_radius)
+        val progressIndicatorSpec = CircularProgressIndicatorSpec(
+                requireContext(),
+                null
+        ).apply {
+            indicatorInset = resources.getDimensionPixelSize(R.dimen.circular_progress_in_chip_indicator_inset)
+            indicatorSize = resources.getDimensionPixelSize(R.dimen.circular_progress_in_chip_indicator_size)
+            trackThickness = resources.getDimensionPixelSize(R.dimen.circular_progress_in_chip_track_thickness)
         }
-        val indeterminateDrawable = IndeterminateDrawable(
+
+        val indeterminateDrawable = IndeterminateDrawable.createCircularDrawable(
                 requireContext(),
                 progressIndicatorSpec
         )
@@ -69,29 +65,54 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
             }
         }
 
-        val growModes = listOf(
-                ProgressIndicator.GROW_MODE_NONE to "NONE",
-                ProgressIndicator.GROW_MODE_INCOMING to "INCOMING",
-                ProgressIndicator.GROW_MODE_OUTGOING to "OUTGOING",
-                ProgressIndicator.GROW_MODE_BIDIRECTIONAL to "BIDIRECTIONAL"
+        val animationBehaviors = listOf(
+                BaseProgressIndicator.SHOW_NONE to "NONE",
+                BaseProgressIndicator.SHOW_INWARD to "INWARD",
+                BaseProgressIndicator.SHOW_OUTWARD to "OUTWARD"
         )
         val adapter = ArrayAdapter(
                 requireContext(),
                 android.R.layout.simple_spinner_dropdown_item,
-                growModes.map {
+                animationBehaviors.map {
                     it.second
                 }
         )
-        grownModeTextView.setText(growModes.first().second)
+        grownModeTextView.setText(animationBehaviors.first().second)
         grownModeTextView.setAdapter(adapter)
         grownModeTextView.setOnItemClickListener { _, _, position, _ ->
-            val growMode = growModes[position].first
-            indeterminateCircularProgressIndicator.growMode = growMode
-            indeterminateLinearProgressIndicator.growMode = growMode
-            inverseCircularProgressIndicator.growMode = growMode
-            inverseLinearProgressIndicator.growMode = growMode
-            determinateCircularProgressIndicator.growMode = growMode
-            determinateLinearProgressIndicator.growMode = growMode
+            val animationBehavior = animationBehaviors[position].first
+            indeterminateCircularProgressIndicator.apply {
+                showAnimationBehavior = animationBehavior
+                hideAnimationBehavior = animationBehavior
+            }
+            indeterminateLinearProgressIndicator.apply {
+                showAnimationBehavior = animationBehavior
+                hideAnimationBehavior = animationBehavior
+            }
+            roundedCircularProgressIndicator.apply {
+                showAnimationBehavior = animationBehavior
+                hideAnimationBehavior = animationBehavior
+            }
+            roundedLinearProgressIndicator.apply {
+                showAnimationBehavior = animationBehavior
+                hideAnimationBehavior = animationBehavior
+            }
+            inverseCircularProgressIndicator.apply {
+                showAnimationBehavior = animationBehavior
+                hideAnimationBehavior = animationBehavior
+            }
+            inverseLinearProgressIndicator.apply {
+                showAnimationBehavior = animationBehavior
+                hideAnimationBehavior = animationBehavior
+            }
+            determinateCircularProgressIndicator.apply {
+                showAnimationBehavior = animationBehavior
+                hideAnimationBehavior = animationBehavior
+            }
+            determinateLinearProgressIndicator.apply {
+                showAnimationBehavior = animationBehavior
+                hideAnimationBehavior = animationBehavior
+            }
         }
 
         scrollView.applySystemWindowInsetsPadding(applyBottom = true)
