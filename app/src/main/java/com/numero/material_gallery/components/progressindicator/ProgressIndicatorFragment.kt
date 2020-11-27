@@ -49,6 +49,8 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
                 R.id.show -> {
                     indeterminateCircularProgressIndicator.show()
                     indeterminateLinearProgressIndicator.show()
+                    roundedCircularProgressIndicator.show()
+                    roundedLinearProgressIndicator.show()
                     inverseCircularProgressIndicator.show()
                     inverseLinearProgressIndicator.show()
                     determinateCircularProgressIndicator.show()
@@ -57,6 +59,8 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
                 R.id.hide -> {
                     indeterminateCircularProgressIndicator.hide()
                     indeterminateLinearProgressIndicator.hide()
+                    roundedCircularProgressIndicator.hide()
+                    roundedLinearProgressIndicator.hide()
                     inverseCircularProgressIndicator.hide()
                     inverseLinearProgressIndicator.hide()
                     determinateCircularProgressIndicator.hide()
