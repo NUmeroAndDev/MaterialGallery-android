@@ -1,10 +1,9 @@
-apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
-
-apply plugin: 'com.google.android.gms.oss-licenses-plugin'
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'com.google.android.gms.oss-licenses-plugin'
+}
 
 android {
 
@@ -35,6 +34,10 @@ android {
 
     androidExtensions {
         experimental = true
+    }
+
+    buildFeatures {
+        viewBinding = true
     }
 
     compileOptions {
