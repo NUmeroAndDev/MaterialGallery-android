@@ -25,12 +25,10 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
 
         val progressIndicatorSpec = CircularProgressIndicatorSpec(
                 requireContext(),
-                null
-        ).apply {
-            indicatorInset = resources.getDimensionPixelSize(R.dimen.circular_progress_in_chip_indicator_inset)
-            indicatorSize = resources.getDimensionPixelSize(R.dimen.circular_progress_in_chip_indicator_size)
-            trackThickness = resources.getDimensionPixelSize(R.dimen.circular_progress_in_chip_track_thickness)
-        }
+                null,
+                0,
+                R.style.Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall
+        )
 
         val indeterminateDrawable = IndeterminateDrawable.createCircularDrawable(
                 requireContext(),
