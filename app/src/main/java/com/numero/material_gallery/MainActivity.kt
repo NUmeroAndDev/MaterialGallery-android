@@ -11,8 +11,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.appbar.AppBarLayout
 import com.numero.material_gallery.core.observeSingle
+import com.numero.material_gallery.databinding.ActivityMainBinding
 import com.numero.material_gallery.repository.ConfigRepository
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
@@ -24,11 +24,14 @@ class MainActivity : AppCompatActivity() {
             R.id.CollapsingScreen
     )
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(configRepository.currentTheme)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
         window.statusBarColor = Color.TRANSPARENT
@@ -43,9 +46,9 @@ class MainActivity : AppCompatActivity() {
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
             if (destination.id != R.id.ThemeInfoDialog) {
                 if (isHideAppBar) {
-                    appbar.gone()
+                    binding.appbar.gone()
                 } else {
-                    appbar.visible()
+                    binding.appbar.visible()
                 }
             }
         }
