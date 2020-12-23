@@ -3,10 +3,7 @@ package com.numero.material_gallery.components.picker.date
 import android.content.Context
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.core.util.Pair
@@ -14,18 +11,35 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import kotlinx.android.synthetic.main.fragment_date_picker.*
+import com.numero.material_gallery.databinding.FragmentDatePickerBinding
 
-class DatePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_date_picker) {
+class DatePickerFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentDatePickerBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentDatePickerBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViews()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -44,16 +58,16 @@ class DatePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_
     }
 
     private fun setupViews() {
-        showDatePickerButton.setOnClickListener {
+        binding.showDatePickerButton.setOnClickListener {
             showDatePicker(isFullScreen = false)
         }
-        showDateRangePickerButton.setOnClickListener {
+        binding.showDateRangePickerButton.setOnClickListener {
             showDateRangePicker(isFullScreen = false)
         }
-        showFullscreenDatePickerButton.setOnClickListener {
+        binding.showFullscreenDatePickerButton.setOnClickListener {
             showDatePicker(isFullScreen = true)
         }
-        showFullscreenDateRangePickerButton.setOnClickListener {
+        binding.showFullscreenDateRangePickerButton.setOnClickListener {
             showDateRangePicker(isFullScreen = true)
         }
     }

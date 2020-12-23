@@ -1,10 +1,7 @@
 package com.numero.material_gallery.components.card
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
@@ -12,36 +9,53 @@ import com.numero.material_gallery.components.card.state.Corner
 import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_material_card.*
+import com.numero.material_gallery.databinding.FragmentMaterialCardBinding
 
-class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragment_material_card) {
+class MaterialCardFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentMaterialCardBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentMaterialCardBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        elevationSlider.addOnChangeListener { _, value, _ ->
+        binding.elevationSlider.addOnChangeListener { _, value, _ ->
             updateElevation(Elevation.values()[value.toInt()])
         }
-        cornerSlider.addOnChangeListener { _, value, _ ->
+        binding.cornerSlider.addOnChangeListener { _, value, _ ->
             updateCorner(Corner.values()[value.toInt()])
         }
-        strokeSlider.addOnChangeListener { _, value, _ ->
+        binding.strokeSlider.addOnChangeListener { _, value, _ ->
             updateStroke(Stroke.values()[value.toInt()])
         }
 
         setupSlidersLabelFormatter()
 
-        updateElevation(Elevation.values()[elevationSlider.value.toInt()])
-        updateCorner(Corner.values()[cornerSlider.value.toInt()])
-        updateStroke(Stroke.values()[strokeSlider.value.toInt()])
+        updateElevation(Elevation.values()[binding.elevationSlider.value.toInt()])
+        updateCorner(Corner.values()[binding.cornerSlider.value.toInt()])
+        updateStroke(Stroke.values()[binding.strokeSlider.value.toInt()])
 
         setupSelectionCardList()
 
-        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -60,17 +74,17 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
     }
 
     private fun setupSlidersLabelFormatter() {
-        elevationSlider.setLabelFormatter {
+        binding.elevationSlider.setLabelFormatter {
             val elevation = Elevation.values()[it.toInt()]
             val elevationSize = resources.getDimension(elevation.dimenRes)
             "%ddp".format(convertPxToDp(elevationSize).toInt())
         }
-        cornerSlider.setLabelFormatter {
+        binding.cornerSlider.setLabelFormatter {
             val corner = Corner.values()[it.toInt()]
             val cornerSize = resources.getDimension(corner.dimenRes)
             "%ddp".format(convertPxToDp(cornerSize).toInt())
         }
-        strokeSlider.setLabelFormatter {
+        binding.strokeSlider.setLabelFormatter {
             val stroke = Stroke.values()[it.toInt()]
             val strokeSize = resources.getDimensionPixelSize(stroke.dimenRes)
             "%ddp".format(convertPxToDp(strokeSize).toInt())
@@ -78,7 +92,7 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
     }
 
     private fun setupSelectionCardList() {
-        selectionCardListRecyclerView.apply {
+        binding.selectionCardListRecyclerView.apply {
             setHasFixedSize(true)
             adapter = SelectionCardAdapter()
         }
@@ -86,20 +100,23 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
 
     private fun updateElevation(elevation: Elevation) {
         val elevationSize = resources.getDimension(elevation.dimenRes)
-        materialCardView.cardElevation = elevationSize
-        elevationInfoTextView.text = getString(R.string.elevation_info_format).format(convertPxToDp(elevationSize).toInt())
+        binding.materialCardView.cardElevation = elevationSize
+        binding.elevationInfoTextView.text =
+            getString(R.string.elevation_info_format).format(convertPxToDp(elevationSize).toInt())
     }
 
     private fun updateCorner(corner: Corner) {
         val cornerSize = resources.getDimension(corner.dimenRes)
-        materialCardView.radius = cornerSize
-        cornerInfoTextView.text = getString(R.string.corner_info_format).format(convertPxToDp(cornerSize).toInt())
+        binding.materialCardView.radius = cornerSize
+        binding.cornerInfoTextView.text =
+            getString(R.string.corner_info_format).format(convertPxToDp(cornerSize).toInt())
     }
 
     private fun updateStroke(stroke: Stroke) {
         val strokeSize = resources.getDimensionPixelSize(stroke.dimenRes)
-        materialCardView.strokeWidth = strokeSize
-        strokeInfoTextView.text = getString(R.string.stroke_info_format).format(convertPxToDp(strokeSize).toInt())
+        binding.materialCardView.strokeWidth = strokeSize
+        binding.strokeInfoTextView.text =
+            getString(R.string.stroke_info_format).format(convertPxToDp(strokeSize).toInt())
     }
 
     private fun convertPxToDp(px: Float): Float {

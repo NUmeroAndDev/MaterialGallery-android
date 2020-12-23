@@ -3,16 +3,25 @@ package com.numero.material_gallery.view
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
-import android.view.View
+import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.core.content.withStyledAttributes
 import com.numero.material_gallery.R
-import kotlinx.android.synthetic.main.view_color_info_item.view.*
+import com.numero.material_gallery.databinding.ViewColorInfoItemBinding
 
-class ColorInfoItemView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr) {
+class ColorInfoItemView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : LinearLayout(context, attrs, defStyleAttr) {
+
+    private val binding = ViewColorInfoItemBinding.inflate(
+        LayoutInflater.from(context),
+        this,
+        true
+    )
+
     init {
-        View.inflate(context, R.layout.view_color_info_item, this)
-
         context.withStyledAttributes(attrs, R.styleable.ColorInfoItemView) {
             setTitle(getString(R.styleable.ColorInfoItemView_title))
             setItemColor(getColor(R.styleable.ColorInfoItemView_itemColor, Color.WHITE))
@@ -20,12 +29,12 @@ class ColorInfoItemView @JvmOverloads constructor(context: Context, attrs: Attri
     }
 
     fun setTitle(title: String?) {
-        titleTextView.text = title
+        binding.titleTextView.text = title
     }
 
     fun setItemColor(color: Int) {
-        cardView.setCardBackgroundColor(color)
-        colorTextView.apply {
+        binding.cardView.setCardBackgroundColor(color)
+        binding.colorTextView.apply {
             text = Integer.toHexString(color).toUpperCase()
             setTextColor(color.adjustTextColor())
         }

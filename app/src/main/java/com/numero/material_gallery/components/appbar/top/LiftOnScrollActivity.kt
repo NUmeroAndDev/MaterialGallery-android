@@ -5,14 +5,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import com.numero.material_gallery.R
-import kotlinx.android.synthetic.main.activity_lift_on_scroll.*
+import com.numero.material_gallery.databinding.ActivityLiftOnScrollBinding
 
-class LiftOnScrollActivity : AppCompatActivity(R.layout.activity_lift_on_scroll) {
+class LiftOnScrollActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityLiftOnScrollBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setSupportActionBar(toolbar)
+        binding = ActivityLiftOnScrollBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
@@ -30,7 +33,9 @@ class LiftOnScrollActivity : AppCompatActivity(R.layout.activity_lift_on_scroll)
     }
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, LiftOnScrollActivity::class.java)
+        fun createIntent(
+            context: Context
+        ): Intent = Intent(context, LiftOnScrollActivity::class.java)
     }
 
 }

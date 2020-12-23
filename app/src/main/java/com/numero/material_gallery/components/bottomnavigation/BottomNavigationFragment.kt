@@ -1,28 +1,42 @@
 package com.numero.material_gallery.components.bottomnavigation
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_bottom_navigation.*
+import com.numero.material_gallery.databinding.FragmentBottomNavigationBinding
 
-class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
+class BottomNavigationFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentBottomNavigationBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentBottomNavigationBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
-        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -42,21 +56,21 @@ class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fra
 
     private fun initViews() {
         val listener = BottomNavigationView.OnNavigationItemSelectedListener {
-            bottomNavigation.setCheckedItem(it.itemId, true)
-            coloredBottomNavigation.setCheckedItem(it.itemId, true)
+            binding.bottomNavigation.setCheckedItem(it.itemId, true)
+            binding.coloredBottomNavigation.setCheckedItem(it.itemId, true)
             false
         }
-        bottomNavigation.setOnNavigationItemSelectedListener(listener)
-        coloredBottomNavigation.setOnNavigationItemSelectedListener(listener)
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(listener)
+        binding.coloredBottomNavigation.setOnNavigationItemSelectedListener(listener)
 
-        removeItemButton.setOnClickListener {
+        binding.removeItemButton.setOnClickListener {
             updateBottomNavigationItemCount(MenuItemAction.REMOVE)
         }
-        addItemButton.setOnClickListener {
+        binding.addItemButton.setOnClickListener {
             updateBottomNavigationItemCount(MenuItemAction.ADD)
         }
 
-        withBadgeBottomNavigation.apply {
+        binding.withBadgeBottomNavigation.apply {
             getOrCreateBadge(R.id.navigation_item_1)
             getOrCreateBadge(R.id.navigation_item_2).apply {
                 number = 10
@@ -68,19 +82,19 @@ class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fra
     }
 
     private fun updateBottomNavigationItemCount(action: MenuItemAction) {
-        val currentItemCount = bottomNavigation.visibleItemCount
+        val currentItemCount = binding.bottomNavigation.visibleItemCount
         when (action) {
             MenuItemAction.ADD -> {
-                bottomNavigation.setVisibleItem(currentItemCount, true)
-                coloredBottomNavigation.setVisibleItem(currentItemCount, true)
-                removeItemButton.isEnabled = true
-                addItemButton.isEnabled = currentItemCount + 1 < MAX_ITEM_COUNT
+                binding.bottomNavigation.setVisibleItem(currentItemCount, true)
+                binding.coloredBottomNavigation.setVisibleItem(currentItemCount, true)
+                binding.removeItemButton.isEnabled = true
+                binding.addItemButton.isEnabled = currentItemCount + 1 < MAX_ITEM_COUNT
             }
             MenuItemAction.REMOVE -> {
-                bottomNavigation.setVisibleItem(currentItemCount - 1, false)
-                coloredBottomNavigation.setVisibleItem(currentItemCount - 1, false)
-                removeItemButton.isEnabled = currentItemCount - 1 > MIN_ITEM_COUNT
-                addItemButton.isEnabled = true
+                binding.bottomNavigation.setVisibleItem(currentItemCount - 1, false)
+                binding.coloredBottomNavigation.setVisibleItem(currentItemCount - 1, false)
+                binding.removeItemButton.isEnabled = currentItemCount - 1 > MIN_ITEM_COUNT
+                binding.addItemButton.isEnabled = true
             }
         }
     }

@@ -1,28 +1,42 @@
 package com.numero.material_gallery.components.slider
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.slider.BasicLabelFormatter
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_slider.*
+import com.numero.material_gallery.databinding.FragmentSliderBinding
 
-class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slider) {
+class SliderFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentSliderBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentSliderBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setupViews()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -42,29 +56,36 @@ class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slid
 
     private fun setupViews() {
         val valueFormat = "%.0f"
-        defaultSlider.addOnChangeListener { _, value, _ ->
-            defaultSliderValueText.text = valueFormat.format(value)
+        binding.defaultSlider.addOnChangeListener { _, value, _ ->
+            binding.defaultSliderValueText.text = valueFormat.format(value)
         }
-        defaultSliderValueText.text = valueFormat.format(defaultSlider.value)
+        binding.defaultSliderValueText.text = valueFormat.format(binding.defaultSlider.value)
 
-        discreteSlider.addOnChangeListener { _, value, _ ->
-            discreteSliderValueText.text = valueFormat.format(value)
+        binding.discreteSlider.addOnChangeListener { _, value, _ ->
+            binding.discreteSliderValueText.text = valueFormat.format(value)
         }
-        discreteSliderValueText.text = valueFormat.format(discreteSlider.value)
-        discreteSlider.setLabelFormatter(BasicLabelFormatter())
+        binding.discreteSliderValueText.text = valueFormat.format(binding.discreteSlider.value)
+        binding.discreteSlider.setLabelFormatter(BasicLabelFormatter())
 
-        labelFormatterSlider.addOnChangeListener { _, value, _ ->
-            labelFormatterSliderValueText.text = valueFormat.format(value)
+        binding.labelFormatterSlider.addOnChangeListener { _, value, _ ->
+            binding.labelFormatterSliderValueText.text = valueFormat.format(value)
         }
-        labelFormatterSliderValueText.text = valueFormat.format(labelFormatterSlider.value)
-        labelFormatterSlider.setLabelFormatter(BasicLabelFormatter())
+        binding.labelFormatterSliderValueText.text =
+            valueFormat.format(binding.labelFormatterSlider.value)
+        binding.labelFormatterSlider.setLabelFormatter(BasicLabelFormatter())
 
         val rangeValueFormat = "From:%.0f\nTo:%.0f"
-        rangeSlider.addOnChangeListener { slider, _, _ ->
-            rangeSliderValueText.text = rangeValueFormat.format(slider.values.first(), slider.values.last())
+        binding.rangeSlider.addOnChangeListener { slider, _, _ ->
+            binding.rangeSliderValueText.text = rangeValueFormat.format(
+                slider.values.first(),
+                slider.values.last()
+            )
         }
-        rangeSliderValueText.text = rangeValueFormat.format(rangeSlider.values.first(), rangeSlider.values.last())
+        binding.rangeSliderValueText.text = rangeValueFormat.format(
+            binding.rangeSlider.values.first(),
+            binding.rangeSlider.values.last()
+        )
 
-        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 }

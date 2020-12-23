@@ -1,25 +1,34 @@
 package com.numero.material_gallery.components.picker.time
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import kotlinx.android.synthetic.main.fragment_time_picker.*
+import com.numero.material_gallery.databinding.FragmentTimePickerBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_time_picker) {
+class TimePickerFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentTimePickerBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentTimePickerBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -27,8 +36,13 @@ class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_
         setupViews()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun setupViews() {
-        showTimePickerButton.setOnClickListener {
+        binding.showTimePickerButton.setOnClickListener {
             showTimePicker()
         }
     }
@@ -49,19 +63,21 @@ class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_
     }
 
     private fun showTimePicker() {
-        val isClock12H = timeFormatToggleGroup.checkedButtonId == R.id.timeFormat12HButton
+        val isClock12H = binding.timeFormatToggleGroup.checkedButtonId == R.id.timeFormat12HButton
         val timePicker = MaterialTimePicker.Builder()
-                .setTimeFormat(if (isClock12H) {
+            .setTimeFormat(
+                if (isClock12H) {
                     TimeFormat.CLOCK_12H
                 } else {
                     TimeFormat.CLOCK_24H
-                })
-                .build()
+                }
+            )
+            .build()
         timePicker.addOnPositiveButtonClickListener {
             showSelectedTime(
-                    timePicker.hour,
-                    timePicker.minute,
-                    isClock12H
+                timePicker.hour,
+                timePicker.minute,
+                isClock12H
             )
         }
         timePicker.show(childFragmentManager, TIME_PICKER_FRAGMENT_TAG)
@@ -80,9 +96,9 @@ class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_
         val formatter = SimpleDateFormat(pattern, Locale.US)
 
         Toast.makeText(
-                context,
-                formatter.format(date),
-                Toast.LENGTH_SHORT
+            context,
+            formatter.format(date),
+            Toast.LENGTH_SHORT
         ).show()
     }
 

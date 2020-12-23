@@ -1,10 +1,7 @@
 package com.numero.material_gallery.components.list
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import androidx.core.view.ViewGroupCompat
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
@@ -23,11 +20,14 @@ import com.google.android.play.core.ktx.startUpdateFlowForResult
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_component_list.*
+import com.numero.material_gallery.databinding.FragmentComponentListBinding
 
-class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
+class ComponentListFragment : Fragment() {
 
     private lateinit var appUpdateManager: AppUpdateManager
+
+    private var _binding: FragmentComponentListBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,15 +35,24 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
         appUpdateManager = AppUpdateManagerFactory.create(requireContext())
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentComponentListBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
 
-        ViewGroupCompat.setTransitionGroup(rootLayout, true)
+        ViewGroupCompat.setTransitionGroup(binding.rootLayout, true)
 
         initViews()
-        componentRecyclerView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.componentRecyclerView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 
     override fun onResume() {
@@ -74,7 +83,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
                             doUpdate(appUpdateInfo)
                         }
                         UpdateAvailability.UPDATE_AVAILABLE -> {
-                            Snackbar.make(rootLayout, R.string.update_message, Snackbar.LENGTH_LONG)
+                            Snackbar.make(binding.rootLayout, R.string.update_message, Snackbar.LENGTH_LONG)
                                     .setAction(R.string.update_button) {
                                         doUpdate(appUpdateInfo)
                                     }
@@ -96,7 +105,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     }
 
     private fun initViews() {
-        componentRecyclerView.apply {
+        binding.componentRecyclerView.apply {
             setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
             adapter = ComponentListAdapter().apply {

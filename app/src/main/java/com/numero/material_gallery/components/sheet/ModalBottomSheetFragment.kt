@@ -7,19 +7,31 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import kotlinx.android.synthetic.main.fragment_modal_bottom_sheet.*
+import com.numero.material_gallery.databinding.FragmentModalBottomSheetBinding
 
-class ModalBottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_modal_bottom_sheet) {
+class ModalBottomSheetFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentModalBottomSheetBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentModalBottomSheetBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        showBottomSheetButton.setOnClickListener {
+        binding.showBottomSheetButton.setOnClickListener {
             BottomSheetModalFragment.newInstance().showIfNeeded(childFragmentManager)
         }
     }

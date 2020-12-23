@@ -1,46 +1,60 @@
 package com.numero.material_gallery.components.fab
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_fab.*
+import com.numero.material_gallery.databinding.FragmentFabBinding
 
 class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
+
+    private var _binding: FragmentFabBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentFabBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fabSizeRadioGroup.setOnCheckedChangeListener { _, id ->
-            fab.size = when (id) {
+        binding.fabSizeRadioGroup.setOnCheckedChangeListener { _, id ->
+            binding.fab.size = when (id) {
                 R.id.fabSizeMinRadioButton -> FloatingActionButton.SIZE_MINI
                 else -> FloatingActionButton.SIZE_NORMAL
             }
         }
-        fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
+        binding.fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.fabShowRadioButton -> fab.show()
-                else -> fab.hide()
+                R.id.fabShowRadioButton -> binding.fab.show()
+                else -> binding.fab.hide()
             }
         }
 
-        fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
 
-        rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

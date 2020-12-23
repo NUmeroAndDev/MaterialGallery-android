@@ -1,25 +1,39 @@
 package com.numero.material_gallery.components.tab
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import kotlinx.android.synthetic.main.fragment_tab.*
+import com.numero.material_gallery.databinding.FragmentTabBinding
 
-class TabFragment : MaterialContainerTransformFragment(R.layout.fragment_tab) {
+class TabFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentTabBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentTabBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupTab()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -38,20 +52,20 @@ class TabFragment : MaterialContainerTransformFragment(R.layout.fragment_tab) {
     }
 
     private fun setupTab() {
-        withBadgeTabLayout.getTabAt(0)?.apply {
+        binding.withBadgeTabLayout.getTabAt(0)?.apply {
             orCreateBadge
         }
-        withBadgeTabLayout.getTabAt(1)?.apply {
+        binding.withBadgeTabLayout.getTabAt(1)?.apply {
             orCreateBadge.apply {
                 number = 10
             }
         }
-        withBadgeTabLayout.getTabAt(2)?.apply {
+        binding.withBadgeTabLayout.getTabAt(2)?.apply {
             orCreateBadge.apply {
                 number = 1000
             }
         }
-        withBadgeTabLayout.getTabAt(3)?.apply {
+        binding.withBadgeTabLayout.getTabAt(3)?.apply {
             orCreateBadge.apply {
                 maxCharacterCount = 5
                 number = 5000

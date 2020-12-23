@@ -1,10 +1,7 @@
 package com.numero.material_gallery.components.appbar.bottom
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -12,54 +9,79 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_bottom_app_bar.*
+import com.numero.material_gallery.databinding.FragmentBottomAppBarBinding
 
-class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_app_bar) {
+class BottomAppBarFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentBottomAppBarBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentBottomAppBarBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
 
-        fabPositionRadioGroup.setOnCheckedChangeListener { _, id ->
+        binding.fabPositionRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.attachedCenterRadioButton -> bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
-                R.id.attachedEndRadioButton -> bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+                R.id.attachedCenterRadioButton -> {
+                    binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+                }
+                R.id.attachedEndRadioButton -> {
+                    binding.bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+                }
             }
         }
 
-        fabAnimationRadioGroup.setOnCheckedChangeListener { _, id ->
+        binding.fabAnimationRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.scaleRadioButton -> bottomAppBar.fabAnimationMode = BottomAppBar.FAB_ANIMATION_MODE_SCALE
-                R.id.slideRadioButton -> bottomAppBar.fabAnimationMode = BottomAppBar.FAB_ANIMATION_MODE_SLIDE
+                R.id.scaleRadioButton -> {
+                    binding.bottomAppBar.fabAnimationMode = BottomAppBar.FAB_ANIMATION_MODE_SCALE
+                }
+                R.id.slideRadioButton -> {
+                    binding.bottomAppBar.fabAnimationMode = BottomAppBar.FAB_ANIMATION_MODE_SLIDE
+                }
             }
         }
 
-        fabVisiblyRadioGroup.setOnCheckedChangeListener { _, id ->
+        binding.fabVisiblyRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.showRadioButton -> fab.show()
-                R.id.hideRadioButton -> fab.hide()
+                R.id.showRadioButton -> binding.fab.show()
+                R.id.hideRadioButton -> binding.fab.hide()
             }
         }
 
-        hideOnScrollSwitch.setOnCheckedChangeListener { _, isChecked ->
-            bottomAppBar.hideOnScroll = isChecked
+        binding.hideOnScrollSwitch.setOnCheckedChangeListener { _, isChecked ->
+            binding.bottomAppBar.hideOnScroll = isChecked
             if (isChecked.not()) {
-                bottomAppBar.performShow()
+                binding.bottomAppBar.performShow()
             }
         }
 
-        bottomAppBar.replaceMenu(R.menu.bottom_app_bar)
-        bottomAppBar.applyFloatingActionButtonEdgeTreatment(fab)
+        binding.bottomAppBar.replaceMenu(R.menu.bottom_app_bar)
+        binding.bottomAppBar.applyFloatingActionButtonEdgeTreatment(binding.fab)
 
-        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
