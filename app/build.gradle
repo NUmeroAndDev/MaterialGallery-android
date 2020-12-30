@@ -5,13 +5,12 @@ plugins {
 }
 
 android {
-
-    compileSdkVersion 30
+    compileSdkVersion versions.compileSdk
 
     defaultConfig {
         applicationId "com.numero.material_gallery"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
         versionCode rootProject.appVersionCode
         versionName rootProject.appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -47,6 +46,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':studies:shrine')
+
     implementation kotlinAndroid.stdlib
 
     implementation androidx.appcompat
@@ -55,7 +56,7 @@ dependencies {
     implementation androidx.recyclerview
     implementation androidx.preference
     implementation androidx.constraintlayout
-    implementation androidx.ktx
+    implementation androidx.core
     implementation androidx.navigation.fragment
     implementation androidx.navigation.ui
     implementation androidx.lifecycle.livedata
