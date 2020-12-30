@@ -1,18 +1,18 @@
 package com.numero.material_gallery.components.sheet
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import kotlinx.android.synthetic.main.fragment_bottom_sheet.*
+import com.numero.material_gallery.databinding.FragmentBottomSheetBinding
 
-class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_sheet) {
+class BottomSheetFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentBottomSheetBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
 
@@ -21,27 +21,42 @@ class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentBottomSheetBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        showBottomSheetButton.setOnClickListener {
+        binding.showBottomSheetButton.setOnClickListener {
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
-        draggableSwitch.setOnCheckedChangeListener { _, isChecked ->
+        binding.draggableSwitch.setOnCheckedChangeListener { _, isChecked ->
             behavior.isDraggable = isChecked
         }
 
-        behavior = BottomSheetBehavior.from(bottomSheetLayout).apply {
+        behavior = BottomSheetBehavior.from(binding.bottomSheetLayout).apply {
             state = BottomSheetBehavior.STATE_HIDDEN
             addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
                 override fun onSlide(p0: View, p1: Float) {
                 }
 
                 override fun onStateChanged(view: View, state: Int) {
-                    showBottomSheetButton.isEnabled = state == BottomSheetBehavior.STATE_HIDDEN
+                    binding.showBottomSheetButton.isEnabled =
+                        state == BottomSheetBehavior.STATE_HIDDEN
                 }
             })
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -1,23 +1,32 @@
 package com.numero.material_gallery.components.progressindicator
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.ArrayAdapter
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.progressindicator.*
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_progress_indicator.*
+import com.numero.material_gallery.databinding.FragmentProgressIndicatorBinding
 
-class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fragment_progress_indicator) {
+class ProgressIndicatorFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentProgressIndicatorBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentProgressIndicatorBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,35 +43,35 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
                 requireContext(),
                 progressIndicatorSpec
         )
-        indeterminateProgressChip.chipIcon = indeterminateDrawable
+        binding.indeterminateProgressChip.chipIcon = indeterminateDrawable
 
-        progressSlider.addOnChangeListener { _, value, _ ->
-            determinateCircularProgressIndicator.progress = value.toInt()
-            determinateLinearProgressIndicator.progress = value.toInt()
+        binding.progressSlider.addOnChangeListener { _, value, _ ->
+            binding.determinateCircularProgressIndicator.progress = value.toInt()
+            binding.determinateLinearProgressIndicator.progress = value.toInt()
         }
 
-        visibilityProgressIndicatorToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
+        binding.visibilityProgressIndicatorToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked.not()) return@addOnButtonCheckedListener
             when (checkedId) {
                 R.id.show -> {
-                    indeterminateCircularProgressIndicator.show()
-                    indeterminateLinearProgressIndicator.show()
-                    roundedCircularProgressIndicator.show()
-                    roundedLinearProgressIndicator.show()
-                    inverseCircularProgressIndicator.show()
-                    inverseLinearProgressIndicator.show()
-                    determinateCircularProgressIndicator.show()
-                    determinateLinearProgressIndicator.show()
+                    binding.indeterminateCircularProgressIndicator.show()
+                    binding.indeterminateLinearProgressIndicator.show()
+                    binding.roundedCircularProgressIndicator.show()
+                    binding.roundedLinearProgressIndicator.show()
+                    binding.inverseCircularProgressIndicator.show()
+                    binding.inverseLinearProgressIndicator.show()
+                    binding.determinateCircularProgressIndicator.show()
+                    binding.determinateLinearProgressIndicator.show()
                 }
                 R.id.hide -> {
-                    indeterminateCircularProgressIndicator.hide()
-                    indeterminateLinearProgressIndicator.hide()
-                    roundedCircularProgressIndicator.hide()
-                    roundedLinearProgressIndicator.hide()
-                    inverseCircularProgressIndicator.hide()
-                    inverseLinearProgressIndicator.hide()
-                    determinateCircularProgressIndicator.hide()
-                    determinateLinearProgressIndicator.hide()
+                    binding.indeterminateCircularProgressIndicator.hide()
+                    binding.indeterminateLinearProgressIndicator.hide()
+                    binding.roundedCircularProgressIndicator.hide()
+                    binding.roundedLinearProgressIndicator.hide()
+                    binding.inverseCircularProgressIndicator.hide()
+                    binding.inverseLinearProgressIndicator.hide()
+                    binding.determinateCircularProgressIndicator.hide()
+                    binding.determinateLinearProgressIndicator.hide()
                 }
             }
         }
@@ -79,45 +88,50 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
                     it.second
                 }
         )
-        grownModeTextView.setText(animationBehaviors.first().second)
-        grownModeTextView.setAdapter(adapter)
-        grownModeTextView.setOnItemClickListener { _, _, position, _ ->
+        binding.grownModeTextView.setText(animationBehaviors.first().second)
+        binding.grownModeTextView.setAdapter(adapter)
+        binding.grownModeTextView.setOnItemClickListener { _, _, position, _ ->
             val animationBehavior = animationBehaviors[position].first
-            indeterminateCircularProgressIndicator.apply {
+            binding.indeterminateCircularProgressIndicator.apply {
                 showAnimationBehavior = animationBehavior
                 hideAnimationBehavior = animationBehavior
             }
-            indeterminateLinearProgressIndicator.apply {
+            binding.indeterminateLinearProgressIndicator.apply {
                 showAnimationBehavior = animationBehavior
                 hideAnimationBehavior = animationBehavior
             }
-            roundedCircularProgressIndicator.apply {
+            binding.roundedCircularProgressIndicator.apply {
                 showAnimationBehavior = animationBehavior
                 hideAnimationBehavior = animationBehavior
             }
-            roundedLinearProgressIndicator.apply {
+            binding.roundedLinearProgressIndicator.apply {
                 showAnimationBehavior = animationBehavior
                 hideAnimationBehavior = animationBehavior
             }
-            inverseCircularProgressIndicator.apply {
+            binding.inverseCircularProgressIndicator.apply {
                 showAnimationBehavior = animationBehavior
                 hideAnimationBehavior = animationBehavior
             }
-            inverseLinearProgressIndicator.apply {
+            binding.inverseLinearProgressIndicator.apply {
                 showAnimationBehavior = animationBehavior
                 hideAnimationBehavior = animationBehavior
             }
-            determinateCircularProgressIndicator.apply {
+            binding.determinateCircularProgressIndicator.apply {
                 showAnimationBehavior = animationBehavior
                 hideAnimationBehavior = animationBehavior
             }
-            determinateLinearProgressIndicator.apply {
+            binding.determinateLinearProgressIndicator.apply {
                 showAnimationBehavior = animationBehavior
                 hideAnimationBehavior = animationBehavior
             }
         }
 
-        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -1,29 +1,43 @@
 package com.numero.material_gallery.components.dialog
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import kotlinx.android.synthetic.main.fragment_material_dialog.*
+import com.numero.material_gallery.databinding.FragmentMaterialDialogBinding
 
-class MaterialDialogFragment : MaterialContainerTransformFragment(R.layout.fragment_material_dialog) {
+class MaterialDialogFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentMaterialDialogBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentMaterialDialogBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        showDialogButton.setOnClickListener {
+        binding.showDialogButton.setOnClickListener {
             showMaterialDialog()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

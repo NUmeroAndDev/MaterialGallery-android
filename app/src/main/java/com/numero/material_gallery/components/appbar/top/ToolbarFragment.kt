@@ -1,26 +1,40 @@
 package com.numero.material_gallery.components.appbar.top
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import kotlinx.android.synthetic.main.fragment_toolbar.*
+import com.numero.material_gallery.databinding.FragmentToolbarBinding
 
-class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_toolbar) {
+class ToolbarFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentToolbarBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentToolbarBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         initViews()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -39,7 +53,11 @@ class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_too
     }
 
     private fun initViews() {
-        val toolbarList = listOf(primaryToolbar, surfaceToolbar, primarySurfaceToolbar)
+        val toolbarList = listOf(
+            binding.primaryToolbar,
+            binding.surfaceToolbar,
+            binding.primarySurfaceToolbar
+        )
         toolbarList.forEach {
             it.inflateMenu(R.menu.menu_action_bar)
         }

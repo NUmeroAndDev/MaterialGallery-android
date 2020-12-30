@@ -6,8 +6,7 @@ import android.view.ViewGroup
 import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.view_holder_card.*
+import com.numero.material_gallery.databinding.ViewHolderCardBinding
 
 class SelectionCardAdapter : RecyclerView.Adapter<SelectionCardAdapter.CardViewHolder>() {
 
@@ -18,7 +17,7 @@ class SelectionCardAdapter : RecyclerView.Adapter<SelectionCardAdapter.CardViewH
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_card, parent, false)
+        val view = ViewHolderCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CardViewHolder(view)
     }
 
@@ -33,24 +32,26 @@ class SelectionCardAdapter : RecyclerView.Adapter<SelectionCardAdapter.CardViewH
         }
     }
 
-    class CardViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    class CardViewHolder(
+        private val binding: ViewHolderCardBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun setSelectionCardItem(item: SelectionCardItem) {
-            cardView.isChecked = item.isSelected
-            iconImageView.setImageResource(item.icon)
-            titleTextView.text = item.title
+            binding.cardView.isChecked = item.isSelected
+            binding.iconImageView.setImageResource(item.icon)
+            binding.titleTextView.text = item.title
         }
 
         fun setOnClickCardListener(listener: (view: View) -> Unit) {
-            cardView.setOnClickListener {
+            binding.cardView.setOnClickListener {
                 listener(it)
             }
         }
     }
 
     data class SelectionCardItem(
-            @DrawableRes val icon: Int,
-            val title: String
+        @DrawableRes val icon: Int,
+        val title: String
     ) {
         var isSelected = false
     }

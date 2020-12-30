@@ -1,8 +1,10 @@
 package com.numero.material_gallery.components.navigationdrawer
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -14,16 +16,27 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
-import kotlinx.android.synthetic.main.fragment_navigation_drawer.*
+import com.numero.material_gallery.databinding.FragmentNavigationDrawerBinding
 
-class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fragment_navigation_drawer),
-        NavigationView.OnNavigationItemSelectedListener {
+class NavigationDrawerFragment : MaterialContainerTransformFragment(),
+    NavigationView.OnNavigationItemSelectedListener {
+
+    private var _binding: FragmentNavigationDrawerBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentNavigationDrawerBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar.apply {
+        binding.content.toolbar.apply {
             setNavigationOnClickListener {
                 findNavController().popBackStack()
             }
@@ -40,32 +53,33 @@ class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fra
         }
 
         val toggle = ActionBarDrawerToggle(
-                requireActivity(),
-                drawerLayout,
-                bottomAppBar,
-                R.string.navigation_drawer_open,
-                R.string.navigation_drawer_close)
-        drawerLayout.addDrawerListener(toggle)
+            requireActivity(),
+            binding.drawerLayout,
+            binding.content.bottomAppBar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        )
+        binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        navigationView.setNavigationItemSelectedListener(this)
+        binding.navigationView.setNavigationItemSelectedListener(this)
 
-        fab.setOnClickListener {
+        binding.content.fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
 
-        showDrawerButton.setOnClickListener {
-            drawerLayout.openDrawer(GravityCompat.START)
+        binding.content.showDrawerButton.setOnClickListener {
+            binding.drawerLayout.openDrawer(GravityCompat.START)
         }
 
         val callback = requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
-            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                drawerLayout.closeDrawer(GravityCompat.START)
+            if (binding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                binding.drawerLayout.closeDrawer(GravityCompat.START)
             }
         }
         callback.isEnabled = false
 
-        drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
+        binding.drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
             override fun onDrawerStateChanged(newState: Int) {
             }
 
@@ -81,8 +95,13 @@ class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fra
             }
         })
 
-        bottomAppBar.applyFloatingActionButtonEdgeTreatment(fab)
-        rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.content.bottomAppBar.applyFloatingActionButtonEdgeTreatment(binding.content.fab)
+        binding.content.rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -101,7 +120,7 @@ class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fra
             }
         }
 
-        drawerLayout.closeDrawer(GravityCompat.START)
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 }

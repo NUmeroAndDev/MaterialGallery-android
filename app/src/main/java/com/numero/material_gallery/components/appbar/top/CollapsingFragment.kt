@@ -1,19 +1,33 @@
 package com.numero.material_gallery.components.appbar.top
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_collapsing.*
+import com.numero.material_gallery.databinding.FragmentCollapsingBinding
 
-class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_collapsing) {
+class CollapsingFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentCollapsingBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentCollapsingBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbar.apply {
+        binding.toolbar.apply {
             setNavigationOnClickListener {
                 findNavController().popBackStack()
             }
@@ -29,6 +43,11 @@ class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_
             }
         }
 
-        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

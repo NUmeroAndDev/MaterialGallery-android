@@ -1,41 +1,56 @@
 package com.numero.material_gallery.components.snackbar
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_snackbar.*
+import com.numero.material_gallery.databinding.FragmentSnackbarBinding
 
-class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_snackbar) {
+class SnackbarFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentSnackbarBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentSnackbarBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
 
-        showSnackbarButton.setOnClickListener {
-            Snackbar.make(it, "Message", Snackbar.LENGTH_SHORT).setAnchorView(fab).show()
+        binding.showSnackbarButton.setOnClickListener {
+            Snackbar.make(it, "Message", Snackbar.LENGTH_SHORT).setAnchorView(binding.fab).show()
         }
-        showActionSnackbarButton.setOnClickListener {
+        binding.showActionSnackbarButton.setOnClickListener {
             Snackbar.make(it, "Message", Snackbar.LENGTH_LONG).setAction("Action") {
-                Toast.makeText(requireContext(), "Clicked Snackbar action", Toast.LENGTH_SHORT).show()
-            }.setAnchorView(fab).show()
+                Toast.makeText(requireContext(), "Clicked Snackbar action", Toast.LENGTH_SHORT)
+                    .show()
+            }.setAnchorView(binding.fab).show()
         }
 
-        rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

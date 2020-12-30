@@ -11,18 +11,34 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.fragment_top_app_bar_type.*
-import kotlinx.android.synthetic.main.view_holder_item.*
+import com.numero.material_gallery.databinding.FragmentTopAppBarTypeBinding
+import com.numero.material_gallery.databinding.ViewHolderItemBinding
 
-class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragment_top_app_bar_type) {
+class TopAppBarTypeFragment : MaterialContainerTransformFragment() {
+
+    private var _binding: FragmentTopAppBarTypeBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentTopAppBarTypeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        toolbarTypeRecyclerView.apply {
+        binding.toolbarTypeRecyclerView.apply {
             setHasFixedSize(true)
-            addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+            addItemDecoration(
+                DividerItemDecoration(
+                    requireContext(),
+                    DividerItemDecoration.VERTICAL
+                )
+            )
             adapter = TopAppBarTypeItemAdapter().apply {
                 setOnItemClickListener { view, type ->
                     selectedToolbarType(view, type)
@@ -31,20 +47,40 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragme
         }
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     private fun selectedToolbarType(view: View, topAppBarType: TopAppBarType) {
         val extras = FragmentNavigatorExtras(view to view.transitionName)
         when (topAppBarType) {
             TopAppBarType.ACTION_BAR -> {
-                findNavController().navigate(R.id.action_TopAppBarType_to_ActionBar, null, null, extras)
+                findNavController().navigate(
+                    R.id.action_TopAppBarType_to_ActionBar,
+                    null,
+                    null,
+                    extras
+                )
             }
             TopAppBarType.TOOLBAR -> {
-                findNavController().navigate(R.id.action_TopAppBarType_to_Toolbar, null, null, extras)
+                findNavController().navigate(
+                    R.id.action_TopAppBarType_to_Toolbar,
+                    null,
+                    null,
+                    extras
+                )
             }
             TopAppBarType.LIFT_ON_SCROLL -> {
                 startActivity(LiftOnScrollActivity.createIntent(requireContext()))
             }
             TopAppBarType.COLLAPSING -> {
-                findNavController().navigate(R.id.action_TopAppBarType_to_Collapsing, null, null, extras)
+                findNavController().navigate(
+                    R.id.action_TopAppBarType_to_Collapsing,
+                    null,
+                    null,
+                    extras
+                )
             }
         }
     }
@@ -68,7 +104,7 @@ class TopAppBarTypeItemAdapter : RecyclerView.Adapter<TopAppBarTypeItemAdapter.V
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_item, parent, false)
+        val view = ViewHolderItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(view)
     }
 
@@ -82,9 +118,12 @@ class TopAppBarTypeItemAdapter : RecyclerView.Adapter<TopAppBarTypeItemAdapter.V
         }
     }
 
-    class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    class ViewHolder(
+        private val binding: ViewHolderItemBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+
         fun bindType(type: TopAppBarType) {
-            titleTextView.setText(type.titleRes)
+            binding.titleTextView.setText(type.titleRes)
             itemView.transitionName = itemView.context.getString(type.transitionNameStringRes)
         }
 

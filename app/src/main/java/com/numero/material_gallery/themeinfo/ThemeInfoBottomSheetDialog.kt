@@ -7,26 +7,39 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.numero.material_gallery.R
+import com.numero.material_gallery.databinding.BottomSheetFragmentThemeInfoBinding
 import com.numero.material_gallery.model.Theme
 import com.numero.material_gallery.repository.ConfigRepository
-import kotlinx.android.synthetic.main.bottom_sheet_fragment_theme_info.view.*
 import org.koin.android.ext.android.inject
 
 class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
 
     private val configRepository by inject<ConfigRepository>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.bottom_sheet_fragment_theme_info, container, false)
+    private var _binding: BottomSheetFragmentThemeInfoBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = BottomSheetFragmentThemeInfoBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupViews(view)
+        setupViews()
     }
 
-    private fun setupViews(view: View) {
-        val toggleGroup = view.selectThemeToggleGroup
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun setupViews() {
+        val toggleGroup = binding.selectThemeToggleGroup
         toggleGroup.check(configRepository.getCurrentTheme().getToggleButtonId())
         toggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked) {

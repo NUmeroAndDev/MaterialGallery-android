@@ -7,8 +7,7 @@ import androidx.annotation.StringRes
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.DesignComponent
-import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.view_holder_item.*
+import com.numero.material_gallery.databinding.ViewHolderItemBinding
 
 class ComponentListAdapter : RecyclerView.Adapter<ComponentItemViewHolder>() {
 
@@ -21,7 +20,7 @@ class ComponentListAdapter : RecyclerView.Adapter<ComponentItemViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ComponentItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder_item, parent, false)
+        val view = ViewHolderItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ComponentItemViewHolder(view)
     }
 
@@ -37,11 +36,11 @@ class ComponentListAdapter : RecyclerView.Adapter<ComponentItemViewHolder>() {
 }
 
 class ComponentItemViewHolder(
-        override val containerView: View
-) : RecyclerView.ViewHolder(containerView), LayoutContainer {
+    private val binding: ViewHolderItemBinding
+) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(component: DesignComponent) {
-        titleTextView.setText(component.titleRes)
+        binding.titleTextView.setText(component.titleRes)
         itemView.transitionName = itemView.context.getString(component.transitionNameStringRes)
     }
 

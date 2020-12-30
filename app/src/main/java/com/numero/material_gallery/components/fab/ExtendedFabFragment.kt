@@ -1,46 +1,64 @@
 package com.numero.material_gallery.components.fab
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_extended_fab.*
+import com.numero.material_gallery.databinding.FragmentExtendedFabBinding
 
 class ExtendedFabFragment : MaterialContainerTransformFragment(R.layout.fragment_extended_fab) {
+
+    private var _binding: FragmentExtendedFabBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentExtendedFabBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        fabStyleRadioGroup.setOnCheckedChangeListener { _, id ->
+        binding.fabStyleRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.fabStyleExtendRadioButton -> extendedFab.extend()
-                else -> extendedFab.shrink()
+                R.id.fabStyleExtendRadioButton -> binding.extendedFab.extend()
+                else -> binding.extendedFab.shrink()
             }
         }
 
-        fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
+        binding.fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.fabShowRadioButton -> extendedFab.show()
-                else -> extendedFab.hide()
+                R.id.fabShowRadioButton -> binding.extendedFab.show()
+                else -> binding.extendedFab.hide()
             }
         }
 
-        extendedFab.setOnClickListener {
-            Snackbar.make(rootLayout, "Clicked FAB", Snackbar.LENGTH_SHORT).setAnchorView(it).show()
+        binding.extendedFab.setOnClickListener {
+            Snackbar.make(
+                binding.rootLayout,
+                "Clicked FAB",
+                Snackbar.LENGTH_SHORT
+            ).setAnchorView(it).show()
         }
 
-        rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

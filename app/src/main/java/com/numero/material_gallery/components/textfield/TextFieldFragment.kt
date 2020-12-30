@@ -1,35 +1,44 @@
 package com.numero.material_gallery.components.textfield
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
-import kotlinx.android.synthetic.main.fragment_text_field.*
+import com.numero.material_gallery.databinding.FragmentTextFieldBinding
 
 class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_text_field) {
+
+    private var _binding: FragmentTextFieldBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentTextFieldBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        filledErrorTextInputLayout.error = "Error"
-        outlineErrorTextInputLayout.error = "Error"
+        binding.filledErrorTextInputLayout.error = "Error"
+        binding.outlineErrorTextInputLayout.error = "Error"
 
-        customIconFilledTextInputLayout.setEndIconOnClickListener {
+        binding.customIconFilledTextInputLayout.setEndIconOnClickListener {
             Toast.makeText(requireContext(), "Clicked end icon", Toast.LENGTH_SHORT).show()
         }
-        customIconOutlineTextInputLayout.setEndIconOnClickListener {
+        binding.customIconOutlineTextInputLayout.setEndIconOnClickListener {
             Toast.makeText(requireContext(), "Clicked end icon", Toast.LENGTH_SHORT).show()
         }
 
@@ -38,10 +47,15 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
                 android.R.layout.simple_spinner_dropdown_item,
                 arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
         )
-        filledAutoCompleteTextView.setAdapter(adapter)
-        outlineAutoCompleteTextView.setAdapter(adapter)
+        binding.filledAutoCompleteTextView.setAdapter(adapter)
+        binding.outlineAutoCompleteTextView.setAdapter(adapter)
 
-        scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
