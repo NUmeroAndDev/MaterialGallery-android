@@ -10,7 +10,7 @@ import com.google.android.material.color.MaterialColors
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialContainerTransform
 
-open class MaterialContainerTransformFragment : Fragment {
+abstract class MaterialContainerTransformFragment : Fragment {
 
     constructor() : super()
     constructor(@LayoutRes contentLayoutId: Int) : super(contentLayoutId)
