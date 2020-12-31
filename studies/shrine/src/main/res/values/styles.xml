@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Shrine.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton.Icon">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.FloatingActionButton</item>
+    </style>
+
+    <style name="Widget.Shrine.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.FloatingActionButton</item>
+    </style>
+
+    <style name="Widget.Shrine.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Button.TextButton</item>
+    </style>
+
+    <style name="Widget.Shrine.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Button.TextButton</item>
+    </style>
+
+    <style name="Widget.Shrine.Button" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Button</item>
+    </style>
+
+    <style name="Widget.Shrine.Button.Dialog" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Button.TextButton</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Shrine.SmallComponent</item>
+    </style>
+
+    <style name="MaterialAlertDialog.Shrine" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearance">@style/ShapeAppearance.Shrine.MediumComponent</item>
+    </style>
+
+    <style name="Widget.Shrine.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Toolbar</item>
+    </style>
+
+    <style name="Widget.Shrine.Chip" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipIconTint">@color/shrine_pink_900</item>
+        <item name="chipBackgroundColor">@android:color/white</item>
+        <item name="chipStrokeWidth">2dp</item>
+        <item name="chipStrokeColor">@color/chip_stroke_tint</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Shrine.Chip</item>
+    </style>
+
+    <style name="Widget.Shrine.Slider" parent="Widget.MaterialComponents.Slider">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Slider</item>
+        <item name="labelStyle">@style/Widget.Shrine.Tooltip</item>
+    </style>
+
+    <style name="Widget.Shrine.Tooltip" parent="Widget.MaterialComponents.Tooltip">
+        <item name="android:textAppearance">@style/TextAppearance.Shrine.Tooltip</item>
+        <item name="backgroundTint">@color/shrine_pink_900</item>
+    </style>
+
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.Shrine.H1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/rubik_light</item>
+        <item name="android:fontFamily">@font/rubik_light</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.H2" parent="TextAppearance.MaterialComponents.Headline2">
+        <item name="fontFamily">@font/rubik_light</item>
+        <item name="android:fontFamily">@font/rubik_light</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.H3" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="fontFamily">@font/rubik_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.H4" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="fontFamily">@font/rubik_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.H5" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/rubik_medium</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.H6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/rubik_medium</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/rubik_medium</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/rubik_medium</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/rubik_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="fontFamily">@font/rubik_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="fontFamily">@font/rubik_medium</item>
+        <item name="android:fontFamily">@font/rubik_medium</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="fontFamily">@font/rubik_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Overline" parent="TextAppearance.MaterialComponents.Overline">
+        <item name="fontFamily">@font/rubik_regular</item>
+        <item name="android:fontFamily">@font/rubik_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.Shrine.Tooltip" parent="TextAppearance.MaterialComponents.Tooltip">
+        <item name="android:textColor">@color/shrine_pink_100</item>
+    </style>
+</resources>
