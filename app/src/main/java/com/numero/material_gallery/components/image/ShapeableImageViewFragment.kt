@@ -8,7 +8,7 @@ import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentShapeableImageViewBinding
 
-class ShapeableImageViewFragment : MaterialContainerTransformFragment() {
+class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.fragment_shapeable_image_view) {
 
     private var _binding: FragmentShapeableImageViewBinding? = null
     private val binding get() = _binding!!
@@ -18,17 +18,9 @@ class ShapeableImageViewFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentShapeableImageViewBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentShapeableImageViewBinding.bind(view)
 
         binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }

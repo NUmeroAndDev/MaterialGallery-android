@@ -11,7 +11,7 @@ import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentBottomAppBarBinding
 
-class BottomAppBarFragment : MaterialContainerTransformFragment() {
+class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_app_bar) {
 
     private var _binding: FragmentBottomAppBarBinding? = null
     private val binding get() = _binding!!
@@ -21,17 +21,9 @@ class BottomAppBarFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentBottomAppBarBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentBottomAppBarBinding.bind(view)
 
         binding.fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()

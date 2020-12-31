@@ -7,7 +7,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentRadioButtonBinding
 
-class RadioButtonFragment : MaterialContainerTransformFragment() {
+class RadioButtonFragment : MaterialContainerTransformFragment(R.layout.fragment_radio_button) {
 
     private var _binding: FragmentRadioButtonBinding? = null
     private val binding get() = _binding!!
@@ -17,13 +17,9 @@ class RadioButtonFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentRadioButtonBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentRadioButtonBinding.bind(view)
     }
 
     override fun onDestroyView() {

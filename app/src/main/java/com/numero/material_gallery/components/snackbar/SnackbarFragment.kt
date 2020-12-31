@@ -10,7 +10,7 @@ import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentSnackbarBinding
 
-class SnackbarFragment : MaterialContainerTransformFragment() {
+class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_snackbar) {
 
     private var _binding: FragmentSnackbarBinding? = null
     private val binding get() = _binding!!
@@ -20,17 +20,10 @@ class SnackbarFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentSnackbarBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentSnackbarBinding.bind(view)
+
         binding.fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
         }

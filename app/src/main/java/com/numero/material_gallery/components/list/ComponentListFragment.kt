@@ -22,7 +22,7 @@ import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentComponentListBinding
 
-class ComponentListFragment : Fragment() {
+class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
     private lateinit var appUpdateManager: AppUpdateManager
 
@@ -35,17 +35,10 @@ class ComponentListFragment : Fragment() {
         appUpdateManager = AppUpdateManagerFactory.create(requireContext())
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentComponentListBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentComponentListBinding.bind(view)
+
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
 

@@ -10,7 +10,7 @@ import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentProgressIndicatorBinding
 
-class ProgressIndicatorFragment : MaterialContainerTransformFragment() {
+class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fragment_progress_indicator) {
 
     private var _binding: FragmentProgressIndicatorBinding? = null
     private val binding get() = _binding!!
@@ -20,17 +20,9 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentProgressIndicatorBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentProgressIndicatorBinding.bind(view)
 
         val progressIndicatorSpec = CircularProgressIndicatorSpec(
                 requireContext(),

@@ -12,7 +12,7 @@ import com.numero.material_gallery.databinding.FragmentTimePickerBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TimePickerFragment : MaterialContainerTransformFragment() {
+class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_time_picker) {
 
     private var _binding: FragmentTimePickerBinding? = null
     private val binding get() = _binding!!
@@ -22,17 +22,9 @@ class TimePickerFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentTimePickerBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentTimePickerBinding.bind(view)
         setupViews()
     }
 

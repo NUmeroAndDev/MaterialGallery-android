@@ -13,7 +13,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentDatePickerBinding
 
-class DatePickerFragment : MaterialContainerTransformFragment() {
+class DatePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_date_picker) {
 
     private var _binding: FragmentDatePickerBinding? = null
     private val binding get() = _binding!!
@@ -23,17 +23,9 @@ class DatePickerFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentDatePickerBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentDatePickerBinding.bind(view)
         setupViews()
     }
 
