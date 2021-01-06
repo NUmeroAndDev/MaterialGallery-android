@@ -21,10 +21,6 @@ android {
         }
     }
 
-    buildFeatures {
-        viewBinding = true
-    }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -36,18 +32,11 @@ android {
 }
 
 dependencies {
-    implementation project(':core')
-
     implementation kotlinAndroid.stdlib
-
     implementation androidx.appcompat
-    implementation androidx.activity
-    implementation androidx.fragment
-    implementation androidx.recyclerview
-    implementation androidx.constraintlayout
     implementation androidx.core
-
-    implementation material
+    implementation androidx.lifecycle.livedata
+    implementation androidx.lifecycle.runtime
 
     testImplementation 'junit:junit:4.13.1'
 }
