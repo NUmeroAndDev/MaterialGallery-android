@@ -28,17 +28,18 @@ class SettingsFragment : Fragment(R.layout.fragment_settings), PreferenceFragmen
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        childFragmentManager.beginTransaction().replace(R.id.container, PreferenceFragment.newInstance()).commit()
+        childFragmentManager.beginTransaction()
+            .replace(R.id.container, PreferenceFragment.newInstance())
+            .commit()
     }
 
     override fun onResume() {
         super.onResume()
-        appUpdateManager.appUpdateInfo
-                .addOnSuccessListener { appUpdateInfo ->
-                    if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                        doUpdate(appUpdateInfo)
-                    }
-                }
+        appUpdateManager.appUpdateInfo.addOnSuccessListener { appUpdateInfo ->
+            if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+                doUpdate(appUpdateInfo)
+            }
+        }
     }
 
     override fun doUpdate(appUpdateInfo: AppUpdateInfo) {

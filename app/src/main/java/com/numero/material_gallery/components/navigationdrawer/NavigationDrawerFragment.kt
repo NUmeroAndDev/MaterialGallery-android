@@ -1,10 +1,8 @@
 package com.numero.material_gallery.components.navigationdrawer
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -18,23 +16,15 @@ import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentNavigationDrawerBinding
 
-class NavigationDrawerFragment : MaterialContainerTransformFragment(),
+class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fragment_navigation_drawer),
     NavigationView.OnNavigationItemSelectedListener {
 
     private var _binding: FragmentNavigationDrawerBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentNavigationDrawerBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentNavigationDrawerBinding.bind(view)
 
         binding.content.toolbar.apply {
             setNavigationOnClickListener {

@@ -9,7 +9,7 @@ import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentSliderBinding
 
-class SliderFragment : MaterialContainerTransformFragment() {
+class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slider) {
 
     private var _binding: FragmentSliderBinding? = null
     private val binding get() = _binding!!
@@ -19,18 +19,9 @@ class SliderFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentSliderBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        _binding = FragmentSliderBinding.bind(view)
         setupViews()
     }
 

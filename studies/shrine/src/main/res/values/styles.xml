@@ -34,6 +34,11 @@
         <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Toolbar</item>
     </style>
 
+    <style name="Widget.Shrine.CheckBox" parent="Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.CheckBox</item>
+        <item name="buttonTint">@color/radio_button_tint</item>
+    </style>
+
     <style name="Widget.Shrine.Chip" parent="Widget.MaterialComponents.Chip.Action">
         <item name="chipIconTint">@color/shrine_pink_900</item>
         <item name="chipBackgroundColor">@android:color/white</item>
@@ -42,9 +47,31 @@
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Shrine.Chip</item>
     </style>
 
+    <style name="Widget.Shrine.CircularProgressIndicator" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="trackThickness">20dp</item>
+    </style>
+
+    <style name="Widget.Shrine.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.RadioButton</item>
+        <item name="buttonTint">@color/radio_button_tint</item>
+    </style>
+
+    <style name="Widget.Shrine.Snackbar" parent="Widget.MaterialComponents.Snackbar">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Snackbar</item>
+        <item name="actionTextColorAlpha">1</item>
+    </style>
+
     <style name="Widget.Shrine.Slider" parent="Widget.MaterialComponents.Slider">
         <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Slider</item>
         <item name="labelStyle">@style/Widget.Shrine.Tooltip</item>
+    </style>
+
+    <style name="Widget.Shrine.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.Switch</item>
+    </style>
+
+    <style name="Widget.Shrine.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Shrine.TabLayout</item>
     </style>
 
     <style name="Widget.Shrine.Tooltip" parent="Widget.MaterialComponents.Tooltip">

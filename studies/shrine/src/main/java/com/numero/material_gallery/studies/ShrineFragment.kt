@@ -1,5 +1,6 @@
 package com.numero.material_gallery.studies
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.studies.databinding.FragmentShrineBinding
 
 class ShrineFragment : Fragment() {
@@ -29,11 +31,23 @@ class ShrineFragment : Fragment() {
         binding.showDialogButton.setOnClickListener {
             showDialog()
         }
+        setupSnackbar()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    @SuppressLint("ShowToast")
+    private fun setupSnackbar() {
+        val snackbarView = Snackbar.make(
+            binding.snackbarContainer, "Message", Snackbar.LENGTH_INDEFINITE
+        )
+            .setAction("Action") {
+            }
+            .view
+        binding.snackbarContainer.addView(snackbarView)
     }
 
     private fun showDialog() {

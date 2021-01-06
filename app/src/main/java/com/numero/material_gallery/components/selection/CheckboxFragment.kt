@@ -7,7 +7,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentCheckboxBinding
 
-class CheckboxFragment : MaterialContainerTransformFragment() {
+class CheckboxFragment : MaterialContainerTransformFragment(R.layout.fragment_checkbox) {
 
     private var _binding: FragmentCheckboxBinding? = null
     private val binding get() = _binding!!
@@ -17,13 +17,9 @@ class CheckboxFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentCheckboxBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentCheckboxBinding.bind(view)
     }
 
     override fun onDestroyView() {

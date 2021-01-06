@@ -9,7 +9,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentModalBottomSheetBinding
 
-class ModalBottomSheetFragment : MaterialContainerTransformFragment() {
+class ModalBottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_modal_bottom_sheet) {
 
     private var _binding: FragmentModalBottomSheetBinding? = null
     private val binding get() = _binding!!
@@ -19,17 +19,9 @@ class ModalBottomSheetFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentModalBottomSheetBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentModalBottomSheetBinding.bind(view)
 
         binding.showBottomSheetButton.setOnClickListener {
             BottomSheetModalFragment.newInstance().showIfNeeded(childFragmentManager)

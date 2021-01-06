@@ -5,6 +5,7 @@
         <!-- Color -->
         <item name="colorPrimary">@color/shrine_pink_100</item>
         <item name="colorSurface">@color/shrine_pink_50</item>
+        <item name="colorOnPrimary">@color/shrine_pink_900</item>
         <item name="colorOnSurface">@color/shrine_pink_900</item>
 
         <!-- Shape -->
@@ -39,8 +40,20 @@
         <item name="materialButtonOutlinedStyle">@style/Widget.Shrine.Button.OutlinedButton</item>
         <item name="materialButtonStyle">@style/Widget.Shrine.Button</item>
         <item name="toolbarStyle">@style/Widget.Shrine.Toolbar</item>
+        <item name="bottomNavigationStyle">
+            @style/Widget.MaterialComponents.BottomNavigationView.Colored
+        </item>
+        <item name="checkboxStyle">@style/Widget.Shrine.CheckBox</item>
         <item name="chipStyle">@style/Widget.Shrine.Chip</item>
+        <item name="circularProgressIndicatorStyle">@style/Widget.Shrine.CircularProgressIndicator
+        </item>
+        <item name="radioButtonStyle">@style/Widget.Shrine.RadioButton</item>
+        <item name="snackbarStyle">@style/Widget.Shrine.Snackbar</item>
         <item name="sliderStyle">@style/Widget.Shrine.Slider</item>
+        <item name="switchStyle">@style/Widget.Shrine.Switch</item>
+        <item name="tabStyle">@style/Widget.Shrine.TabLayout</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox
+        </item>
         <item name="tooltipStyle">@style/Widget.Shrine.Tooltip</item>
 
         <!-- Theme -->
@@ -83,6 +96,32 @@
         <item name="colorPrimary">@color/shrine_pink_100</item>
         <item name="colorOnPrimary">@color/shrine_pink_900</item>
         <item name="colorOnSurface">@color/shrine_pink_100</item>
+    </style>
+
+    <style name="ThemeOverlay.Shrine.TabLayout" parent="">
+        <item name="colorPrimary">@color/shrine_pink_900</item>
+        <item name="colorSurface">@color/shrine_pink_light</item>
+        <item name="colorOnSurface">@color/shrine_pink_900</item>
+    </style>
+
+    <style name="ThemeOverlay.Shrine.Switch" parent="">
+        <item name="colorOnSurface">@color/shrine_pink_900</item>
+        <item name="colorSecondary">@color/shrine_pink_100</item>
+    </style>
+
+    <style name="ThemeOverlay.Shrine.Snackbar" parent="">
+        <item name="colorPrimary">@color/shrine_pink_100</item>
+        <item name="colorOnSurface">@color/shrine_pink_900</item>
+    </style>
+
+    <style name="ThemeOverlay.Shrine.RadioButton" parent="">
+        <item name="colorOnSurface">@color/shrine_pink_900</item>
+        <item name="colorSecondary">@color/shrine_pink_100</item>
+    </style>
+
+    <style name="ThemeOverlay.Shrine.CheckBox" parent="">
+        <item name="colorOnSurface">@color/shrine_pink_900</item>
+        <item name="colorSecondary">@color/shrine_pink_100</item>
     </style>
 
 </resources>

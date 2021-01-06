@@ -19,17 +19,9 @@ class ExtendedFabFragment : MaterialContainerTransformFragment(R.layout.fragment
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentExtendedFabBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentExtendedFabBinding.bind(view)
 
         binding.fabStyleRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {

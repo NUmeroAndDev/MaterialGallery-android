@@ -7,7 +7,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentActionBarBinding
 
-class ActionBarFragment : MaterialContainerTransformFragment() {
+class ActionBarFragment : MaterialContainerTransformFragment(R.layout.fragment_action_bar) {
 
     private var _binding: FragmentActionBarBinding? = null
     private val binding get() = _binding!!
@@ -17,13 +17,9 @@ class ActionBarFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentActionBarBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentActionBarBinding.bind(view)
     }
 
     override fun onDestroyView() {

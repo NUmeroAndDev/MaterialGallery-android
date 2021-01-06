@@ -20,17 +20,9 @@ class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentFabBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentFabBinding.bind(view)
 
         binding.fabSizeRadioGroup.setOnCheckedChangeListener { _, id ->
             binding.fab.size = when (id) {
