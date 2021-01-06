@@ -9,24 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: set up JDK
-      uses: actions/setup-java@v1
-      with:
-        java-version: 11
+      - uses: actions/checkout@v2.3.4
+        with:
+          fetch-depth: 0
+      - name: set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
 
-    - name: Setup Ruby
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: '2.6'
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
 
-    - name: Install bundler
-      run: bundle install
+      - name: Install bundler
+        run: bundle install
 
-    - name: Run AndroidLint
-      run: ./gradlew lintRelease
+      - name: Run AndroidLint
+        run: ./gradlew lintRelease
 
-    - name: Run danger
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: bundle exec danger
+      - name: Run danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec danger
