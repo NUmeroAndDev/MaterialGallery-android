@@ -20,17 +20,9 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentTextFieldBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentTextFieldBinding.bind(view)
 
         binding.filledErrorTextInputLayout.error = "Error"
         binding.outlineErrorTextInputLayout.error = "Error"

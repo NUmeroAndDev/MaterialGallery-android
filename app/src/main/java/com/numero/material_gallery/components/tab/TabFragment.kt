@@ -7,7 +7,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentTabBinding
 
-class TabFragment : MaterialContainerTransformFragment() {
+class TabFragment : MaterialContainerTransformFragment(R.layout.fragment_tab) {
 
     private var _binding: FragmentTabBinding? = null
     private val binding get() = _binding!!
@@ -17,17 +17,9 @@ class TabFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentTabBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentTabBinding.bind(view)
         setupTab()
     }
 

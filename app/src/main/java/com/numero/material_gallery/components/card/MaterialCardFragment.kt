@@ -11,7 +11,7 @@ import com.numero.material_gallery.components.card.state.Stroke
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentMaterialCardBinding
 
-class MaterialCardFragment : MaterialContainerTransformFragment() {
+class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragment_material_card) {
 
     private var _binding: FragmentMaterialCardBinding? = null
     private val binding get() = _binding!!
@@ -21,17 +21,10 @@ class MaterialCardFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentMaterialCardBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentMaterialCardBinding.bind(view)
+
         binding.elevationSlider.addOnChangeListener { _, value, _ ->
             updateElevation(Elevation.values()[value.toInt()])
         }

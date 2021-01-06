@@ -9,7 +9,7 @@ import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentBottomNavigationBinding
 
-class BottomNavigationFragment : MaterialContainerTransformFragment() {
+class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
 
     private var _binding: FragmentBottomNavigationBinding? = null
     private val binding get() = _binding!!
@@ -19,17 +19,9 @@ class BottomNavigationFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentBottomNavigationBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentBottomNavigationBinding.bind(view)
         initViews()
         binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }

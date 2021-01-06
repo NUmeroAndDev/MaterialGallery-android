@@ -8,7 +8,7 @@ import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentMaterialButtonBinding
 
-class MaterialButtonFragment : MaterialContainerTransformFragment() {
+class MaterialButtonFragment : MaterialContainerTransformFragment(R.layout.fragment_material_button) {
 
     private var _binding: FragmentMaterialButtonBinding? = null
     private val binding get() = _binding!!
@@ -18,17 +18,9 @@ class MaterialButtonFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentMaterialButtonBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentMaterialButtonBinding.bind(view)
         binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
     }
 

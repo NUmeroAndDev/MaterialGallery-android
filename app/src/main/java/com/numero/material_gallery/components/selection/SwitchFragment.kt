@@ -7,7 +7,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentSwitchBinding
 
-class SwitchFragment : MaterialContainerTransformFragment() {
+class SwitchFragment : MaterialContainerTransformFragment(R.layout.fragment_switch) {
 
     private var _binding: FragmentSwitchBinding? = null
     private val binding get() = _binding!!
@@ -17,13 +17,9 @@ class SwitchFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentSwitchBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentSwitchBinding.bind(view)
     }
 
     override fun onDestroyView() {

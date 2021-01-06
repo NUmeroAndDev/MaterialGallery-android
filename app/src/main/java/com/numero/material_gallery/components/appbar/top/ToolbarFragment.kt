@@ -7,7 +7,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentToolbarBinding
 
-class ToolbarFragment : MaterialContainerTransformFragment() {
+class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_toolbar) {
 
     private var _binding: FragmentToolbarBinding? = null
     private val binding get() = _binding!!
@@ -17,17 +17,9 @@ class ToolbarFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentToolbarBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentToolbarBinding.bind(view)
 
         initViews()
     }

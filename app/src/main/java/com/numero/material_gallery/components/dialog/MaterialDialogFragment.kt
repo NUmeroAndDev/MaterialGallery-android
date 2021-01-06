@@ -8,7 +8,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentMaterialDialogBinding
 
-class MaterialDialogFragment : MaterialContainerTransformFragment() {
+class MaterialDialogFragment : MaterialContainerTransformFragment(R.layout.fragment_material_dialog) {
 
     private var _binding: FragmentMaterialDialogBinding? = null
     private val binding get() = _binding!!
@@ -18,17 +18,9 @@ class MaterialDialogFragment : MaterialContainerTransformFragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentMaterialDialogBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentMaterialDialogBinding.bind(view)
 
         binding.showDialogButton.setOnClickListener {
             showMaterialDialog()
