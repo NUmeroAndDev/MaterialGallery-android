@@ -36,8 +36,8 @@ android {
 }
 
 dependencies {
+
     implementation project(':core')
-    implementation project(':studies:base')
 
     implementation kotlinAndroid.stdlib
 

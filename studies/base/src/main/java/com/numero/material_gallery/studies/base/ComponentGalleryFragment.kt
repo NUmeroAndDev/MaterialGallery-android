@@ -1,4 +1,4 @@
-package com.numero.material_gallery.studies
+package com.numero.material_gallery.studies.base
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -6,14 +6,17 @@ import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.StyleRes
 import androidx.fragment.app.Fragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
-import com.numero.material_gallery.studies.databinding.FragmentShrineBinding
+import com.numero.material_gallery.base.databinding.FragmentComponentGalleryBinding
 
-class ShrineFragment : Fragment() {
+abstract class ComponentGalleryFragment(
+    @StyleRes private val overlayTheme: Int
+) : Fragment() {
 
-    private var _binding: FragmentShrineBinding? = null
+    private var _binding: FragmentComponentGalleryBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -21,8 +24,12 @@ class ShrineFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val context = ContextThemeWrapper(requireContext(), R.style.Theme_Shrine)
-        _binding = FragmentShrineBinding.inflate(LayoutInflater.from(context), container, false)
+        val wrappedContext = ContextThemeWrapper(requireContext(), overlayTheme)
+        _binding = FragmentComponentGalleryBinding.inflate(
+            LayoutInflater.from(wrappedContext),
+            container,
+            false
+        )
         return binding.root
     }
 
@@ -51,10 +58,8 @@ class ShrineFragment : Fragment() {
     }
 
     private fun showDialog() {
-        MaterialAlertDialogBuilder(
-            requireContext(),
-            R.style.ThemeOverlay_Shrine_MaterialAlertDialog
-        )
+        val wrappedContext = ContextThemeWrapper(requireContext(), overlayTheme)
+        MaterialAlertDialogBuilder(wrappedContext)
             .setTitle("Title")
             .setMessage("Message")
             .setPositiveButton("Ok", null)

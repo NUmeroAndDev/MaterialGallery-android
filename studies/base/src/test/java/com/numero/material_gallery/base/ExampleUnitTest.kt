@@ -1,4 +1,4 @@
-package com.numero.material_gallery.studies
+package com.numero.material_gallery.base
 
 import org.junit.Test
 

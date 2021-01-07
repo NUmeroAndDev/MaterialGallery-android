@@ -1,3 +1,4 @@
 include ':app'
 include ':studies:shrine'
 include ':core'
+include ':studies:base'
