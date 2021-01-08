@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.transition.Hold
-import com.google.android.material.transition.MaterialSharedAxis
+import com.google.android.material.transition.MaterialFadeThrough
 import com.google.android.play.core.appupdate.AppUpdateInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
@@ -41,31 +41,17 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
-
+        exitTransition = MaterialFadeThrough()
+        enterTransition = MaterialFadeThrough()
         ViewGroupCompat.setTransitionGroup(binding.rootLayout, true)
 
         initViews()
-        binding.componentRecyclerView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.componentRecyclerView.applySystemWindowInsetsPadding(applyTop = true)
     }
 
     override fun onResume() {
         super.onResume()
         checkUpdate()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_main, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> {
-                showSettingsScreen()
-                true
-            }
-            else -> false
-        }
     }
 
     private fun checkUpdate() {
@@ -88,13 +74,6 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
     private fun doUpdate(info: AppUpdateInfo) {
         appUpdateManager.startUpdateFlowForResult(info, AppUpdateType.IMMEDIATE, this, UPDATE_REQUEST_CODE)
-    }
-
-    private fun showSettingsScreen() {
-        reenterTransition = MaterialSharedAxis(MaterialSharedAxis.Z, false)
-        exitTransition = MaterialSharedAxis(MaterialSharedAxis.Z, true)
-
-        findNavController().navigate(R.id.action_ComponentList_to_Settings)
     }
 
     private fun initViews() {

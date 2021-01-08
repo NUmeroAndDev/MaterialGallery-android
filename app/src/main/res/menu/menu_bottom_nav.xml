@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.numero.material_gallery.MainActivity">
+    <item
+        android:id="@+id/navComponents"
+        android:icon="@drawable/ic_code"
+        android:title="Components" />
+
+    <item
+        android:id="@+id/navStudies"
+        android:icon="@drawable/ic_palette"
+        android:title="Studies" />
+
+    <item
+        android:id="@+id/navSettings"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+</menu>

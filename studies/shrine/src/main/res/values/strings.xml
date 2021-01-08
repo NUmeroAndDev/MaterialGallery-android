@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="label_shrine">Shrine</string>
+
+    <string name="shrine_transition_name">shrine</string>
+</resources>

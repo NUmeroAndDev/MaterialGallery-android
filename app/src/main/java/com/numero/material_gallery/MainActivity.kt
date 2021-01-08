@@ -5,10 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsControllerCompat
+import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.AppBarLayout
 import com.numero.material_gallery.core.observeSingle
 import com.numero.material_gallery.databinding.ActivityMainBinding
@@ -20,8 +23,18 @@ class MainActivity : AppCompatActivity() {
     private val configRepository by inject<ConfigRepository>()
 
     private val hideAppBarDestinationIds = setOf(
-            R.id.NavigationDrawerScreen,
-            R.id.CollapsingScreen
+        R.id.NavigationDrawerScreen,
+        R.id.CollapsingScreen,
+        R.id.ComponentListScreen,
+        R.id.StudiesScreen,
+        R.id.SettingsScreen,
+        R.id.ShrineScreen
+    )
+
+    private val rootNavigationDestinationIds = setOf(
+        R.id.ComponentListScreen,
+        R.id.StudiesScreen,
+        R.id.SettingsScreen
     )
 
     private lateinit var binding: ActivityMainBinding
@@ -37,10 +50,13 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor = Color.TRANSPARENT
 
         val navController = checkNotNull(
-                supportFragmentManager.findFragmentById(R.id.container)
+            supportFragmentManager.findFragmentById(R.id.container)
         ).findNavController()
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        binding.bottomNavigation.setupWithNavController(navController)
+        binding.bottomNavigation.setOnNavigationItemReselectedListener {}
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
@@ -51,6 +67,12 @@ class MainActivity : AppCompatActivity() {
                     binding.appbar.visible()
                 }
             }
+
+            val isRootDestination = rootNavigationDestinationIds.contains(destination.id)
+            binding.bottomNavigation.isVisible = isRootDestination
+
+            val windowInsetController = WindowInsetsControllerCompat(window, window.decorView)
+            windowInsetController.isAppearanceLightStatusBars = isRootDestination
         }
 
         configRepository.changedTheme.observeSingle(this) {
@@ -59,7 +81,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp() = checkNotNull(
-            supportFragmentManager.findFragmentById(R.id.container)
+        supportFragmentManager.findFragmentById(R.id.container)
     ).findNavController().navigateUp()
 
     private fun AppBarLayout.gone() {

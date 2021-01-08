@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navSettings"
+    app:startDestination="@id/SettingsScreen">
+
+    <fragment
+        android:id="@+id/SettingsScreen"
+        android:name="com.numero.material_gallery.settings.SettingsFragment"
+        android:label="@string/action_settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_Settings_to_Licenses"
+            app:destination="@id/LicensesScreen" />
+    </fragment>
+
+    <activity
+        android:id="@+id/LicensesScreen"
+        android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity" />
+
+</navigation>
