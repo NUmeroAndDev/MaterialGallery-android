@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navStudies"
+    app:startDestination="@id/StudiesScreen">
+
+    <fragment
+        android:id="@+id/StudiesScreen"
+        android:name="com.numero.material_gallery.StudiesFragment"
+        tools:layout="@layout/fragment_studies">
+        <action
+            android:id="@+id/action_Studies_to_Shrine"
+            app:destination="@id/ShrineScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ShrineScreen"
+        android:name="com.numero.material_gallery.studies.shrine.ShrineFragment"
+        android:label="@string/label_shrine" />
+
+</navigation>

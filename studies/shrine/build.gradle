@@ -36,17 +36,12 @@ android {
 }
 
 dependencies {
-    implementation project(':core')
     implementation project(':studies:base')
 
     implementation kotlinAndroid.stdlib
 
     implementation androidx.appcompat
-    implementation androidx.activity
     implementation androidx.fragment
-    implementation androidx.recyclerview
-    implementation androidx.constraintlayout
-    implementation androidx.core
 
     implementation material
 
