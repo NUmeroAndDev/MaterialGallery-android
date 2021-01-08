@@ -5,4 +5,5 @@ import com.numero.material_gallery.studies.shrines.R
 
 class ShrineFragment : ComponentGalleryFragment(R.style.Theme_Shrine) {
     override val transitionNameRes: Int = R.string.shrine_transition_name
+    override val titleRes: Int = R.string.label_shrine
 }

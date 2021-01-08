@@ -13,6 +13,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.AppBarLayout
+import com.numero.material_gallery.core.isDarkTheme
 import com.numero.material_gallery.core.observeSingle
 import com.numero.material_gallery.databinding.ActivityMainBinding
 import com.numero.material_gallery.repository.ConfigRepository
@@ -72,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             binding.bottomNavigation.isVisible = isRootDestination
 
             val windowInsetController = WindowInsetsControllerCompat(window, window.decorView)
-            windowInsetController.isAppearanceLightStatusBars = isRootDestination
+            windowInsetController.isAppearanceLightStatusBars = isRootDestination && !isDarkTheme
         }
 
         configRepository.changedTheme.observeSingle(this) {

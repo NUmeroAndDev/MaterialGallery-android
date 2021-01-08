@@ -16,6 +16,7 @@
 
     <fragment
         android:id="@+id/ShrineScreen"
-        android:name="com.numero.material_gallery.studies.shrine.ShrineFragment" />
+        android:name="com.numero.material_gallery.studies.shrine.ShrineFragment"
+        android:label="@string/label_shrine" />
 
 </navigation>

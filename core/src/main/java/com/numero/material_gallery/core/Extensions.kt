@@ -1,5 +1,7 @@
 package com.numero.material_gallery.core
 
+import android.content.Context
+import android.content.res.Configuration
 import android.view.View
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -23,6 +25,9 @@ fun <T> LiveData<T>.observeSingle(owner: LifecycleOwner, observer: ((T) -> Unit)
         observer(it)
     })
 }
+
+val Context.isDarkTheme: Boolean
+    get() = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
 
 fun View.applySystemWindowInsetsPadding(
         applyLeft: Boolean = false,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Shrine" parent="Theme.MaterialComponents.DayNight">
+    <style name="Theme.Shrine" parent="Theme.MaterialComponents.Light">
         <!-- Color -->
         <item name="colorPrimary">@color/shrine_pink_100</item>
         <item name="colorSurface">@color/shrine_pink_50</item>
