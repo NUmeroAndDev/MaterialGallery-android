@@ -152,11 +152,15 @@
                 android:layout_marginTop="32dp"
                 android:text="Progress indicator" />
 
+            <!--
+                Settings app:indicatorSize because workaround of throws an exception if indicatorSize is less than twice of the trackThickness
+            -->
             <com.google.android.material.progressindicator.CircularProgressIndicator
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:indeterminate="true" />
+                android:indeterminate="true"
+                app:indicatorSize="41dp" />
 
             <TextView
                 android:layout_width="wrap_content"
