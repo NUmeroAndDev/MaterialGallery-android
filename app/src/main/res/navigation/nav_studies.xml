@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/StudiesScreen"
-        android:name="com.numero.material_gallery.StudiesFragment"
+        android:name="com.numero.material_gallery.studies.StudiesFragment"
         tools:layout="@layout/fragment_studies">
         <action
             android:id="@+id/action_Studies_to_Shrine"
