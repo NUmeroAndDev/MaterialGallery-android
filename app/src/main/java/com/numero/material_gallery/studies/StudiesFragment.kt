@@ -1,4 +1,4 @@
-package com.numero.material_gallery
+package com.numero.material_gallery.studies
 
 import android.os.Bundle
 import android.view.View
@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialFadeThrough
+import com.numero.material_gallery.R
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentStudiesBinding
 

@@ -1,11 +1,12 @@
-package com.numero.material_gallery
+package com.numero.material_gallery.studies
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
-import com.numero.material_gallery.components.DesignComponent
+import com.numero.material_gallery.R
 import com.numero.material_gallery.databinding.ViewHolderItemBinding
 
 class MaterialStudiesAdapter : RecyclerView.Adapter<StudiesItemViewHolder>() {
@@ -40,6 +41,8 @@ class StudiesItemViewHolder(
 
     fun bind(studies: MaterialStudies) {
         binding.titleTextView.setText(studies.titleRes)
+        binding.iconImageView.isVisible = true
+        binding.iconImageView.setImageResource(studies.iconRes)
         itemView.transitionName = itemView.context.getString(studies.transitionNameStringRes)
     }
 
