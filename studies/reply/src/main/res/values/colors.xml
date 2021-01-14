@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="reply_blue_50">#eef0f2</color>
+    <color name="reply_blue_100">#d2dbe0</color>
+    <color name="reply_blue_200">#adbbc4</color>
+    <color name="reply_blue_300">#8ca2ae</color>
+    <color name="reply_blue_600">#4a6572</color>
+    <color name="reply_blue_700">#344955</color>
+    <color name="reply_blue_800">#232f34</color>
+
+    <color name="reply_orange_300">#fbd790</color>
+    <color name="reply_orange_400">#f9be64</color>
+    <color name="reply_orange_500">#f9aa33</color>
+
+    <color name="reply_red_200">#cf7779</color>
+    <color name="reply_red_400">#ff4c5d</color>
+</resources>

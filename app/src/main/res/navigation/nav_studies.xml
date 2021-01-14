@@ -10,9 +10,17 @@
         android:name="com.numero.material_gallery.studies.StudiesFragment"
         tools:layout="@layout/fragment_studies">
         <action
+            android:id="@+id/action_Studies_to_Reply"
+            app:destination="@id/ReplyScreen" />
+        <action
             android:id="@+id/action_Studies_to_Shrine"
             app:destination="@id/ShrineScreen" />
     </fragment>
+
+    <fragment
+        android:id="@+id/ReplyScreen"
+        android:name="com.numero.material_gallery.studies.reply.ReplyFragment"
+        android:label="@string/label_reply" />
 
     <fragment
         android:id="@+id/ShrineScreen"
