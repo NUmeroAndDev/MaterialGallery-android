@@ -38,5 +38,7 @@ dependencies {
     implementation androidx.lifecycle.livedata
     implementation androidx.lifecycle.runtime
 
+    implementation material
+
     testImplementation 'junit:junit:4.13.1'
 }

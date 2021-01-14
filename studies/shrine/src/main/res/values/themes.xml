@@ -32,6 +32,7 @@
         <item name="textAppearanceOverline">@style/TextAppearance.Shrine.Overline</item>
 
         <!-- Widget -->
+        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.Colored</item>
         <item name="extendedFloatingActionButtonStyle">
             @style/Widget.Shrine.ExtendedFloatingActionButton
         </item>
