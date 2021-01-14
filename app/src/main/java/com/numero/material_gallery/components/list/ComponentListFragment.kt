@@ -1,22 +1,15 @@
 package com.numero.material_gallery.components.list
 
 import android.os.Bundle
-import android.view.*
+import android.view.View
 import androidx.core.view.ViewGroupCompat
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialFadeThrough
-import com.google.android.play.core.appupdate.AppUpdateInfo
-import com.google.android.play.core.appupdate.AppUpdateManager
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory
-import com.google.android.play.core.install.model.AppUpdateType
-import com.google.android.play.core.install.model.UpdateAvailability
-import com.google.android.play.core.ktx.startUpdateFlowForResult
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
@@ -24,15 +17,12 @@ import com.numero.material_gallery.databinding.FragmentComponentListBinding
 
 class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
-    private lateinit var appUpdateManager: AppUpdateManager
-
     private var _binding: FragmentComponentListBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        appUpdateManager = AppUpdateManagerFactory.create(requireContext())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -47,33 +37,6 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
         initViews()
         binding.componentRecyclerView.applySystemWindowInsetsPadding(applyTop = true)
-    }
-
-    override fun onResume() {
-        super.onResume()
-        checkUpdate()
-    }
-
-    private fun checkUpdate() {
-        appUpdateManager.appUpdateInfo
-                .addOnSuccessListener { appUpdateInfo ->
-                    when (appUpdateInfo.updateAvailability()) {
-                        UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS -> {
-                            doUpdate(appUpdateInfo)
-                        }
-                        UpdateAvailability.UPDATE_AVAILABLE -> {
-                            Snackbar.make(binding.rootLayout, R.string.update_message, Snackbar.LENGTH_LONG)
-                                    .setAction(R.string.update_button) {
-                                        doUpdate(appUpdateInfo)
-                                    }
-                                    .show()
-                        }
-                    }
-                }
-    }
-
-    private fun doUpdate(info: AppUpdateInfo) {
-        appUpdateManager.startUpdateFlowForResult(info, AppUpdateType.IMMEDIATE, this, UPDATE_REQUEST_CODE)
     }
 
     private fun initViews() {
@@ -123,8 +86,4 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
             DesignComponent.TIME_PICKER -> R.id.action_ComponentList_to_TimePicker
             DesignComponent.TOP_APP_BAR -> R.id.action_ComponentList_to_TopAppBar
         }
-
-    companion object {
-        private const val UPDATE_REQUEST_CODE = 1
-    }
 }
