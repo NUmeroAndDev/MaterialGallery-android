@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Widget.Reply.BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="itemIconTint">@color/bottom_navigation_tint</item>
+        <item name="itemTextColor">@color/bottom_navigation_tint</item>
+    </style>
+
     <style name="Widget.Reply.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
         <item name="materialThemeOverlay">@style/ThemeOverlay.Reply.Toolbar</item>
     </style>
