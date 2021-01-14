@@ -42,9 +42,7 @@
         <!-- Widget -->
         <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.Colored</item>
         <item name="toolbarStyle">@style/Widget.Reply.Toolbar</item>
-        <item name="bottomNavigationStyle">
-            @style/Widget.MaterialComponents.BottomNavigationView.Colored
-        </item>
+        <item name="bottomNavigationStyle">@style/Widget.Reply.BottomNavigation</item>
     </style>
 
     <style name="ThemeOverlay.Reply.Toolbar" parent="">
