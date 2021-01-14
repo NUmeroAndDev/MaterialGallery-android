@@ -8,8 +8,7 @@
     <fragment
         android:id="@+id/SettingsScreen"
         android:name="com.numero.material_gallery.settings.SettingsFragment"
-        android:label="@string/action_settings"
-        tools:layout="@layout/fragment_settings">
+        android:label="@string/action_settings">
         <action
             android:id="@+id/action_Settings_to_Licenses"
             app:destination="@id/LicensesScreen" />

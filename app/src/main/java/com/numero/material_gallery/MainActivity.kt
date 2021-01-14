@@ -8,20 +8,27 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 import androidx.core.view.updateLayoutParams
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.appbar.AppBarLayout
+import com.google.android.play.core.appupdate.AppUpdateManager
+import com.google.android.play.core.ktx.AppUpdateResult
+import com.google.android.play.core.ktx.requestUpdateFlow
 import com.numero.material_gallery.core.isDarkTheme
+import com.numero.material_gallery.core.launchWhenStartedIn
 import com.numero.material_gallery.core.observeSingle
 import com.numero.material_gallery.databinding.ActivityMainBinding
 import com.numero.material_gallery.repository.ConfigRepository
+import kotlinx.coroutines.flow.onEach
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
     private val configRepository by inject<ConfigRepository>()
+    private val appUpdateManager by inject<AppUpdateManager>()
 
     private val hideAppBarDestinationIds = setOf(
         R.id.NavigationDrawerScreen,
@@ -82,9 +89,29 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        checkUpdate()
+    }
+
     override fun onSupportNavigateUp() = checkNotNull(
         supportFragmentManager.findFragmentById(R.id.container)
     ).findNavController().navigateUp()
+
+    private fun checkUpdate() {
+        appUpdateManager.requestUpdateFlow()
+            .onEach { appUpdate ->
+                when (appUpdate) {
+                    is AppUpdateResult.Available -> {
+                        binding.bottomNavigation.getOrCreateBadge(R.id.navSettings)
+                    }
+                    else -> {
+                        binding.bottomNavigation.removeBadge(R.id.navSettings)
+                    }
+                }
+            }
+            .launchWhenStartedIn(lifecycleScope)
+    }
 
     private fun AppBarLayout.gone() {
         updateLayoutParams<CoordinatorLayout.LayoutParams> {
