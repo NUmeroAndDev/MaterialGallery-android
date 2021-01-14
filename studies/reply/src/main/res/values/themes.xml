@@ -40,6 +40,7 @@
         <item name="textAppearanceOverline">@style/TextAppearance.Reply.Overline</item>
 
         <!-- Widget -->
+        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.Colored</item>
         <item name="toolbarStyle">@style/Widget.Reply.Toolbar</item>
         <item name="bottomNavigationStyle">
             @style/Widget.MaterialComponents.BottomNavigationView.Colored

@@ -7,9 +7,7 @@ import android.view.ContextThemeWrapper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.StringRes
 import androidx.annotation.StyleRes
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import com.google.android.material.color.MaterialColors
@@ -18,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialContainerTransform
 import com.numero.material_gallery.base.databinding.FragmentComponentGalleryBinding
+import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 
 abstract class ComponentGalleryFragment(
@@ -66,6 +65,8 @@ abstract class ComponentGalleryFragment(
         view.doOnPreDraw { startPostponedEnterTransition() }
 
         binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+
+        binding.bottomAppBar.applyFloatingActionButtonEdgeTreatment(binding.fab)
         binding.toolbar.setTitle(titleRes)
         binding.showDialogButton.setOnClickListener {
             showDialog()
