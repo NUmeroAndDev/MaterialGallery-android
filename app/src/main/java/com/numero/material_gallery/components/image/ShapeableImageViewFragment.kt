@@ -5,8 +5,8 @@ import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentShapeableImageViewBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.fragment_shapeable_image_view) {
 
@@ -22,7 +22,7 @@ class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.f
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentShapeableImageViewBinding.bind(view)
 
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

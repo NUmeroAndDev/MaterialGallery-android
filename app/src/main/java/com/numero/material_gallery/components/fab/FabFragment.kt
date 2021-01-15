@@ -7,8 +7,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentFabBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
 
@@ -41,7 +41,7 @@ class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
 
-        binding.rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.rootLayout.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

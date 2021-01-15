@@ -17,7 +17,7 @@ import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialContainerTransform
 import com.numero.material_gallery.base.databinding.FragmentComponentGalleryBinding
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 abstract class ComponentGalleryFragment(
     @StyleRes private val overlayTheme: Int
@@ -64,7 +64,7 @@ abstract class ComponentGalleryFragment(
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
 
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
 
         binding.bottomAppBar.applyFloatingActionButtonEdgeTreatment(binding.fab)
         binding.toolbar.setTitle(titleRes)

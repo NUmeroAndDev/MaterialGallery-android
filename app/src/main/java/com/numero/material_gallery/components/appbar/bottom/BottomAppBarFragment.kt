@@ -1,15 +1,18 @@
 package com.numero.material_gallery.components.appbar.bottom
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentBottomAppBarBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_app_bar) {
 
@@ -68,7 +71,7 @@ class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragmen
         binding.bottomAppBar.replaceMenu(R.menu.bottom_app_bar)
         binding.bottomAppBar.applyFloatingActionButtonEdgeTreatment(binding.fab)
 
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

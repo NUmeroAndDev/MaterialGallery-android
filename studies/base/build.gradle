@@ -47,5 +47,7 @@ dependencies {
 
     implementation material
 
+    implementation insetter
+
     testImplementation 'junit:junit:4.13.1'
 }

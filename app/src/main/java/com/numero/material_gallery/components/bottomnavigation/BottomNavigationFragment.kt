@@ -1,13 +1,16 @@
 package com.numero.material_gallery.components.bottomnavigation
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentBottomNavigationBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
 
@@ -23,7 +26,7 @@ class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fra
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentBottomNavigationBinding.bind(view)
         initViews()
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

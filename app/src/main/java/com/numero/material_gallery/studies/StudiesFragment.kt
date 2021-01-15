@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialFadeThrough
 import com.numero.material_gallery.R
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentStudiesBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class StudiesFragment : Fragment(R.layout.fragment_studies) {
 
@@ -32,7 +32,7 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
         enterTransition = MaterialFadeThrough()
 
         initViews()
-        binding.studiesRecyclerView.applySystemWindowInsetsPadding(applyTop = true)
+        binding.studiesRecyclerView.applySystemWindowInsetsToPadding(top = true)
     }
 
     private fun initViews() {

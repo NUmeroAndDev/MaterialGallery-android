@@ -7,8 +7,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentSnackbarBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_snackbar) {
 
@@ -38,7 +38,7 @@ class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_sn
             }.setAnchorView(binding.fab).show()
         }
 
-        binding.rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.rootLayout.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

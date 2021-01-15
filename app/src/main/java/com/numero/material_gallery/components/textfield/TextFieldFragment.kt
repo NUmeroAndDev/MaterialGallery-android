@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentTextFieldBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_text_field) {
 
@@ -42,7 +42,7 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
         binding.filledAutoCompleteTextView.setAdapter(adapter)
         binding.outlineAutoCompleteTextView.setAdapter(adapter)
 
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

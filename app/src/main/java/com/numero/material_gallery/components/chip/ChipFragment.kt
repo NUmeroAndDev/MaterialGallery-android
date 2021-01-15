@@ -5,8 +5,8 @@ import android.view.*
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentChipBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class ChipFragment : MaterialContainerTransformFragment(R.layout.fragment_chip) {
 
@@ -21,7 +21,7 @@ class ChipFragment : MaterialContainerTransformFragment(R.layout.fragment_chip) 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentChipBinding.bind(view)
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {
