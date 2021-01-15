@@ -38,6 +38,8 @@ buildscript {
 
         material = "com.google.android.material:material:$material_version"
 
+        insetter = "dev.chrisbanes.insetter:insetter:0.4.0"
+
         play = [
                 core: "com.google.android.play:core:1.9.0",
                 ktx : "com.google.android.play:core-ktx:1.8.1"
@@ -64,6 +66,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
     }
 }
 

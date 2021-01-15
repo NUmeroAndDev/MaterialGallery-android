@@ -5,8 +5,8 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentCollapsingBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_collapsing) {
 
@@ -33,7 +33,7 @@ class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_
             }
         }
 
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

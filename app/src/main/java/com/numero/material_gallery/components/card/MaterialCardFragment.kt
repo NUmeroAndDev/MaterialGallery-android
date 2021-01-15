@@ -1,15 +1,18 @@
 package com.numero.material_gallery.components.card
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.components.card.state.Corner
 import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentMaterialCardBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragment_material_card) {
 
@@ -43,7 +46,7 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
 
         setupSelectionCardList()
 
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

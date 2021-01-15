@@ -6,8 +6,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.slider.BasicLabelFormatter
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentSliderBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slider) {
 
@@ -77,6 +77,6 @@ class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slid
             binding.rangeSlider.values.last()
         )
 
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 }

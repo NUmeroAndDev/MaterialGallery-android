@@ -13,8 +13,8 @@ import com.google.android.material.navigation.NavigationView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentNavigationDrawerBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fragment_navigation_drawer),
     NavigationView.OnNavigationItemSelectedListener {
@@ -86,7 +86,7 @@ class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fra
         })
 
         binding.content.bottomAppBar.applyFloatingActionButtonEdgeTreatment(binding.content.fab)
-        binding.content.rootLayout.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.content.rootLayout.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {

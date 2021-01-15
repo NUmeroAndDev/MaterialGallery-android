@@ -1,12 +1,15 @@
 package com.numero.material_gallery.components.button
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
-import com.numero.material_gallery.core.applySystemWindowInsetsPadding
 import com.numero.material_gallery.databinding.FragmentMaterialButtonToggleGroupBinding
+import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 
 class MaterialButtonToggleGroupFragment : MaterialContainerTransformFragment(R.layout.fragment_material_button_toggle_group) {
 
@@ -21,7 +24,7 @@ class MaterialButtonToggleGroupFragment : MaterialContainerTransformFragment(R.l
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMaterialButtonToggleGroupBinding.bind(view)
-        binding.scrollView.applySystemWindowInsetsPadding(applyBottom = true)
+        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
     }
 
     override fun onDestroyView() {
