@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--  TODO : merge component menu resource  -->
+    <item
+        android:id="@+id/nav_favorites"
+        android:icon="@drawable/ic_favorite"
+        android:title="@string/label_favorites" />
+
+    <item
+        android:id="@+id/nav_music"
+        android:icon="@drawable/ic_music"
+        android:title="@string/label_music" />
+
+    <item
+        android:id="@+id/nav_books"
+        android:icon="@drawable/ic_book"
+        android:title="@string/label_books" />
+
+    <item
+        android:id="@+id/nav_feeds"
+        android:icon="@drawable/ic_feed"
+        android:title="@string/label_feeds" />
+</menu>
