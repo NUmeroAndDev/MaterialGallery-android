@@ -3,7 +3,7 @@
     tools:context="com.numero.material_gallery.MainActivity">
     <item
         android:id="@+id/navComponents"
-        android:icon="@drawable/ic_code"
+        android:icon="@drawable/ic_extension"
         android:title="Components" />
 
     <item
