@@ -111,9 +111,9 @@ enum VersionSuffix {
 }
 
 ext {
-    def appMajor = 1
-    def appMinor = 6
-    def appPatch = 3
+    def appMajor = 2
+    def appMinor = 0
+    def appPatch = 0
     def appBuild = 0
 
     def suffix = VersionSuffix.PRODUCT
