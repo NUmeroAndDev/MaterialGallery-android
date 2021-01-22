@@ -4,5 +4,13 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-    time: "23:00"
+    time: '07:00'
+    timezone: Asia/Tokyo
+  open-pull-requests-limit: 15
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: '07:00'
+    timezone: Asia/Tokyo
   open-pull-requests-limit: 10
