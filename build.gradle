@@ -24,7 +24,7 @@ buildscript {
                 preference      : "androidx.preference:preference:1.1.1",
 
                 navigation      : [
-                        fragment: 'androidx.navigation:navigation-fragment-ktx:2.3.2',
+                        fragment: 'androidx.navigation:navigation-fragment-ktx:2.3.3',
                         ui      : 'androidx.navigation:navigation-ui-ktx:2.3.2'
                 ],
 
