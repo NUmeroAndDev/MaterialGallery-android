@@ -8,7 +8,7 @@ import com.google.android.material.progressindicator.*
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentProgressIndicatorBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fragment_progress_indicator) {
 
@@ -118,7 +118,11 @@ class ProgressIndicatorFragment : MaterialContainerTransformFragment(R.layout.fr
             }
         }
 
-        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
+        binding.scrollView.applyInsetter {
+            type(navigationBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onDestroyView() {

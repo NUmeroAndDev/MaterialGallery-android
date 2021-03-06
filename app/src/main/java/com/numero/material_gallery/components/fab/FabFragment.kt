@@ -1,14 +1,17 @@
 package com.numero.material_gallery.components.fab
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentFabBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
 
@@ -41,7 +44,11 @@ class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
 
-        binding.rootLayout.applySystemWindowInsetsToPadding(bottom = true)
+        binding.rootLayout.applyInsetter {
+            type(navigationBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onDestroyView() {

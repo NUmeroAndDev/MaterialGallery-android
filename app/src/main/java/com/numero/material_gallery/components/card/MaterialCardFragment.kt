@@ -12,7 +12,7 @@ import com.numero.material_gallery.components.card.state.Corner
 import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
 import com.numero.material_gallery.databinding.FragmentMaterialCardBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragment_material_card) {
 
@@ -46,7 +46,11 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
 
         setupSelectionCardList()
 
-        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
+        binding.scrollView.applyInsetter {
+            type(navigationBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onDestroyView() {

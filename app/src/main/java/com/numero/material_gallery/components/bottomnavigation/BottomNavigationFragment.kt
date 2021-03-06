@@ -10,7 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentBottomNavigationBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
 
@@ -26,7 +26,11 @@ class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fra
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentBottomNavigationBinding.bind(view)
         initViews()
-        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
+        binding.scrollView.applyInsetter {
+            type(navigationBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onDestroyView() {

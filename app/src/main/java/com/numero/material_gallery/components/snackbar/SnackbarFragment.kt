@@ -1,14 +1,17 @@
 package com.numero.material_gallery.components.snackbar
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentSnackbarBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_snackbar) {
 
@@ -38,7 +41,11 @@ class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_sn
             }.setAnchorView(binding.fab).show()
         }
 
-        binding.rootLayout.applySystemWindowInsetsToPadding(bottom = true)
+        binding.rootLayout.applyInsetter {
+            type(navigationBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onDestroyView() {

@@ -12,7 +12,7 @@ import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialFadeThrough
 import com.numero.material_gallery.R
 import com.numero.material_gallery.databinding.FragmentStudiesBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class StudiesFragment : Fragment(R.layout.fragment_studies) {
 
@@ -32,7 +32,11 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
         enterTransition = MaterialFadeThrough()
 
         initViews()
-        binding.studiesRecyclerView.applySystemWindowInsetsToPadding(top = true)
+        binding.studiesRecyclerView.applyInsetter {
+            type(statusBars = true) {
+                padding()
+            }
+        }
     }
 
     private fun initViews() {

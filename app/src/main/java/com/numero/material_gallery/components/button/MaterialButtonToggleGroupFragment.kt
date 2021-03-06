@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentMaterialButtonToggleGroupBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class MaterialButtonToggleGroupFragment : MaterialContainerTransformFragment(R.layout.fragment_material_button_toggle_group) {
 
@@ -24,7 +24,11 @@ class MaterialButtonToggleGroupFragment : MaterialContainerTransformFragment(R.l
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMaterialButtonToggleGroupBinding.bind(view)
-        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
+        binding.scrollView.applyInsetter {
+            type(navigationBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onDestroyView() {
