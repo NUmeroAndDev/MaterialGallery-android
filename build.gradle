@@ -38,7 +38,7 @@ buildscript {
 
         material = "com.google.android.material:material:$material_version"
 
-        insetter = "dev.chrisbanes.insetter:insetter:0.4.0"
+        insetter = "dev.chrisbanes.insetter:insetter:0.5.0"
 
         play = [
                 core: "com.google.android.play:core:1.9.0",
