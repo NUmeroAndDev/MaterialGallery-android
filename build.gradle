@@ -29,7 +29,7 @@ buildscript {
                 ],
 
                 lifecycle       : [
-                        livedata: "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-rc01",
+                        livedata: "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha01",
                         runtime : "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-rc01"
                 ]
         ]
