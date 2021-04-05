@@ -1,14 +1,17 @@
 package com.numero.material_gallery.components.textfield
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentTextFieldBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_text_field) {
 
@@ -42,7 +45,11 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
         binding.filledAutoCompleteTextView.setAdapter(adapter)
         binding.outlineAutoCompleteTextView.setAdapter(adapter)
 
-        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
+        binding.scrollView.applyInsetter {
+            type(navigationBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onDestroyView() {

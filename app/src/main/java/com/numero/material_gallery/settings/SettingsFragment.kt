@@ -18,7 +18,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.core.launchWhenStartedIn
 import com.numero.material_gallery.model.Theme
 import com.numero.material_gallery.repository.ConfigRepository
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 import kotlinx.coroutines.flow.onEach
 import org.koin.android.ext.android.inject
 
@@ -67,7 +67,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
         super.onViewCreated(view, savedInstanceState)
 
         view.setBackgroundColor(MaterialColors.getColor(view, android.R.attr.colorBackground))
-        view.applySystemWindowInsetsToPadding(top = true)
+        view.applyInsetter {
+            type(statusBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onResume() {

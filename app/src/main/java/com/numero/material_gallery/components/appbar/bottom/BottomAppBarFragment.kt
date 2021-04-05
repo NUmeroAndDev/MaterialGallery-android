@@ -12,7 +12,7 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.databinding.FragmentBottomAppBarBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_app_bar) {
 
@@ -71,7 +71,11 @@ class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragmen
         binding.bottomAppBar.replaceMenu(R.menu.bottom_app_bar)
         binding.bottomAppBar.applyFloatingActionButtonEdgeTreatment(binding.fab)
 
-        binding.scrollView.applySystemWindowInsetsToPadding(bottom = true)
+        binding.scrollView.applyInsetter {
+            type(navigationBars = true) {
+                padding()
+            }
+        }
     }
 
     override fun onDestroyView() {

@@ -13,7 +13,7 @@ import com.google.android.material.transition.MaterialFadeThrough
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.DesignComponent
 import com.numero.material_gallery.databinding.FragmentComponentListBinding
-import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
+import dev.chrisbanes.insetter.applyInsetter
 
 class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
@@ -36,7 +36,11 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
         ViewGroupCompat.setTransitionGroup(binding.rootLayout, true)
 
         initViews()
-        binding.componentRecyclerView.applySystemWindowInsetsToPadding(top = true)
+        binding.componentRecyclerView.applyInsetter {
+            type(statusBars = true) {
+                padding()
+            }
+        }
     }
 
     private fun initViews() {
