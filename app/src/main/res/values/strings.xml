@@ -37,6 +37,7 @@
     <string name="material_dialog">Material Dialog</string>
     <string name="modal_bottom_sheet">Modal Bottom Sheet</string>
     <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="navigation_rail">Navigation Rail</string>
     <string name="progress_indicator">Progress Indicator</string>
     <string name="radio_button">Radio Button</string>
     <string name="slider">Slider</string>

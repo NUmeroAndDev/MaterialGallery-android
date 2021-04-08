@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:transitionName="@string/navigation_rail_transition_name">
+
+    <com.google.android.material.navigationrail.NavigationRailView
+        android:id="@+id/navigationRailView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/navigation_rail_header"
+        app:menu="@menu/menu_navigation_rail" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelVisibilityTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Label visibility mode"
+                android:textAppearance="?attr/textAppearanceSubtitle2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/labelVisibilityRadioGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:checkedButton="@id/labelVisibilityAutoRadioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/labelVisibilityTextView">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/labelVisibilityAutoRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Auto"
+                    android:textSize="16sp"
+                    app:useMaterialThemeColors="true" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/labelVisibilitySelectedRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Selected"
+                    android:textSize="16sp"
+                    app:useMaterialThemeColors="true" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/labelVisibilityLabeledRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Labeled"
+                    android:textSize="16sp"
+                    app:useMaterialThemeColors="true" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/labelVisibilityUnlabeledRadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="Unlabeled"
+                    android:textSize="16sp"
+                    app:useMaterialThemeColors="true" />
+
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
