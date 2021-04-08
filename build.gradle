@@ -25,7 +25,7 @@ buildscript {
 
                 navigation      : [
                         fragment: 'androidx.navigation:navigation-fragment-ktx:2.3.5',
-                        ui      : 'androidx.navigation:navigation-ui-ktx:2.3.4'
+                        ui      : 'androidx.navigation:navigation-ui-ktx:2.3.5'
                 ],
 
                 lifecycle       : [
