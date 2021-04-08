@@ -80,6 +80,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
             DesignComponent.MATERIAL_DIALOG -> R.id.action_ComponentList_to_MaterialDialog
             DesignComponent.MODAL_BOTTOM_SHEET -> R.id.action_ComponentList_to_ModalBottomSheet
             DesignComponent.NAVIGATION_DRAWER -> R.id.action_ComponentList_to_NavigationDrawer
+            DesignComponent.NAVIGATION_RAIL -> R.id.action_ComponentList_to_NavigationRail
             DesignComponent.PROGRESS_INDICATOR -> R.id.action_ComponentList_to_ProgressIndicator
             DesignComponent.RADIO_BUTTON -> R.id.action_ComponentList_to_RadioButton
             DesignComponent.SLIDER -> R.id.action_ComponentList_to_Slider

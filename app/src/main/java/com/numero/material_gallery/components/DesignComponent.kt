@@ -71,6 +71,10 @@ enum class DesignComponent(
             R.string.navigation_drawer
     ),
 
+    NAVIGATION_RAIL(
+        R.string.navigation_rail
+    ),
+
     PROGRESS_INDICATOR(
             R.string.progress_indicator
     ),

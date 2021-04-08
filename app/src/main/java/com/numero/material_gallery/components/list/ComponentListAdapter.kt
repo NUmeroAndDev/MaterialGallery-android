@@ -62,6 +62,7 @@ class ComponentItemViewHolder(
             DesignComponent.MATERIAL_DIALOG -> R.string.material_dialog_transition_name
             DesignComponent.MODAL_BOTTOM_SHEET -> R.string.modal_bottom_sheet_transition_name
             DesignComponent.NAVIGATION_DRAWER -> R.string.navigation_drawer_transition_name
+            DesignComponent.NAVIGATION_RAIL -> R.string.navigation_rail_transition_name
             DesignComponent.PROGRESS_INDICATOR -> R.string.progress_indicator_transition_name
             DesignComponent.RADIO_BUTTON -> R.string.radio_button_transition_name
             DesignComponent.SLIDER -> R.string.slider_transition_name
