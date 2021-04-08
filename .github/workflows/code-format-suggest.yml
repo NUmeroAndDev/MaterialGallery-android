@@ -12,7 +12,7 @@ jobs:
         with:
           java-version: 11
       - run: ./gradlew spotlessKotlinApply
-      - uses: reviewdog/action-suggester@v1.0.0
+      - uses: reviewdog/action-suggester@v1.0.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tool_name: spotless
