@@ -1,8 +1,11 @@
 package com.numero.material_gallery.components.appbar.top
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.*
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.badge.BadgeDrawable
+import com.google.android.material.badge.BadgeUtils
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentToolbarBinding
@@ -44,14 +47,18 @@ class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_too
         }
     }
 
+    @SuppressLint("UnsafeExperimentalUsageError")
     private fun initViews() {
         val toolbarList = listOf(
             binding.primaryToolbar,
             binding.surfaceToolbar,
             binding.primarySurfaceToolbar
         )
-        toolbarList.forEach {
-            it.inflateMenu(R.menu.menu_action_bar)
+        toolbarList.forEach { toolbar ->
+            toolbar.inflateMenu(R.menu.menu_action_bar)
+
+            val badge = BadgeDrawable.create(requireContext())
+            BadgeUtils.attachBadgeDrawable(badge, toolbar, R.id.action_info)
         }
     }
 }
