@@ -56,6 +56,7 @@
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox
         </item>
         <item name="tooltipStyle">@style/Widget.Shrine.Tooltip</item>
+        <item name="navigationRailStyle">@style/Widget.Shrine.NavigationRailView</item>
 
         <!-- Theme -->
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.Shrine.MaterialAlertDialog</item>
@@ -113,6 +114,11 @@
     <style name="ThemeOverlay.Shrine.CompoundButton" parent="">
         <item name="colorOnSurface">@color/shrine_pink_900</item>
         <item name="colorSecondary">@color/shrine_pink_100</item>
+    </style>
+
+    <style name="ThemeOverlay.Shrine.NavigationRailView" parent="">
+        <item name="colorPrimary">@color/shrine_pink_100</item>
+        <item name="colorOnPrimary">@color/shrine_pink_900</item>
     </style>
 
 </resources>
