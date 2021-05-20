@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    compileSdkVersion versions.compileSdk
+    compileSdk versions.compileSdk
 
     defaultConfig {
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -39,16 +39,14 @@ android {
 dependencies {
     implementation project(':core')
 
-    implementation kotlinAndroid.stdlib
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.fragment
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.core
 
-    implementation androidx.appcompat
-    implementation androidx.fragment
-    implementation androidx.constraintlayout
-    implementation androidx.core
+    implementation libs.material
 
-    implementation material
-
-    implementation insetter
+    implementation libs.insetter
 
     testImplementation 'junit:junit:4.13.2'
 }

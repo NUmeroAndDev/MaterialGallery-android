@@ -4,48 +4,52 @@ buildscript {
         versions = [
                 compileSdk: 30,
                 minSdk    : 23,
-                targetSdk : 30
+                targetSdk : 30,
+
+                kotlin    : "1.5.0",
+
+                navigation: "2.3.5",
+                lifecycle : "2.4.0-alpha01",
+
+                material  : "1.4.0-alpha02",
         ]
 
-        kotlin_version = '1.5.0'
-        material_version = '1.4.0-alpha02'
+        libs = [
+                kotlinPlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
 
-        kotlinAndroid = [
-                stdlib: "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-        ]
+                androidx    : [
+                        appcompat       : "androidx.appcompat:appcompat:1.3.0-rc01",
+                        activity        : "androidx.activity:activity-ktx:1.3.0-alpha07",
+                        fragment        : "androidx.fragment:fragment-ktx:1.3.3",
+                        core            : "androidx.core:core-ktx:1.5.0-beta02",
+                        recyclerview    : "androidx.recyclerview:recyclerview:1.2.0",
+                        constraintlayout: "androidx.constraintlayout:constraintlayout:2.0.4",
+                        preference      : "androidx.preference:preference:1.1.1",
 
-        androidx = [
-                appcompat       : "androidx.appcompat:appcompat:1.3.0-rc01",
-                activity        : "androidx.activity:activity-ktx:1.3.0-alpha07",
-                fragment        : "androidx.fragment:fragment-ktx:1.3.4",
-                core            : "androidx.core:core-ktx:1.5.0-beta02",
-                recyclerview    : "androidx.recyclerview:recyclerview:1.2.0",
-                constraintlayout: "androidx.constraintlayout:constraintlayout:2.0.4",
-                preference      : "androidx.preference:preference:1.1.1",
+                        navigation      : [
+                                fragment: "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
+                                ui      : "androidx.navigation:navigation-ui-ktx:$versions.navigation",
+                        ],
 
-                navigation      : [
-                        fragment: 'androidx.navigation:navigation-fragment-ktx:2.3.5',
-                        ui      : 'androidx.navigation:navigation-ui-ktx:2.3.5'
+                        lifecycle       : [
+                                livedata: "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle",
+                                runtime : "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+                        ]
                 ],
 
-                lifecycle       : [
-                        livedata: "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha01",
-                        runtime : "androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha01"
-                ]
+                koin        : "org.koin:koin-androidx-scope:2.1.6",
+
+                material    : "com.google.android.material:material:$versions.material",
+
+                insetter    : "dev.chrisbanes.insetter:insetter:0.5.0",
+
+                play        : [
+                        core: "com.google.android.play:core:1.9.0",
+                        ktx : "com.google.android.play:core-ktx:1.8.1"
+                ],
+
+                licenses    : "com.google.android.gms:play-services-oss-licenses:17.0.0"
         ]
-
-        koin = "org.koin:koin-androidx-scope:2.1.6"
-
-        material = "com.google.android.material:material:$material_version"
-
-        insetter = "dev.chrisbanes.insetter:insetter:0.5.0"
-
-        play = [
-                core: "com.google.android.play:core:1.9.0",
-                ktx : "com.google.android.play:core-ktx:1.8.1"
-        ]
-
-        licenses = "com.google.android.gms:play-services-oss-licenses:17.0.0"
     }
     repositories {
         google()
@@ -53,7 +57,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0-beta01'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath libs.kotlinPlugin
         classpath 'com.google.android.gms:oss-licenses-plugin:0.10.4'
     }
 }
