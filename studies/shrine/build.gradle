@@ -39,12 +39,10 @@ android {
 dependencies {
     implementation project(':studies:base')
 
-    implementation kotlinAndroid.stdlib
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.fragment
 
-    implementation androidx.appcompat
-    implementation androidx.fragment
-
-    implementation material
+    implementation libs.material
 
     testImplementation 'junit:junit:4.13.2'
 }

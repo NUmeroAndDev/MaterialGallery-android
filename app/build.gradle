@@ -15,7 +15,7 @@ android {
         versionName rootProject.appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "MATERIAL_COMPONENTS_VERSION", "\"$material_version\"")
+        buildConfigField("String", "MATERIAL_COMPONENTS_VERSION", "\"$versions.material\"")
     }
 
     buildTypes {
@@ -50,30 +50,28 @@ dependencies {
     implementation project(':studies:reply')
     implementation project(':core')
 
-    implementation kotlinAndroid.stdlib
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.activity
+    implementation libs.androidx.fragment
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.preference
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.core
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
+    implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.lifecycle.runtime
 
-    implementation androidx.appcompat
-    implementation androidx.activity
-    implementation androidx.fragment
-    implementation androidx.recyclerview
-    implementation androidx.preference
-    implementation androidx.constraintlayout
-    implementation androidx.core
-    implementation androidx.navigation.fragment
-    implementation androidx.navigation.ui
-    implementation androidx.lifecycle.livedata
-    implementation androidx.lifecycle.runtime
+    implementation libs.material
 
-    implementation material
+    implementation libs.insetter
 
-    implementation insetter
+    implementation libs.koin
 
-    implementation koin
+    implementation libs.licenses
 
-    implementation licenses
-
-    implementation play.core
-    implementation play.ktx
+    implementation libs.play.core
+    implementation libs.play.ktx
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.3.0'
