@@ -63,6 +63,10 @@ enum class DesignComponent(
             R.string.material_dialog
     ),
 
+    MENU(
+        R.string.menu
+    ),
+
     MODAL_BOTTOM_SHEET(
             R.string.modal_bottom_sheet
     ),

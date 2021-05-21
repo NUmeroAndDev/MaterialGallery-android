@@ -46,7 +46,9 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
     private fun initViews() {
         binding.componentRecyclerView.apply {
             setHasFixedSize(true)
-            addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+            addItemDecoration(
+                DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
+            )
             adapter = ComponentListAdapter().apply {
                 setOnItemClickListener { view, component ->
                     selectedComponent(view, component)
@@ -78,6 +80,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
             DesignComponent.MATERIAL_BUTTON_TOGGLE_GROUP -> R.id.action_ComponentList_to_MaterialButtonToggleGroup
             DesignComponent.MATERIAL_CARD -> R.id.action_ComponentList_to_MaterialCard
             DesignComponent.MATERIAL_DIALOG -> R.id.action_ComponentList_to_MaterialDialog
+            DesignComponent.MENU -> R.id.action_ComponentList_to_Menu
             DesignComponent.MODAL_BOTTOM_SHEET -> R.id.action_ComponentList_to_ModalBottomSheet
             DesignComponent.NAVIGATION_DRAWER -> R.id.action_ComponentList_to_NavigationDrawer
             DesignComponent.NAVIGATION_RAIL -> R.id.action_ComponentList_to_NavigationRail
