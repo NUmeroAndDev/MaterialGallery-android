@@ -91,12 +91,12 @@
             android:hint="@string/label_password"
             app:counterEnabled="true"
             app:counterMaxLength="16"
+            app:endIconMode="password_toggle"
             app:helperText="Helper"
             app:helperTextEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dropdownFilledTextInputLayout"
-            app:passwordToggleEnabled="true">
+            app:layout_constraintTop_toBottomOf="@+id/dropdownFilledTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -229,12 +229,12 @@
             android:hint="@string/label_password"
             app:counterEnabled="true"
             app:counterMaxLength="16"
+            app:endIconMode="password_toggle"
             app:helperText="Helper"
             app:helperTextEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dropdownOutlineTextInputLayout"
-            app:passwordToggleEnabled="true">
+            app:layout_constraintTop_toBottomOf="@id/dropdownOutlineTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
