@@ -51,6 +51,37 @@
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/iconOnlySingleSelectToggleGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/singleSelectToggleGroup"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/multiSelectTextView"
             android:layout_width="0dp"
@@ -60,7 +91,7 @@
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/singleSelectToggleGroup" />
+            app:layout_constraintTop_toBottomOf="@id/iconOnlySingleSelectToggleGroup" />
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/multiSelectToggleGroup"
@@ -92,6 +123,37 @@
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/iconOnlyMultiSelectToggleGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/multiSelectToggleGroup"
+            app:singleSelection="false">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/verticalTextView"
             android:layout_width="0dp"
@@ -101,7 +163,7 @@
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/multiSelectToggleGroup" />
+            app:layout_constraintTop_toBottomOf="@id/iconOnlyMultiSelectToggleGroup" />
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/verticalToggleGroup"
@@ -120,9 +182,7 @@
                 android:layout_height="wrap_content"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:minWidth="@dimen/mtrl_min_touch_target_size"
-                app:icon="@drawable/ic_android"
-                app:iconPadding="0dp" />
+                android:text="Select1" />
 
             <com.google.android.material.button.MaterialButton
                 style="?attr/materialButtonOutlinedStyle"
@@ -130,9 +190,7 @@
                 android:layout_height="wrap_content"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:minWidth="@dimen/mtrl_min_touch_target_size"
-                app:icon="@drawable/ic_android"
-                app:iconPadding="0dp" />
+                android:text="Select2" />
 
             <com.google.android.material.button.MaterialButton
                 style="?attr/materialButtonOutlinedStyle"
@@ -140,9 +198,38 @@
                 android:layout_height="wrap_content"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
-                android:minWidth="@dimen/mtrl_min_touch_target_size"
-                app:icon="@drawable/ic_android"
-                app:iconPadding="0dp" />
+                android:text="Select3" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/iconOnlyVerticalToggleGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/verticalToggleGroup"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.MaterialGallery.Button.OutlinedButton.IconOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_android" />
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
