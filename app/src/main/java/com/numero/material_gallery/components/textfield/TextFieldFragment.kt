@@ -28,12 +28,12 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
         _binding = FragmentTextFieldBinding.bind(view)
 
         binding.filledErrorTextInputLayout.error = "Error"
-        binding.outlineErrorTextInputLayout.error = "Error"
+        binding.outlinedErrorTextInputLayout.error = "Error"
 
-        binding.customIconFilledTextInputLayout.setEndIconOnClickListener {
+        binding.iconFilledTextInputLayout.setEndIconOnClickListener {
             Toast.makeText(requireContext(), "Clicked end icon", Toast.LENGTH_SHORT).show()
         }
-        binding.customIconOutlineTextInputLayout.setEndIconOnClickListener {
+        binding.iconOutlinedTextInputLayout.setEndIconOnClickListener {
             Toast.makeText(requireContext(), "Clicked end icon", Toast.LENGTH_SHORT).show()
         }
 
@@ -43,7 +43,7 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
                 arrayOf("Item 1", "Item 2", "Item 3", "Item 4")
         )
         binding.filledAutoCompleteTextView.setAdapter(adapter)
-        binding.outlineAutoCompleteTextView.setAdapter(adapter)
+        binding.outlinedAutoCompleteTextView.setAdapter(adapter)
 
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
