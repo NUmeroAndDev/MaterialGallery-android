@@ -30,10 +30,10 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
         binding.filledErrorTextInputLayout.error = "Error"
         binding.outlinedErrorTextInputLayout.error = "Error"
 
-        binding.customIconFilledTextInputLayout.setEndIconOnClickListener {
+        binding.iconFilledTextInputLayout.setEndIconOnClickListener {
             Toast.makeText(requireContext(), "Clicked end icon", Toast.LENGTH_SHORT).show()
         }
-        binding.customIconOutlinedTextInputLayout.setEndIconOnClickListener {
+        binding.iconOutlinedTextInputLayout.setEndIconOnClickListener {
             Toast.makeText(requireContext(), "Clicked end icon", Toast.LENGTH_SHORT).show()
         }
 

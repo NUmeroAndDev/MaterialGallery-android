@@ -77,6 +77,8 @@
     <string name="label">Label</string>
     <string name="label_password">Password</string>
     <string name="label_clear_text">Clear text</string>
+    <string name="prefix">Prefix</string>
+    <string name="suffix">Suffix</string>
 
     <!--  TimePicker  -->
     <string name="label_time_format">Time format</string>
