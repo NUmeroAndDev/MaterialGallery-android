@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/option1"
+        android:title="Option 1"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/option2"
+        android:title="Option 2"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/option3"
+        android:title="Option 3"
+        tools:ignore="HardcodedText" />
+</menu>
