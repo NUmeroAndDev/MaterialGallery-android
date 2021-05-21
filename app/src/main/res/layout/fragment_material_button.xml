@@ -12,38 +12,38 @@
         android:padding="16dp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/raisedButtonTextView"
+            android:id="@+id/containedButtonTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Raised Button"
+            android:text="Contained Button"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/raisedButton"
+            android:id="@+id/containedButton"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/raisedButtonTextView" />
+            app:layout_constraintTop_toBottomOf="@id/containedButtonTextView" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/disableRaisedButton"
+            android:id="@+id/disableContainedButton"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:enabled="false"
             android:text="Button"
-            app:layout_constraintStart_toEndOf="@+id/raisedButton"
-            app:layout_constraintTop_toTopOf="@+id/raisedButton" />
+            app:layout_constraintStart_toEndOf="@id/containedButton"
+            app:layout_constraintTop_toTopOf="@id/containedButton" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/iconRaisedButton"
+            android:id="@+id/iconContainedButton"
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,10 +51,10 @@
             android:text="Button"
             app:icon="@drawable/ic_add"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/raisedButton" />
+            app:layout_constraintTop_toBottomOf="@id/containedButton" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/disableIconRaisedButton"
+            android:id="@+id/disableIconContainedButton"
             style="@style/Widget.MaterialComponents.Button.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,8 +62,8 @@
             android:enabled="false"
             android:text="Button"
             app:icon="@drawable/ic_add"
-            app:layout_constraintStart_toEndOf="@+id/iconRaisedButton"
-            app:layout_constraintTop_toTopOf="@+id/iconRaisedButton" />
+            app:layout_constraintStart_toEndOf="@id/iconContainedButton"
+            app:layout_constraintTop_toTopOf="@id/iconContainedButton" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -75,7 +75,7 @@
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iconRaisedButton" />
+            app:layout_constraintTop_toBottomOf="@id/iconContainedButton" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/unelevatedButton"
