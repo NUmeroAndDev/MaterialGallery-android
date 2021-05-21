@@ -30,7 +30,7 @@
             android:hint="@string/label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filledBoxInputTextView">
+            app:layout_constraintTop_toBottomOf="@id/filledBoxInputTextView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             app:helperText="Custom start and end icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filledTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/filledTextInputLayout"
             app:startIconDrawable="@drawable/ic_search">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -72,7 +72,7 @@
             android:hint="@string/label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/customIconFilledTextInputLayout">
+            app:layout_constraintTop_toBottomOf="@id/customIconFilledTextInputLayout">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/filledAutoCompleteTextView"
@@ -96,7 +96,7 @@
             app:helperTextEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dropdownFilledTextInputLayout">
+            app:layout_constraintTop_toBottomOf="@id/dropdownFilledTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -149,7 +149,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/outlineBoxInputTextView"
+            android:id="@+id/outlinedBoxInputTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -157,10 +157,10 @@
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filledErrorTextInputLayout" />
+            app:layout_constraintTop_toBottomOf="@id/filledErrorTextInputLayout" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlineTextInputLayout"
+            android:id="@+id/outlinedTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -168,7 +168,7 @@
             android:hint="@string/label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/outlineBoxInputTextView">
+            app:layout_constraintTop_toBottomOf="@id/outlinedBoxInputTextView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -179,7 +179,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/customIconOutlineTextInputLayout"
+            android:id="@+id/customIconOutlinedTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -190,7 +190,7 @@
             app:helperText="Custom start and end icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/outlineTextInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/outlinedTextInputLayout"
             app:startIconDrawable="@drawable/ic_search">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -210,10 +210,10 @@
             android:hint="@string/label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/customIconOutlineTextInputLayout">
+            app:layout_constraintTop_toBottomOf="@id/customIconOutlinedTextInputLayout">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/outlineAutoCompleteTextView"
+                android:id="@+id/outlinedAutoCompleteTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none" />
@@ -221,7 +221,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlinePasswordTextInputLayout"
+            android:id="@+id/outlinedPasswordTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -256,7 +256,7 @@
             app:helperText="@string/label_clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/outlinePasswordTextInputLayout">
+            app:layout_constraintTop_toBottomOf="@id/outlinedPasswordTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -267,7 +267,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlineErrorTextInputLayout"
+            android:id="@+id/outlinedErrorTextInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
