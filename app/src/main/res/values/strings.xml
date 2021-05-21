@@ -73,6 +73,10 @@
         <item>cut</item>
     </string-array>
 
+    <!--  TextField  -->
+    <string name="label">Label</string>
+    <string name="label_password">Password</string>
+
     <!--  TimePicker  -->
     <string name="label_time_format">Time format</string>
     <string name="show_time_picker">Show Time Picker</string>
