@@ -11,7 +11,7 @@ buildscript {
                 navigation: "2.3.5",
                 lifecycle : "2.4.0-alpha01",
 
-                material  : "1.4.0-alpha02",
+                material  : "1.4.0-beta01",
         ]
 
         libs = [
