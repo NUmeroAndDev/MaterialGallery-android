@@ -74,11 +74,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/iconTextInputTextView"
+            android:id="@+id/iconTextFieldLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Icon"
+            android:text="@string/label_icon_text_field"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -95,7 +95,7 @@
             app:endIconMode="custom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iconTextInputTextView"
+            app:layout_constraintTop_toBottomOf="@id/iconTextFieldLabel"
             app:startIconDrawable="@drawable/ic_search">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -129,11 +129,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/prefixAndSuffixTextInputTextView"
+            android:id="@+id/prefixTextFieldLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Prefix and suffix"
+            android:text="@string/label_prefix_and_suffix_text_field"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +148,7 @@
             android:hint="@string/label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/prefixAndSuffixTextInputTextView"
+            app:layout_constraintTop_toBottomOf="@id/prefixTextFieldLabel"
             app:prefixText="@string/prefix"
             app:suffixText="@string/suffix">
 
@@ -182,11 +182,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/passwordTextInputTextView"
+            android:id="@+id/passwordTextFieldLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Password"
+            android:text="@string/label_password"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -204,7 +204,7 @@
             app:endIconMode="password_toggle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/passwordTextInputTextView">
+            app:layout_constraintTop_toBottomOf="@id/passwordTextFieldLabel">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -239,11 +239,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/clearTextTextInputTextView"
+            android:id="@+id/clearTextTextFieldLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/label_clear_text"
+            android:text="@string/label_clear_text_text_field"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -259,7 +259,7 @@
             app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/clearTextTextInputTextView">
+            app:layout_constraintTop_toBottomOf="@id/clearTextTextFieldLabel">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -290,11 +290,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/dropdownTextInputTextView"
+            android:id="@+id/dropdownTextFieldLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Exposed dropdown"
+            android:text="@string/label_exposed_dropdown_text_field"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -309,7 +309,7 @@
             android:hint="@string/label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dropdownTextInputTextView">
+            app:layout_constraintTop_toBottomOf="@id/dropdownTextFieldLabel">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/filledAutoCompleteTextView"
@@ -339,11 +339,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/errorTextInputTextView"
+            android:id="@+id/errorTextFieldLabel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Error"
+            android:text="@string/label_error"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -359,7 +359,7 @@
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/errorTextInputTextView">
+            app:layout_constraintTop_toBottomOf="@id/errorTextFieldLabel">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"

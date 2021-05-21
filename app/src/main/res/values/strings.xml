@@ -74,9 +74,15 @@
     </string-array>
 
     <!--  TextField  -->
+    <string name="label_icon_text_field">Icon</string>
+    <string name="label_prefix_and_suffix_text_field">Prefix and suffix</string>
+    <string name="label_clear_text_text_field">Clear text</string>
+    <string name="label_exposed_dropdown_text_field">Exposed dropdown</string>
+
     <string name="label">Label</string>
     <string name="label_password">Password</string>
-    <string name="label_clear_text">Clear text</string>
+    <string name="label_error">Error</string>
+
     <string name="prefix">Prefix</string>
     <string name="suffix">Suffix</string>
 
