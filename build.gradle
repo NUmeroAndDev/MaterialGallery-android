@@ -116,7 +116,7 @@ enum VersionSuffix {
 
 ext {
     def appMajor = 2
-    def appMinor = 0
+    def appMinor = 1
     def appPatch = 0
     def appBuild = 0
 
