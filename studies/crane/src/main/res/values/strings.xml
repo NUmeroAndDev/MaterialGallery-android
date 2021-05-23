@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_crane">Crane</string>
+
+    <string name="crane_transition_name">crane</string>
+</resources>

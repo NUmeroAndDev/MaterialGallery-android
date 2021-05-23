@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         R.id.ComponentListScreen,
         R.id.StudiesScreen,
         R.id.SettingsScreen,
+
+        R.id.CraneScreen,
         R.id.ReplyScreen,
         R.id.ShrineScreen
     )

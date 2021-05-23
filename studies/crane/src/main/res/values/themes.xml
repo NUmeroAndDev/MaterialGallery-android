@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Crane" parent="Theme.MaterialComponents.Light">
+        <!-- Color -->
+        <item name="colorPrimary">@color/crane_purple_800</item>
+        <item name="colorPrimaryVariant">@color/crane_purple_700</item>
+        <item name="colorSecondary">@color/crane_red</item>
+        <item name="colorSurface">@color/crane_purple_900</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorOnSurface">@android:color/white</item>
+
+        <!-- Shape -->
+        <item name="shapeAppearanceSmallComponent">
+            @style/ShapeAppearance.Crane.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">
+            @style/ShapeAppearance.Crane.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">
+            @style/ShapeAppearance.Crane.LargeComponent
+        </item>
+
+        <!-- Typography -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.Crane.H1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Crane.H2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Crane.H3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Crane.H4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Crane.H5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Crane.H6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Crane.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Crane.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Crane.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Crane.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Crane.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Crane.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Crane.Overline</item>
+
+        <!-- Widget -->
+        <item name="bottomSheetStyle">@style/Widget.Crane.BottomSheet</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
+        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.Colored</item>
+        <item name="bottomNavigationStyle">
+            @style/Widget.MaterialComponents.BottomNavigationView.Colored
+        </item>
+        <item name="navigationRailStyle">
+            @style/Widget.MaterialComponents.NavigationRailView.Colored
+        </item>
+        <item name="tabStyle">@style/Widget.MaterialComponents.TabLayout.Colored</item>
+    </style>
+</resources>
