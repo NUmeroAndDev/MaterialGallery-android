@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="crane_red">#e30425</color>
+
+    <color name="crane_purple_700">#720D5D</color>
+    <color name="crane_purple_800">#5D1049</color>
+    <color name="crane_purple_900">#4E0D3A</color>
+</resources>
