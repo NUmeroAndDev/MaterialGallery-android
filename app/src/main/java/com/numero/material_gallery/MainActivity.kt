@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.bottomNavigation.setupWithNavController(navController)
-        binding.bottomNavigation.setOnItemReselectedListener {  }
+        binding.bottomNavigation.setOnItemReselectedListener { }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
