@@ -6,7 +6,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 import com.numero.material_gallery.R
 import com.numero.material_gallery.components.MaterialContainerTransformFragment
 import com.numero.material_gallery.databinding.FragmentBottomNavigationBinding
@@ -54,13 +54,13 @@ class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fra
     }
 
     private fun initViews() {
-        val listener = BottomNavigationView.OnNavigationItemSelectedListener {
+        val listener = NavigationBarView.OnItemSelectedListener {
             binding.bottomNavigation.setCheckedItem(it.itemId, true)
             binding.coloredBottomNavigation.setCheckedItem(it.itemId, true)
             false
         }
-        binding.bottomNavigation.setOnNavigationItemSelectedListener(listener)
-        binding.coloredBottomNavigation.setOnNavigationItemSelectedListener(listener)
+        binding.bottomNavigation.setOnItemSelectedListener(listener)
+        binding.coloredBottomNavigation.setOnItemSelectedListener(listener)
 
         binding.removeItemButton.setOnClickListener {
             updateBottomNavigationItemCount(MenuItemAction.REMOVE)
