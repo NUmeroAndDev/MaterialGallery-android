@@ -1,9 +1,8 @@
 package com.numero.material_gallery.components
 
 import androidx.annotation.StringRes
-import com.numero.material_gallery.R
 
-enum class DesignComponent(
+enum class MaterialComponent(
     @StringRes val titleRes: Int
 ) {
 

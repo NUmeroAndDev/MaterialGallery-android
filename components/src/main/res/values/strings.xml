@@ -1,0 +1,34 @@
+<resources>
+    <string name="backdrop">Backdrop</string>
+    <string name="bottom_app_bar">Bottom App Bar</string>
+    <string name="bottom_navigation">Bottom Navigation</string>
+    <string name="bottom_sheet">Bottom Sheet</string>
+    <string name="checkbox">Checkbox</string>
+    <string name="chips">Chips</string>
+    <string name="date_picker">Date Picker</string>
+    <string name="extended_fab">Extended Floating Action Button</string>
+    <string name="fab">Floating Action Button</string>
+    <string name="shapeable_image_view">Shapeable Image View</string>
+    <string name="material_button">Material Button</string>
+    <string name="material_button_toggle_group">Material Button Toggle Group</string>
+    <string name="material_card">Material Card</string>
+    <string name="material_dialog">Material Dialog</string>
+    <string name="menu">Menu</string>
+    <string name="modal_bottom_sheet">Modal Bottom Sheet</string>
+    <string name="navigation_drawer">Navigation Drawer</string>
+    <string name="navigation_rail">Navigation Rail</string>
+    <string name="progress_indicator">Progress Indicator</string>
+    <string name="radio_button">Radio Button</string>
+    <string name="slider">Slider</string>
+    <string name="snackbar">Snackbar</string>
+    <string name="material_switch">Switch</string>
+    <string name="tab">Tab</string>
+    <string name="text_field">Text Field</string>
+    <string name="time_picker">Time Picker</string>
+    <string name="top_app_bar">Top App Bar</string>
+
+    <string name="actionbar">ActionBar</string>
+    <string name="toolbar">Toolbar</string>
+    <string name="lift_on_scroll">LiftOnScroll</string>
+    <string name="collapsing">Collapsing</string>
+</resources>

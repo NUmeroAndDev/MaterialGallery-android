@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialFadeThrough
 import com.numero.material_gallery.R
-import com.numero.material_gallery.components.DesignComponent
+import com.numero.material_gallery.components.MaterialComponent
 import com.numero.material_gallery.databinding.FragmentComponentListBinding
 import dev.chrisbanes.insetter.applyInsetter
 
@@ -57,7 +57,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
         }
     }
 
-    private fun selectedComponent(view: View, component: DesignComponent) {
+    private fun selectedComponent(view: View, component: MaterialComponent) {
         exitTransition = Hold()
         reenterTransition = null
 
@@ -65,33 +65,33 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
         findNavController().navigate(component.navigationId, null, null, extras)
     }
 
-    private val DesignComponent.navigationId: Int
+    private val MaterialComponent.navigationId: Int
         get() = when (this) {
-            DesignComponent.BOTTOM_NAVIGATION -> R.id.action_ComponentList_to_BottomNavigation
-            DesignComponent.BOTTOM_APP_BAR -> R.id.action_ComponentList_to_BottomAppBar
-            DesignComponent.BOTTOM_SHEET -> R.id.action_ComponentList_to_BottomSheet
-            DesignComponent.CHECKBOX -> R.id.action_ComponentList_to_Checkbox
-            DesignComponent.CHIPS -> R.id.action_ComponentList_to_Chip
-            DesignComponent.DATE_PICKER -> R.id.action_ComponentList_to_DatePicker
-            DesignComponent.EXTENDED_FAB -> R.id.action_ComponentList_to_ExtendedFab
-            DesignComponent.FAB -> R.id.action_ComponentList_to_Fab
-            DesignComponent.IMAGE_VIEW -> R.id.action_ComponentList_to_ShapeableImage
-            DesignComponent.MATERIAL_BUTTON -> R.id.action_ComponentList_to_MaterialButton
-            DesignComponent.MATERIAL_BUTTON_TOGGLE_GROUP -> R.id.action_ComponentList_to_MaterialButtonToggleGroup
-            DesignComponent.MATERIAL_CARD -> R.id.action_ComponentList_to_MaterialCard
-            DesignComponent.MATERIAL_DIALOG -> R.id.action_ComponentList_to_MaterialDialog
-            DesignComponent.MENU -> R.id.action_ComponentList_to_Menu
-            DesignComponent.MODAL_BOTTOM_SHEET -> R.id.action_ComponentList_to_ModalBottomSheet
-            DesignComponent.NAVIGATION_DRAWER -> R.id.action_ComponentList_to_NavigationDrawer
-            DesignComponent.NAVIGATION_RAIL -> R.id.action_ComponentList_to_NavigationRail
-            DesignComponent.PROGRESS_INDICATOR -> R.id.action_ComponentList_to_ProgressIndicator
-            DesignComponent.RADIO_BUTTON -> R.id.action_ComponentList_to_RadioButton
-            DesignComponent.SLIDER -> R.id.action_ComponentList_to_Slider
-            DesignComponent.SNACKBAR -> R.id.action_ComponentList_to_Snackbar
-            DesignComponent.SWITCH -> R.id.action_ComponentList_to_Switch
-            DesignComponent.TAB -> R.id.action_ComponentList_to_Tab
-            DesignComponent.TEXT_FIELDS -> R.id.action_ComponentList_to_TextField
-            DesignComponent.TIME_PICKER -> R.id.action_ComponentList_to_TimePicker
-            DesignComponent.TOP_APP_BAR -> R.id.action_ComponentList_to_TopAppBar
+            MaterialComponent.BOTTOM_NAVIGATION -> R.id.action_ComponentList_to_BottomNavigation
+            MaterialComponent.BOTTOM_APP_BAR -> R.id.action_ComponentList_to_BottomAppBar
+            MaterialComponent.BOTTOM_SHEET -> R.id.action_ComponentList_to_BottomSheet
+            MaterialComponent.CHECKBOX -> R.id.action_ComponentList_to_Checkbox
+            MaterialComponent.CHIPS -> R.id.action_ComponentList_to_Chip
+            MaterialComponent.DATE_PICKER -> R.id.action_ComponentList_to_DatePicker
+            MaterialComponent.EXTENDED_FAB -> R.id.action_ComponentList_to_ExtendedFab
+            MaterialComponent.FAB -> R.id.action_ComponentList_to_Fab
+            MaterialComponent.IMAGE_VIEW -> R.id.action_ComponentList_to_ShapeableImage
+            MaterialComponent.MATERIAL_BUTTON -> R.id.action_ComponentList_to_MaterialButton
+            MaterialComponent.MATERIAL_BUTTON_TOGGLE_GROUP -> R.id.action_ComponentList_to_MaterialButtonToggleGroup
+            MaterialComponent.MATERIAL_CARD -> R.id.action_ComponentList_to_MaterialCard
+            MaterialComponent.MATERIAL_DIALOG -> R.id.action_ComponentList_to_MaterialDialog
+            MaterialComponent.MENU -> R.id.action_ComponentList_to_Menu
+            MaterialComponent.MODAL_BOTTOM_SHEET -> R.id.action_ComponentList_to_ModalBottomSheet
+            MaterialComponent.NAVIGATION_DRAWER -> R.id.action_ComponentList_to_NavigationDrawer
+            MaterialComponent.NAVIGATION_RAIL -> R.id.action_ComponentList_to_NavigationRail
+            MaterialComponent.PROGRESS_INDICATOR -> R.id.action_ComponentList_to_ProgressIndicator
+            MaterialComponent.RADIO_BUTTON -> R.id.action_ComponentList_to_RadioButton
+            MaterialComponent.SLIDER -> R.id.action_ComponentList_to_Slider
+            MaterialComponent.SNACKBAR -> R.id.action_ComponentList_to_Snackbar
+            MaterialComponent.SWITCH -> R.id.action_ComponentList_to_Switch
+            MaterialComponent.TAB -> R.id.action_ComponentList_to_Tab
+            MaterialComponent.TEXT_FIELDS -> R.id.action_ComponentList_to_TextField
+            MaterialComponent.TIME_PICKER -> R.id.action_ComponentList_to_TimePicker
+            MaterialComponent.TOP_APP_BAR -> R.id.action_ComponentList_to_TopAppBar
         }
 }

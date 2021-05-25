@@ -6,16 +6,16 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
-import com.numero.material_gallery.components.DesignComponent
+import com.numero.material_gallery.components.MaterialComponent
 import com.numero.material_gallery.databinding.ViewHolderItemBinding
 
 class ComponentListAdapter : RecyclerView.Adapter<ComponentItemViewHolder>() {
 
-    private val componentList = DesignComponent.values().toList()
+    private val componentList = MaterialComponent.values().toList()
 
-    private var listener: ((view: View, component: DesignComponent) -> Unit)? = null
+    private var listener: ((view: View, component: MaterialComponent) -> Unit)? = null
 
-    fun setOnItemClickListener(listener: ((view: View, component: DesignComponent) -> Unit)) {
+    fun setOnItemClickListener(listener: ((view: View, component: MaterialComponent) -> Unit)) {
         this.listener = listener
     }
 
@@ -39,40 +39,40 @@ class ComponentItemViewHolder(
     private val binding: ViewHolderItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(component: DesignComponent) {
+    fun bind(component: MaterialComponent) {
         binding.titleTextView.setText(component.titleRes)
         itemView.transitionName = itemView.context.getString(component.transitionNameStringRes)
     }
 
-    private val DesignComponent.transitionNameStringRes: Int
+    private val MaterialComponent.transitionNameStringRes: Int
         @StringRes
         get() = when (this) {
-            DesignComponent.BOTTOM_NAVIGATION -> R.string.bottom_navigation_transition_name
-            DesignComponent.BOTTOM_APP_BAR -> R.string.bottom_app_bar_transition_name
-            DesignComponent.BOTTOM_SHEET -> R.string.bottom_sheet_transition_name
-            DesignComponent.CHECKBOX -> R.string.checkbox_transition_name
-            DesignComponent.CHIPS -> R.string.chips_transition_name
-            DesignComponent.DATE_PICKER -> R.string.date_picker_transition_name
-            DesignComponent.EXTENDED_FAB -> R.string.extended_fab_transition_name
-            DesignComponent.FAB -> R.string.fab_transition_name
-            DesignComponent.IMAGE_VIEW -> R.string.shapeable_image_view_transition_name
-            DesignComponent.MATERIAL_BUTTON -> R.string.material_button_transition_name
-            DesignComponent.MATERIAL_BUTTON_TOGGLE_GROUP -> R.string.material_button_toggle_group_transition_name
-            DesignComponent.MATERIAL_CARD -> R.string.material_card_transition_name
-            DesignComponent.MATERIAL_DIALOG -> R.string.material_dialog_transition_name
-            DesignComponent.MENU -> R.string.menu_transition_name
-            DesignComponent.MODAL_BOTTOM_SHEET -> R.string.modal_bottom_sheet_transition_name
-            DesignComponent.NAVIGATION_DRAWER -> R.string.navigation_drawer_transition_name
-            DesignComponent.NAVIGATION_RAIL -> R.string.navigation_rail_transition_name
-            DesignComponent.PROGRESS_INDICATOR -> R.string.progress_indicator_transition_name
-            DesignComponent.RADIO_BUTTON -> R.string.radio_button_transition_name
-            DesignComponent.SLIDER -> R.string.slider_transition_name
-            DesignComponent.SNACKBAR -> R.string.snackbar_transition_name
-            DesignComponent.SWITCH -> R.string.material_switch_transition_name
-            DesignComponent.TAB -> R.string.tab_transition_name
-            DesignComponent.TEXT_FIELDS -> R.string.text_field_transition_name
-            DesignComponent.TIME_PICKER -> R.string.time_picker_transition_name
-            DesignComponent.TOP_APP_BAR -> R.string.top_app_bar_transition_name
+            MaterialComponent.BOTTOM_NAVIGATION -> R.string.bottom_navigation_transition_name
+            MaterialComponent.BOTTOM_APP_BAR -> R.string.bottom_app_bar_transition_name
+            MaterialComponent.BOTTOM_SHEET -> R.string.bottom_sheet_transition_name
+            MaterialComponent.CHECKBOX -> R.string.checkbox_transition_name
+            MaterialComponent.CHIPS -> R.string.chips_transition_name
+            MaterialComponent.DATE_PICKER -> R.string.date_picker_transition_name
+            MaterialComponent.EXTENDED_FAB -> R.string.extended_fab_transition_name
+            MaterialComponent.FAB -> R.string.fab_transition_name
+            MaterialComponent.IMAGE_VIEW -> R.string.shapeable_image_view_transition_name
+            MaterialComponent.MATERIAL_BUTTON -> R.string.material_button_transition_name
+            MaterialComponent.MATERIAL_BUTTON_TOGGLE_GROUP -> R.string.material_button_toggle_group_transition_name
+            MaterialComponent.MATERIAL_CARD -> R.string.material_card_transition_name
+            MaterialComponent.MATERIAL_DIALOG -> R.string.material_dialog_transition_name
+            MaterialComponent.MENU -> R.string.menu_transition_name
+            MaterialComponent.MODAL_BOTTOM_SHEET -> R.string.modal_bottom_sheet_transition_name
+            MaterialComponent.NAVIGATION_DRAWER -> R.string.navigation_drawer_transition_name
+            MaterialComponent.NAVIGATION_RAIL -> R.string.navigation_rail_transition_name
+            MaterialComponent.PROGRESS_INDICATOR -> R.string.progress_indicator_transition_name
+            MaterialComponent.RADIO_BUTTON -> R.string.radio_button_transition_name
+            MaterialComponent.SLIDER -> R.string.slider_transition_name
+            MaterialComponent.SNACKBAR -> R.string.snackbar_transition_name
+            MaterialComponent.SWITCH -> R.string.material_switch_transition_name
+            MaterialComponent.TAB -> R.string.tab_transition_name
+            MaterialComponent.TEXT_FIELDS -> R.string.text_field_transition_name
+            MaterialComponent.TIME_PICKER -> R.string.time_picker_transition_name
+            MaterialComponent.TOP_APP_BAR -> R.string.top_app_bar_transition_name
         }
 
 }
