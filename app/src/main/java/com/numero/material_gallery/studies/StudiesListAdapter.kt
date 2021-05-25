@@ -7,7 +7,7 @@ import androidx.annotation.StringRes
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.numero.material_gallery.R
-import com.numero.material_gallery.databinding.ViewHolderItemBinding
+import com.numero.material_gallery.components.databinding.ViewHolderItemBinding
 
 class MaterialStudiesAdapter : RecyclerView.Adapter<StudiesItemViewHolder>() {
 
