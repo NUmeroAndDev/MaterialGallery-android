@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import androidx.core.content.withStyledAttributes
 import com.numero.material_gallery.R
 import com.numero.material_gallery.databinding.ViewColorInfoItemBinding
+import java.util.*
 
 class ColorInfoItemView @JvmOverloads constructor(
     context: Context,
@@ -35,7 +36,7 @@ class ColorInfoItemView @JvmOverloads constructor(
     fun setItemColor(color: Int) {
         binding.cardView.setCardBackgroundColor(color)
         binding.colorTextView.apply {
-            text = Integer.toHexString(color).toUpperCase()
+            text = Integer.toHexString(color).uppercase(Locale.getDefault())
             setTextColor(color.adjustTextColor())
         }
     }
