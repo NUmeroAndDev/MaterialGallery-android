@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Crane.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Crane.BottomSheet</item>
+    </style>
+
+    <style name="MaterialAlertDialog.Crane" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearance">@style/ShapeAppearance.Crane.LargeComponent</item>
+    </style>
+
+    <style name="Widget.Crane.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Crane.CompoundButton</item>
+    </style>
+
+    <style name="Widget.Crane.TabLayout" parent="Widget.MaterialComponents.TabLayout.Colored">
+        <item name="tabIndicator">@drawable/crane_tab_indicator</item>
+        <item name="tabIndicatorGravity">stretch</item>
+    </style>
+
+    <style name="Widget.Crane.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Crane.TextInputLayout</item>
+        <item name="hintTextColor">?attr/colorOnPrimary</item>
+        <item name="helperTextTextColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Widget.Crane.TextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="Widget.Crane.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MaterialComponents.Toolbar.Primary
+        </item>
+    </style>
+</resources>

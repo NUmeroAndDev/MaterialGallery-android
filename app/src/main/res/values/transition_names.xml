@@ -13,6 +13,7 @@
     <string name="material_button_toggle_group_transition_name">material_button_toggle_group</string>
     <string name="material_card_transition_name">material_card</string>
     <string name="material_dialog_transition_name">material_dialog</string>
+    <string name="menu_transition_name">menu</string>
     <string name="modal_bottom_sheet_transition_name">modal_bottom_sheet</string>
     <string name="navigation_drawer_transition_name">navigation_drawer</string>
     <string name="navigation_rail_transition_name">navigation_rail</string>

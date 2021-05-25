@@ -47,6 +47,9 @@
             android:id="@+id/action_ComponentList_to_MaterialDialog"
             app:destination="@id/MaterialDialogScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_Menu"
+            app:destination="@id/MenuScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_NavigationDrawer"
             app:destination="@id/NavigationDrawerScreen" />
         <action
@@ -158,6 +161,12 @@
         android:name="com.numero.material_gallery.components.dialog.MaterialDialogFragment"
         android:label="@string/material_dialog"
         tools:layout="@layout/fragment_material_dialog" />
+
+    <fragment
+        android:id="@+id/MenuScreen"
+        android:name="com.numero.material_gallery.components.menu.MenuFragment"
+        android:label="@string/menu"
+        tools:layout="@layout/fragment_menu" />
 
     <fragment
         android:id="@+id/NavigationDrawerScreen"

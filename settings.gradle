@@ -1,6 +1,7 @@
 include ':app'
+include ':studies:base'
+include ':studies:crane'
 include ':studies:shrine'
 include ':studies:reply'
 include ':core'
-include ':studies:base'
 include ':components'

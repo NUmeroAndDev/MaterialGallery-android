@@ -35,6 +35,7 @@
     <string name="material_button_toggle_group">Material Button Toggle Group</string>
     <string name="material_card">Material Card</string>
     <string name="material_dialog">Material Dialog</string>
+    <string name="menu">Menu</string>
     <string name="modal_bottom_sheet">Modal Bottom Sheet</string>
     <string name="navigation_drawer">Navigation Drawer</string>
     <string name="navigation_rail">Navigation Rail</string>
@@ -72,6 +73,26 @@
         <item>rounded</item>
         <item>cut</item>
     </string-array>
+
+    <!--  Menu  -->
+    <string name="label_overflow_menu">Overflow menu</string>
+    <string name="label_popup_menu">Popup menu</string>
+    <string name="label_icon_popup_menu">Popup menu with icon</string>
+
+    <string name="button_popup_menu">Show popup menu</string>
+
+    <!--  TextField  -->
+    <string name="label_icon_text_field">Icon</string>
+    <string name="label_prefix_and_suffix_text_field">Prefix and suffix</string>
+    <string name="label_clear_text_text_field">Clear text</string>
+    <string name="label_exposed_dropdown_text_field">Exposed dropdown</string>
+
+    <string name="label">Label</string>
+    <string name="label_password">Password</string>
+    <string name="label_error">Error</string>
+
+    <string name="prefix">Prefix</string>
+    <string name="suffix">Suffix</string>
 
     <!--  TimePicker  -->
     <string name="label_time_format">Time format</string>

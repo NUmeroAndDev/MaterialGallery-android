@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         R.id.ComponentListScreen,
         R.id.StudiesScreen,
         R.id.SettingsScreen,
+
+        R.id.CraneScreen,
         R.id.ReplyScreen,
         R.id.ShrineScreen
     )
@@ -65,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.bottomNavigation.setupWithNavController(navController)
-        binding.bottomNavigation.setOnNavigationItemReselectedListener {}
+        binding.bottomNavigation.setOnItemReselectedListener { }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)

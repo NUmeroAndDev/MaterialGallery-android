@@ -36,13 +36,12 @@ android {
 }
 
 dependencies {
-    implementation kotlinAndroid.stdlib
-    implementation androidx.appcompat
-    implementation androidx.core
-    implementation androidx.lifecycle.livedata
-    implementation androidx.lifecycle.runtime
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.core
+    implementation libs.androidx.lifecycle.livedata
+    implementation libs.androidx.lifecycle.runtime
 
-    implementation material
+    implementation libs.material
 
     testImplementation 'junit:junit:4.13.2'
 }
