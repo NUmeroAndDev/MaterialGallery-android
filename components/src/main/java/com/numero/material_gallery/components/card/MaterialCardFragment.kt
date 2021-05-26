@@ -7,11 +7,11 @@ import android.view.MenuItem
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.components.card.state.Corner
 import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
 import com.numero.material_gallery.components.databinding.FragmentMaterialCardBinding
+import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import dev.chrisbanes.insetter.applyInsetter
 
 class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragment_material_card) {
