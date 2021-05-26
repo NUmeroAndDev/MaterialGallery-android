@@ -17,6 +17,8 @@ buildscript {
         libs = [
                 kotlinPlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
 
+                coroutines  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0",
+
                 androidx    : [
                         appcompat       : "androidx.appcompat:appcompat:1.3.0-rc01",
                         activity        : "androidx.activity:activity-ktx:1.3.0-alpha08",
@@ -32,7 +34,6 @@ buildscript {
                         ],
 
                         lifecycle       : [
-                                livedata: "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle",
                                 runtime : "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
                         ]
                 ],

@@ -19,7 +19,6 @@ import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
 import com.numero.material_gallery.core.isDarkTheme
 import com.numero.material_gallery.core.launchWhenStartedIn
-import com.numero.material_gallery.core.observeSingle
 import com.numero.material_gallery.databinding.ActivityMainBinding
 import com.numero.material_gallery.repository.ConfigRepository
 import kotlinx.coroutines.flow.onEach
@@ -86,9 +85,9 @@ class MainActivity : AppCompatActivity() {
             windowInsetController.isAppearanceLightStatusBars = isRootDestination && !isDarkTheme
         }
 
-        configRepository.changedTheme.observeSingle(this) {
+        configRepository.changedThemeEvent.onEach {
             recreate()
-        }
+        }.launchWhenStartedIn(lifecycleScope)
     }
 
     override fun onResume() {
