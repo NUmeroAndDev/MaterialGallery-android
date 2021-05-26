@@ -3,19 +3,19 @@ package com.numero.material_gallery.repository
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.preference.PreferenceManager
 import com.numero.material_gallery.R
-import com.numero.material_gallery.core.singleLiveData
 import com.numero.material_gallery.model.Theme
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.receiveAsFlow
 
 class ConfigRepositoryImpl(context: Context) : ConfigRepository {
 
     private val settingsPreference = PreferenceManager.getDefaultSharedPreferences(context)
 
-    private val currentThemeLiveData = singleLiveData<Int>()
-    override val changedTheme: LiveData<Int> = currentThemeLiveData
+    private val _changedThemeEvent = Channel<Int>()
+    override val changedThemeEvent: Flow<Int> = _changedThemeEvent.receiveAsFlow()
 
     override val currentTheme: Int
         get() {
@@ -27,7 +27,7 @@ class ConfigRepositoryImpl(context: Context) : ConfigRepository {
         }
 
     override fun notifyChangedTheme() {
-        currentThemeLiveData.value = currentTheme
+        _changedThemeEvent.trySend(currentTheme)
     }
 
     override fun getCurrentTheme(): Theme {
