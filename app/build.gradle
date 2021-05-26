@@ -49,7 +49,9 @@ dependencies {
     implementation project(':studies:crane')
     implementation project(':studies:shrine')
     implementation project(':studies:reply')
+    implementation project(':components')
     implementation project(':core')
+    implementation project(':resource')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.activity

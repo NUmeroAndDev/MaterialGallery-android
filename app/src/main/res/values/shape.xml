@@ -30,14 +30,4 @@
         <item name="cornerFamily">cut</item>
         <item name="cornerSize">8dp</item>
     </style>
-
-    <style name="ShapeAppearance.MaterialGallery.Image.Diamond" parent="ShapeAppearance.MaterialComponents">
-        <item name="cornerFamily">cut</item>
-        <item name="cornerSize">50%</item>
-    </style>
-
-    <style name="ShapeAppearance.MaterialGallery.Image.Circle" parent="ShapeAppearance.MaterialComponents">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
-    </style>
 </resources>
