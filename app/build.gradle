@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.android.gms.oss-licenses-plugin'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -44,6 +46,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes true
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':studies:crane')
@@ -70,7 +76,8 @@ dependencies {
 
     implementation libs.insetter
 
-    implementation libs.koin
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
 
     implementation libs.licenses
 

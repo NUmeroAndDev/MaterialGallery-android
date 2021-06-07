@@ -11,6 +11,8 @@ buildscript {
                 navigation: "2.3.5",
                 lifecycle : "2.4.0-alpha01",
 
+                hilt      : "2.36",
+
                 material  : "1.4.0-rc01",
         ]
 
@@ -34,11 +36,15 @@ buildscript {
                         ],
 
                         lifecycle       : [
-                                runtime : "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
+                                runtime: "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
                         ]
                 ],
 
-                koin        : "org.koin:koin-androidx-scope:2.1.6",
+                hilt        : [
+                        plugin  : "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt",
+                        android : "com.google.dagger:hilt-android:$versions.hilt",
+                        compiler: "com.google.dagger:hilt-compiler:$versions.hilt"
+                ],
 
                 material    : "com.google.android.material:material:$versions.material",
 
@@ -54,11 +60,11 @@ buildscript {
     }
     repositories {
         google()
-        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0-beta02'
         classpath libs.kotlinPlugin
+        classpath libs.hilt.plugin
         classpath 'com.google.android.gms:oss-licenses-plugin:0.10.4'
     }
 }
@@ -70,7 +76,6 @@ plugins {
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
     }
 }
