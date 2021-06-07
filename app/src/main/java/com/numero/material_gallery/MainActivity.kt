@@ -21,13 +21,17 @@ import com.numero.material_gallery.core.isDarkTheme
 import com.numero.material_gallery.core.launchWhenStartedIn
 import com.numero.material_gallery.databinding.ActivityMainBinding
 import com.numero.material_gallery.repository.ConfigRepository
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.onEach
-import org.koin.android.ext.android.inject
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val configRepository by inject<ConfigRepository>()
-    private val appUpdateManager by inject<AppUpdateManager>()
+    @Inject
+    lateinit var configRepository: ConfigRepository
+    @Inject
+    lateinit var appUpdateManager: AppUpdateManager
 
     private val hideAppBarDestinationIds = setOf(
         R.id.NavigationDrawerScreen,
@@ -50,8 +54,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(configRepository.currentTheme)
         super.onCreate(savedInstanceState)
+        setTheme(configRepository.currentTheme)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)

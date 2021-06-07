@@ -10,11 +10,14 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.databinding.BottomSheetFragmentThemeInfoBinding
 import com.numero.material_gallery.model.Theme
 import com.numero.material_gallery.repository.ConfigRepository
-import org.koin.android.ext.android.inject
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
 
-    private val configRepository by inject<ConfigRepository>()
+    @Inject
+    lateinit var configRepository: ConfigRepository
 
     private var _binding: BottomSheetFragmentThemeInfoBinding? = null
     private val binding get() = _binding!!

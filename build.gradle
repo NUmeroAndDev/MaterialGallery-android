@@ -46,8 +46,6 @@ buildscript {
                         compiler: "com.google.dagger:hilt-compiler:$versions.hilt"
                 ],
 
-                koin        : "org.koin:koin-androidx-scope:2.1.6",
-
                 material    : "com.google.android.material:material:$versions.material",
 
                 insetter    : "dev.chrisbanes.insetter:insetter:0.6.0",
@@ -62,7 +60,6 @@ buildscript {
     }
     repositories {
         google()
-        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.0-beta02'
@@ -79,7 +76,6 @@ plugins {
 allprojects {
     repositories {
         google()
-        jcenter()
         mavenCentral()
     }
 }

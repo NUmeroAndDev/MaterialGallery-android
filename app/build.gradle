@@ -76,7 +76,6 @@ dependencies {
 
     implementation libs.insetter
 
-    implementation libs.koin
     implementation libs.hilt.android
     kapt libs.hilt.compiler
 
