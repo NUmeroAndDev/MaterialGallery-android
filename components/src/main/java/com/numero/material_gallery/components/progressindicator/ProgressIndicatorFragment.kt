@@ -8,13 +8,13 @@ import com.google.android.material.progressindicator.*
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentProgressIndicatorBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class ProgressIndicatorFragment :
     MaterialContainerTransformFragment(R.layout.fragment_progress_indicator) {
 
-    private var _binding: FragmentProgressIndicatorBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentProgressIndicatorBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,6 @@ class ProgressIndicatorFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentProgressIndicatorBinding.bind(view)
 
         val progressIndicatorSpec = CircularProgressIndicatorSpec(
             requireContext(),
@@ -124,11 +123,6 @@ class ProgressIndicatorFragment :
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

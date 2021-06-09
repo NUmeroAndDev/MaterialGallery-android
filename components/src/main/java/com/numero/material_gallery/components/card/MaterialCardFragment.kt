@@ -12,12 +12,12 @@ import com.numero.material_gallery.components.card.state.Elevation
 import com.numero.material_gallery.components.card.state.Stroke
 import com.numero.material_gallery.components.databinding.FragmentMaterialCardBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragment_material_card) {
 
-    private var _binding: FragmentMaterialCardBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentMaterialCardBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,6 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentMaterialCardBinding.bind(view)
 
         binding.elevationSlider.addOnChangeListener { _, value, _ ->
             updateElevation(Elevation.values()[value.toInt()])
@@ -51,11 +50,6 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

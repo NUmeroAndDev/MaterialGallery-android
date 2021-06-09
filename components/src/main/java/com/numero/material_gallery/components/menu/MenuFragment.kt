@@ -14,12 +14,12 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentMenuBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class MenuFragment : MaterialContainerTransformFragment(R.layout.fragment_menu) {
 
-    private var _binding: FragmentMenuBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentMenuBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +28,6 @@ class MenuFragment : MaterialContainerTransformFragment(R.layout.fragment_menu) 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentMenuBinding.bind(view)
 
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
@@ -42,11 +41,6 @@ class MenuFragment : MaterialContainerTransformFragment(R.layout.fragment_menu) 
         binding.iconPopupMenuButton.setOnClickListener {
             showPopupMenuWithIcon(it)
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

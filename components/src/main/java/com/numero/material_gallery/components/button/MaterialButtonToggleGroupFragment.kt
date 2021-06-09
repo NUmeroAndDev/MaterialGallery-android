@@ -9,13 +9,13 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentMaterialButtonToggleGroupBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class MaterialButtonToggleGroupFragment :
     MaterialContainerTransformFragment(R.layout.fragment_material_button_toggle_group) {
 
-    private var _binding: FragmentMaterialButtonToggleGroupBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentMaterialButtonToggleGroupBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,17 +24,11 @@ class MaterialButtonToggleGroupFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentMaterialButtonToggleGroupBinding.bind(view)
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

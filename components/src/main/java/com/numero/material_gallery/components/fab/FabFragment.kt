@@ -11,12 +11,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentFabBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
 
-    private var _binding: FragmentFabBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentFabBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,6 @@ class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentFabBinding.bind(view)
 
         binding.fabSizeRadioGroup.setOnCheckedChangeListener { _, id ->
             binding.fab.size = when (id) {
@@ -49,11 +48,6 @@ class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -11,12 +11,12 @@ import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentSnackbarBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_snackbar) {
 
-    private var _binding: FragmentSnackbarBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentSnackbarBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,6 @@ class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_sn
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentSnackbarBinding.bind(view)
 
         binding.fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
@@ -46,11 +45,6 @@ class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_sn
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

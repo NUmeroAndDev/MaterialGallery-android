@@ -10,12 +10,12 @@ import com.google.android.material.navigation.NavigationBarView
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentBottomNavigationBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
 
-    private var _binding: FragmentBottomNavigationBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentBottomNavigationBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,18 +24,12 @@ class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fra
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentBottomNavigationBinding.bind(view)
         initViews()
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

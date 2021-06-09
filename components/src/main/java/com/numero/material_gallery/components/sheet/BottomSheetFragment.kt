@@ -8,11 +8,11 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentBottomSheetBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 
 class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_sheet) {
 
-    private var _binding: FragmentBottomSheetBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentBottomSheetBinding>()
 
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
 
@@ -23,7 +23,6 @@ class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentBottomSheetBinding.bind(view)
 
         binding.showBottomSheetButton.setOnClickListener {
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
@@ -44,11 +43,6 @@ class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment
                 }
             })
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

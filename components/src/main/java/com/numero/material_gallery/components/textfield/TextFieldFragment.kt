@@ -11,12 +11,12 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentTextFieldBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_text_field) {
 
-    private var _binding: FragmentTextFieldBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentTextFieldBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,6 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentTextFieldBinding.bind(view)
 
         binding.filledErrorTextInputLayout.error = "Error"
         binding.outlinedErrorTextInputLayout.error = "Error"
@@ -50,11 +49,6 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

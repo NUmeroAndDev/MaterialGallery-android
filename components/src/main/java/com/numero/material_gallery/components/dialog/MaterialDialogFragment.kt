@@ -7,11 +7,11 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentMaterialDialogBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 
 class MaterialDialogFragment : MaterialContainerTransformFragment(R.layout.fragment_material_dialog) {
 
-    private var _binding: FragmentMaterialDialogBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentMaterialDialogBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,16 +20,10 @@ class MaterialDialogFragment : MaterialContainerTransformFragment(R.layout.fragm
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentMaterialDialogBinding.bind(view)
 
         binding.showDialogButton.setOnClickListener {
             showMaterialDialog()
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

@@ -9,13 +9,13 @@ import com.google.android.material.timepicker.TimeFormat
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentTimePickerBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
 class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_time_picker) {
 
-    private var _binding: FragmentTimePickerBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentTimePickerBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,13 +24,7 @@ class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentTimePickerBinding.bind(view)
         setupViews()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun setupViews() {

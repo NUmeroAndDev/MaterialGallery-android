@@ -8,11 +8,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentModalBottomSheetBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 
 class ModalBottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_modal_bottom_sheet) {
 
-    private var _binding: FragmentModalBottomSheetBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentModalBottomSheetBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,6 @@ class ModalBottomSheetFragment : MaterialContainerTransformFragment(R.layout.fra
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentModalBottomSheetBinding.bind(view)
 
         binding.showBottomSheetButton.setOnClickListener {
             BottomSheetModalFragment.newInstance().showIfNeeded(childFragmentManager)

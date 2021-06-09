@@ -11,17 +11,16 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialFadeThrough
 import com.numero.material_gallery.R
+import com.numero.material_gallery.core.delegate.viewBinding
 import com.numero.material_gallery.databinding.FragmentStudiesBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class StudiesFragment : Fragment(R.layout.fragment_studies) {
 
-    private var _binding: FragmentStudiesBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentStudiesBinding>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentStudiesBinding.bind(view)
 
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }

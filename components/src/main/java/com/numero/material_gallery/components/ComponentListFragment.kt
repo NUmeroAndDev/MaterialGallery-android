@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialFadeThrough
 import com.numero.material_gallery.components.databinding.FragmentComponentListBinding
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
-    private var _binding: FragmentComponentListBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding<FragmentComponentListBinding>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,6 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentComponentListBinding.bind(view)
 
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
