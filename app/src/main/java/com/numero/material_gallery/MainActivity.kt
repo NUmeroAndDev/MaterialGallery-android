@@ -3,17 +3,14 @@ package com.numero.material_gallery
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
-import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.appbar.AppBarLayout
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
@@ -76,9 +73,9 @@ class MainActivity : AppCompatActivity() {
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
             if (destination.id != R.id.ThemeInfoDialog) {
                 if (isHideAppBar) {
-                    binding.appbar.gone()
+                    supportActionBar?.hide()
                 } else {
-                    binding.appbar.visible()
+                    supportActionBar?.show()
                 }
             }
 
@@ -116,17 +113,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             .launchWhenStartedIn(lifecycleScope)
-    }
-
-    private fun AppBarLayout.gone() {
-        updateLayoutParams<CoordinatorLayout.LayoutParams> {
-            height = 0
-        }
-    }
-
-    private fun AppBarLayout.visible() {
-        updateLayoutParams<CoordinatorLayout.LayoutParams> {
-            height = CoordinatorLayout.LayoutParams.WRAP_CONTENT
-        }
     }
 }
