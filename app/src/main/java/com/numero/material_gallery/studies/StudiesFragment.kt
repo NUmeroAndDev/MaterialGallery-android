@@ -17,7 +17,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class StudiesFragment : Fragment(R.layout.fragment_studies) {
 
-    private val binding by viewBinding<FragmentStudiesBinding>()
+    private val binding by viewBinding { FragmentStudiesBinding.bind(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

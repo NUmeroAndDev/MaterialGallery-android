@@ -13,7 +13,7 @@ import com.numero.material_gallery.core.delegate.viewBinding
 
 class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_toolbar) {
 
-    private val binding by viewBinding<FragmentToolbarBinding>()
+    private val binding by viewBinding { FragmentToolbarBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

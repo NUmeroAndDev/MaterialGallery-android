@@ -16,7 +16,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_text_field) {
 
-    private val binding by viewBinding<FragmentTextFieldBinding>()
+    private val binding by viewBinding { FragmentTextFieldBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

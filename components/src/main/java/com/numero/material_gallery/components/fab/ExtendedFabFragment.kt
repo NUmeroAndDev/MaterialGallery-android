@@ -15,7 +15,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class ExtendedFabFragment : MaterialContainerTransformFragment(R.layout.fragment_extended_fab) {
 
-    private val binding by viewBinding<FragmentExtendedFabBinding>()
+    private val binding by viewBinding { FragmentExtendedFabBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

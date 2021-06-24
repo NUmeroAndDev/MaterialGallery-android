@@ -14,7 +14,7 @@ import dev.chrisbanes.insetter.applyInsetter
 class ProgressIndicatorFragment :
     MaterialContainerTransformFragment(R.layout.fragment_progress_indicator) {
 
-    private val binding by viewBinding<FragmentProgressIndicatorBinding>()
+    private val binding by viewBinding { FragmentProgressIndicatorBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

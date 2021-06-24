@@ -14,7 +14,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.fragment_shapeable_image_view) {
 
-    private val binding by viewBinding<FragmentShapeableImageViewBinding>()
+    private val binding by viewBinding { FragmentShapeableImageViewBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

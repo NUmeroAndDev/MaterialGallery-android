@@ -10,7 +10,7 @@ import com.numero.material_gallery.core.delegate.viewBinding
 
 class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_collapsing) {
 
-    private val binding by viewBinding<FragmentCollapsingBinding>()
+    private val binding by viewBinding { FragmentCollapsingBinding.bind(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -15,7 +15,7 @@ import java.util.*
 
 class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_time_picker) {
 
-    private val binding by viewBinding<FragmentTimePickerBinding>()
+    private val binding by viewBinding { FragmentTimePickerBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

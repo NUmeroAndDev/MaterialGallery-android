@@ -12,7 +12,7 @@ import com.numero.material_gallery.core.delegate.viewBinding
 
 class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_sheet) {
 
-    private val binding by viewBinding<FragmentBottomSheetBinding>()
+    private val binding by viewBinding { FragmentBottomSheetBinding.bind(it) }
 
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
 
@@ -34,9 +34,7 @@ class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment
         behavior = BottomSheetBehavior.from(binding.bottomSheetLayout).apply {
             state = BottomSheetBehavior.STATE_HIDDEN
             addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
-                override fun onSlide(p0: View, p1: Float) {
-                }
-
+                override fun onSlide(p0: View, p1: Float) = Unit
                 override fun onStateChanged(view: View, state: Int) {
                     binding.showBottomSheetButton.isEnabled =
                         state == BottomSheetBehavior.STATE_HIDDEN

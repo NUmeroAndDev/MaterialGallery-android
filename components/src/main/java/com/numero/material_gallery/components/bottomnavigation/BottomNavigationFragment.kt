@@ -15,7 +15,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
 
-    private val binding by viewBinding<FragmentBottomNavigationBinding>()
+    private val binding by viewBinding { FragmentBottomNavigationBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

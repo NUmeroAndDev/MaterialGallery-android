@@ -17,7 +17,7 @@ import com.numero.material_gallery.core.delegate.viewBinding
 
 class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragment_top_app_bar_type) {
 
-    private val binding by viewBinding<FragmentTopAppBarTypeBinding>()
+    private val binding by viewBinding { FragmentTopAppBarTypeBinding.bind(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

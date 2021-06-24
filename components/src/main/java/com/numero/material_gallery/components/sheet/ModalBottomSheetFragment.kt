@@ -12,7 +12,7 @@ import com.numero.material_gallery.core.delegate.viewBinding
 
 class ModalBottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_modal_bottom_sheet) {
 
-    private val binding by viewBinding<FragmentModalBottomSheetBinding>()
+    private val binding by viewBinding { FragmentModalBottomSheetBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

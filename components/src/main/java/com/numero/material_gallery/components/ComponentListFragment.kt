@@ -16,7 +16,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
-    private val binding by viewBinding<FragmentComponentListBinding>()
+    private val binding by viewBinding { FragmentComponentListBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

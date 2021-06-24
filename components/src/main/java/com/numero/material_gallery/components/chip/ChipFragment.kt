@@ -14,7 +14,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class ChipFragment : MaterialContainerTransformFragment(R.layout.fragment_chip) {
 
-    private val binding by viewBinding<FragmentChipBinding>()
+    private val binding by viewBinding { FragmentChipBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

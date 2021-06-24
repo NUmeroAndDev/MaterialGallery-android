@@ -15,7 +15,7 @@ import dev.chrisbanes.insetter.applyInsetter
 class MaterialButtonToggleGroupFragment :
     MaterialContainerTransformFragment(R.layout.fragment_material_button_toggle_group) {
 
-    private val binding by viewBinding<FragmentMaterialButtonToggleGroupBinding>()
+    private val binding by viewBinding { FragmentMaterialButtonToggleGroupBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

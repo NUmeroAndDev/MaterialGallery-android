@@ -20,7 +20,7 @@ import dev.chrisbanes.insetter.applyInsetter
 class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fragment_navigation_drawer),
     NavigationView.OnNavigationItemSelectedListener {
 
-    private val binding by viewBinding<FragmentNavigationDrawerBinding>()
+    private val binding by viewBinding { FragmentNavigationDrawerBinding.bind(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -11,7 +11,7 @@ import com.numero.material_gallery.core.delegate.viewBinding
 
 class MaterialDialogFragment : MaterialContainerTransformFragment(R.layout.fragment_material_dialog) {
 
-    private val binding by viewBinding<FragmentMaterialDialogBinding>()
+    private val binding by viewBinding { FragmentMaterialDialogBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

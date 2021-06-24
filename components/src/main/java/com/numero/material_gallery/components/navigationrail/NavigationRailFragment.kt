@@ -16,7 +16,7 @@ import dev.chrisbanes.insetter.applyInsetter
 class NavigationRailFragment :
     MaterialContainerTransformFragment(R.layout.fragment_navigation_rail) {
 
-    private val binding by viewBinding<FragmentNavigationRailBinding>()
+    private val binding by viewBinding { FragmentNavigationRailBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -16,7 +16,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
 
-    private val binding by viewBinding<FragmentFabBinding>()
+    private val binding by viewBinding { FragmentFabBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

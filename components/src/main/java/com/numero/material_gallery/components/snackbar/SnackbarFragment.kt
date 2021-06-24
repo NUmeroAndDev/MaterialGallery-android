@@ -16,7 +16,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_snackbar) {
 
-    private val binding by viewBinding<FragmentSnackbarBinding>()
+    private val binding by viewBinding { FragmentSnackbarBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

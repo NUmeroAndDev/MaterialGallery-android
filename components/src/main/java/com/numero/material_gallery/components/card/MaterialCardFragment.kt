@@ -17,7 +17,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragment_material_card) {
 
-    private val binding by viewBinding<FragmentMaterialCardBinding>()
+    private val binding by viewBinding { FragmentMaterialCardBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

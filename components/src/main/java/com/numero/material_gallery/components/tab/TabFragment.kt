@@ -10,7 +10,7 @@ import com.numero.material_gallery.core.delegate.viewBinding
 
 class TabFragment : MaterialContainerTransformFragment(R.layout.fragment_tab) {
 
-    private val binding by viewBinding<FragmentTabBinding>()
+    private val binding by viewBinding { FragmentTabBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

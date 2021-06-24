@@ -15,7 +15,7 @@ import dev.chrisbanes.insetter.applyInsetter
 class MaterialButtonFragment :
     MaterialContainerTransformFragment(R.layout.fragment_material_button) {
 
-    private val binding by viewBinding<FragmentMaterialButtonBinding>()
+    private val binding by viewBinding { FragmentMaterialButtonBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

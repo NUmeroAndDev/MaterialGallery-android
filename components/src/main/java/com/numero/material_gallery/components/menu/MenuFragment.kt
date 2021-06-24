@@ -19,7 +19,7 @@ import dev.chrisbanes.insetter.applyInsetter
 
 class MenuFragment : MaterialContainerTransformFragment(R.layout.fragment_menu) {
 
-    private val binding by viewBinding<FragmentMenuBinding>()
+    private val binding by viewBinding { FragmentMenuBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
