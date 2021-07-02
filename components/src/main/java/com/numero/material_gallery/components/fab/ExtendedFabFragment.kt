@@ -10,12 +10,12 @@ import com.google.android.material.snackbar.Snackbar
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentExtendedFabBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class ExtendedFabFragment : MaterialContainerTransformFragment(R.layout.fragment_extended_fab) {
 
-    private var _binding: FragmentExtendedFabBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentExtendedFabBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +24,6 @@ class ExtendedFabFragment : MaterialContainerTransformFragment(R.layout.fragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentExtendedFabBinding.bind(view)
 
         binding.fabStyleRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
@@ -53,11 +52,6 @@ class ExtendedFabFragment : MaterialContainerTransformFragment(R.layout.fragment
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

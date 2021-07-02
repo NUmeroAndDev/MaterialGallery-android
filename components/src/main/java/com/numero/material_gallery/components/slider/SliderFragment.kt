@@ -10,12 +10,12 @@ import com.google.android.material.slider.BasicLabelFormatter
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentSliderBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slider) {
 
-    private var _binding: FragmentSliderBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentSliderBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,13 +24,7 @@ class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slid
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentSliderBinding.bind(view)
         setupViews()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

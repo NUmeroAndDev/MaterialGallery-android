@@ -9,12 +9,12 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentChipBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class ChipFragment : MaterialContainerTransformFragment(R.layout.fragment_chip) {
 
-    private var _binding: FragmentChipBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentChipBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,17 +23,11 @@ class ChipFragment : MaterialContainerTransformFragment(R.layout.fragment_chip) 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentChipBinding.bind(view)
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

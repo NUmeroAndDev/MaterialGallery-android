@@ -9,11 +9,11 @@ import com.google.android.material.badge.BadgeUtils
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentToolbarBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 
 class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_toolbar) {
 
-    private var _binding: FragmentToolbarBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentToolbarBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +22,7 @@ class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_too
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentToolbarBinding.bind(view)
-
         initViews()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

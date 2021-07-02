@@ -6,15 +6,14 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentCollapsingBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 
 class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_collapsing) {
 
-    private var _binding: FragmentCollapsingBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentCollapsingBinding.bind(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentCollapsingBinding.bind(view)
 
         binding.toolbar.apply {
             setNavigationOnClickListener {
@@ -31,10 +30,5 @@ class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

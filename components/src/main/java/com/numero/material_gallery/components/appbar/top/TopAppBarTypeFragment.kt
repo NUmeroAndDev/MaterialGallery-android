@@ -13,15 +13,14 @@ import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentTopAppBarTypeBinding
 import com.numero.material_gallery.components.databinding.ViewHolderItemBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 
 class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragment_top_app_bar_type) {
 
-    private var _binding: FragmentTopAppBarTypeBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentTopAppBarTypeBinding.bind(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentTopAppBarTypeBinding.bind(view)
 
         binding.toolbarTypeRecyclerView.apply {
             setHasFixedSize(true)
@@ -37,11 +36,6 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragme
                 }
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     private fun selectedToolbarType(view: View, topAppBarType: TopAppBarType) {

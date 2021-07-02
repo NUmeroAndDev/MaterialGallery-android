@@ -10,13 +10,13 @@ import com.google.android.material.navigationrail.NavigationRailView
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentNavigationRailBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class NavigationRailFragment :
     MaterialContainerTransformFragment(R.layout.fragment_navigation_rail) {
 
-    private var _binding: FragmentNavigationRailBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentNavigationRailBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,6 @@ class NavigationRailFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentNavigationRailBinding.bind(view)
 
         binding.labelVisibilityRadioGroup.setOnCheckedChangeListener { _, checkedId ->
             binding.navigationRailView.labelVisibilityMode = when (checkedId) {
@@ -42,11 +41,6 @@ class NavigationRailFragment :
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

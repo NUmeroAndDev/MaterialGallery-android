@@ -12,11 +12,11 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentDatePickerBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 
 class DatePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_date_picker) {
 
-    private var _binding: FragmentDatePickerBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentDatePickerBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +25,7 @@ class DatePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentDatePickerBinding.bind(view)
         setupViews()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

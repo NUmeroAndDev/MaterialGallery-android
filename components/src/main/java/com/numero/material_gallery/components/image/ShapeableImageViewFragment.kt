@@ -9,12 +9,12 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentShapeableImageViewBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.fragment_shapeable_image_view) {
 
-    private var _binding: FragmentShapeableImageViewBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentShapeableImageViewBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,18 +23,12 @@ class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.f
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentShapeableImageViewBinding.bind(view)
 
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
