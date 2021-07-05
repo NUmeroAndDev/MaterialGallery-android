@@ -53,5 +53,11 @@ class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_too
             val badge = BadgeDrawable.create(requireContext())
             BadgeUtils.attachBadgeDrawable(badge, toolbar, R.id.action_info)
         }
+
+        binding.centerTitleSwitch.setOnCheckedChangeListener { _, isChecked ->
+            toolbarList.forEach { toolbar ->
+                toolbar.isTitleCentered = isChecked
+            }
+        }
     }
 }
