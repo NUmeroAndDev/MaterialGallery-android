@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.google.android.material.transition.Hold
-import com.google.android.material.transition.MaterialFadeThrough
+import com.google.android.material.transition.platform.Hold
+import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.numero.material_gallery.R
 import com.numero.material_gallery.core.delegate.viewBinding
 import com.numero.material_gallery.databinding.FragmentStudiesBinding
@@ -41,7 +41,12 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
     private fun initViews() {
         binding.studiesRecyclerView.apply {
             setHasFixedSize(true)
-            addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
+            addItemDecoration(
+                DividerItemDecoration(
+                    requireContext(),
+                    DividerItemDecoration.VERTICAL
+                )
+            )
             adapter = MaterialStudiesAdapter().apply {
                 setOnItemClickListener { view, component ->
                     selectedStudies(view, component)

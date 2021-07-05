@@ -7,8 +7,8 @@ import androidx.annotation.LayoutRes
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import com.google.android.material.color.MaterialColors
-import com.google.android.material.transition.Hold
-import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.platform.Hold
+import com.google.android.material.transition.platform.MaterialContainerTransform
 
 abstract class MaterialContainerTransformFragment : Fragment {
 

@@ -9,7 +9,7 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.material.color.MaterialColors
-import com.google.android.material.transition.MaterialFadeThrough
+import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
