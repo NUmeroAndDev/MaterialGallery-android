@@ -6,11 +6,11 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentTabBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.delegate.viewBinding
 
 class TabFragment : MaterialContainerTransformFragment(R.layout.fragment_tab) {
 
-    private var _binding: FragmentTabBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentTabBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,13 +19,7 @@ class TabFragment : MaterialContainerTransformFragment(R.layout.fragment_tab) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentTabBinding.bind(view)
         setupTab()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

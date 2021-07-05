@@ -12,12 +12,12 @@ import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentBottomAppBarBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_app_bar) {
 
-    private var _binding: FragmentBottomAppBarBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentBottomAppBarBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,6 @@ class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragmen
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentBottomAppBarBinding.bind(view)
 
         binding.fab.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
@@ -76,11 +75,6 @@ class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragmen
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

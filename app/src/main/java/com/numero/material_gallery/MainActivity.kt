@@ -3,17 +3,14 @@ package com.numero.material_gallery
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
-import androidx.core.view.updateLayoutParams
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.appbar.AppBarLayout
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
@@ -21,13 +18,17 @@ import com.numero.material_gallery.core.isDarkTheme
 import com.numero.material_gallery.core.launchWhenStartedIn
 import com.numero.material_gallery.databinding.ActivityMainBinding
 import com.numero.material_gallery.repository.ConfigRepository
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.onEach
-import org.koin.android.ext.android.inject
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private val configRepository by inject<ConfigRepository>()
-    private val appUpdateManager by inject<AppUpdateManager>()
+    @Inject
+    lateinit var configRepository: ConfigRepository
+    @Inject
+    lateinit var appUpdateManager: AppUpdateManager
 
     private val hideAppBarDestinationIds = setOf(
         R.id.NavigationDrawerScreen,
@@ -50,8 +51,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(configRepository.currentTheme)
         super.onCreate(savedInstanceState)
+        setTheme(configRepository.currentTheme)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
@@ -72,9 +73,9 @@ class MainActivity : AppCompatActivity() {
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
             if (destination.id != R.id.ThemeInfoDialog) {
                 if (isHideAppBar) {
-                    binding.appbar.gone()
+                    supportActionBar?.hide()
                 } else {
-                    binding.appbar.visible()
+                    supportActionBar?.show()
                 }
             }
 
@@ -112,17 +113,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             .launchWhenStartedIn(lifecycleScope)
-    }
-
-    private fun AppBarLayout.gone() {
-        updateLayoutParams<CoordinatorLayout.LayoutParams> {
-            height = 0
-        }
-    }
-
-    private fun AppBarLayout.visible() {
-        updateLayoutParams<CoordinatorLayout.LayoutParams> {
-            height = CoordinatorLayout.LayoutParams.WRAP_CONTENT
-        }
     }
 }

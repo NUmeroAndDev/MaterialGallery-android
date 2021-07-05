@@ -13,8 +13,8 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.transition.Hold
-import com.google.android.material.transition.MaterialContainerTransform
+import com.google.android.material.transition.platform.Hold
+import com.google.android.material.transition.platform.MaterialContainerTransform
 import com.numero.material_gallery.base.databinding.FragmentComponentGalleryBinding
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import dev.chrisbanes.insetter.applyInsetter

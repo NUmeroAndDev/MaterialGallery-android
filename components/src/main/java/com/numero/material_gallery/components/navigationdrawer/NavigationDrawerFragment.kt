@@ -14,17 +14,16 @@ import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentNavigationDrawerBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
+import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
 class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fragment_navigation_drawer),
     NavigationView.OnNavigationItemSelectedListener {
 
-    private var _binding: FragmentNavigationDrawerBinding? = null
-    private val binding get() = _binding!!
+    private val binding by viewBinding { FragmentNavigationDrawerBinding.bind(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentNavigationDrawerBinding.bind(view)
 
         binding.content.toolbar.apply {
             setNavigationOnClickListener {
@@ -91,11 +90,6 @@ class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fra
                 padding()
             }
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

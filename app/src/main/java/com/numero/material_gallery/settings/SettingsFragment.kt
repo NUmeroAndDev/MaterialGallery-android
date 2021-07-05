@@ -9,7 +9,7 @@ import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.material.color.MaterialColors
-import com.google.android.material.transition.MaterialFadeThrough
+import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
@@ -18,15 +18,19 @@ import com.numero.material_gallery.R
 import com.numero.material_gallery.core.launchWhenStartedIn
 import com.numero.material_gallery.model.Theme
 import com.numero.material_gallery.repository.ConfigRepository
+import dagger.hilt.android.AndroidEntryPoint
 import dev.chrisbanes.insetter.applyInsetter
 import kotlinx.coroutines.flow.onEach
-import org.koin.android.ext.android.inject
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SettingsFragment : PreferenceFragmentCompat() {
 
     private lateinit var appVersionPreference: Preference
-    private val configRepository by inject<ConfigRepository>()
-    private val appUpdateManager by inject<AppUpdateManager>()
+    @Inject
+    lateinit var configRepository: ConfigRepository
+    @Inject
+    lateinit var appUpdateManager: AppUpdateManager
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings, rootKey)
@@ -114,8 +118,5 @@ class SettingsFragment : PreferenceFragmentCompat() {
         private const val KEY_APP_VERSION = "app_version"
 
         private const val sourceUrl = "https://github.com/NUmeroAndDev/MaterialGallery-android"
-
-        fun newInstance(): SettingsFragment =
-            SettingsFragment()
     }
 }

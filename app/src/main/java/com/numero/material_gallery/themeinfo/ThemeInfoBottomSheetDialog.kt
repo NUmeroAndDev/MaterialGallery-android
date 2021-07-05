@@ -4,17 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.numero.material_gallery.R
 import com.numero.material_gallery.databinding.BottomSheetFragmentThemeInfoBinding
 import com.numero.material_gallery.model.Theme
 import com.numero.material_gallery.repository.ConfigRepository
-import org.koin.android.ext.android.inject
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
 
-    private val configRepository by inject<ConfigRepository>()
+    @Inject
+    lateinit var configRepository: ConfigRepository
 
     private var _binding: BottomSheetFragmentThemeInfoBinding? = null
     private val binding get() = _binding!!
@@ -54,22 +56,11 @@ class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
         }
     }
 
-    fun showIfNeeded(fragmentManager: FragmentManager) {
-        if (fragmentManager.findFragmentByTag(TAG) != null) return
-        showNow(fragmentManager, TAG)
-    }
-
     private fun Theme.getToggleButtonId(): Int {
         return when (this) {
             Theme.LIGHT -> R.id.lightThemeButton
             Theme.DARK -> R.id.darkThemeButton
             Theme.SYSTEM_DEFAULT -> R.id.systemThemeButton
         }
-    }
-
-    companion object {
-        private const val TAG = "ThemeInfoBottomSheetDialog"
-
-        fun newInstance(): ThemeInfoBottomSheetDialog = ThemeInfoBottomSheetDialog()
     }
 }
