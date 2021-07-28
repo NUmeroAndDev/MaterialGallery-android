@@ -70,6 +70,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
             MaterialComponent.CHECKBOX -> R.id.action_ComponentList_to_Checkbox
             MaterialComponent.CHIPS -> R.id.action_ComponentList_to_Chip
             MaterialComponent.DATE_PICKER -> R.id.action_ComponentList_to_DatePicker
+            MaterialComponent.DIVIDER -> R.id.action_ComponentList_to_Divider
             MaterialComponent.EXTENDED_FAB -> R.id.action_ComponentList_to_ExtendedFab
             MaterialComponent.FAB -> R.id.action_ComponentList_to_Fab
             MaterialComponent.IMAGE_VIEW -> R.id.action_ComponentList_to_ShapeableImage

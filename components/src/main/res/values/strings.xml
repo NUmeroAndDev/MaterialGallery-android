@@ -6,6 +6,7 @@
     <string name="checkbox">Checkbox</string>
     <string name="chips">Chips</string>
     <string name="date_picker">Date Picker</string>
+    <string name="divider">Divider</string>
     <string name="extended_fab">Extended Floating Action Button</string>
     <string name="fab">Floating Action Button</string>
     <string name="shapeable_image_view">Shapeable Image View</string>

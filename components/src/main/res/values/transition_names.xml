@@ -6,6 +6,7 @@
     <string name="checkbox_transition_name">checkbox</string>
     <string name="chips_transition_name">chips</string>
     <string name="date_picker_transition_name">date_picker</string>
+    <string name="divider_transition_name">divider</string>
     <string name="extended_fab_transition_name">extended_floating_action_button</string>
     <string name="fab_transition_name">floating_action_button</string>
     <string name="shapeable_image_view_transition_name">shapeable_image_view</string>

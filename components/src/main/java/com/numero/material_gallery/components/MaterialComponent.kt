@@ -34,6 +34,10 @@ enum class MaterialComponent(
         R.string.date_picker
     ),
 
+    DIVIDER(
+        R.string.divider
+    ),
+
     EXTENDED_FAB(
         R.string.extended_fab
     ),
