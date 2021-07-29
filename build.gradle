@@ -2,9 +2,9 @@ buildscript {
     ext {
 
         versions = [
-                compileSdk: 30,
+                compileSdk: 31,
                 minSdk    : 23,
-                targetSdk : 30,
+                targetSdk : 31,
 
                 kotlin    : "1.5.10",
 
