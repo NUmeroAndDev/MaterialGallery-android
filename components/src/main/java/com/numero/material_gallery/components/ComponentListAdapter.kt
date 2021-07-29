@@ -51,6 +51,7 @@ class ComponentItemViewHolder(
             MaterialComponent.CHECKBOX -> R.string.checkbox_transition_name
             MaterialComponent.CHIPS -> R.string.chips_transition_name
             MaterialComponent.DATE_PICKER -> R.string.date_picker_transition_name
+            MaterialComponent.DIVIDER -> R.string.divider_transition_name
             MaterialComponent.EXTENDED_FAB -> R.string.extended_fab_transition_name
             MaterialComponent.FAB -> R.string.fab_transition_name
             MaterialComponent.IMAGE_VIEW -> R.string.shapeable_image_view_transition_name
