@@ -26,6 +26,9 @@
             android:id="@+id/action_ComponentList_to_DatePicker"
             app:destination="@id/DatePickerScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_Divider"
+            app:destination="@id/DividerScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_Fab"
             app:destination="@id/FabScreen" />
         <action
@@ -119,6 +122,12 @@
         android:name="com.numero.material_gallery.components.picker.date.DatePickerFragment"
         android:label="@string/date_picker"
         tools:layout="@layout/fragment_date_picker" />
+
+    <fragment
+        android:id="@+id/DividerScreen"
+        android:name="com.numero.material_gallery.components.divider.DividerFragment"
+        android:label="@string/divider"
+        tools:layout="@layout/fragment_divider" />
 
     <fragment
         android:id="@+id/FabScreen"
