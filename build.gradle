@@ -62,7 +62,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.0-alpha05'
+        classpath 'com.android.tools.build:gradle:7.1.0-alpha06'
         classpath libs.kotlinPlugin
         classpath libs.hilt.plugin
         classpath 'com.google.android.gms:oss-licenses-plugin:0.10.4'
