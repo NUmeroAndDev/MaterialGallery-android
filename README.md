@@ -1,6 +1,6 @@
 # MaterialGallery-android  
 
-![Android Studio](https://img.shields.io/badge/Android%20Studio-Bumblebee%20Canary6-green.svg)
+![Android Studio](https://img.shields.io/badge/Android%20Studio-Bumblebee%20Canary8-green.svg)
 ![Kotlin](https://img.shields.io/badge/kotlin-1.5.10-yellow.svg)
 
 ## About  
