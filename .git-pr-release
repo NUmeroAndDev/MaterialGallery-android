@@ -1,0 +1,4 @@
+Release <%= Time.now.strftime('%Y-%m-%d') %>
+<% pull_requests.each do |pr| -%>
+<%=  "- ##{pr.pr.number}" + pr.mention %>
+<% end -%>

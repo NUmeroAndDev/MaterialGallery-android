@@ -90,7 +90,7 @@ subprojects {
             targetExclude("$buildDir/**/*.kt")
             targetExclude("bin/**/*.kt")
 
-            ratchetFrom("origin/master")
+            ratchetFrom("origin/develop")
 
             ktlint("0.39.0").userData(["disabled_rules": "no-wildcard-imports"])
         }
