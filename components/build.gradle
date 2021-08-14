@@ -34,6 +34,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    lintOptions {
+        // https://github.com/google/dagger/issues/2582
+        abortOnError false
+    }
 }
 
 dependencies {
