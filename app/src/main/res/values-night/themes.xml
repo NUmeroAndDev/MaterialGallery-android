@@ -21,4 +21,9 @@
 
     <style name="Theme.MaterialGallery.DayNight.SurfaceStatus" />
 
+    <style name="Theme.MaterialGallery.SplashScreen.DayNight" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenBackground">@color/black</item>
+    </style>
+
 </resources>

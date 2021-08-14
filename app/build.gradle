@@ -68,6 +68,7 @@ dependencies {
     implementation libs.androidx.preference
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.core
+    implementation libs.androidx.coreSplash
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
     implementation libs.androidx.lifecycle.runtime

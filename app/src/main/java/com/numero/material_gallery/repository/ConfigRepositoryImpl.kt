@@ -21,8 +21,8 @@ class ConfigRepositoryImpl(context: Context) : ConfigRepository {
         get() {
             val shapeTheme = settingsPreference.getShapeTheme()
             return when (shapeTheme) {
-                ShapeTheme.ROUNDED -> R.style.Theme_MaterialGallery_DayNight_Rounded
-                ShapeTheme.CUT -> R.style.Theme_MaterialGallery_DayNight_Cut
+                ShapeTheme.ROUNDED -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Rounded
+                ShapeTheme.CUT -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Cut
             }
         }
 
