@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialGallery.DayNight"
+        android:theme="@style/Theme.MaterialGallery.SplashScreen.DayNight"
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
