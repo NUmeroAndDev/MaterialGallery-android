@@ -18,6 +18,7 @@ jobs:
           GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_PR_RELEASE_BRANCH_PRODUCTION: main
           GIT_PR_RELEASE_BRANCH_STAGING: develop
+          GIT_PR_RELEASE_TEMPLATE: .git-pr-release-template
         run: |
           gem install --no-document git-pr-release
           git-pr-release --no-fetch
