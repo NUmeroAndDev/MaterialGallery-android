@@ -2,6 +2,7 @@ name: Code Format Suggester
 on: [pull_request]
 jobs:
   code-format-suggest:
+    if: github.head_ref != 'develop'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
