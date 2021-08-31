@@ -16,6 +16,7 @@ jobs:
         with:
           java-version: 11
           distribution: zulu
+          cache: gradle
       - name: Setup Ruby
         uses: actions/setup-ruby@v1.1.3
         with:

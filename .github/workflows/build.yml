@@ -17,5 +17,6 @@ jobs:
         with:
           java-version: 11
           distribution: zulu
+          cache: gradle
       - name: Build with Gradle
         run: ./gradlew assembleRelease

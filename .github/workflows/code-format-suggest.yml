@@ -13,6 +13,7 @@ jobs:
         with:
           java-version: 11
           distribution: zulu
+          cache: gradle
       - run: ./gradlew spotlessKotlinApply
       - uses: reviewdog/action-suggester@v1.1.1
         with:
