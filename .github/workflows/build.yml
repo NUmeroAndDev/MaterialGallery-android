@@ -13,9 +13,10 @@ jobs:
         with:
           fetch-depth: 0
       - name: set up JDK
-        uses: actions/setup-java@v2.2.0
+        uses: actions/setup-java@v2.3.0
         with:
           java-version: 11
           distribution: zulu
+          cache: gradle
       - name: Build with Gradle
         run: ./gradlew assembleRelease
