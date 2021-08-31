@@ -37,7 +37,7 @@ android {
 }
 
 dependencies {
-    implementation project(':studies:base')
+    implementation projects.studies.base
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.fragment
