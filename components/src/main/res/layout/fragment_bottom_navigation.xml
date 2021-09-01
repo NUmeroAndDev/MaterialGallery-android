@@ -28,40 +28,6 @@
             android:layout_marginTop="16dp"
             app:menu="@menu/bottom_navigation" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="Material Component"
-            android:textAppearance="?attr/textAppearanceSubtitle2" />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/materialComponentBottomNavigation"
-            style="@style/Widget.MaterialComponents.BottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:menu="@menu/bottom_navigation" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="Material Component Colored"
-            android:textAppearance="?attr/textAppearanceSubtitle2" />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/coloredBottomNavigation"
-            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:menu="@menu/bottom_navigation" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +37,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/removeItemButton"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="32dp"
@@ -80,7 +46,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/addItemButton"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
+                style="@style/Widget.Material3.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Add Item" />

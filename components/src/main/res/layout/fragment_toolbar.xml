@@ -22,54 +22,45 @@
             app:switchTextAppearance="?attr/textAppearanceSubtitle2" />
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/material3Toolbar"
+            android:id="@+id/defaultToolbar"
             style="@style/Widget.Material3.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
+            android:elevation="2dp"
             app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="Material3" />
+            app:subtitle="Default"
+            app:title="Toolbar" />
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/primaryToolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:id="@+id/onSurfaceToolbar"
+            style="@style/Widget.Material3.Toolbar.OnSurface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp"
             app:navigationIcon="?attr/homeAsUpIndicator"
-            app:subtitle="Primary"
-            app:title="Material Components" />
+            app:subtitle="OnSurface"
+            app:title="Toolbar" />
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/surfaceToolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            style="@style/Widget.Material3.Toolbar.Surface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:elevation="2dp"
             app:navigationIcon="?attr/homeAsUpIndicator"
             app:subtitle="Surface"
-            app:title="Material Components" />
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/primarySurfaceToolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:subtitle="PrimarySurface"
-            app:title="Material Components" />
-
+            app:title="Toolbar" />
     </LinearLayout>
 
 </ScrollView>
