@@ -43,6 +43,7 @@ class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_too
     private fun initViews() {
         val toolbarList = listOf(
             binding.defaultToolbar,
+            binding.onSurfaceToolbar,
             binding.surfaceToolbar,
         )
         toolbarList.forEach { toolbar ->
