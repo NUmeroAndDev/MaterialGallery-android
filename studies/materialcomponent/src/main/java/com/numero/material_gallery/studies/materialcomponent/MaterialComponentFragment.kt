@@ -17,7 +17,7 @@ import com.numero.material_gallery.core.delegate.viewBinding
 import com.numero.material_gallery.studies.materialcomponent.databinding.FragmentMaterialComponentBinding
 import dev.chrisbanes.insetter.applyInsetter
 
-class MaterialComponentFragment : Fragment() {
+class MaterialComponentFragment : Fragment(R.layout.fragment_material_component) {
 
     private val binding by viewBinding { FragmentMaterialComponentBinding.bind(it) }
 
