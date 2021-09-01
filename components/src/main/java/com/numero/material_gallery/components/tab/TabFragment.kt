@@ -1,7 +1,10 @@
 package com.numero.material_gallery.components.tab
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentTabBinding
@@ -11,11 +14,6 @@ import com.numero.material_gallery.core.delegate.viewBinding
 class TabFragment : MaterialContainerTransformFragment(R.layout.fragment_tab) {
 
     private val binding by viewBinding { FragmentTabBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

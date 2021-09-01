@@ -3,7 +3,10 @@ package com.numero.material_gallery.components.picker.date
 import android.content.Context
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.AttrRes
 import androidx.core.util.Pair
@@ -17,11 +20,6 @@ import com.numero.material_gallery.core.delegate.viewBinding
 class DatePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_date_picker) {
 
     private val binding by viewBinding { FragmentDatePickerBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

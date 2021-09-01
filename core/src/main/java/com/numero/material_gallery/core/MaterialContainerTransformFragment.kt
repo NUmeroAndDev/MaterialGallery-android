@@ -32,6 +32,7 @@ abstract class MaterialContainerTransformFragment : Fragment {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
     }

@@ -2,7 +2,10 @@ package com.numero.material_gallery.components.appbar.top
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.badge.BadgeUtils
@@ -14,11 +17,6 @@ import com.numero.material_gallery.core.delegate.viewBinding
 class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_toolbar) {
 
     private val binding by viewBinding { FragmentToolbarBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

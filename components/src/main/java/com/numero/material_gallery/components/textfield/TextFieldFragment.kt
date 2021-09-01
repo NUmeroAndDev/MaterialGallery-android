@@ -18,11 +18,6 @@ class TextFieldFragment : MaterialContainerTransformFragment(R.layout.fragment_t
 
     private val binding by viewBinding { FragmentTextFieldBinding.bind(it) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

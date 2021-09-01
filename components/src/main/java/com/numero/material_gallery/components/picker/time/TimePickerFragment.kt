@@ -1,7 +1,10 @@
 package com.numero.material_gallery.components.picker.time
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.timepicker.MaterialTimePicker
@@ -16,11 +19,6 @@ import java.util.*
 class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_time_picker) {
 
     private val binding by viewBinding { FragmentTimePickerBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

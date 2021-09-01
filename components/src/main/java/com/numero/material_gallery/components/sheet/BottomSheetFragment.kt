@@ -1,7 +1,10 @@
 package com.numero.material_gallery.components.sheet
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import android.widget.LinearLayout
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -15,11 +18,6 @@ class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment
     private val binding by viewBinding { FragmentBottomSheetBinding.bind(it) }
 
     private lateinit var behavior: BottomSheetBehavior<LinearLayout>
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

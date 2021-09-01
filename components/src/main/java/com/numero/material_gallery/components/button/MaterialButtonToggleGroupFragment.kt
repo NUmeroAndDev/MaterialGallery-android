@@ -17,11 +17,6 @@ class MaterialButtonToggleGroupFragment :
 
     private val binding by viewBinding { FragmentMaterialButtonToggleGroupBinding.bind(it) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.scrollView.applyInsetter {
