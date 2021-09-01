@@ -7,7 +7,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
-        style="@style/Widget.MaterialComponents.CardView"
+        style="@style/Widget.Material3.CardView.Outlined"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="8dp"
