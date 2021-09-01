@@ -1,4 +1,0 @@
-<resources>
-
-    <style name="ThemeOverlay.MaterialGallery.AppBarLayout" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Surface" />
-</resources>

@@ -4,8 +4,6 @@
     <style name="Base.MaterialGallery" parent="Theme.Material3.DayNight">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-
-        <item name="toolbarStyle">@style/Widget.MaterialGallery.Toolbar</item>
     </style>
 
     <style name="Theme.MaterialGallery" parent="Base.MaterialGallery" />
