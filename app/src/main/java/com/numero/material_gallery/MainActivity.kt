@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         R.id.StudiesScreen,
         R.id.SettingsScreen,
 
+        R.id.MaterialComponentScreen,
         R.id.CraneScreen,
         R.id.ReplyScreen,
         R.id.ShrineScreen
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
     )
 
     private val studiesDestinationIds = setOf(
+        R.id.MaterialComponentScreen,
         R.id.CraneScreen,
         R.id.ReplyScreen,
         R.id.ShrineScreen
