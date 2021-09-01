@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
     android:fitsSystemWindows="true"
-    android:theme="@style/Theme.MaterialComponent"
+    android:theme="@style/Theme.MaterialComponent.DayNight"
     android:transitionName="@string/material_component_transition_name">
 
     <com.google.android.material.appbar.AppBarLayout
