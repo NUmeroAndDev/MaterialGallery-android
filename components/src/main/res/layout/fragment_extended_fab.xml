@@ -98,13 +98,40 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/extendedFab"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:text="Create"
-        app:icon="@drawable/ic_add" />
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/primaryExtendedFab"
+            style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Primary"
+            app:icon="@drawable/ic_add" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/secondaryExtendedFab"
+            style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Secondary"
+            app:icon="@drawable/ic_add" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/surfaceExtendedFab"
+            style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Surface"
+            app:icon="@drawable/ic_add" />
+
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
