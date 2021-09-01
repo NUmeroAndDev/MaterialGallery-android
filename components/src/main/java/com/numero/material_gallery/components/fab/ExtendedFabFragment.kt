@@ -20,26 +20,23 @@ class ExtendedFabFragment : MaterialContainerTransformFragment(R.layout.fragment
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val extendedFabs = listOf(
+            binding.primaryExtendedFab,
+            binding.secondaryExtendedFab,
+            binding.surfaceExtendedFab,
+        )
         binding.fabStyleRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.fabStyleExtendRadioButton -> binding.extendedFab.extend()
-                else -> binding.extendedFab.shrink()
+                R.id.fabStyleExtendRadioButton -> extendedFabs.forEach { it.extend() }
+                else -> extendedFabs.forEach { it.shrink() }
             }
         }
 
         binding.fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.fabShowRadioButton -> binding.extendedFab.show()
-                else -> binding.extendedFab.hide()
+                R.id.fabShowRadioButton -> extendedFabs.forEach { it.show() }
+                else -> extendedFabs.forEach { it.hide() }
             }
-        }
-
-        binding.extendedFab.setOnClickListener {
-            Snackbar.make(
-                binding.rootLayout,
-                "Clicked FAB",
-                Snackbar.LENGTH_SHORT
-            ).setAnchorView(it).show()
         }
 
         binding.rootLayout.applyInsetter {
