@@ -15,7 +15,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Material 3"
+            android:text="Default"
             android:textAppearance="?attr/textAppearanceSubtitle2" />
 
         <com.google.android.material.tabs.TabLayout
@@ -49,11 +49,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:text="Material Component"
+            android:text="OnSurface"
             android:textAppearance="?attr/textAppearanceSubtitle2" />
 
         <com.google.android.material.tabs.TabLayout
-            style="@style/Widget.MaterialComponents.TabLayout"
+            style="@style/Widget.Material3.TabLayout.OnSurface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
@@ -84,11 +84,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:text="Material Component Colored"
+            android:text="Secondary"
             android:textAppearance="?attr/textAppearanceSubtitle2" />
 
         <com.google.android.material.tabs.TabLayout
-            style="@style/Widget.MaterialComponents.TabLayout.Colored"
+            style="@style/Widget.Material3.TabLayout.Secondary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
