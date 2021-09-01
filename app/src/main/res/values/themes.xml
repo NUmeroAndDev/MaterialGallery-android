@@ -17,8 +17,6 @@
         <item name="windowNoTitle">false</item>
     </style>
 
-    <style name="Theme.MaterialGallery.DayNight.SurfaceStatus" />
-
     <style name="Theme.MaterialGallery.DayNight.Rounded">
         <item name="shapeAppearanceSmallComponent">
             @style/ShapeAppearance.MaterialGallery.Small.Rounded

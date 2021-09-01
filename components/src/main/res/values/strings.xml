@@ -30,7 +30,6 @@
 
     <string name="actionbar">ActionBar</string>
     <string name="toolbar">Toolbar</string>
-    <string name="lift_on_scroll">LiftOnScroll</string>
     <string name="collapsing">Collapsing</string>
 
     <string name="action_search">Search</string>
