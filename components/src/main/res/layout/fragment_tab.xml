@@ -1,35 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:transitionName="@string/tab_transition_name">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/defaultStyleTitleText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Default"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Material 3"
+            android:textAppearance="?attr/textAppearanceSubtitle2" />
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/defaultTabLayout"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/defaultStyleTitleText">
+            android:layout_marginTop="16dp">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -52,27 +44,19 @@
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/coloredStyleTitleText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            android:text="Colored"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/defaultTabLayout" />
+            android:text="Material Component"
+            android:textAppearance="?attr/textAppearanceSubtitle2" />
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/coloredTabLayout"
-            style="@style/Widget.MaterialComponents.TabLayout.Colored"
-            android:layout_width="0dp"
+            style="@style/Widget.MaterialComponents.TabLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/coloredStyleTitleText">
+            android:layout_marginTop="16dp">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -95,26 +79,54 @@
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/withBadgeTitleText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:text="Material Component Colored"
+            android:textAppearance="?attr/textAppearanceSubtitle2" />
+
+        <com.google.android.material.tabs.TabLayout
+            style="@style/Widget.MaterialComponents.TabLayout.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_android"
+                android:text="Tab A" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_android"
+                android:text="Tab B" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_android"
+                android:text="Tab C" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:text="With Badge"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/coloredTabLayout" />
+            android:textAppearance="?attr/textAppearanceSubtitle2" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/withBadgeTabLayout"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/withBadgeTitleText">
+            android:layout_marginTop="16dp">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -142,6 +154,6 @@
 
         </com.google.android.material.tabs.TabLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-</androidx.core.widget.NestedScrollView>
+</ScrollView>
