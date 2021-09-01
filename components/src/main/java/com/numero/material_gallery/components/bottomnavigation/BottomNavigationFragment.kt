@@ -13,7 +13,8 @@ import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
-class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
+class BottomNavigationFragment :
+    MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
 
     private val binding by viewBinding { FragmentBottomNavigationBinding.bind(it) }
 
@@ -45,10 +46,12 @@ class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fra
     private fun initViews() {
         val listener = NavigationBarView.OnItemSelectedListener {
             binding.bottomNavigation.setCheckedItem(it.itemId, true)
+            binding.materialComponentBottomNavigation.setCheckedItem(it.itemId, true)
             binding.coloredBottomNavigation.setCheckedItem(it.itemId, true)
             false
         }
         binding.bottomNavigation.setOnItemSelectedListener(listener)
+        binding.materialComponentBottomNavigation.setOnItemSelectedListener(listener)
         binding.coloredBottomNavigation.setOnItemSelectedListener(listener)
 
         binding.removeItemButton.setOnClickListener {
@@ -74,12 +77,17 @@ class BottomNavigationFragment : MaterialContainerTransformFragment(R.layout.fra
         when (action) {
             MenuItemAction.ADD -> {
                 binding.bottomNavigation.setVisibleItem(currentItemCount, true)
+                binding.materialComponentBottomNavigation.setVisibleItem(currentItemCount, true)
                 binding.coloredBottomNavigation.setVisibleItem(currentItemCount, true)
                 binding.removeItemButton.isEnabled = true
                 binding.addItemButton.isEnabled = currentItemCount + 1 < MAX_ITEM_COUNT
             }
             MenuItemAction.REMOVE -> {
                 binding.bottomNavigation.setVisibleItem(currentItemCount - 1, false)
+                binding.materialComponentBottomNavigation.setVisibleItem(
+                    currentItemCount - 1,
+                    false
+                )
                 binding.coloredBottomNavigation.setVisibleItem(currentItemCount - 1, false)
                 binding.removeItemButton.isEnabled = currentItemCount - 1 > MIN_ITEM_COUNT
                 binding.addItemButton.isEnabled = true
