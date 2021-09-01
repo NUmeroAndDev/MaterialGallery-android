@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:transitionName="@string/toolbar_transition_name">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/centerTitleSwitch"
@@ -18,55 +19,48 @@
             android:layout_marginEnd="16dp"
             android:checked="false"
             android:text="Center title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:switchTextAppearance="?attr/textAppearanceSubtitle2" />
 
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/primaryToolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:id="@+id/defaultToolbar"
+            style="@style/Widget.Material3.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/centerTitleSwitch"
+            android:elevation="2dp"
             app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="Primary" />
+            app:subtitle="Default"
+            app:title="Toolbar" />
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/onSurfaceToolbar"
+            style="@style/Widget.Material3.Toolbar.OnSurface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:elevation="2dp"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            app:subtitle="OnSurface"
+            app:title="Toolbar" />
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/surfaceToolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            style="@style/Widget.Material3.Toolbar.Surface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/primaryToolbar"
+            android:elevation="2dp"
             app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="Surface" />
+            app:subtitle="Surface"
+            app:title="Toolbar" />
+    </LinearLayout>
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/primarySurfaceToolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/surfaceToolbar"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:title="PrimarySurface" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.core.widget.NestedScrollView>
+</ScrollView>

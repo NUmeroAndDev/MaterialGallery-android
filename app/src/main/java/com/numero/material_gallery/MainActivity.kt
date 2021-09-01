@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.color.DynamicColors
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var configRepository: ConfigRepository
+
     @Inject
     lateinit var appUpdateManager: AppUpdateManager
 
@@ -49,12 +51,21 @@ class MainActivity : AppCompatActivity() {
         R.id.SettingsScreen
     )
 
+    private val studiesDestinationIds = setOf(
+        R.id.CraneScreen,
+        R.id.ReplyScreen,
+        R.id.ShrineScreen
+    )
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(configRepository.currentTheme)
         installSplashScreen()
+        if (DynamicColors.isDynamicColorAvailable()) {
+            DynamicColors.applyIfAvailable(this)
+        }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
@@ -84,8 +95,9 @@ class MainActivity : AppCompatActivity() {
             val isRootDestination = rootNavigationDestinationIds.contains(destination.id)
             binding.bottomNavigation.isVisible = isRootDestination
 
+            val isStudiesDestination = studiesDestinationIds.contains(destination.id)
             val windowInsetController = WindowInsetsControllerCompat(window, window.decorView)
-            windowInsetController.isAppearanceLightStatusBars = isRootDestination && !isDarkTheme
+            windowInsetController.isAppearanceLightStatusBars = !isStudiesDestination && !isDarkTheme
         }
 
         configRepository.changedThemeEvent.onEach {

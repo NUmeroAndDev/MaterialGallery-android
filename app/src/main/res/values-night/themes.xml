@@ -2,24 +2,8 @@
 <resources>
 
     <style name="Theme.MaterialGallery.DayNight" parent="Theme.MaterialGallery">
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="android:colorBackground">@color/black</item>
-        <item name="colorSurface">@color/black</item>
-        <item name="colorError">@color/red_light</item>
-
-        <item name="colorOnPrimary">@color/pure_black</item>
-        <item name="colorOnSecondary">@color/pure_black</item>
-        <item name="colorOnBackground">@color/white</item>
-        <item name="colorOnError">@color/pure_black</item>
-        <item name="colorOnSurface">@color/white</item>
-
         <item name="android:statusBarColor">?attr/colorSurface</item>
     </style>
-
-    <style name="Theme.MaterialGallery.DayNight.SurfaceStatus" />
 
     <style name="Theme.MaterialGallery.SplashScreen.DayNight" parent="Theme.SplashScreen">
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>

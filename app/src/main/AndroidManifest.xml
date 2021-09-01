@@ -25,11 +25,6 @@
         </activity>
 
         <activity
-            android:name=".components.appbar.top.LiftOnScrollActivity"
-            android:label="@string/lift_on_scroll"
-            android:theme="@style/Theme.MaterialGallery.DayNight.SurfaceStatus" />
-
-        <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
             android:theme="@style/Theme.MaterialGallery.DayNight.WithActionBar" />
 

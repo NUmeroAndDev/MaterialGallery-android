@@ -1,13 +1,2 @@
 <resources>
-
-    <style name="Widget.MaterialGallery.Toolbar" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
-        <item name="android:background">@null</item>
-        <item name="android:elevation">0dp</item>
-    </style>
-
-    <style name="Widget.MaterialGallery.AppBarLayout" parent="Widget.MaterialComponents.AppBarLayout.PrimarySurface">
-        <item name="statusBarForeground">?attr/colorPrimaryVariant</item>
-    </style>
-
-    <style name="ThemeOverlay.MaterialGallery.AppBarLayout" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Primary" />
 </resources>

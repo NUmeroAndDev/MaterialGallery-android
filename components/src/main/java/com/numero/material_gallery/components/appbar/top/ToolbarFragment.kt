@@ -38,12 +38,12 @@ class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_too
         }
     }
 
-    @SuppressLint("UnsafeExperimentalUsageError")
+    @SuppressLint("UnsafeOptInUsageError")
     private fun initViews() {
         val toolbarList = listOf(
-            binding.primaryToolbar,
+            binding.defaultToolbar,
+            binding.onSurfaceToolbar,
             binding.surfaceToolbar,
-            binding.primarySurfaceToolbar
         )
         toolbarList.forEach { toolbar ->
             toolbar.inflateMenu(R.menu.menu_action_bar)

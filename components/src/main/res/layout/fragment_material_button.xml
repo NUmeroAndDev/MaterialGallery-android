@@ -23,7 +23,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/containedButton"
-            style="@style/Widget.MaterialComponents.Button"
+            style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -33,7 +33,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/disableContainedButton"
-            style="@style/Widget.MaterialComponents.Button"
+            style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -44,7 +44,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/iconContainedButton"
-            style="@style/Widget.MaterialComponents.Button.Icon"
+            style="@style/Widget.Material3.Button.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -55,7 +55,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/disableIconContainedButton"
-            style="@style/Widget.MaterialComponents.Button.Icon"
+            style="@style/Widget.Material3.Button.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -79,7 +79,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/unelevatedButton"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            style="@style/Widget.Material3.Button.UnelevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -89,7 +89,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/disableUnelevatedButton"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            style="@style/Widget.Material3.Button.UnelevatedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -98,28 +98,61 @@
             app:layout_constraintStart_toEndOf="@+id/unelevatedButton"
             app:layout_constraintTop_toTopOf="@+id/unelevatedButton" />
 
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tonalButtonTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Tonal Button"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unelevatedButton" />
+
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/iconUnelevatedButton"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"
+            android:id="@+id/tonalButton"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tonalButtonTextView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/disableTonalButton"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:enabled="false"
+            android:text="Button"
+            app:layout_constraintStart_toEndOf="@id/tonalButton"
+            app:layout_constraintTop_toTopOf="@id/tonalButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iconTonalButton"
+            style="@style/Widget.Material3.Button.TonalButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Button"
             app:icon="@drawable/ic_add"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/unelevatedButton" />
+            app:layout_constraintTop_toBottomOf="@id/tonalButton" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/disabelIconUnelevatedButton"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton.Icon"
+            android:id="@+id/disabelIconTonalButton"
+            style="@style/Widget.Material3.Button.TonalButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:enabled="false"
             android:text="Button"
             app:icon="@drawable/ic_add"
-            app:layout_constraintStart_toEndOf="@+id/iconUnelevatedButton"
-            app:layout_constraintTop_toTopOf="@+id/iconUnelevatedButton" />
+            app:layout_constraintStart_toEndOf="@id/iconTonalButton"
+            app:layout_constraintTop_toTopOf="@id/iconTonalButton" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -131,11 +164,11 @@
             android:textAppearance="?attr/textAppearanceSubtitle2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/iconUnelevatedButton" />
+            app:layout_constraintTop_toBottomOf="@id/iconTonalButton" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/outlinedButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -145,7 +178,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/disableOutlinedButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            style="@style/Widget.Material3.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -156,7 +189,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/iconOutlinedButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -167,7 +200,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/disabelIconOutlinedButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -191,7 +224,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/textButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -201,7 +234,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/disableTextButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
+            style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -212,7 +245,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/iconTextButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -223,7 +256,7 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/disabelIconTextButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

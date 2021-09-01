@@ -1,8 +1,0 @@
-<resources>
-
-    <style name="Widget.MaterialGallery.AppBarLayout" parent="Widget.MaterialComponents.AppBarLayout.PrimarySurface">
-        <item name="statusBarForeground">?attr/colorSurface</item>
-    </style>
-
-    <style name="ThemeOverlay.MaterialGallery.AppBarLayout" parent="@style/ThemeOverlay.MaterialComponents.ActionBar.Surface" />
-</resources>

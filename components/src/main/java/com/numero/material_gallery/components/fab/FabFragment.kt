@@ -5,7 +5,6 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.numero.material_gallery.components.R
@@ -21,21 +20,24 @@ class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val fabs = listOf(
+            binding.primaryFab,
+            binding.secondaryFab,
+            binding.surfaceFab,
+        )
         binding.fabSizeRadioGroup.setOnCheckedChangeListener { _, id ->
-            binding.fab.size = when (id) {
-                R.id.fabSizeMinRadioButton -> FloatingActionButton.SIZE_MINI
-                else -> FloatingActionButton.SIZE_NORMAL
+            fabs.forEach {
+                it.size = when (id) {
+                    R.id.fabSizeMinRadioButton -> FloatingActionButton.SIZE_MINI
+                    else -> FloatingActionButton.SIZE_NORMAL
+                }
             }
         }
         binding.fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
             when (id) {
-                R.id.fabShowRadioButton -> binding.fab.show()
-                else -> binding.fab.hide()
+                R.id.fabShowRadioButton -> fabs.forEach { it.show() }
+                else -> fabs.forEach { it.hide() }
             }
-        }
-
-        binding.fab.setOnClickListener {
-            Toast.makeText(requireContext(), "Clicked FAB", Toast.LENGTH_SHORT).show()
         }
 
         binding.rootLayout.applyInsetter {
