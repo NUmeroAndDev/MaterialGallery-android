@@ -9,6 +9,7 @@ import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.badge.BadgeUtils
+import com.google.android.material.badge.ExperimentalBadgeUtils
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentToolbarBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
@@ -38,9 +39,10 @@ class ToolbarFragment : MaterialContainerTransformFragment(R.layout.fragment_too
         }
     }
 
-    @SuppressLint("UnsafeExperimentalUsageError")
+    @SuppressLint("UnsafeOptInUsageError")
     private fun initViews() {
         val toolbarList = listOf(
+            binding.material3Toolbar,
             binding.primaryToolbar,
             binding.surfaceToolbar,
             binding.primarySurfaceToolbar
