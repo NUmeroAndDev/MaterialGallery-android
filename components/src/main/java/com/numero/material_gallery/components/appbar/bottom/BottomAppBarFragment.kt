@@ -19,11 +19,6 @@ class BottomAppBarFragment : MaterialContainerTransformFragment(R.layout.fragmen
 
     private val binding by viewBinding { FragmentBottomAppBarBinding.bind(it) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

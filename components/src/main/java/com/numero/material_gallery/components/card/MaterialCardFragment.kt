@@ -19,11 +19,6 @@ class MaterialCardFragment : MaterialContainerTransformFragment(R.layout.fragmen
 
     private val binding by viewBinding { FragmentMaterialCardBinding.bind(it) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

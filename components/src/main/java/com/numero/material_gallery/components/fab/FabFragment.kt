@@ -18,11 +18,6 @@ class FabFragment : MaterialContainerTransformFragment(R.layout.fragment_fab) {
 
     private val binding by viewBinding { FragmentFabBinding.bind(it) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
