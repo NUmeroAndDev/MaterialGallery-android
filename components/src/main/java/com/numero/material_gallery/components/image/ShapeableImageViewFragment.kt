@@ -16,11 +16,6 @@ class ShapeableImageViewFragment : MaterialContainerTransformFragment(R.layout.f
 
     private val binding by viewBinding { FragmentShapeableImageViewBinding.bind(it) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

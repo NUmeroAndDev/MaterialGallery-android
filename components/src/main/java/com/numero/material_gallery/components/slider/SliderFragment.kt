@@ -17,11 +17,6 @@ class SliderFragment : MaterialContainerTransformFragment(R.layout.fragment_slid
 
     private val binding by viewBinding { FragmentSliderBinding.bind(it) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupViews()

@@ -18,11 +18,6 @@ class SnackbarFragment : MaterialContainerTransformFragment(R.layout.fragment_sn
 
     private val binding by viewBinding { FragmentSnackbarBinding.bind(it) }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

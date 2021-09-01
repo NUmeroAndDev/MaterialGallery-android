@@ -1,7 +1,10 @@
 package com.numero.material_gallery.components.dialog
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.numero.material_gallery.components.R
@@ -12,11 +15,6 @@ import com.numero.material_gallery.core.delegate.viewBinding
 class MaterialDialogFragment : MaterialContainerTransformFragment(R.layout.fragment_material_dialog) {
 
     private val binding by viewBinding { FragmentMaterialDialogBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
