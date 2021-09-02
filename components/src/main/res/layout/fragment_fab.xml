@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
@@ -7,130 +7,402 @@
     android:transitionName="@string/fab_transition_name">
 
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/fabSizeTextView"
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/primaryTitle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Size"
-                android:textAppearance="?attr/textAppearanceSubtitle2"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Primary"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <RadioGroup
-                android:id="@+id/fabSizeRadioGroup"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/primaryMiniFabContainer"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:checkedButton="@+id/fabSizeNormalRadioButton"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/primaryFabContainer"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fabSizeTextView">
+                app:layout_constraintTop_toBottomOf="@id/primaryTitle">
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/fabSizeNormalRadioButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="Normal"
-                    android:textSize="16sp"
-                    app:useMaterialThemeColors="true" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/fabSizeMinRadioButton"
-                    android:layout_width="match_parent"
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/primaryMiniFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add"
+                        app:fabSize="mini" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
+                    android:layout_gravity="center|bottom"
                     android:text="Mini"
-                    android:textSize="16sp"
-                    app:useMaterialThemeColors="true" />
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
 
-            </RadioGroup>
+            </LinearLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/fabVisibilityTextView"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:id="@+id/primaryFabContainer"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Show / Hide"
-                android:textAppearance="?attr/textAppearanceSubtitle2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fabSizeRadioGroup" />
+                android:layout_marginStart="28dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/primaryLargeFabContainer"
+                app:layout_constraintStart_toEndOf="@id/primaryMiniFabContainer"
+                app:layout_constraintTop_toTopOf="@id/primaryMiniFabContainer">
 
-            <RadioGroup
-                android:id="@+id/fabVisibilityRadioGroup"
-                android:layout_width="0dp"
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/primaryFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Default"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/primaryLargeFabContainer"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:checkedButton="@+id/fabShowRadioButton"
+                android:layout_marginStart="28dp"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/primaryFabContainer"
+                app:layout_constraintTop_toTopOf="@id/primaryFabContainer">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/primaryLargeFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Large"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/secondaryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Secondary"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fabVisibilityTextView">
+                app:layout_constraintTop_toBottomOf="@id/primaryMiniFabContainer" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/fabShowRadioButton"
-                    android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/secondaryMiniFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/secondaryFabContainer"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondaryTitle">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/secondaryMiniFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add"
+                        app:fabSize="mini" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="Show"
-                    android:textSize="16sp"
-                    app:useMaterialThemeColors="true" />
+                    android:layout_gravity="center|bottom"
+                    android:text="Mini"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
 
-                <com.google.android.material.radiobutton.MaterialRadioButton
-                    android:id="@+id/fabHideRadioButton"
-                    android:layout_width="match_parent"
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/secondaryFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/secondaryLargeFabContainer"
+                app:layout_constraintStart_toEndOf="@id/secondaryMiniFabContainer"
+                app:layout_constraintTop_toTopOf="@id/secondaryMiniFabContainer">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/secondaryFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="Hide"
-                    android:textSize="16sp"
-                    app:useMaterialThemeColors="true" />
+                    android:layout_gravity="center|bottom"
+                    android:text="Default"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
 
-            </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/secondaryLargeFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/secondaryFabContainer"
+                app:layout_constraintTop_toTopOf="@id/secondaryFabContainer">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/secondaryLargeFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Large.Secondary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Large"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/surfaceTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Surface"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondaryMiniFabContainer" />
+
+            <LinearLayout
+                android:id="@+id/surfaceMiniFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/surfaceFabContainer"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/surfaceTitle">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/surfaceMiniFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Surface"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add"
+                        app:fabSize="mini" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Mini"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/surfaceFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/surfaceLargeFabContainer"
+                app:layout_constraintStart_toEndOf="@id/surfaceMiniFabContainer"
+                app:layout_constraintTop_toTopOf="@id/surfaceMiniFabContainer">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/surfaceFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Surface"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Default"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/surfaceLargeFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/surfaceFabContainer"
+                app:layout_constraintTop_toTopOf="@id/surfaceFabContainer">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/surfaceLargeFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Large.Surface"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Large"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/bottomLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:gravity="end"
-        android:orientation="vertical">
+        android:background="?attr/colorSurfaceVariant"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollView">
 
-        <!--   TODO: LargeFab   -->
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/primaryFab"
-            style="@style/Widget.Material3.FloatingActionButton.Primary"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fabVisibilityTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_add" />
+            android:text="Show / Hide"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/secondaryFab"
-            style="@style/Widget.Material3.FloatingActionButton.Secondary"
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/fabVisibilityToggleGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_add" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            app:checkedButton="@id/fabShowButton"
+            app:selectionRequired="true"
+            app:singleSelection="true">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/surfaceFab"
-            style="@style/Widget.Material3.FloatingActionButton.Surface"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/ic_add" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fabShowButton"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/fabHideButton"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hide" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
 
     </LinearLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
