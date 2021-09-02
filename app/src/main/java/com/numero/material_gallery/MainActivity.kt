@@ -22,6 +22,7 @@ import com.numero.material_gallery.core.launchWhenStartedIn
 import com.numero.material_gallery.databinding.ActivityMainBinding
 import com.numero.material_gallery.core.repository.ConfigRepository
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
@@ -128,6 +129,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+            .catch {}
             .launchWhenStartedIn(lifecycleScope)
     }
 
