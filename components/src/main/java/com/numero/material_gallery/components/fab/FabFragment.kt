@@ -16,22 +16,20 @@ class FabFragment : ComponentFragment(R.layout.fragment_fab) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val fabs = listOf(
-            binding.primaryFab,
-            binding.secondaryFab,
-            binding.surfaceFab,
-        )
-        binding.fabSizeRadioGroup.setOnCheckedChangeListener { _, id ->
-            fabs.forEach {
-                it.size = when (id) {
-                    R.id.fabSizeMinRadioButton -> FloatingActionButton.SIZE_MINI
-                    else -> FloatingActionButton.SIZE_NORMAL
-                }
-            }
-        }
-        binding.fabVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
-            when (id) {
-                R.id.fabShowRadioButton -> fabs.forEach { it.show() }
+        binding.fabVisibilityToggleGroup.addOnButtonCheckedListener { _, checkedId, _ ->
+            val fabs = listOf(
+                binding.primaryMiniFab,
+                binding.primaryFab,
+                binding.primaryLargeFab,
+                binding.secondaryMiniFab,
+                binding.secondaryFab,
+                binding.secondaryLargeFab,
+                binding.surfaceMiniFab,
+                binding.surfaceFab,
+                binding.surfaceLargeFab,
+            )
+            when (checkedId) {
+                R.id.fabShowButton -> fabs.forEach { it.show() }
                 else -> fabs.forEach { it.hide() }
             }
         }
