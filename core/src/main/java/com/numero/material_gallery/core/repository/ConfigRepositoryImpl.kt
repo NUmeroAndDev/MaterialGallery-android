@@ -1,11 +1,11 @@
-package com.numero.material_gallery.repository
+package com.numero.material_gallery.core.repository
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import androidx.preference.PreferenceManager
-import com.numero.material_gallery.R
-import com.numero.material_gallery.model.Theme
+import com.numero.material_gallery.core.ShapeTheme
+import com.numero.material_gallery.core.Theme
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -14,20 +14,15 @@ class ConfigRepositoryImpl(context: Context) : ConfigRepository {
 
     private val settingsPreference = PreferenceManager.getDefaultSharedPreferences(context)
 
-    private val _changedThemeEvent = Channel<Int>()
-    override val changedThemeEvent: Flow<Int> = _changedThemeEvent.receiveAsFlow()
+    private val _changedThemeEvent = Channel<ShapeTheme>()
+    override val changedThemeEvent: Flow<ShapeTheme> = _changedThemeEvent.receiveAsFlow()
 
-    override val currentTheme: Int
-        get() {
-            val shapeTheme = settingsPreference.getShapeTheme()
-            return when (shapeTheme) {
-                ShapeTheme.ROUNDED -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Rounded
-                ShapeTheme.CUT -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Cut
-            }
-        }
+    override val currentShapeTheme: ShapeTheme
+        get() = settingsPreference.getShapeTheme()
+
 
     override fun notifyChangedTheme() {
-        _changedThemeEvent.trySend(currentTheme)
+        _changedThemeEvent.trySend(currentShapeTheme)
     }
 
     override fun getCurrentTheme(): Theme {
@@ -45,17 +40,6 @@ class ConfigRepositoryImpl(context: Context) : ConfigRepository {
     private fun SharedPreferences.getShapeTheme(): ShapeTheme {
         val value = getString(KEY_SHAPE_THEME, null) ?: return ShapeTheme.ROUNDED
         return ShapeTheme.findShapeTheme(value)
-    }
-
-    private enum class ShapeTheme(private val value: String) {
-        ROUNDED("rounded"),
-        CUT("cut");
-
-        companion object {
-            fun findShapeTheme(value: String): ShapeTheme {
-                return checkNotNull(values().find { it.value == value })
-            }
-        }
     }
 
     companion object {

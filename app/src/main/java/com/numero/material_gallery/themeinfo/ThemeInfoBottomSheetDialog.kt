@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.numero.material_gallery.R
 import com.numero.material_gallery.databinding.BottomSheetFragmentThemeInfoBinding
-import com.numero.material_gallery.model.Theme
-import com.numero.material_gallery.repository.ConfigRepository
+import com.numero.material_gallery.core.Theme
+import com.numero.material_gallery.core.repository.ConfigRepository
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
