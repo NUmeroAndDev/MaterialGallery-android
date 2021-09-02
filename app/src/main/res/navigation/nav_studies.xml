@@ -10,6 +10,9 @@
         android:name="com.numero.material_gallery.studies.StudiesFragment"
         tools:layout="@layout/fragment_studies">
         <action
+            android:id="@+id/action_Studies_to_MaterialComponent"
+            app:destination="@id/MaterialComponentScreen" />
+        <action
             android:id="@+id/action_Studies_to_Crane"
             app:destination="@id/CraneScreen" />
         <action
@@ -19,6 +22,11 @@
             android:id="@+id/action_Studies_to_Shrine"
             app:destination="@id/ShrineScreen" />
     </fragment>
+
+    <fragment
+        android:id="@+id/MaterialComponentScreen"
+        android:name="com.numero.material_gallery.studies.materialcomponent.MaterialComponentFragment"
+        android:label="@string/label_material_component" />
 
     <fragment
         android:id="@+id/CraneScreen"

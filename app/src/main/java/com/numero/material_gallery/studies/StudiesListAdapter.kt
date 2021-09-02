@@ -49,6 +49,7 @@ class StudiesItemViewHolder(
     private val MaterialStudies.transitionNameStringRes: Int
         @StringRes
         get() = when (this) {
+            MaterialStudies.MaterialComponent -> R.string.material_component_transition_name
             MaterialStudies.Crane -> R.string.crane_transition_name
             MaterialStudies.Reply -> R.string.reply_transition_name
             MaterialStudies.Shrine -> R.string.shrine_transition_name

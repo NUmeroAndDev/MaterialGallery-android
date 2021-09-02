@@ -7,6 +7,10 @@ enum class MaterialStudies(
     val iconRes: Int,
     @StringRes val titleRes: Int
 ) {
+    MaterialComponent(
+        R.mipmap.ic_material_component_launcher,
+        R.string.label_material_component
+    ),
     Crane(
         R.mipmap.ic_crane_launcher,
         R.string.label_crane

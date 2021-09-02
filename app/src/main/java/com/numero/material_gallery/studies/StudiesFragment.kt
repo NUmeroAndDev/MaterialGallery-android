@@ -65,6 +65,7 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
 
     private val MaterialStudies.navigationId: Int
         get() = when (this) {
+            MaterialStudies.MaterialComponent -> R.id.action_Studies_to_MaterialComponent
             MaterialStudies.Crane -> R.id.action_Studies_to_Crane
             MaterialStudies.Reply -> R.id.action_Studies_to_Reply
             MaterialStudies.Shrine -> R.id.action_Studies_to_Shrine
