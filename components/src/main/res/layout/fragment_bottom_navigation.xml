@@ -17,8 +17,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Material 3"
-            android:textAppearance="?attr/textAppearanceSubtitle2" />
+            android:text="Default"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
@@ -60,7 +60,7 @@
             android:layout_marginTop="64dp"
             android:layout_marginEnd="16dp"
             android:text="with badge"
-            android:textAppearance="?attr/textAppearanceSubtitle2" />
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/withBadgeBottomNavigation"
