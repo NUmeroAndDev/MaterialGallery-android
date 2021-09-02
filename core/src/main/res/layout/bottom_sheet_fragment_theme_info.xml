@@ -61,161 +61,355 @@
             android:paddingTop="8dp"
             android:paddingBottom="8dp">
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemColor="?attr/colorPrimary"
-                app:title="colorPrimary" />
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorPrimaryContainer"
-                app:title="colorPrimaryContainer" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorPrimary"
+                    app:contentColor="?attr/colorOnPrimary"
+                    app:title="Primary" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorPrimaryInverse"
-                app:title="colorPrimaryInverse" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnPrimary"
+                    app:title="OnPrimary" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorSecondary"
-                app:title="colorSecondary" />
+            </LinearLayout>
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemColor="?attr/colorSecondaryContainer"
-                app:title="colorSecondaryContainer" />
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorTertiary"
-                app:title="colorTertiary" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorPrimaryContainer"
+                    app:contentColor="?attr/colorOnPrimaryContainer"
+                    app:title="PrimaryContainer" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorTertiaryContainer"
-                app:title="colorTertiaryContainer" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnPrimaryContainer"
+                    app:title="OnPrimaryContainer" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?android:attr/colorBackground"
-                app:title="colorBackground" />
+            </LinearLayout>
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemColor="?attr/colorError"
-                app:title="colorError" />
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorErrorContainer"
-                app:title="colorErrorContainer" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorPrimaryInverse"
+                    app:title="PrimaryInverse" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOutline"
-                app:title="colorOutline" />
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorSurface"
-                app:title="colorSurface" />
+            </LinearLayout>
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorSurfaceVariant"
-                app:title="colorSurfaceVariant" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemColor="?attr/colorSurfaceInverse"
-                app:title="colorSurfaceInverse" />
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnPrimary"
-                app:title="colorOnPrimary" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorSecondary"
+                    app:contentColor="?attr/colorOnSecondary"
+                    app:title="Secondary" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnPrimaryContainer"
-                app:title="colorOnPrimaryContainer" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnSecondary"
+                    app:title="OnSecondary" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnSecondary"
-                app:title="colorOnSecondary" />
+            </LinearLayout>
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnSecondaryContainer"
-                app:title="colorOnSecondaryContainer" />
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnTertiary"
-                app:title="colorOnTertiary" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorSecondaryContainer"
+                    app:contentColor="?attr/colorOnSecondaryContainer"
+                    app:title="SecondaryContainer" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnTertiaryContainer"
-                app:title="colorOnTertiaryContainer" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnSecondaryContainer"
+                    app:title="OnSecondaryContainer" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnBackground"
-                app:title="colorOnBackground" />
+            </LinearLayout>
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnError"
-                app:title="colorOnError" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnErrorContainer"
-                app:title="colorOnErrorContainer" />
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnSurface"
-                app:title="colorOnSurface" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorTertiary"
+                    app:contentColor="?attr/colorOnTertiary"
+                    app:title="Tertiary" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnSurfaceVariant"
-                app:title="colorOnSurfaceVariant" />
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnTertiary"
+                    app:title="OnTertiary" />
 
-            <com.numero.material_gallery.core.view.ColorInfoItemView
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemColor="?attr/colorOnSurfaceInverse"
-                app:title="colorOnSurfaceInverse" />
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorTertiaryContainer"
+                    app:contentColor="?attr/colorOnTertiaryContainer"
+                    app:title="TertiaryContainer" />
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnTertiaryContainer"
+                    app:title="TertiaryContainer" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?android:attr/colorBackground"
+                    app:contentColor="?attr/colorOnBackground"
+                    app:title="Background" />
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnBackground"
+                    app:title="OnBackground" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorError"
+                    app:contentColor="?attr/colorOnError"
+                    app:title="Error" />
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnError"
+                    app:title="OnError" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorErrorContainer"
+                    app:contentColor="?attr/colorOnErrorContainer"
+                    app:title="ErrorContainer" />
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnErrorContainer"
+                    app:title="OnErrorContainer" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOutline"
+                    app:title="Outline" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorSurface"
+                    app:contentColor="?attr/colorOnSurface"
+                    app:title="Surface" />
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnSurface"
+                    app:title="OnSurface" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorSurfaceVariant"
+                    app:contentColor="?attr/colorOnSurfaceVariant"
+                    app:title="SurfaceVariant" />
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnSurfaceVariant"
+                    app:title="OnSurfaceVariant" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorSurfaceInverse"
+                    app:contentColor="?attr/colorOnSurfaceInverse"
+                    app:title="SurfaceInverse" />
+
+                <com.numero.material_gallery.core.view.ThemeColorView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:backgroundColor="?attr/colorOnSurfaceInverse"
+                    app:title="OnSurfaceInverse" />
+
+            </LinearLayout>
+
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"

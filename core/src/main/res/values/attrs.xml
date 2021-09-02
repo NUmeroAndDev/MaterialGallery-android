@@ -2,9 +2,10 @@
 <resources>
     <attr name="title" format="string" />
 
-    <declare-styleable name="ColorInfoItemView">
+    <declare-styleable name="ThemeColorView">
         <attr name="title" />
-        <attr name="itemColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="contentColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="TypographyInfoItemView">
