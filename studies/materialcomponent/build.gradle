@@ -46,6 +46,7 @@ dependencies {
     implementation libs.androidx.core
 
     implementation libs.material
+    implementation libs.flexbox
 
     implementation libs.insetter
 

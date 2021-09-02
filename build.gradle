@@ -48,6 +48,7 @@ buildscript {
                 ],
 
                 material    : "com.google.android.material:material:$versions.material",
+                flexbox     : "com.google.android.flexbox:flexbox:3.0.0",
 
                 insetter    : "dev.chrisbanes.insetter:insetter:0.6.0",
 
