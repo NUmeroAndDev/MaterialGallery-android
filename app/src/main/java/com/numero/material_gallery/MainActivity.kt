@@ -16,10 +16,11 @@ import com.google.android.material.color.DynamicColors
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
+import com.numero.material_gallery.core.ShapeTheme
 import com.numero.material_gallery.core.isDarkTheme
 import com.numero.material_gallery.core.launchWhenStartedIn
 import com.numero.material_gallery.databinding.ActivityMainBinding
-import com.numero.material_gallery.repository.ConfigRepository
+import com.numero.material_gallery.core.repository.ConfigRepository
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(configRepository.currentTheme)
+        setTheme(configRepository.currentShapeTheme.themeRes)
         installSplashScreen()
         if (DynamicColors.isDynamicColorAvailable()) {
             DynamicColors.applyIfAvailable(this)
@@ -99,7 +100,8 @@ class MainActivity : AppCompatActivity() {
 
             val isStudiesDestination = studiesDestinationIds.contains(destination.id)
             val windowInsetController = WindowInsetsControllerCompat(window, window.decorView)
-            windowInsetController.isAppearanceLightStatusBars = !isStudiesDestination && !isDarkTheme
+            windowInsetController.isAppearanceLightStatusBars =
+                !isStudiesDestination && !isDarkTheme
         }
 
         configRepository.changedThemeEvent.onEach {
@@ -130,4 +132,12 @@ class MainActivity : AppCompatActivity() {
             }
             .launchWhenStartedIn(lifecycleScope)
     }
+
+    private val ShapeTheme.themeRes: Int
+        get() {
+            return when (this) {
+                ShapeTheme.ROUNDED -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Rounded
+                ShapeTheme.CUT -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Cut
+            }
+        }
 }

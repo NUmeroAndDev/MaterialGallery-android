@@ -1,7 +1,8 @@
-package com.numero.material_gallery.model
+package com.numero.material_gallery.core
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
+import com.numero.material_gallery.core.repository.ConfigRepositoryImpl
 
 enum class Theme(val value: String) {
     LIGHT("light"),
@@ -24,6 +25,17 @@ enum class Theme(val value: String) {
     companion object {
         fun find(value: String): Theme {
             return checkNotNull(values().find { it.value == value })
+        }
+    }
+}
+
+enum class ShapeTheme(private val value: String) {
+    ROUNDED("rounded"),
+    CUT("cut");
+
+    companion object {
+        fun findShapeTheme(value: String): ShapeTheme {
+            return checkNotNull(ShapeTheme.values().find { it.value == value })
         }
     }
 }

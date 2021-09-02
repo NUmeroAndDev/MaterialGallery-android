@@ -16,8 +16,8 @@ import com.google.android.play.core.ktx.requestUpdateFlow
 import com.numero.material_gallery.BuildConfig
 import com.numero.material_gallery.R
 import com.numero.material_gallery.core.launchWhenStartedIn
-import com.numero.material_gallery.model.Theme
-import com.numero.material_gallery.repository.ConfigRepository
+import com.numero.material_gallery.core.Theme
+import com.numero.material_gallery.core.repository.ConfigRepository
 import dagger.hilt.android.AndroidEntryPoint
 import dev.chrisbanes.insetter.applyInsetter
 import kotlinx.coroutines.flow.onEach
