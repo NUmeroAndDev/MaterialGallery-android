@@ -6,7 +6,7 @@ buildscript {
                 minSdk    : 23,
                 targetSdk : 31,
 
-                kotlin    : "1.5.21",
+                kotlin    : "1.5.30",
 
                 navigation: "2.4.0-alpha08",
                 lifecycle : "2.4.0-alpha03",
