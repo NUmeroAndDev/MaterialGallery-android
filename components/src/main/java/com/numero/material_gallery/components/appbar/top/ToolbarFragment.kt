@@ -9,6 +9,7 @@ import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentToolbarBinding
 import com.numero.material_gallery.core.delegate.viewBinding
+import dev.chrisbanes.insetter.applyInsetter
 
 class ToolbarFragment : ComponentFragment(R.layout.fragment_toolbar) {
 
@@ -36,6 +37,13 @@ class ToolbarFragment : ComponentFragment(R.layout.fragment_toolbar) {
         binding.centerTitleSwitch.setOnCheckedChangeListener { _, isChecked ->
             toolbarList.forEach { toolbar ->
                 toolbar.isTitleCentered = isChecked
+                toolbar.isSubtitleCentered = isChecked
+            }
+        }
+
+        binding.rootLayout.applyInsetter {
+            type(navigationBars = true) {
+                padding()
             }
         }
     }
