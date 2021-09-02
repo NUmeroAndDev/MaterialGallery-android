@@ -20,6 +20,7 @@ import com.numero.material_gallery.core.Theme
 import com.numero.material_gallery.core.repository.ConfigRepository
 import dagger.hilt.android.AndroidEntryPoint
 import dev.chrisbanes.insetter.applyInsetter
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
@@ -27,8 +28,10 @@ import javax.inject.Inject
 class SettingsFragment : PreferenceFragmentCompat() {
 
     private lateinit var appVersionPreference: Preference
+
     @Inject
     lateinit var configRepository: ConfigRepository
+
     @Inject
     lateinit var appUpdateManager: AppUpdateManager
 
@@ -104,6 +107,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
                     else -> Unit
                 }
             }
+            .catch {}
             .launchWhenStartedIn(viewLifecycleOwner)
     }
 
