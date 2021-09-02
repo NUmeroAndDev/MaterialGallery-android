@@ -6,6 +6,7 @@ import androidx.navigation.fragment.findNavController
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentCollapsingBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.core.delegate.viewBinding
 
 class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_collapsing) {
@@ -23,7 +24,7 @@ class CollapsingFragment : MaterialContainerTransformFragment(R.layout.fragment_
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.action_current_theme -> {
-                        findNavController().navigate(R.id.action_show_ThemeInfoDialog)
+                        ThemeInfoBottomSheetDialog().showIfNeeded(childFragmentManager)
                         true
                     }
                     else -> false

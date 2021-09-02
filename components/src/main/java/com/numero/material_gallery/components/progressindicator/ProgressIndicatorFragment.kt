@@ -1,25 +1,20 @@
 package com.numero.material_gallery.components.progressindicator
 
 import android.os.Bundle
-import android.view.*
+import android.view.View
 import android.widget.ArrayAdapter
-import androidx.navigation.fragment.findNavController
-import com.google.android.material.progressindicator.*
+import com.google.android.material.progressindicator.BaseProgressIndicator
+import com.google.android.material.progressindicator.CircularProgressIndicatorSpec
+import com.google.android.material.progressindicator.IndeterminateDrawable
+import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentProgressIndicatorBinding
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
-class ProgressIndicatorFragment :
-    MaterialContainerTransformFragment(R.layout.fragment_progress_indicator) {
+class ProgressIndicatorFragment : ComponentFragment(R.layout.fragment_progress_indicator) {
 
     private val binding by viewBinding { FragmentProgressIndicatorBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -122,21 +117,6 @@ class ProgressIndicatorFragment :
             type(navigationBars = true) {
                 padding()
             }
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
         }
     }
 }

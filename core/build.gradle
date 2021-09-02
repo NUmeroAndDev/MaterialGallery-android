@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -37,11 +39,17 @@ android {
 }
 
 dependencies {
+    implementation projects.resource
+
     implementation libs.androidx.appcompat
     implementation libs.androidx.core
     implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.preference
 
     implementation libs.material
+
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
 
     testImplementation 'junit:junit:4.13.2'
 }

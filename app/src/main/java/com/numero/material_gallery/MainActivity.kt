@@ -3,6 +3,7 @@ package com.numero.material_gallery
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
@@ -11,14 +12,17 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.color.DynamicColors
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
+import com.numero.material_gallery.core.ShapeTheme
 import com.numero.material_gallery.core.isDarkTheme
 import com.numero.material_gallery.core.launchWhenStartedIn
 import com.numero.material_gallery.databinding.ActivityMainBinding
-import com.numero.material_gallery.repository.ConfigRepository
+import com.numero.material_gallery.core.repository.ConfigRepository
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
@@ -27,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var configRepository: ConfigRepository
+
     @Inject
     lateinit var appUpdateManager: AppUpdateManager
 
@@ -37,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         R.id.StudiesScreen,
         R.id.SettingsScreen,
 
+        R.id.MaterialComponentScreen,
         R.id.CraneScreen,
         R.id.ReplyScreen,
         R.id.ShrineScreen
@@ -48,11 +54,22 @@ class MainActivity : AppCompatActivity() {
         R.id.SettingsScreen
     )
 
+    private val studiesDestinationIds = setOf(
+        R.id.MaterialComponentScreen,
+        R.id.CraneScreen,
+        R.id.ReplyScreen,
+        R.id.ShrineScreen
+    )
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(configRepository.currentTheme)
+        setTheme(configRepository.currentShapeTheme.themeRes)
+        installSplashScreen()
+        if (DynamicColors.isDynamicColorAvailable()) {
+            DynamicColors.applyIfAvailable(this)
+        }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
@@ -71,19 +88,19 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
-            if (destination.id != R.id.ThemeInfoDialog) {
-                if (isHideAppBar) {
-                    supportActionBar?.hide()
-                } else {
-                    supportActionBar?.show()
-                }
+            if (isHideAppBar) {
+                supportActionBar?.hide()
+            } else {
+                supportActionBar?.show()
             }
 
             val isRootDestination = rootNavigationDestinationIds.contains(destination.id)
             binding.bottomNavigation.isVisible = isRootDestination
 
+            val isStudiesDestination = studiesDestinationIds.contains(destination.id)
             val windowInsetController = WindowInsetsControllerCompat(window, window.decorView)
-            windowInsetController.isAppearanceLightStatusBars = isRootDestination && !isDarkTheme
+            windowInsetController.isAppearanceLightStatusBars =
+                !isStudiesDestination && !isDarkTheme
         }
 
         configRepository.changedThemeEvent.onEach {
@@ -112,6 +129,15 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+            .catch {}
             .launchWhenStartedIn(lifecycleScope)
     }
+
+    private val ShapeTheme.themeRes: Int
+        get() {
+            return when (this) {
+                ShapeTheme.ROUNDED -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Rounded
+                ShapeTheme.CUT -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Cut
+            }
+        }
 }

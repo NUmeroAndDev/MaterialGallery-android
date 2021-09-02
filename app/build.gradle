@@ -52,12 +52,14 @@ kapt {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':studies:crane')
-    implementation project(':studies:shrine')
-    implementation project(':studies:reply')
-    implementation project(':components')
-    implementation project(':core')
-    implementation project(':resource')
+
+    implementation projects.studies.crane
+    implementation projects.studies.shrine
+    implementation projects.studies.reply
+    implementation projects.studies.materialcomponent
+    implementation projects.components
+    implementation projects.core
+    implementation projects.resource
 
     implementation libs.coroutines
 
@@ -68,6 +70,7 @@ dependencies {
     implementation libs.androidx.preference
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.core
+    implementation libs.androidx.coreSplash
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
     implementation libs.androidx.lifecycle.runtime

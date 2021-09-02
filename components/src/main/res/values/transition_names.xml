@@ -30,6 +30,5 @@
 
     <string name="actionbar_transition_name">actionbar</string>
     <string name="toolbar_transition_name">toolbar</string>
-    <string name="lift_on_scroll_transition_name">lift_on_scroll</string>
     <string name="collapsing_transition_name">collapsing</string>
 </resources>

@@ -1,26 +1,20 @@
 package com.numero.material_gallery.components.picker.time
 
 import android.os.Bundle
-import android.view.*
+import android.view.View
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
+import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentTimePickerBinding
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.delegate.viewBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_time_picker) {
+class TimePickerFragment : ComponentFragment(R.layout.fragment_time_picker) {
 
     private val binding by viewBinding { FragmentTimePickerBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,21 +24,6 @@ class TimePickerFragment : MaterialContainerTransformFragment(R.layout.fragment_
     private fun setupViews() {
         binding.showTimePickerButton.setOnClickListener {
             showTimePicker()
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
         }
     }
 

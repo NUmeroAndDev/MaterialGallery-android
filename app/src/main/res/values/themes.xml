@@ -1,31 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Base.MaterialGallery" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Base.MaterialGallery" parent="Theme.Material3.DayNight">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-
-        <item name="toolbarStyle">@style/Widget.MaterialGallery.Toolbar</item>
-        <item name="appBarLayoutStyle">@style/Widget.MaterialGallery.AppBarLayout</item>
     </style>
 
-    <style name="Theme.MaterialGallery" parent="Base.MaterialGallery">
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_900</item>
-        <item name="android:colorBackground">@color/white</item>
-        <item name="colorSurface">@color/white</item>
-        <item name="colorError">@color/red</item>
-
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnSecondary">@color/pure_black</item>
-        <item name="colorOnBackground">@color/pure_black</item>
-        <item name="colorOnError">@color/white</item>
-        <item name="colorOnSurface">@color/pure_black</item>
-
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-    </style>
+    <style name="Theme.MaterialGallery" parent="Base.MaterialGallery" />
 
     <style name="Theme.MaterialGallery.DayNight" parent="Theme.MaterialGallery" />
 
@@ -34,18 +15,40 @@
         <item name="windowNoTitle">false</item>
     </style>
 
-    <style name="Theme.MaterialGallery.DayNight.SurfaceStatus" />
-
     <style name="Theme.MaterialGallery.DayNight.Rounded">
-        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MaterialGallery.Small.Rounded</item>
-        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MaterialGallery.Medium.Rounded</item>
-        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MaterialGallery.Large.Rounded</item>
+        <item name="shapeAppearanceSmallComponent">
+            @style/ShapeAppearance.MaterialGallery.Small.Rounded
+        </item>
+        <item name="shapeAppearanceMediumComponent">
+            @style/ShapeAppearance.MaterialGallery.Medium.Rounded
+        </item>
+        <item name="shapeAppearanceLargeComponent">
+            @style/ShapeAppearance.MaterialGallery.Large.Rounded
+        </item>
     </style>
 
     <style name="Theme.MaterialGallery.DayNight.Cut">
-        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MaterialGallery.Small.Cut</item>
-        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MaterialGallery.Medium.Cut</item>
-        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MaterialGallery.Large.Cut</item>
+        <item name="shapeAppearanceSmallComponent">
+            @style/ShapeAppearance.MaterialGallery.Small.Cut
+        </item>
+        <item name="shapeAppearanceMediumComponent">
+            @style/ShapeAppearance.MaterialGallery.Medium.Cut
+        </item>
+        <item name="shapeAppearanceLargeComponent">
+            @style/ShapeAppearance.MaterialGallery.Large.Cut
+        </item>
     </style>
 
+    <style name="Theme.MaterialGallery.SplashScreen.DayNight" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenBackground">@color/white</item>
+    </style>
+
+    <style name="Theme.MaterialGallery.SplashScreen.DayNight.Rounded">
+        <item name="postSplashScreenTheme">@style/Theme.MaterialGallery.DayNight.Rounded</item>
+    </style>
+
+    <style name="Theme.MaterialGallery.SplashScreen.DayNight.Cut">
+        <item name="postSplashScreenTheme">@style/Theme.MaterialGallery.DayNight.Cut</item>
+    </style>
 </resources>

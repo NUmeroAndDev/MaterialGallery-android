@@ -1,40 +1,19 @@
 package com.numero.material_gallery.components.tab
 
 import android.os.Bundle
-import android.view.*
-import androidx.navigation.fragment.findNavController
+import android.view.View
+import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentTabBinding
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.delegate.viewBinding
 
-class TabFragment : MaterialContainerTransformFragment(R.layout.fragment_tab) {
+class TabFragment : ComponentFragment(R.layout.fragment_tab) {
 
     private val binding by viewBinding { FragmentTabBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupTab()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
-        }
     }
 
     private fun setupTab() {

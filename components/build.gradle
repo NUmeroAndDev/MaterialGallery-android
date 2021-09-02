@@ -34,11 +34,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    lintOptions {
+        // https://github.com/google/dagger/issues/2582
+        abortOnError false
+    }
 }
 
 dependencies {
-    implementation project(':core')
-    implementation project(':resource')
+    implementation projects.core
+    implementation projects.resource
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.fragment

@@ -57,9 +57,6 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragme
                     extras
                 )
             }
-            TopAppBarType.LIFT_ON_SCROLL -> {
-                startActivity(LiftOnScrollActivity.createIntent(requireContext()))
-            }
             TopAppBarType.COLLAPSING -> {
                 findNavController().navigate(
                     R.id.action_TopAppBarType_to_Collapsing,
@@ -75,7 +72,6 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragme
 enum class TopAppBarType {
     ACTION_BAR,
     TOOLBAR,
-    LIFT_ON_SCROLL,
     COLLAPSING
 }
 
@@ -118,7 +114,6 @@ class TopAppBarTypeItemAdapter : RecyclerView.Adapter<TopAppBarTypeItemAdapter.V
             get() = when (this) {
                 TopAppBarType.ACTION_BAR -> R.string.actionbar
                 TopAppBarType.TOOLBAR -> R.string.toolbar
-                TopAppBarType.LIFT_ON_SCROLL -> R.string.lift_on_scroll
                 TopAppBarType.COLLAPSING -> R.string.collapsing
             }
 
@@ -127,7 +122,6 @@ class TopAppBarTypeItemAdapter : RecyclerView.Adapter<TopAppBarTypeItemAdapter.V
             get() = when (this) {
                 TopAppBarType.ACTION_BAR -> R.string.actionbar_transition_name
                 TopAppBarType.TOOLBAR -> R.string.toolbar_transition_name
-                TopAppBarType.LIFT_ON_SCROLL -> R.string.lift_on_scroll_transition_name
                 TopAppBarType.COLLAPSING -> R.string.collapsing_transition_name
             }
     }

@@ -4,27 +4,18 @@ import android.annotation.SuppressLint
 import android.graphics.drawable.InsetDrawable
 import android.os.Bundle
 import android.util.TypedValue
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.widget.PopupMenu
-import androidx.navigation.fragment.findNavController
+import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentMenuBinding
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
-class MenuFragment : MaterialContainerTransformFragment(R.layout.fragment_menu) {
+class MenuFragment : ComponentFragment(R.layout.fragment_menu) {
 
     private val binding by viewBinding { FragmentMenuBinding.bind(it) }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setHasOptionsMenu(true)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -40,21 +31,6 @@ class MenuFragment : MaterialContainerTransformFragment(R.layout.fragment_menu) 
         }
         binding.iconPopupMenuButton.setOnClickListener {
             showPopupMenuWithIcon(it)
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
         }
     }
 

@@ -37,7 +37,8 @@ android {
 }
 
 dependencies {
-    implementation project(':core')
+    implementation projects.core
+    implementation projects.resource
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.fragment

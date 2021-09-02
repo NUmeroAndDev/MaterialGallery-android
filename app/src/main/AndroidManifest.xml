@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialGallery.DayNight"
+        android:theme="@style/Theme.MaterialGallery.SplashScreen.DayNight"
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
@@ -23,11 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".components.appbar.top.LiftOnScrollActivity"
-            android:label="@string/lift_on_scroll"
-            android:theme="@style/Theme.MaterialGallery.DayNight.SurfaceStatus" />
 
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"

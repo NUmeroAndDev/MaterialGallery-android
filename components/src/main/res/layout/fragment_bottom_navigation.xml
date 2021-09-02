@@ -1,111 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:transitionName="@string/bottom_navigation_transition_name">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="16dp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/defaultStyleTitleText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="Default"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigation"
-            style="@style/Widget.MaterialComponents.BottomNavigationView"
-            android:layout_width="0dp"
+            style="@style/Widget.Material3.BottomNavigationView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/defaultStyleTitleText"
             app:menu="@menu/bottom_navigation" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/coloredStyleTitleText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="16dp"
-            android:text="Colored"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bottomNavigation" />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/coloredBottomNavigation"
-            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coloredStyleTitleText"
-            app:menu="@menu/bottom_navigation" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/removeItemButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:enabled="false"
-            android:text="Remove Item"
-            app:layout_constraintEnd_toStartOf="@id/addItemButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/coloredBottomNavigation" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/addItemButton"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Item"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/removeItemButton"
-            app:layout_constraintTop_toTopOf="@id/removeItemButton" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/removeItemButton"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:enabled="false"
+                android:text="Remove Item" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addItemButton"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Item" />
+
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/withBadgeTitleText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="64dp"
             android:layout_marginEnd="16dp"
             android:text="with badge"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/removeItemButton" />
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/withBadgeBottomNavigation"
-            style="@style/Widget.MaterialComponents.BottomNavigationView"
-            android:layout_width="0dp"
+            style="@style/Widget.Material3.BottomNavigationView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/withBadgeTitleText"
             app:menu="@menu/bottom_navigation" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-</androidx.core.widget.NestedScrollView>
+</ScrollView>

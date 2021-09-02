@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_material_component">Material Component</string>
+
+    <string name="material_component_transition_name">material_component</string>
+</resources>
