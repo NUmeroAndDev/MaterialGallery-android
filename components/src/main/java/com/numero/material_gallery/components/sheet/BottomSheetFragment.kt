@@ -1,19 +1,15 @@
 package com.numero.material_gallery.components.sheet
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.widget.LinearLayout
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentBottomSheetBinding
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.delegate.viewBinding
 
-class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment_bottom_sheet) {
+class BottomSheetFragment : ComponentFragment(R.layout.fragment_bottom_sheet) {
 
     private val binding by viewBinding { FragmentBottomSheetBinding.bind(it) }
 
@@ -38,21 +34,6 @@ class BottomSheetFragment : MaterialContainerTransformFragment(R.layout.fragment
                         state == BottomSheetBehavior.STATE_HIDDEN
                 }
             })
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
         }
     }
 }

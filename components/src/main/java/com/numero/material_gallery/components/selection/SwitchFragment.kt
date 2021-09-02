@@ -1,26 +1,12 @@
 package com.numero.material_gallery.components.selection
 
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.navigation.fragment.findNavController
+import android.os.Bundle
+import android.view.View
+import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 
-class SwitchFragment : MaterialContainerTransformFragment(R.layout.fragment_switch) {
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
-        }
+class SwitchFragment : ComponentFragment(R.layout.fragment_switch) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }

@@ -1,20 +1,15 @@
 package com.numero.material_gallery.components.bottomnavigation
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.navigation.NavigationBarView
+import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentBottomNavigationBinding
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
-class BottomNavigationFragment :
-    MaterialContainerTransformFragment(R.layout.fragment_bottom_navigation) {
+class BottomNavigationFragment : ComponentFragment(R.layout.fragment_bottom_navigation) {
 
     private val binding by viewBinding { FragmentBottomNavigationBinding.bind(it) }
 
@@ -25,21 +20,6 @@ class BottomNavigationFragment :
             type(navigationBars = true) {
                 padding()
             }
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
         }
     }
 

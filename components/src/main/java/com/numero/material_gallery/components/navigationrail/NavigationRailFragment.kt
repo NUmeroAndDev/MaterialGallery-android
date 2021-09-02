@@ -1,20 +1,15 @@
 package com.numero.material_gallery.components.navigationrail
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.navigationrail.NavigationRailView
+import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentNavigationRailBinding
-import com.numero.material_gallery.core.MaterialContainerTransformFragment
 import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
-class NavigationRailFragment :
-    MaterialContainerTransformFragment(R.layout.fragment_navigation_rail) {
+class NavigationRailFragment : ComponentFragment(R.layout.fragment_navigation_rail) {
 
     private val binding by viewBinding { FragmentNavigationRailBinding.bind(it) }
 
@@ -35,21 +30,6 @@ class NavigationRailFragment :
             type(navigationBars = true) {
                 padding()
             }
-        }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu_common, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_current_theme -> {
-                findNavController().navigate(R.id.action_show_ThemeInfoDialog)
-                true
-            }
-            else -> false
         }
     }
 }

@@ -87,12 +87,10 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
-            if (destination.id != R.id.ThemeInfoDialog) {
-                if (isHideAppBar) {
-                    supportActionBar?.hide()
-                } else {
-                    supportActionBar?.show()
-                }
+            if (isHideAppBar) {
+                supportActionBar?.hide()
+            } else {
+                supportActionBar?.show()
             }
 
             val isRootDestination = rootNavigationDestinationIds.contains(destination.id)

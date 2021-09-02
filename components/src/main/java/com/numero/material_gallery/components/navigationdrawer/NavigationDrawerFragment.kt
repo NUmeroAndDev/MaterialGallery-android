@@ -13,6 +13,7 @@ import com.google.android.material.navigation.NavigationView
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentNavigationDrawerBinding
 import com.numero.material_gallery.core.MaterialContainerTransformFragment
+import com.numero.material_gallery.core.ThemeInfoBottomSheetDialog
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
@@ -33,7 +34,7 @@ class NavigationDrawerFragment : MaterialContainerTransformFragment(R.layout.fra
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.action_current_theme -> {
-                        findNavController().navigate(R.id.action_show_ThemeInfoDialog)
+                        ThemeInfoBottomSheetDialog().showIfNeeded(childFragmentManager)
                         true
                     }
                     else -> false
