@@ -61,157 +61,157 @@
             android:paddingTop="8dp"
             android:paddingBottom="8dp">
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorPrimary"
                 app:title="colorPrimary" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorPrimaryContainer"
                 app:title="colorPrimaryContainer" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorPrimaryInverse"
                 app:title="colorPrimaryInverse" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorSecondary"
                 app:title="colorSecondary" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorSecondaryContainer"
                 app:title="colorSecondaryContainer" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorTertiary"
                 app:title="colorTertiary" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorTertiaryContainer"
                 app:title="colorTertiaryContainer" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?android:attr/colorBackground"
                 app:title="colorBackground" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorError"
                 app:title="colorError" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorErrorContainer"
                 app:title="colorErrorContainer" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOutline"
                 app:title="colorOutline" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorSurface"
                 app:title="colorSurface" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorSurfaceVariant"
                 app:title="colorSurfaceVariant" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorSurfaceInverse"
                 app:title="colorSurfaceInverse" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnPrimary"
                 app:title="colorOnPrimary" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnPrimaryContainer"
                 app:title="colorOnPrimaryContainer" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnSecondary"
                 app:title="colorOnSecondary" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnSecondaryContainer"
                 app:title="colorOnSecondaryContainer" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnTertiary"
                 app:title="colorOnTertiary" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnTertiaryContainer"
                 app:title="colorOnTertiaryContainer" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnBackground"
                 app:title="colorOnBackground" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnError"
                 app:title="colorOnError" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnErrorContainer"
                 app:title="colorOnErrorContainer" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnSurface"
                 app:title="colorOnSurface" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnSurfaceVariant"
                 app:title="colorOnSurfaceVariant" />
 
-            <com.numero.material_gallery.view.ColorInfoItemView
+            <com.numero.material_gallery.core.view.ColorInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemColor="?attr/colorOnSurfaceInverse"
@@ -283,91 +283,91 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Display Large"
                 app:titleTextAppearance="?attr/textAppearanceDisplayLarge" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Display Medium"
                 app:titleTextAppearance="?attr/textAppearanceDisplayMedium" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Display Small"
                 app:titleTextAppearance="?attr/textAppearanceDisplaySmall" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Headline Large"
                 app:titleTextAppearance="?attr/textAppearanceHeadlineLarge" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Headline Medium"
                 app:titleTextAppearance="?attr/textAppearanceHeadlineMedium" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Headline Small"
                 app:titleTextAppearance="?attr/textAppearanceHeadlineSmall" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Title Large"
                 app:titleTextAppearance="?attr/textAppearanceTitleLarge" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Title Medium"
                 app:titleTextAppearance="?attr/textAppearanceTitleMedium" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Title Small"
                 app:titleTextAppearance="?attr/textAppearanceTitleSmall" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Body Large"
                 app:titleTextAppearance="?attr/textAppearanceBodyLarge" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Body Medium"
                 app:titleTextAppearance="?attr/textAppearanceBodyMedium" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Body Small"
                 app:titleTextAppearance="?attr/textAppearanceBodySmall" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Label Large"
                 app:titleTextAppearance="?attr/textAppearanceLabelLarge" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Label Medium"
                 app:titleTextAppearance="?attr/textAppearanceLabelMedium" />
 
-            <com.numero.material_gallery.view.TypographyInfoItemView
+            <com.numero.material_gallery.core.view.TypographyInfoItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:title="Label Small"

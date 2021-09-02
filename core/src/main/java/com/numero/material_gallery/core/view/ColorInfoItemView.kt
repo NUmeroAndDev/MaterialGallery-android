@@ -1,4 +1,4 @@
-package com.numero.material_gallery.view
+package com.numero.material_gallery.core.view
 
 import android.content.Context
 import android.graphics.Color
@@ -6,8 +6,8 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.core.content.withStyledAttributes
-import com.numero.material_gallery.R
-import com.numero.material_gallery.databinding.ViewColorInfoItemBinding
+import com.numero.material_gallery.core.R
+import com.numero.material_gallery.core.databinding.ViewColorInfoItemBinding
 import java.util.*
 
 class ColorInfoItemView @JvmOverloads constructor(

@@ -1,4 +1,4 @@
-package com.numero.material_gallery.view
+package com.numero.material_gallery.core.view
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,8 +10,8 @@ import androidx.core.content.res.getResourceIdOrThrow
 import androidx.core.content.res.use
 import androidx.core.content.withStyledAttributes
 import androidx.core.widget.TextViewCompat
-import com.numero.material_gallery.R
-import com.numero.material_gallery.databinding.ViewTypographyInfoItemBinding
+import com.numero.material_gallery.core.R
+import com.numero.material_gallery.core.databinding.ViewTypographyInfoItemBinding
 
 class TypographyInfoItemView @JvmOverloads constructor(
     context: Context,

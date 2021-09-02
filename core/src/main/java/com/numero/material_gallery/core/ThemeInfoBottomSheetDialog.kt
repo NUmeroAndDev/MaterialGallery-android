@@ -1,13 +1,12 @@
-package com.numero.material_gallery.themeinfo
+package com.numero.material_gallery.core
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.numero.material_gallery.R
-import com.numero.material_gallery.databinding.BottomSheetFragmentThemeInfoBinding
-import com.numero.material_gallery.core.Theme
+import com.numero.material_gallery.core.databinding.BottomSheetFragmentThemeInfoBinding
 import com.numero.material_gallery.core.repository.ConfigRepository
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -40,6 +39,12 @@ class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
         _binding = null
     }
 
+    fun showIfNeeded(fragmentManager: FragmentManager) {
+        if (fragmentManager.findFragmentByTag(Tag) == null) {
+            show(fragmentManager, Tag)
+        }
+    }
+
     private fun setupViews() {
         val toggleGroup = binding.selectThemeToggleGroup
         toggleGroup.check(configRepository.getCurrentTheme().getToggleButtonId())
@@ -62,5 +67,9 @@ class ThemeInfoBottomSheetDialog : BottomSheetDialogFragment() {
             Theme.DARK -> R.id.darkThemeButton
             Theme.SYSTEM_DEFAULT -> R.id.systemThemeButton
         }
+    }
+
+    companion object {
+        private const val Tag = "ThemeInfoBottomSheetDialog"
     }
 }
