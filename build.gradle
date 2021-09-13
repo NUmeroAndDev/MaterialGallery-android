@@ -28,7 +28,7 @@ buildscript {
                         core            : "androidx.core:core-ktx:1.7.0-alpha02",
                         coreSplash      : "androidx.core:core-splashscreen:1.0.0-alpha01",
                         recyclerview    : "androidx.recyclerview:recyclerview:1.2.1",
-                        constraintlayout: "androidx.constraintlayout:constraintlayout:2.0.4",
+                        constraintlayout: "androidx.constraintlayout:constraintlayout:2.1.0",
                         preference      : "androidx.preference:preference:1.1.1",
 
                         navigation      : [
