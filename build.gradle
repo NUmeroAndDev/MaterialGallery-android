@@ -23,7 +23,7 @@ buildscript {
 
                 androidx    : [
                         appcompat       : "androidx.appcompat:appcompat:1.4.0-alpha03",
-                        activity        : "androidx.activity:activity-ktx:1.4.0-alpha01",
+                        activity        : "androidx.activity:activity-ktx:1.4.0-alpha02",
                         fragment        : "androidx.fragment:fragment-ktx:1.4.0-alpha09",
                         core            : "androidx.core:core-ktx:1.7.0-beta01",
                         coreSplash      : "androidx.core:core-splashscreen:1.0.0-alpha01",
