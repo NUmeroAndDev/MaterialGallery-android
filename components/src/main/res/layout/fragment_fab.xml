@@ -17,14 +17,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp">
 
             <TextView
                 android:id="@+id/primaryTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
                 android:text="Primary"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 app:layout_constraintStart_toStartOf="parent"
@@ -244,6 +244,118 @@
 
 
             <TextView
+                android:id="@+id/tertiaryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:text="Tertiary"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondaryMiniFabContainer" />
+
+            <LinearLayout
+                android:id="@+id/tertiaryMiniFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/tertiaryFabContainer"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tertiaryTitle">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/tertiaryMiniFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Tertiary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add"
+                        app:fabSize="mini" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Mini"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tertiaryFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/tertiaryLargeFabContainer"
+                app:layout_constraintStart_toEndOf="@id/tertiaryMiniFabContainer"
+                app:layout_constraintTop_toTopOf="@id/tertiaryMiniFabContainer">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/tertiaryFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Tertiary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Default"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tertiaryLargeFabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tertiaryFabContainer"
+                app:layout_constraintTop_toTopOf="@id/tertiaryFabContainer">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/tertiaryLargeFab"
+                        style="@style/Widget.Material3.FloatingActionButton.Large.Tertiary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_add" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|bottom"
+                    android:text="Large"
+                    android:textAppearance="?attr/textAppearanceLabelMedium" />
+
+            </LinearLayout>
+
+
+            <TextView
                 android:id="@+id/surfaceTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -252,7 +364,7 @@
                 android:text="Surface"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/secondaryMiniFabContainer" />
+                app:layout_constraintTop_toBottomOf="@id/tertiaryMiniFabContainer" />
 
             <LinearLayout
                 android:id="@+id/surfaceMiniFabContainer"

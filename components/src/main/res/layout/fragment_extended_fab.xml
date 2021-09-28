@@ -124,6 +124,15 @@
             app:icon="@drawable/ic_add" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/tertiaryExtendedFab"
+            style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Tertiary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Tertiary"
+            app:icon="@drawable/ic_add" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/surfaceExtendedFab"
             style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
             android:layout_width="wrap_content"
