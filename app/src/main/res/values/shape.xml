@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ShapeAppearance.MaterialGallery.Small.Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearance.MaterialGallery.Small.Rounded" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">4dp</item>
     </style>
 
-    <style name="ShapeAppearance.MaterialGallery.Medium.Rounded" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+    <style name="ShapeAppearance.MaterialGallery.Medium.Rounded" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">8dp</item>
     </style>
 
-    <style name="ShapeAppearance.MaterialGallery.Large.Rounded" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+    <style name="ShapeAppearance.MaterialGallery.Large.Rounded" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">8dp</item>
     </style>
 
-    <style name="ShapeAppearance.MaterialGallery.Small.Cut" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+    <style name="ShapeAppearance.MaterialGallery.Small.Cut" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">cut</item>
-        <item name="cornerSize">4dp</item>
     </style>
 
-    <style name="ShapeAppearance.MaterialGallery.Medium.Cut" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+    <style name="ShapeAppearance.MaterialGallery.Medium.Cut" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerFamily">cut</item>
-        <item name="cornerSize">8dp</item>
     </style>
 
-    <style name="ShapeAppearance.MaterialGallery.Large.Cut" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+    <style name="ShapeAppearance.MaterialGallery.Large.Cut" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">cut</item>
-        <item name="cornerSize">8dp</item>
     </style>
 </resources>
