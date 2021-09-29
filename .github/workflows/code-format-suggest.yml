@@ -15,7 +15,7 @@ jobs:
           distribution: zulu
           cache: gradle
       - run: ./gradlew spotlessKotlinApply
-      - uses: reviewdog/action-suggester@v1.2
+      - uses: reviewdog/action-suggester@v1.3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tool_name: spotless
