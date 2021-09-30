@@ -18,6 +18,7 @@ class ExtendedFabFragment : ComponentFragment(R.layout.fragment_extended_fab) {
         val extendedFabs = listOf(
             binding.primaryExtendedFab,
             binding.secondaryExtendedFab,
+            binding.tertiaryExtendedFab,
             binding.surfaceExtendedFab,
         )
         binding.fabStyleRadioGroup.setOnCheckedChangeListener { _, id ->
