@@ -43,12 +43,4 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="windowSplashScreenBackground">@color/white</item>
     </style>
-
-    <style name="Theme.MaterialGallery.SplashScreen.DayNight.Rounded">
-        <item name="postSplashScreenTheme">@style/Theme.MaterialGallery.DayNight.Rounded</item>
-    </style>
-
-    <style name="Theme.MaterialGallery.SplashScreen.DayNight.Cut">
-        <item name="postSplashScreenTheme">@style/Theme.MaterialGallery.DayNight.Cut</item>
-    </style>
 </resources>
