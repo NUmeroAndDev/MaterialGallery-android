@@ -1,7 +1,6 @@
 # MaterialGallery-android  
 
-![Android Studio](https://img.shields.io/badge/Android%20Studio-Bumblebee%20Canary10-green.svg)
-![Kotlin](https://img.shields.io/badge/kotlin-1.5.21-yellow.svg)
+![Android Studio](https://img.shields.io/badge/Android%20Studio-Bumblebee%20Canary12-green.svg)
 
 ## About  
 Catalog application of Material Components.  

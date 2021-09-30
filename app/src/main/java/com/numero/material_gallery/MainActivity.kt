@@ -13,14 +13,15 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.color.DynamicColors
+import com.google.android.material.navigation.NavigationBarView
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.ktx.AppUpdateResult
 import com.google.android.play.core.ktx.requestUpdateFlow
 import com.numero.material_gallery.core.ShapeTheme
 import com.numero.material_gallery.core.isDarkTheme
 import com.numero.material_gallery.core.launchWhenStartedIn
-import com.numero.material_gallery.databinding.ActivityMainBinding
 import com.numero.material_gallery.core.repository.ConfigRepository
+import com.numero.material_gallery.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onEach
@@ -83,8 +84,8 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.bottomNavigation.setupWithNavController(navController)
-        binding.bottomNavigation.setOnItemReselectedListener { }
+        binding.requireNavigationView.setupWithNavController(navController)
+        binding.requireNavigationView.setOnItemReselectedListener { }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             val isHideAppBar = hideAppBarDestinationIds.contains(destination.id)
@@ -95,7 +96,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             val isRootDestination = rootNavigationDestinationIds.contains(destination.id)
-            binding.bottomNavigation.isVisible = isRootDestination
+            binding.requireNavigationView.isVisible = isRootDestination
 
             val isStudiesDestination = studiesDestinationIds.contains(destination.id)
             val windowInsetController = WindowInsetsControllerCompat(window, window.decorView)
@@ -122,10 +123,10 @@ class MainActivity : AppCompatActivity() {
             .onEach { appUpdate ->
                 when (appUpdate) {
                     is AppUpdateResult.Available -> {
-                        binding.bottomNavigation.getOrCreateBadge(R.id.navSettings)
+                        binding.requireNavigationView.getOrCreateBadge(R.id.navSettings)
                     }
                     else -> {
-                        binding.bottomNavigation.removeBadge(R.id.navSettings)
+                        binding.requireNavigationView.removeBadge(R.id.navSettings)
                     }
                 }
             }
@@ -136,8 +137,11 @@ class MainActivity : AppCompatActivity() {
     private val ShapeTheme.themeRes: Int
         get() {
             return when (this) {
-                ShapeTheme.ROUNDED -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Rounded
-                ShapeTheme.CUT -> R.style.Theme_MaterialGallery_SplashScreen_DayNight_Cut
+                ShapeTheme.ROUNDED -> R.style.Theme_MaterialGallery_DayNight_Rounded
+                ShapeTheme.CUT -> R.style.Theme_MaterialGallery_DayNight_Cut
             }
         }
+
+    private val ActivityMainBinding.requireNavigationView: NavigationBarView
+        get() = navigation as NavigationBarView
 }
