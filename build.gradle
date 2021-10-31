@@ -9,7 +9,7 @@ buildscript {
                 kotlin    : "1.5.31",
 
                 navigation: "2.4.0-beta01",
-                lifecycle : "2.4.0-rc01",
+                lifecycle : "2.4.0",
 
                 hilt      : "2.40",
 
