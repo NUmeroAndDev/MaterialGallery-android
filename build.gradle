@@ -22,7 +22,7 @@ buildscript {
                 coroutines  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2",
 
                 androidx    : [
-                        appcompat       : "androidx.appcompat:appcompat:1.4.0-beta01",
+                        appcompat       : "androidx.appcompat:appcompat:1.4.0-rc01",
                         activity        : "androidx.activity:activity-ktx:1.4.0-beta01",
                         fragment        : "androidx.fragment:fragment-ktx:1.4.0-alpha10",
                         core            : "androidx.core:core-ktx:1.7.0",
