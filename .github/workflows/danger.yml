@@ -8,7 +8,7 @@ jobs:
     if: github.head_ref != 'develop'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.5
+      - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0
       - name: set up JDK
