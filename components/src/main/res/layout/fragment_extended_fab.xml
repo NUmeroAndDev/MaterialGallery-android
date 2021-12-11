@@ -99,10 +99,9 @@
     </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
         android:gravity="end"
         android:orientation="vertical">
 
@@ -111,6 +110,7 @@
             style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/fab_margin"
             android:text="Primary"
             app:icon="@drawable/ic_add" />
 
@@ -119,7 +119,8 @@
             style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"
             android:text="Secondary"
             app:icon="@drawable/ic_add" />
 
@@ -128,7 +129,8 @@
             style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Tertiary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"
             android:text="Tertiary"
             app:icon="@drawable/ic_add" />
 
@@ -137,7 +139,9 @@
             style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Surface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/fab_margin"
             android:text="Surface"
             app:icon="@drawable/ic_add" />
 
