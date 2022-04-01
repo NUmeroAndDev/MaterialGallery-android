@@ -67,7 +67,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:7.2.0-beta04'
         classpath libs.kotlinPlugin
         classpath libs.hilt.plugin
-        classpath 'com.google.android.gms:oss-licenses-plugin:0.10.4'
+        classpath 'com.google.android.gms:oss-licenses-plugin:0.10.5'
     }
 }
 
