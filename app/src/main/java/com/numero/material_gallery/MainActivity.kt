@@ -66,9 +66,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
+        setTheme(R.style.Theme_MaterialGallery_DayNight)
         super.onCreate(savedInstanceState)
         setTheme(configRepository.currentShapeTheme.themeRes)
-        installSplashScreen()
         if (DynamicColors.isDynamicColorAvailable()) {
             DynamicColors.applyIfAvailable(this)
         }
