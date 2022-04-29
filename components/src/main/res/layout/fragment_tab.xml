@@ -215,6 +215,14 @@
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
 
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/inlineSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checked="false"
+            android:text="Inline" />
+
     </LinearLayout>
 
 </LinearLayout>

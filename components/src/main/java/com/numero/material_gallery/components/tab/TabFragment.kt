@@ -45,13 +45,14 @@ class TabFragment : ComponentFragment(R.layout.fragment_tab) {
             }
         }
 
-        binding.indicatorAnimationToggleGroup.addOnButtonCheckedListener { _, checkedId, _ ->
-            val tabs = listOf(
-                binding.defaultTab,
-                binding.onSurfaceTab,
-                binding.secondaryTab,
-                binding.withBadgeTabLayout,
-            )
+        val tabs = listOf(
+            binding.defaultTab,
+            binding.onSurfaceTab,
+            binding.secondaryTab,
+            binding.withBadgeTabLayout,
+        )
+        binding.indicatorAnimationToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
+            if (!isChecked) return@addOnButtonCheckedListener
             tabs.forEach {
                 it.tabIndicatorAnimationMode = when (checkedId) {
                     R.id.linearButton -> TabLayout.INDICATOR_ANIMATION_MODE_LINEAR
@@ -59,6 +60,12 @@ class TabFragment : ComponentFragment(R.layout.fragment_tab) {
                     R.id.fadeButton -> TabLayout.INDICATOR_ANIMATION_MODE_FADE
                     else -> throw IllegalArgumentException()
                 }
+            }
+        }
+
+        binding.inlineSwitch.setOnCheckedChangeListener { _, isChecked ->
+            tabs.forEach {
+                it.isInlineLabel = isChecked
             }
         }
     }
