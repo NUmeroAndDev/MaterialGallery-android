@@ -19,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="From 0 to 100"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
-            android:textAppearance="?attr/textAppearanceOverline"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
             app:layout_constraintBottom_toBottomOf="@id/defaultSlider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/defaultSlider"
@@ -53,9 +53,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="From 0 to 100 step 10"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/defaultSlider" />
+            app:layout_constraintTop_toBottomOf="@id/defaultSlider" />
 
         <com.google.android.material.slider.Slider
             android:id="@+id/discreteSlider"
@@ -76,7 +76,7 @@
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
-            android:textAppearance="?attr/textAppearanceOverline"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
             app:layout_constraintBottom_toBottomOf="@id/discreteSlider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/discreteSlider"
@@ -88,9 +88,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="From 1000 to 10000 step 100\nWith label formatter"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/discreteSlider" />
+            app:layout_constraintTop_toBottomOf="@id/discreteSlider" />
 
         <com.google.android.material.slider.Slider
             android:id="@+id/labelFormatterSlider"
@@ -111,7 +111,7 @@
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
-            android:textAppearance="?attr/textAppearanceOverline"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
             app:layout_constraintBottom_toBottomOf="@id/labelFormatterSlider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/labelFormatterSlider"
@@ -123,9 +123,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="Range From 0 to 100"
-            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/labelFormatterSlider" />
+            app:layout_constraintTop_toBottomOf="@id/labelFormatterSlider" />
 
         <com.google.android.material.slider.RangeSlider
             android:id="@+id/rangeSlider"
@@ -145,11 +145,48 @@
             android:layout_width="56dp"
             android:layout_height="wrap_content"
             android:textAllCaps="false"
-            android:textAppearance="?attr/textAppearanceOverline"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
             app:layout_constraintBottom_toBottomOf="@id/rangeSlider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/rangeSlider"
             app:layout_constraintTop_toTopOf="@id/rangeSlider"
+            tools:text="From:10\nTo:50" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labeledSliderTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="From 0 to 100 with label"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rangeSlider" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/labeledSlider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:value="10"
+            android:valueFrom="0.0"
+            android:valueTo="100.0"
+            app:labelBehavior="visible"
+            app:layout_constraintEnd_toStartOf="@id/rangeSliderValueText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/labeledSliderTitleText"
+            app:values="@array/initial_range_slider_values" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labeledSliderValueText"
+            android:layout_width="56dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textAppearance="?attr/textAppearanceLabelSmall"
+            app:layout_constraintBottom_toBottomOf="@id/labeledSlider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/labeledSlider"
+            app:layout_constraintTop_toTopOf="@id/labeledSlider"
             tools:text="From:10\nTo:50" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
