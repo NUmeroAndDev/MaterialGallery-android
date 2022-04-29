@@ -50,6 +50,11 @@ class SliderFragment : ComponentFragment(R.layout.fragment_slider) {
             binding.rangeSlider.values.last()
         )
 
+        binding.labeledSlider.addOnChangeListener { _, value, _ ->
+            binding.labeledSliderValueText.text = valueFormat.format(value)
+        }
+        binding.labeledSliderValueText.text = valueFormat.format(binding.labeledSlider.value)
+
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
                 padding()
