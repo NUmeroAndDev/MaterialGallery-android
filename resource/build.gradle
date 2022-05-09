@@ -4,6 +4,8 @@ plugins {
 }
 
 android {
+    namespace 'jp.numero.material_gallery.resource'
+
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
