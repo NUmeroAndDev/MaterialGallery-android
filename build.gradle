@@ -6,8 +6,6 @@ buildscript {
                 minSdk    : 23,
                 targetSdk : 32,
 
-                kotlin    : "1.6.21",
-
                 navigation: "2.5.0-beta01",
                 lifecycle : "2.4.1",
 
@@ -17,8 +15,6 @@ buildscript {
         ]
 
         libs = [
-                kotlinPlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
-
                 coroutines  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1",
 
                 androidx    : [
@@ -42,7 +38,6 @@ buildscript {
                 ],
 
                 hilt        : [
-                        plugin  : "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt",
                         android : "com.google.dagger:hilt-android:$versions.hilt",
                         compiler: "com.google.dagger:hilt-compiler:$versions.hilt"
                 ],
@@ -60,26 +55,18 @@ buildscript {
                 licenses    : "com.google.android.gms:play-services-oss-licenses:17.0.0"
         ]
     }
-    repositories {
-        google()
-    }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
-        classpath libs.kotlinPlugin
-        classpath libs.hilt.plugin
         classpath 'com.google.android.gms:oss-licenses-plugin:0.10.5'
     }
 }
 
 plugins {
-    id("com.diffplug.spotless") version "6.5.2"
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
+    id 'com.google.dagger.hilt.android' version '2.41' apply false
+    id "com.diffplug.spotless" version "6.5.2"
 }
 
 subprojects {
