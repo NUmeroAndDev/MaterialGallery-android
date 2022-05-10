@@ -4,6 +4,8 @@ plugins {
 }
 
 android {
+    namespace 'com.numero.material_gallery.studies.shrines'
+
     compileSdkVersion versions.compileSdk
 
     defaultConfig {

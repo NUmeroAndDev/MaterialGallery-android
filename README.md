@@ -1,6 +1,6 @@
 # MaterialGallery-android  
 
-![Android Studio](https://img.shields.io/badge/Android%20Studio-Chipmunk%20RC1-green.svg)
+![Android Studio](https://img.shields.io/badge/Android%20Studio-Chipmunk-green.svg)
 
 ## About  
 Catalog application of Material Components.  
