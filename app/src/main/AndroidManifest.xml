@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialGallery.SplashScreen.DayNight"
         tools:ignore="GoogleAppIndexingWarning">
+        <profileable
+            android:shell="true"
+            tools:targetApi="q" />
 
         <activity
             android:name=".MainActivity"
@@ -21,15 +24,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
             android:theme="@style/Theme.MaterialGallery.DayNight.WithActionBar" />
-
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
             android:theme="@style/Theme.MaterialGallery.DayNight.WithActionBar" />
-
     </application>
 
 </manifest>
