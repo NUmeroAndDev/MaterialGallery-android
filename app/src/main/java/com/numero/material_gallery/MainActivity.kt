@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(configRepository.currentShapeTheme.themeRes)
         if (DynamicColors.isDynamicColorAvailable()) {
-            DynamicColors.applyIfAvailable(this)
+            DynamicColors.applyToActivityIfAvailable(this)
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
