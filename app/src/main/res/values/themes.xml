@@ -6,7 +6,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.MaterialGallery" parent="Base.MaterialGallery" />
+    <style name="Theme.MaterialGallery" parent="Base.MaterialGallery">
+        <item name="android:navigationBarColor">@color/system_ui_scrim_black</item>
+    </style>
 
     <style name="Theme.MaterialGallery.DayNight" parent="Theme.MaterialGallery" />
 
