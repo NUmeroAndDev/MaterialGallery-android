@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.numero.material_gallery.studies.materialcomponent'
+    namespace 'com.numero.material_gallery.studies.material2'
 
     compileSdkVersion versions.compileSdk
 

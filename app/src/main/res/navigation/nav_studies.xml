@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/MaterialComponentScreen"
-        android:name="com.numero.material_gallery.studies.materialcomponent.MaterialComponentFragment"
+        android:name="com.numero.material_gallery.studies.material2.MaterialComponentFragment"
         android:label="@string/label_material_component" />
 
     <fragment

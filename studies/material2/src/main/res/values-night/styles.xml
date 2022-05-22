@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Widget.MaterialComponent.AppBarLayout" parent="Widget.MaterialComponents.AppBarLayout.PrimarySurface">
+    <style name="Widget.Material2.AppBarLayout" parent="Widget.MaterialComponents.AppBarLayout.PrimarySurface">
         <item name="statusBarForeground">?attr/colorSurface</item>
     </style>
 </resources>

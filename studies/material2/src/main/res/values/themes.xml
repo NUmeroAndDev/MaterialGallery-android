@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.MaterialComponent" parent="Theme.MaterialComponents.DayNight">
+    <style name="Theme.Material2" parent="Theme.MaterialComponents.DayNight">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorSecondary">@color/teal_200</item>
@@ -16,8 +16,8 @@
         <item name="colorOnError">@color/white</item>
         <item name="colorOnSurface">@color/black</item>
 
-        <item name="appBarLayoutStyle">@style/Widget.MaterialComponent.AppBarLayout</item>
+        <item name="appBarLayoutStyle">@style/Widget.Material2.AppBarLayout</item>
     </style>
 
-    <style name="Theme.MaterialComponent.DayNight" parent="Theme.MaterialComponent" />
+    <style name="Theme.Material2.DayNight" parent="Theme.Material2" />
 </resources>
