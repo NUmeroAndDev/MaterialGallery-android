@@ -3,9 +3,7 @@ package com.numero.material_gallery.components.progressindicator
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
-import com.google.android.material.progressindicator.BaseProgressIndicator
-import com.google.android.material.progressindicator.CircularProgressIndicatorSpec
-import com.google.android.material.progressindicator.IndeterminateDrawable
+import com.google.android.material.progressindicator.*
 import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentProgressIndicatorBinding
@@ -23,42 +21,43 @@ class ProgressIndicatorFragment : ComponentFragment(R.layout.fragment_progress_i
             requireContext(),
             null,
             0,
-            R.style.Widget_MaterialComponents_CircularProgressIndicator_ExtraSmall
+            R.style.Widget_Material3_CircularProgressIndicator_ExtraSmall
         )
-
         val indeterminateDrawable = IndeterminateDrawable.createCircularDrawable(
             requireContext(),
             progressIndicatorSpec
         )
         binding.indeterminateProgressChip.chipIcon = indeterminateDrawable
 
+        val forButtonIndeterminateDrawable = IndeterminateDrawable.createCircularDrawable(
+            requireContext(),
+            progressIndicatorSpec
+        )
+        binding.indeterminateProgressButton.icon = forButtonIndeterminateDrawable
+
         binding.progressSlider.addOnChangeListener { _, value, _ ->
+            binding.extraSmallDeterminateCircularProgressIndicator.progress = value.toInt()
+            binding.smallDeterminateCircularProgressIndicator.progress = value.toInt()
             binding.determinateCircularProgressIndicator.progress = value.toInt()
             binding.determinateLinearProgressIndicator.progress = value.toInt()
         }
 
+        val indicators = listOf(
+            binding.extraSmallIndeterminateCircularProgressIndicator,
+            binding.smallIndeterminateCircularProgressIndicator,
+            binding.indeterminateCircularProgressIndicator,
+            binding.indeterminateLinearProgressIndicator,
+            binding.extraSmallDeterminateCircularProgressIndicator,
+            binding.smallDeterminateCircularProgressIndicator,
+            binding.determinateCircularProgressIndicator,
+            binding.determinateLinearProgressIndicator,
+        )
         binding.visibilityProgressIndicatorToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (isChecked.not()) return@addOnButtonCheckedListener
-            when (checkedId) {
-                R.id.show -> {
-                    binding.indeterminateCircularProgressIndicator.show()
-                    binding.indeterminateLinearProgressIndicator.show()
-                    binding.roundedCircularProgressIndicator.show()
-                    binding.roundedLinearProgressIndicator.show()
-                    binding.inverseCircularProgressIndicator.show()
-                    binding.inverseLinearProgressIndicator.show()
-                    binding.determinateCircularProgressIndicator.show()
-                    binding.determinateLinearProgressIndicator.show()
-                }
-                R.id.hide -> {
-                    binding.indeterminateCircularProgressIndicator.hide()
-                    binding.indeterminateLinearProgressIndicator.hide()
-                    binding.roundedCircularProgressIndicator.hide()
-                    binding.roundedLinearProgressIndicator.hide()
-                    binding.inverseCircularProgressIndicator.hide()
-                    binding.inverseLinearProgressIndicator.hide()
-                    binding.determinateCircularProgressIndicator.hide()
-                    binding.determinateLinearProgressIndicator.hide()
+            indicators.forEach {
+                when (checkedId) {
+                    R.id.show -> it.show()
+                    R.id.hide -> it.hide()
                 }
             }
         }
@@ -79,41 +78,34 @@ class ProgressIndicatorFragment : ComponentFragment(R.layout.fragment_progress_i
         binding.grownModeTextView.setAdapter(adapter)
         binding.grownModeTextView.setOnItemClickListener { _, _, position, _ ->
             val animationBehavior = animationBehaviors[position].first
-            binding.indeterminateCircularProgressIndicator.apply {
-                showAnimationBehavior = animationBehavior
-                hideAnimationBehavior = animationBehavior
-            }
-            binding.indeterminateLinearProgressIndicator.apply {
-                showAnimationBehavior = animationBehavior
-                hideAnimationBehavior = animationBehavior
-            }
-            binding.roundedCircularProgressIndicator.apply {
-                showAnimationBehavior = animationBehavior
-                hideAnimationBehavior = animationBehavior
-            }
-            binding.roundedLinearProgressIndicator.apply {
-                showAnimationBehavior = animationBehavior
-                hideAnimationBehavior = animationBehavior
-            }
-            binding.inverseCircularProgressIndicator.apply {
-                showAnimationBehavior = animationBehavior
-                hideAnimationBehavior = animationBehavior
-            }
-            binding.inverseLinearProgressIndicator.apply {
-                showAnimationBehavior = animationBehavior
-                hideAnimationBehavior = animationBehavior
-            }
-            binding.determinateCircularProgressIndicator.apply {
-                showAnimationBehavior = animationBehavior
-                hideAnimationBehavior = animationBehavior
-            }
-            binding.determinateLinearProgressIndicator.apply {
-                showAnimationBehavior = animationBehavior
-                hideAnimationBehavior = animationBehavior
+            indicators.forEach {
+                it.showAnimationBehavior = animationBehavior
+                it.hideAnimationBehavior = animationBehavior
             }
         }
 
-        binding.scrollView.applyInsetter {
+        binding.inverseSwitch.setOnCheckedChangeListener { _, isChecked ->
+            indicators.forEach {
+                when (it) {
+                    is CircularProgressIndicator -> {
+                        it.indicatorDirection = if (isChecked) {
+                            CircularProgressIndicator.INDICATOR_DIRECTION_COUNTERCLOCKWISE
+                        } else {
+                            CircularProgressIndicator.INDICATOR_DIRECTION_CLOCKWISE
+                        }
+                    }
+                    is LinearProgressIndicator -> {
+                        it.indicatorDirection = if (isChecked) {
+                            LinearProgressIndicator.INDICATOR_DIRECTION_END_TO_START
+                        } else {
+                            LinearProgressIndicator.INDICATOR_DIRECTION_START_TO_END
+                        }
+                    }
+                }
+            }
+        }
+
+        binding.root.applyInsetter {
             type(navigationBars = true) {
                 padding()
             }

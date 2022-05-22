@@ -7,7 +7,7 @@ import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
+import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.google.android.material.transition.platform.Hold
 import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.numero.material_gallery.R
@@ -32,8 +32,15 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
 
         initViews()
         binding.studiesRecyclerView.applyInsetter {
-            type(statusBars = true) {
-                padding()
+            type(
+                statusBars = true,
+                navigationBars = true,
+                displayCutout = true
+            ) {
+                padding(
+                    top = true,
+                    right = true
+                )
             }
         }
     }
@@ -42,9 +49,9 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
         binding.studiesRecyclerView.apply {
             setHasFixedSize(true)
             addItemDecoration(
-                DividerItemDecoration(
+                MaterialDividerItemDecoration(
                     requireContext(),
-                    DividerItemDecoration.VERTICAL
+                    MaterialDividerItemDecoration.VERTICAL
                 )
             )
             adapter = MaterialStudiesAdapter().apply {
@@ -65,7 +72,8 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
 
     private val MaterialStudies.navigationId: Int
         get() = when (this) {
-            MaterialStudies.MaterialComponent -> R.id.action_Studies_to_MaterialComponent
+            MaterialStudies.Material2 -> R.id.action_Studies_to_Material2
+            MaterialStudies.Material3 -> R.id.action_Studies_to_Material3
             MaterialStudies.Crane -> R.id.action_Studies_to_Crane
             MaterialStudies.Reply -> R.id.action_Studies_to_Reply
             MaterialStudies.Shrine -> R.id.action_Studies_to_Shrine

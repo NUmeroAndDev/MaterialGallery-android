@@ -1,3 +1,19 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include ':app'
@@ -5,7 +21,9 @@ include ':studies:base'
 include ':studies:crane'
 include ':studies:shrine'
 include ':studies:reply'
-include ':studies:materialcomponent'
+include ':studies:material2'
+include ':studies:material3'
 include ':core'
 include ':components'
 include ':resource'
+include ':benchmark'

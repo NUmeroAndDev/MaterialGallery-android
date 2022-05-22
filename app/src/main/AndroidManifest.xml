@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.numero.material_gallery">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name=".MaterialGalleryApplication"
@@ -12,26 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialGallery.SplashScreen.DayNight"
         tools:ignore="GoogleAppIndexingWarning">
+        <profileable
+            android:shell="true"
+            tools:targetApi="q" />
 
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
             android:theme="@style/Theme.MaterialGallery.DayNight.WithActionBar" />
-
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
             android:theme="@style/Theme.MaterialGallery.DayNight.WithActionBar" />
-
     </application>
 
 </manifest>

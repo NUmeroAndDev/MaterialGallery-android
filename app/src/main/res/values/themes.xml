@@ -6,7 +6,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.MaterialGallery" parent="Base.MaterialGallery" />
+    <style name="Theme.MaterialGallery" parent="Base.MaterialGallery">
+        <item name="android:navigationBarColor">@color/system_ui_scrim_black</item>
+    </style>
 
     <style name="Theme.MaterialGallery.DayNight" parent="Theme.MaterialGallery" />
 
@@ -42,5 +44,6 @@
     <style name="Theme.MaterialGallery.SplashScreen.DayNight" parent="Theme.SplashScreen">
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="postSplashScreenTheme">@style/Theme.MaterialGallery.DayNight</item>
     </style>
 </resources>

@@ -7,6 +7,8 @@ plugins {
 }
 
 android {
+    namespace 'com.numero.material_gallery'
+
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
@@ -29,6 +31,11 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        benchmark {
+            signingConfig signingConfigs.debug
+            matchingFallbacks = ['release']
+            debuggable false
         }
     }
 
@@ -56,7 +63,8 @@ dependencies {
     implementation projects.studies.crane
     implementation projects.studies.shrine
     implementation projects.studies.reply
-    implementation projects.studies.materialcomponent
+    implementation projects.studies.material2
+    implementation projects.studies.material3
     implementation projects.components
     implementation projects.core
     implementation projects.resource
@@ -86,6 +94,8 @@ dependencies {
 
     implementation libs.play.core
     implementation libs.play.ktx
+
+    implementation libs.androidx.profileinstaller
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.4.0'

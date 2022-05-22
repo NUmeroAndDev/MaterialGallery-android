@@ -1,230 +1,337 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:transitionName="@string/progress_indicator_transition_name">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/indeterminateProgressTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Indeterminate Progress Indicator"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/extraSmallIndeterminateCircularProgressIndicatorContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/indeterminateCircularProgressIndicatorContainer"
+                app:layout_constraintEnd_toStartOf="@id/smallIndeterminateCircularProgressIndicatorContainer"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/extraSmallIndeterminateCircularProgressIndicator"
+                    style="@style/Widget.Material3.CircularProgressIndicator.ExtraSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extra Small"
+                    android:textAppearance="?attr/textAppearanceLabelSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/smallIndeterminateCircularProgressIndicatorContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/indeterminateCircularProgressIndicatorContainer"
+                app:layout_constraintEnd_toStartOf="@id/indeterminateCircularProgressIndicatorContainer"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/extraSmallIndeterminateCircularProgressIndicatorContainer">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/smallIndeterminateCircularProgressIndicator"
+                    style="@style/Widget.Material3.CircularProgressIndicator.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Small"
+                    android:textAppearance="?attr/textAppearanceLabelSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/indeterminateCircularProgressIndicatorContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/smallIndeterminateCircularProgressIndicatorContainer"
+                app:layout_constraintTop_toBottomOf="@+id/indeterminateProgressTitleTextView">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/indeterminateCircularProgressIndicator"
+                    style="@style/Widget.Material3.CircularProgressIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medium"
+                    android:textAppearance="?attr/textAppearanceLabelSmall" />
+
+            </LinearLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/indeterminateLinearProgressIndicator"
+                style="@style/Widget.Material3.LinearProgressIndicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:indeterminate="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/indeterminateCircularProgressIndicatorContainer" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/indeterminateProgressChip"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Chip with progress indicator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/indeterminateLinearProgressIndicator" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/indeterminateProgressButton"
+                style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Button with progress indicator"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/indeterminateProgressChip" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/determinateProgressTitleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Determinate Progress Indicator"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/indeterminateProgressButton" />
+
+            <LinearLayout
+                android:id="@+id/extraSmallDeterminateCircularProgressIndicatorContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/determinateCircularProgressIndicatorContainer"
+                app:layout_constraintEnd_toStartOf="@id/smallDeterminateCircularProgressIndicatorContainer"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/extraSmallDeterminateCircularProgressIndicator"
+                    style="@style/Widget.Material3.CircularProgressIndicator.ExtraSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extra Small"
+                    android:textAppearance="?attr/textAppearanceLabelSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/smallDeterminateCircularProgressIndicatorContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/determinateCircularProgressIndicatorContainer"
+                app:layout_constraintEnd_toStartOf="@id/determinateCircularProgressIndicatorContainer"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/extraSmallIndeterminateCircularProgressIndicatorContainer">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/smallDeterminateCircularProgressIndicator"
+                    style="@style/Widget.Material3.CircularProgressIndicator.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Small"
+                    android:textAppearance="?attr/textAppearanceLabelSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/determinateCircularProgressIndicatorContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@id/smallDeterminateCircularProgressIndicatorContainer"
+                app:layout_constraintTop_toBottomOf="@id/determinateProgressTitleTextView">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/determinateCircularProgressIndicator"
+                    style="@style/Widget.Material3.CircularProgressIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Medium"
+                    android:textAppearance="?attr/textAppearanceLabelSmall" />
+
+            </LinearLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/determinateLinearProgressIndicator"
+                style="@style/Widget.Material3.LinearProgressIndicator"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:indeterminate="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/determinateCircularProgressIndicatorContainer" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/determinateProgressHelperTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progress"
+                android:textAllCaps="false"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
+                app:layout_constraintBottom_toBottomOf="@id/progressSlider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/progressSlider" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/progressSlider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:stepSize="1"
+                android:value="0.0"
+                android:valueFrom="0.0"
+                android:valueTo="100.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/determinateProgressHelperTextView"
+                app:layout_constraintTop_toBottomOf="@id/determinateLinearProgressIndicator" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?attr/colorSurfaceVariant"
+        android:orientation="vertical"
         android:padding="16dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/indeterminateProgressTitleTextView"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Indeterminate Progress Indicator"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:id="@+id/indeterminateCircularProgressIndicator"
-            style="@style/Widget.Material3.CircularProgressIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/indeterminateProgressTitleTextView" />
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/indeterminateLinearProgressIndicator"
-            style="@style/Widget.Material3.LinearProgressIndicator"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/indeterminateCircularProgressIndicator" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/indeterminateProgressChip"
-            style="@style/Widget.Material3.Chip.Assist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Chip with progress indicator"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/indeterminateLinearProgressIndicator" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/roundedProgressTitleTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Rounded Progress Indicator"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/indeterminateProgressChip" />
-
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:id="@+id/roundedCircularProgressIndicator"
-            style="@style/Widget.Material3.CircularProgressIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/roundedProgressTitleTextView"
-            app:trackCornerRadius="2dp" />
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/roundedLinearProgressIndicator"
-            style="@style/Widget.Material3.LinearProgressIndicator"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/roundedCircularProgressIndicator"
-            app:trackCornerRadius="2dp" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/inverseProgressTitleTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Inverse Progress Indicator"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/roundedLinearProgressIndicator" />
-
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:id="@+id/inverseCircularProgressIndicator"
-            style="@style/Widget.Material3.CircularProgressIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="true"
-            app:indicatorDirectionCircular="counterclockwise"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inverseProgressTitleTextView" />
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/inverseLinearProgressIndicator"
-            style="@style/Widget.Material3.LinearProgressIndicator"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="true"
-            app:indicatorDirectionLinear="endToStart"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inverseCircularProgressIndicator" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/determinateProgressTitleTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Determinate Progress Indicator"
-            android:textAppearance="?attr/textAppearanceTitleMedium"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/inverseLinearProgressIndicator" />
-
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:id="@+id/determinateCircularProgressIndicator"
-            style="@style/Widget.Material3.CircularProgressIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="false"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/determinateProgressTitleTextView" />
-
-        <com.google.android.material.progressindicator.LinearProgressIndicator
-            android:id="@+id/determinateLinearProgressIndicator"
-            style="@style/Widget.Material3.LinearProgressIndicator"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:indeterminate="false"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/determinateCircularProgressIndicator" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/determinateProgressHelperTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Progress"
-            android:textAllCaps="false"
-            android:textAppearance="?attr/textAppearanceLabelSmall"
-            app:layout_constraintBottom_toBottomOf="@id/progressSlider"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/progressSlider" />
-
-        <com.google.android.material.slider.Slider
-            android:id="@+id/progressSlider"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:stepSize="1"
-            android:value="0.0"
-            android:valueFrom="0.0"
-            android:valueTo="100.0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/determinateProgressHelperTextView"
-            app:layout_constraintTop_toBottomOf="@id/determinateLinearProgressIndicator" />
-
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/visibilityProgressIndicatorToggleGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            app:checkedButton="@id/show"
-            app:layout_constraintBottom_toBottomOf="@id/grownModeDropdownMenuTextInputLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/grownModeDropdownMenuTextInputLayout"
-            app:selectionRequired="true"
-            app:singleSelection="true">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/show"
-                style="?attr/materialButtonOutlinedStyle"
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/visibilityProgressIndicatorToggleGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Show" />
+                app:checkedButton="@id/show"
+                app:selectionRequired="true"
+                app:singleSelection="true">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/hide"
-                style="?attr/materialButtonOutlinedStyle"
-                android:layout_width="wrap_content"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/show"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/hide"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hide" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/grownModeDropdownMenuTextInputLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Hide" />
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:hint="Show/Hide animation">
 
-        </com.google.android.material.button.MaterialButtonToggleGroup>
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/grownModeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/grownModeDropdownMenuTextInputLayout"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="0dp"
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/inverseSwitch"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:hint="Show/Hide animation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/visibilityProgressIndicatorToggleGroup"
-            app:layout_constraintTop_toBottomOf="@id/progressSlider">
+            android:layout_marginTop="16dp"
+            android:checked="false"
+            android:text="Inverse" />
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/grownModeTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="none" />
+    </LinearLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.core.widget.NestedScrollView>
+</LinearLayout>

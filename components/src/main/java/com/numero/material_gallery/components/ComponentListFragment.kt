@@ -7,7 +7,7 @@ import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
+import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.google.android.material.transition.platform.Hold
 import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.numero.material_gallery.components.databinding.FragmentComponentListBinding
@@ -29,8 +29,15 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
         initViews()
         binding.componentRecyclerView.applyInsetter {
-            type(statusBars = true) {
-                padding()
+            type(
+                statusBars = true,
+                navigationBars = true,
+                displayCutout = true
+            ) {
+                padding(
+                    top = true,
+                    right = true
+                )
             }
         }
     }
@@ -39,7 +46,10 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
         binding.componentRecyclerView.apply {
             setHasFixedSize(true)
             addItemDecoration(
-                DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL)
+                MaterialDividerItemDecoration(
+                    requireContext(),
+                    MaterialDividerItemDecoration.VERTICAL
+                )
             )
             adapter = ComponentListAdapter().apply {
                 setOnItemClickListener { view, component ->

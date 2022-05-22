@@ -2,34 +2,30 @@ buildscript {
     ext {
 
         versions = [
-                compileSdk: 31,
+                compileSdk: 32,
                 minSdk    : 23,
-                targetSdk : 31,
+                targetSdk : 32,
 
-                kotlin    : "1.5.31",
+                navigation: "2.5.0-beta01",
+                lifecycle : "2.4.1",
 
-                navigation: "2.4.0-alpha10",
-                lifecycle : "2.4.0-rc01",
+                hilt      : "2.42",
 
-                hilt      : "2.38.1",
-
-                material  : "1.5.0-alpha04",
+                material  : "1.7.0-alpha01",
         ]
 
         libs = [
-                kotlinPlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+                coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1",
 
-                coroutines  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2",
-
-                androidx    : [
-                        appcompat       : "androidx.appcompat:appcompat:1.4.0-beta01",
-                        activity        : "androidx.activity:activity-ktx:1.4.0-beta01",
-                        fragment        : "androidx.fragment:fragment-ktx:1.4.0-alpha10",
-                        core            : "androidx.core:core-ktx:1.7.0-beta02",
-                        coreSplash      : "androidx.core:core-splashscreen:1.0.0-alpha02",
+                androidx  : [
+                        appcompat       : "androidx.appcompat:appcompat:1.4.1",
+                        activity        : "androidx.activity:activity-ktx:1.4.0",
+                        fragment        : "androidx.fragment:fragment-ktx:1.4.1",
+                        core            : "androidx.core:core-ktx:1.7.0",
+                        coreSplash      : "androidx.core:core-splashscreen:1.0.0-beta02",
                         recyclerview    : "androidx.recyclerview:recyclerview:1.2.1",
-                        constraintlayout: "androidx.constraintlayout:constraintlayout:2.1.0",
-                        preference      : "androidx.preference:preference:1.1.1",
+                        constraintlayout: "androidx.constraintlayout:constraintlayout:2.1.3",
+                        preference      : "androidx.preference:preference:1.2.0",
 
                         navigation      : [
                                 fragment: "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
@@ -38,48 +34,42 @@ buildscript {
 
                         lifecycle       : [
                                 runtime: "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
-                        ]
+                        ],
+
+                        profileinstaller: "androidx.profileinstaller:profileinstaller:1.2.0-beta01"
                 ],
 
-                hilt        : [
-                        plugin  : "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt",
+                hilt      : [
                         android : "com.google.dagger:hilt-android:$versions.hilt",
                         compiler: "com.google.dagger:hilt-compiler:$versions.hilt"
                 ],
 
-                material    : "com.google.android.material:material:$versions.material",
-                flexbox     : "com.google.android.flexbox:flexbox:3.0.0",
+                material  : "com.google.android.material:material:$versions.material",
+                flexbox   : "com.google.android.flexbox:flexbox:3.0.0",
 
-                insetter    : "dev.chrisbanes.insetter:insetter:0.6.0",
+                insetter  : "dev.chrisbanes.insetter:insetter:0.6.1",
 
-                play        : [
-                        core: "com.google.android.play:core:1.10.2",
+                play      : [
+                        core: "com.google.android.play:core:1.10.3",
                         ktx : "com.google.android.play:core-ktx:1.8.1"
                 ],
 
-                licenses    : "com.google.android.gms:play-services-oss-licenses:17.0.0"
+                licenses  : "com.google.android.gms:play-services-oss-licenses:17.0.0"
         ]
     }
-    repositories {
-        google()
-    }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.0-alpha12'
-        classpath libs.kotlinPlugin
-        classpath libs.hilt.plugin
-        classpath 'com.google.android.gms:oss-licenses-plugin:0.10.4'
+        classpath 'com.google.android.gms:oss-licenses-plugin:0.10.5'
     }
 }
 
 plugins {
-    id("com.diffplug.spotless") version "5.15.2"
-}
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+    id 'com.android.application' version '7.2.0' apply false
+    id 'com.android.library' version '7.2.0' apply false
+    id 'com.android.test' version '7.2.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
+    id 'com.google.dagger.hilt.android' version '2.42' apply false
+    id "com.diffplug.spotless" version "6.6.1"
 }
 
 subprojects {
@@ -124,8 +114,8 @@ enum VersionSuffix {
 
 ext {
     def appMajor = 3
-    def appMinor = 0
-    def appPatch = 1
+    def appMinor = 1
+    def appPatch = 0
     def appBuild = 0
 
     def suffix = VersionSuffix.PRODUCT

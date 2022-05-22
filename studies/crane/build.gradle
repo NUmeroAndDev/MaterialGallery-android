@@ -4,6 +4,8 @@ plugins {
 }
 
 android {
+    namespace 'com.numero.material_gallery.studies.crane'
+
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
