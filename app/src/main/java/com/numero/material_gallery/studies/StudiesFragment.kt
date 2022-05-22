@@ -7,7 +7,7 @@ import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
+import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.google.android.material.transition.platform.Hold
 import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.numero.material_gallery.R
@@ -42,9 +42,9 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
         binding.studiesRecyclerView.apply {
             setHasFixedSize(true)
             addItemDecoration(
-                DividerItemDecoration(
+                MaterialDividerItemDecoration(
                     requireContext(),
-                    DividerItemDecoration.VERTICAL
+                    MaterialDividerItemDecoration.VERTICAL
                 )
             )
             adapter = MaterialStudiesAdapter().apply {
