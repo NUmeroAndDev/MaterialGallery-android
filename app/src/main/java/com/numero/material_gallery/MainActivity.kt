@@ -29,7 +29,6 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
-
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
