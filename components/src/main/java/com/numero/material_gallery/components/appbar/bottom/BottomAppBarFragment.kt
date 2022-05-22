@@ -63,7 +63,7 @@ class BottomAppBarFragment : ComponentFragment(R.layout.fragment_bottom_app_bar)
 
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
-                padding()
+                padding(bottom = true)
             }
         }
     }

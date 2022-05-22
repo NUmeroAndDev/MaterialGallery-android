@@ -75,8 +75,15 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         view.setBackgroundColor(MaterialColors.getColor(view, android.R.attr.colorBackground))
         view.applyInsetter {
-            type(statusBars = true) {
-                padding()
+            type(
+                statusBars = true,
+                navigationBars = true,
+                displayCutout = true
+            ) {
+                padding(
+                    top = true,
+                    right = true
+                )
             }
         }
     }
