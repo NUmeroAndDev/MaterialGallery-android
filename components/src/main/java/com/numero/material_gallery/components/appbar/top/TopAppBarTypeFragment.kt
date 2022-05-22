@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentTopAppBarTypeBinding
 import com.numero.material_gallery.components.databinding.ViewHolderItemBinding
@@ -25,9 +25,9 @@ class TopAppBarTypeFragment : MaterialContainerTransformFragment(R.layout.fragme
         binding.toolbarTypeRecyclerView.apply {
             setHasFixedSize(true)
             addItemDecoration(
-                DividerItemDecoration(
+                MaterialDividerItemDecoration(
                     requireContext(),
-                    DividerItemDecoration.VERTICAL
+                    MaterialDividerItemDecoration.VERTICAL
                 )
             )
             adapter = TopAppBarTypeItemAdapter().apply {
