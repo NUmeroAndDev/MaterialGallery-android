@@ -32,6 +32,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        benchmark {
+            signingConfig signingConfigs.debug
+            matchingFallbacks = ['release']
+            debuggable false
+        }
     }
 
     buildFeatures {
@@ -88,6 +93,8 @@ dependencies {
 
     implementation libs.play.core
     implementation libs.play.ktx
+
+    implementation libs.androidx.profileinstaller
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.4.0'
