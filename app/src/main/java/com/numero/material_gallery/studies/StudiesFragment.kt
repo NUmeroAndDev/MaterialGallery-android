@@ -32,8 +32,15 @@ class StudiesFragment : Fragment(R.layout.fragment_studies) {
 
         initViews()
         binding.studiesRecyclerView.applyInsetter {
-            type(statusBars = true) {
-                padding()
+            type(
+                statusBars = true,
+                navigationBars = true,
+                displayCutout = true
+            ) {
+                padding(
+                    top = true,
+                    right = true
+                )
             }
         }
     }

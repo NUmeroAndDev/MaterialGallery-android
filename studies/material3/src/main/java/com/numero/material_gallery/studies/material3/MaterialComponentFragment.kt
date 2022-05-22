@@ -41,9 +41,14 @@ class MaterialComponentFragment : Fragment(R.layout.fragment_material3_component
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
 
+        binding.appbar.applyInsetter {
+            type(statusBars = true) {
+                padding(top = true)
+            }
+        }
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
-                padding()
+                padding(bottom = true)
             }
         }
 

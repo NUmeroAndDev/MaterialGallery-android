@@ -64,9 +64,14 @@ abstract class ComponentGalleryFragment(
         postponeEnterTransition()
         view.doOnPreDraw { startPostponedEnterTransition() }
 
+        binding.appbar.applyInsetter {
+            type(statusBars = true) {
+                padding(top = true)
+            }
+        }
         binding.scrollView.applyInsetter {
             type(navigationBars = true) {
-                padding()
+                padding(bottom = true)
             }
         }
 

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?android:attr/colorBackground"
-    android:fitsSystemWindows="true"
     android:theme="@style/Theme.Studies.Material3.DayNight"
     android:transitionName="@string/material3_transition_name">
 
@@ -13,7 +12,6 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true"
         app:liftOnScrollTargetViewId="@id/scrollView">
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -63,7 +61,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     app:navigationIcon="@drawable/ic_menu"
-                    app:paddingBottomSystemWindowInsets="false" />
+                    app:paddingBottomSystemWindowInsets="false"
+                    app:paddingLeftSystemWindowInsets="false"
+                    app:paddingRightSystemWindowInsets="false" />
 
             </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
