@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_material3">Material Design 3</string>
+
+    <string name="material3_transition_name">material_3</string>
+</resources>
