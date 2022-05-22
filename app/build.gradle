@@ -64,6 +64,7 @@ dependencies {
     implementation projects.studies.shrine
     implementation projects.studies.reply
     implementation projects.studies.material2
+    implementation projects.studies.material3
     implementation projects.components
     implementation projects.core
     implementation projects.resource

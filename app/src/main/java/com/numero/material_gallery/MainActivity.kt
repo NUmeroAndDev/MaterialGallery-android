@@ -44,7 +44,8 @@ class MainActivity : AppCompatActivity() {
         R.id.StudiesScreen,
         R.id.SettingsScreen,
 
-        R.id.MaterialComponentScreen,
+        R.id.Material2Screen,
+        R.id.Material3Screen,
         R.id.CraneScreen,
         R.id.ReplyScreen,
         R.id.ShrineScreen
@@ -56,11 +57,10 @@ class MainActivity : AppCompatActivity() {
         R.id.SettingsScreen
     )
 
-    private val studiesDestinationIds = setOf(
-        R.id.MaterialComponentScreen,
+    private val darkStatusBarDestinationIds = setOf(
+        R.id.Material2Screen,
         R.id.CraneScreen,
         R.id.ReplyScreen,
-        R.id.ShrineScreen
     )
 
     private lateinit var binding: ActivityMainBinding
@@ -97,10 +97,10 @@ class MainActivity : AppCompatActivity() {
             val isRootDestination = rootNavigationDestinationIds.contains(destination.id)
             binding.requireNavigationView.isVisible = isRootDestination
 
-            val isStudiesDestination = studiesDestinationIds.contains(destination.id)
+            val isDarkStatusBarDestination = darkStatusBarDestinationIds.contains(destination.id)
             val windowInsetController = WindowInsetsControllerCompat(window, window.decorView)
             windowInsetController.isAppearanceLightStatusBars =
-                !isStudiesDestination && !isDarkTheme
+                !isDarkStatusBarDestination && !isDarkTheme
         }
 
         configRepository.changedThemeEvent.onEach {

@@ -1,4 +1,4 @@
-package com.numero.material_gallery.studies.material2
+package com.numero.material_gallery.studies.material3
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -14,12 +14,12 @@ import com.google.android.material.transition.platform.Hold
 import com.google.android.material.transition.platform.MaterialContainerTransform
 import com.numero.material_gallery.core.applyFloatingActionButtonEdgeTreatment
 import com.numero.material_gallery.core.delegate.viewBinding
-import com.numero.material_gallery.studies.material2.databinding.FragmentMaterial2ComponentBinding
+import com.numero.material_gallery.studies.material3.databinding.FragmentMaterial3ComponentBinding
 import dev.chrisbanes.insetter.applyInsetter
 
-class MaterialComponentFragment : Fragment(R.layout.fragment_material2_component) {
+class MaterialComponentFragment : Fragment(R.layout.fragment_material3_component) {
 
-    private val binding by viewBinding { FragmentMaterial2ComponentBinding.bind(it) }
+    private val binding by viewBinding { FragmentMaterial3ComponentBinding.bind(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,7 +66,7 @@ class MaterialComponentFragment : Fragment(R.layout.fragment_material2_component
     }
 
     private fun showDialog() {
-        val wrappedContext = ContextThemeWrapper(requireContext(), R.style.Theme_Material2_DayNight)
+        val wrappedContext = ContextThemeWrapper(requireContext(), R.style.Theme_Material3_DayNight)
         MaterialAlertDialogBuilder(wrappedContext)
             .setTitle("Title")
             .setMessage("Message")
