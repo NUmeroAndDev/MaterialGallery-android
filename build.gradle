@@ -11,7 +11,7 @@ buildscript {
 
                 hilt      : "2.42",
 
-                material  : "1.7.0-alpha01",
+                material  : "1.7.0-alpha02",
         ]
 
         libs = [
