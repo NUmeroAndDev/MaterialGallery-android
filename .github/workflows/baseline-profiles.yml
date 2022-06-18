@@ -1,0 +1,58 @@
+name: baseline-profiles
+
+on: workflow_dispatch
+
+jobs:
+  generate-baseline-profiles:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: zulu
+          cache: gradle
+
+      - name: AVD cache
+        uses: actions/cache@v3
+        id: avd-cache
+        with:
+          path: |
+            ~/.android/avd/*
+            ~/.android/adb*
+          key: avd-30
+
+      - name: create AVD
+        if: steps.avd-cache.outputs.cache-hit != 'true'
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          arch: x86_64
+          target: default
+          force-avd-creation: false
+          script: echo "Generated AVD snapshot for caching."
+
+      - name: Generate baseline profile
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          arch: x86_64
+          target: default
+          force-avd-creation: false
+          script: |
+            adb root
+            adb uninstall com.numero.material_gallery || true
+            adb uninstall com.numero.material_gallery.benchmark || true
+            ./gradlew :benchmark::connectedCheck -P android.testInstrumentationRunnerArguments.class=com.numero.material_gallery.benchmark.BaselineProfileGenerator
+            adb pull "/sdcard/Android/media/com.numero.material_gallery.benchmark/additional_test_output/BaselineProfileGenerator_startup-baseline-prof.txt"
+            mv BaselineProfileGenerator_startup-baseline-prof.txt app/src/main/baseline-prof.txt
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Updated baseline profiles
+          title: Updated baseline profiles
+          body: ""
+          branch: update-baseline-profiles
