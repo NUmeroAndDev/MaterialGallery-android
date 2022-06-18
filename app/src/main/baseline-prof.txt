@@ -269,7 +269,6 @@ HSPLandroidx/appcompat/widget/FitWindowsLinearLayout;->fitSystemWindows(Landroid
 HSPLandroidx/appcompat/widget/ForwardingListener;-><init>(Landroid/view/View;)V
 HSPLandroidx/appcompat/widget/LinearLayoutCompat;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 HSPLandroidx/appcompat/widget/LinearLayoutCompat;->getVirtualChildCount()I
-HSPLandroidx/appcompat/widget/LinearLayoutCompat;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 HSPLandroidx/appcompat/widget/LinearLayoutCompat;->onLayout(ZIIII)V
 HSPLandroidx/appcompat/widget/LinearLayoutCompat;->onMeasure(II)V
 HSPLandroidx/appcompat/widget/LinearLayoutCompat;->setBaselineAligned(Z)V
