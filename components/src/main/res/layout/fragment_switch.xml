@@ -1,44 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:transitionName="@string/material_switch_transition_name">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/enableSwitch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Enable"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:switchPadding="8dp"
-        app:useMaterialThemeColors="true" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/disableCheckedSwitch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:checked="true"
-        android:enabled="false"
-        android:text="Disable"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enableSwitch"
-        app:switchPadding="8dp"
-        app:useMaterialThemeColors="true" />
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/enableSwitch"
+            style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable"
+            app:switchPadding="8dp" />
 
-    <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/disableNonCheckedCheckBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:enabled="false"
-        android:text="Disable"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/disableCheckedSwitch"
-        app:switchPadding="8dp"
-        app:useMaterialThemeColors="true" />
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/disableCheckedSwitch"
+            style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checked="true"
+            android:enabled="false"
+            android:text="Disable"
+            app:switchPadding="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/disableNonCheckedCheckBox"
+            style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:enabled="false"
+            android:text="Disable"
+            app:switchPadding="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Legacy"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Enable"
+            app:switchPadding="8dp"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:checked="true"
+            android:enabled="false"
+            android:text="Disable"
+            app:switchPadding="8dp"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:enabled="false"
+            android:text="Disable"
+            app:switchPadding="8dp"
+            app:useMaterialThemeColors="true" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
