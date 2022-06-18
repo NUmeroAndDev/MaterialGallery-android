@@ -36,7 +36,7 @@ buildscript {
                                 runtime: "androidx.lifecycle:lifecycle-runtime-ktx:$versions.lifecycle"
                         ],
 
-                        profileinstaller: "androidx.profileinstaller:profileinstaller:1.2.0-beta02"
+                        profileinstaller: "androidx.profileinstaller:profileinstaller:1.2.0-rc01"
                 ],
 
                 hilt      : [
