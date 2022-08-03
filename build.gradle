@@ -9,7 +9,7 @@ buildscript {
                 navigation: "2.5.0-beta01",
                 lifecycle : "2.4.1",
 
-                hilt      : "2.42",
+                hilt      : "2.43.2",
 
                 material  : "1.7.0-alpha02",
         ]
