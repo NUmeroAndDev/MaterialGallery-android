@@ -16,7 +16,7 @@ plugins {
     alias(libs.plugins.androidGradlePlugin) apply false
     alias(libs.plugins.kotlinPlugin) apply false
     alias(libs.plugins.hiltPlugin) apply false
-    id "com.diffplug.spotless" version "6.7.2"
+    id "com.diffplug.spotless" version "6.19.0"
 }
 
 subprojects {
