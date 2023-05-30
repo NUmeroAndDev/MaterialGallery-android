@@ -33,6 +33,13 @@ subprojects {
             ktlint("0.39.0").userData(["disabled_rules": "no-wildcard-imports"])
         }
     }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile)
+            .configureEach {
+                kotlinOptions {
+                    jvmTarget = JavaVersion.VERSION_11.toString()
+                }
+            }
 }
 
 //task clean(type: Delete) {
