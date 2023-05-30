@@ -50,7 +50,7 @@ jobs:
             mv BaselineProfileGenerator_startup-baseline-prof.txt app/src/main/baseline-prof.txt
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           commit-message: Updated baseline profiles
           title: Updated baseline profiles
