@@ -19,7 +19,7 @@ android {
         versionName rootProject.appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "MATERIAL_COMPONENTS_VERSION", "\"$versions.material\"")
+        buildConfigField("String", "MATERIAL_COMPONENTS_VERSION", "\"${libs.versions.material.get()}\"")
     }
 
     buildTypes {
@@ -71,7 +71,7 @@ dependencies {
     implementation projects.core
     implementation projects.resource
 
-    implementation libs.coroutines
+    implementation libs.coroutines.android
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.activity
@@ -80,22 +80,23 @@ dependencies {
     implementation libs.androidx.preference
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.core
-    implementation libs.androidx.coreSplash
+    implementation libs.androidx.core.splashscreen
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
     implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.lifecycle.viewmodel
 
     implementation libs.material
 
     implementation libs.insetter
 
-    implementation libs.hilt.android
-    kapt libs.hilt.compiler
+    implementation libs.dagger.hilt.android
+    kapt libs.dagger.hilt.android.compiler
 
     implementation libs.licenses
 
     implementation libs.play.core
-    implementation libs.play.ktx
+    implementation libs.play.core.ktx
 
     implementation libs.androidx.profileinstaller
 
