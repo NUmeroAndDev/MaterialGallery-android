@@ -4,6 +4,7 @@
     <string name="bottom_navigation_transition_name">bottom_navigation</string>
     <string name="bottom_sheet_transition_name">bottom_sheet</string>
     <string name="checkbox_transition_name">checkbox</string>
+    <string name="carousel_transition_name">carousel</string>
     <string name="chips_transition_name">chips</string>
     <string name="date_picker_transition_name">date_picker</string>
     <string name="divider_transition_name">divider</string>
