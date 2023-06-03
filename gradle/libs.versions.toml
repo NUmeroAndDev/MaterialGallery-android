@@ -7,7 +7,7 @@ androidxNavigation = "2.5.3"
 
 hilt = "2.46.1"
 
-material = "1.7.0-alpha02"
+material = "1.9.0"
 
 [libraries]
 coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
