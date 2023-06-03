@@ -46,7 +46,7 @@
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/primaryMiniFab"
-                        style="@style/Widget.Material3.FloatingActionButton.Primary"
+                        style="?attr/floatingActionButtonSmallPrimaryStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -113,7 +113,7 @@
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/primaryLargeFab"
-                        style="@style/Widget.Material3.FloatingActionButton.Large.Primary"
+                        style="?attr/floatingActionButtonLargePrimaryStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -158,7 +158,7 @@
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/secondaryMiniFab"
-                        style="@style/Widget.Material3.FloatingActionButton.Secondary"
+                        style="?attr/floatingActionButtonSmallSecondaryStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -225,7 +225,7 @@
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/secondaryLargeFab"
-                        style="@style/Widget.Material3.FloatingActionButton.Large.Secondary"
+                        style="?attr/floatingActionButtonLargeSecondaryStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -270,7 +270,7 @@
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/tertiaryMiniFab"
-                        style="@style/Widget.Material3.FloatingActionButton.Tertiary"
+                        style="?attr/floatingActionButtonSmallTertiaryStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -337,7 +337,7 @@
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/tertiaryLargeFab"
-                        style="@style/Widget.Material3.FloatingActionButton.Large.Tertiary"
+                        style="?attr/floatingActionButtonLargeTertiaryStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -382,7 +382,7 @@
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/surfaceMiniFab"
-                        style="@style/Widget.Material3.FloatingActionButton.Surface"
+                        style="?attr/floatingActionButtonSmallSurfaceStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -449,7 +449,7 @@
 
                     <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:id="@+id/surfaceLargeFab"
-                        style="@style/Widget.Material3.FloatingActionButton.Large.Surface"
+                        style="?attr/floatingActionButtonLargeSurfaceStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
