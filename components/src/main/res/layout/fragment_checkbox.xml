@@ -6,36 +6,207 @@
     android:padding="16dp"
     android:transitionName="@string/checkbox_transition_name">
 
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/enableCheckBox"
+    <LinearLayout
+        android:id="@+id/checkedCheckboxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/enableCheckedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Enable"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/disableCheckedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:enabled="false"
+            android:text="Disable"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/errorCheckedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:text="Error"
+            app:errorShown="true"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/errorDisabledCheckedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="true"
+            android:enabled="false"
+            android:text="Error\nDisabled"
+            app:errorShown="true"
+            app:useMaterialThemeColors="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nonCheckedCheckboxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/checkedCheckboxLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/enableNonCheckedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/disableNonCheckedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:enabled="false"
+            android:text="Disable"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/errorNonCheckedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Error"
+            app:errorShown="true"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/errorDisabledNonCheckedCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:enabled="false"
+            android:text="Error\nDisabled"
+            app:errorShown="true"
+            app:useMaterialThemeColors="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/indeterminateCheckboxLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@id/nonCheckedCheckboxLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/enableIndeterminateCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable"
+            app:checkedState="indeterminate"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/disableIndeterminateCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:enabled="false"
+            android:text="Disable"
+            app:checkedState="indeterminate"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/errorIndeterminateCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Error"
+            app:checkedState="indeterminate"
+            app:errorShown="true"
+            app:useMaterialThemeColors="true" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/errorDisabledIndeterminateCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:enabled="false"
+            android:text="Error\nDisabled"
+            app:checkedState="indeterminate"
+            app:errorShown="true"
+            app:useMaterialThemeColors="true" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/checkboxGroupTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Enable"
+        android:layout_marginTop="32dp"
+        android:text="Checkbox group"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:useMaterialThemeColors="true" />
+        app:layout_constraintTop_toBottomOf="@id/checkedCheckboxLayout" />
 
     <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/disableCheckedCheckBox"
-        android:layout_width="0dp"
+        android:id="@+id/parentCheckbox"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:checked="true"
-        android:enabled="false"
-        android:text="Disable"
+        android:text="Select All"
+        app:checkedState="indeterminate"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enableCheckBox"
-        app:useMaterialThemeColors="true" />
+        app:layout_constraintTop_toBottomOf="@id/checkboxGroupTextView" />
 
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/disableNonCheckedCheckBox"
+    <LinearLayout
+        android:id="@+id/checkbox_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:enabled="false"
-        android:text="Disable"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/disableCheckedCheckBox"
-        app:useMaterialThemeColors="true" />
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/parentCheckbox"
+        app:layout_constraintStart_toStartOf="@id/parentCheckbox"
+        app:layout_constraintTop_toBottomOf="@id/parentCheckbox">
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/child1Checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Child 1" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/child2Checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Child 2" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/child3Checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Child 3" />
+
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/child4Checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Child 4" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
