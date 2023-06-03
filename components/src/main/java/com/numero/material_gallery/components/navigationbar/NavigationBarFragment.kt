@@ -2,12 +2,12 @@ package com.numero.material_gallery.components.navigationbar
 
 import android.os.Bundle
 import android.view.View
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentNavigationBarBinding
 import com.numero.material_gallery.core.delegate.viewBinding
-import dev.chrisbanes.insetter.applyInsetter
 
 class NavigationBarFragment : ComponentFragment(R.layout.fragment_navigation_bar) {
 
@@ -16,11 +16,6 @@ class NavigationBarFragment : ComponentFragment(R.layout.fragment_navigation_bar
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
-        binding.scrollView.applyInsetter {
-            type(navigationBars = true) {
-                padding()
-            }
-        }
     }
 
     private fun initViews() {
@@ -44,6 +39,16 @@ class NavigationBarFragment : ComponentFragment(R.layout.fragment_navigation_bar
             }
             getOrCreateBadge(R.id.navigation_item_3).apply {
                 number = 1000
+            }
+        }
+
+        binding.labelVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
+            binding.bottomNavigation.labelVisibilityMode = when (id) {
+                R.id.labelVisibilityAutoRadioButton -> BottomNavigationView.LABEL_VISIBILITY_AUTO
+                R.id.labelVisibilitySelectedRadioButton -> BottomNavigationView.LABEL_VISIBILITY_SELECTED
+                R.id.labelVisibilityLabeledRadioButton -> BottomNavigationView.LABEL_VISIBILITY_LABELED
+                R.id.labelVisibilityUnlabeledRadioButton -> BottomNavigationView.LABEL_VISIBILITY_UNLABELED
+                else -> throw Exception("Not defined id")
             }
         }
     }
