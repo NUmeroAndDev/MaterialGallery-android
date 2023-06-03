@@ -39,17 +39,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="16dp"
         app:behavior_hideable="true"
         app:behavior_peekHeight="96dp"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:id="@+id/drag_handle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:paddingStart="16dp"
-            android:paddingTop="32dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="32dp"
+            android:layout_marginTop="16dp"
             android:text="This is bottom sheet."
             android:textColor="?attr/colorOnSurface"
             android:textSize="16sp" />
