@@ -48,6 +48,7 @@ class ComponentItemViewHolder(
             MaterialComponent.NAVIGATION_BAR -> R.string.bottom_navigation_transition_name
             MaterialComponent.BOTTOM_APP_BAR -> R.string.bottom_app_bar_transition_name
             MaterialComponent.BOTTOM_SHEET -> R.string.bottom_sheet_transition_name
+            MaterialComponent.Carousel -> R.string.carousel_transition_name
             MaterialComponent.CHECKBOX -> R.string.checkbox_transition_name
             MaterialComponent.CHIPS -> R.string.chips_transition_name
             MaterialComponent.DATE_PICKER -> R.string.date_picker_transition_name

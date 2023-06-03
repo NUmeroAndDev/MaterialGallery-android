@@ -18,6 +18,10 @@ enum class MaterialComponent(
         R.string.bottom_sheet
     ),
 
+    Carousel(
+        R.string.carousel
+    ),
+
     CHECKBOX(
         R.string.checkbox
     ),

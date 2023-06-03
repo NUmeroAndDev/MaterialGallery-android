@@ -3,6 +3,7 @@
     <string name="bottom_app_bar">Bottom App Bar</string>
     <string name="bottom_navigation">Navigation Bar(Bottom Navigation)</string>
     <string name="bottom_sheet">Bottom Sheet</string>
+    <string name="carousel">Carousel</string>
     <string name="checkbox">Checkbox</string>
     <string name="chips">Chips</string>
     <string name="date_picker">Date Picker</string>

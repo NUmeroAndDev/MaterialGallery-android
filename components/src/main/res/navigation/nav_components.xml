@@ -20,6 +20,9 @@
             android:id="@+id/action_ComponentList_to_BottomSheet"
             app:destination="@id/BottomSheetScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_Carousel"
+            app:destination="@id/CarouselScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_Chip"
             app:destination="@id/ChipScreen" />
         <action
@@ -110,6 +113,12 @@
         android:name="com.numero.material_gallery.components.sheet.BottomSheetFragment"
         android:label="@string/bottom_sheet"
         tools:layout="@layout/fragment_bottom_sheet" />
+
+    <fragment
+        android:id="@+id/CarouselScreen"
+        android:name="com.numero.material_gallery.components.carousel.CarouselFragment"
+        android:label="@string/carousel"
+        tools:layout="@layout/fragment_carousel" />
 
     <fragment
         android:id="@+id/ChipScreen"
