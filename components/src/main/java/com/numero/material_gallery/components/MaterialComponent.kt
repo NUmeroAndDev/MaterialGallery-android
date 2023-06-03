@@ -10,10 +10,6 @@ enum class MaterialComponent(
 //            R.string.backdrop
 //    ),
 
-    BOTTOM_NAVIGATION(
-        R.string.bottom_navigation
-    ),
-
     BOTTOM_APP_BAR(
         R.string.bottom_app_bar
     ),
@@ -72,6 +68,10 @@ enum class MaterialComponent(
 
     MODAL_BOTTOM_SHEET(
         R.string.modal_bottom_sheet
+    ),
+
+    NAVIGATION_BAR(
+        R.string.bottom_navigation
     ),
 
     NAVIGATION_DRAWER(

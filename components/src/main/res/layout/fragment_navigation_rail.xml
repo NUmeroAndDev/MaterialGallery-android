@@ -28,7 +28,7 @@
                 android:id="@+id/labelVisibilityTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Label visibility mode"
+                android:text="Label visibility"
                 android:textAppearance="?attr/textAppearanceSubtitle2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
