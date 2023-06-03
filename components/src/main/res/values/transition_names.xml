@@ -21,6 +21,7 @@
     <string name="navigation_rail_transition_name">navigation_rail</string>
     <string name="progress_indicator_transition_name">progress_indicator</string>
     <string name="radio_button_transition_name">radio_button</string>
+    <string name="side_sheet_transition_name">side_sheet</string>
     <string name="slider_transition_name">slider</string>
     <string name="snackbar_transition_name">snackbar</string>
     <string name="material_switch_transition_name">switch</string>

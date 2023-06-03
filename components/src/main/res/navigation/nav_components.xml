@@ -77,6 +77,9 @@
             android:id="@+id/action_ComponentList_to_Switch"
             app:destination="@id/SwitchScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_SideSheet"
+            app:destination="@id/SideSheetScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_Slider"
             app:destination="@id/SliderScreen" />
         <action
@@ -227,6 +230,12 @@
         android:name="com.numero.material_gallery.components.selection.SwitchFragment"
         android:label="@string/material_switch"
         tools:layout="@layout/fragment_switch" />
+
+    <fragment
+        android:id="@+id/SideSheetScreen"
+        android:name="com.numero.material_gallery.components.sheet.side.SideSheetFragment"
+        android:label="@string/side_sheet"
+        tools:layout="@layout/fragment_side_sheet" />
 
     <fragment
         android:id="@+id/SliderScreen"
