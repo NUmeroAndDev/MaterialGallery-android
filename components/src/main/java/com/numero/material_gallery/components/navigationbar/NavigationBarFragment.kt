@@ -1,17 +1,17 @@
-package com.numero.material_gallery.components.bottomnavigation
+package com.numero.material_gallery.components.navigationbar
 
 import android.os.Bundle
 import android.view.View
 import com.google.android.material.navigation.NavigationBarView
 import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
-import com.numero.material_gallery.components.databinding.FragmentBottomNavigationBinding
+import com.numero.material_gallery.components.databinding.FragmentNavigationBarBinding
 import com.numero.material_gallery.core.delegate.viewBinding
 import dev.chrisbanes.insetter.applyInsetter
 
-class BottomNavigationFragment : ComponentFragment(R.layout.fragment_bottom_navigation) {
+class NavigationBarFragment : ComponentFragment(R.layout.fragment_navigation_bar) {
 
-    private val binding by viewBinding { FragmentBottomNavigationBinding.bind(it) }
+    private val binding by viewBinding { FragmentNavigationBarBinding.bind(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

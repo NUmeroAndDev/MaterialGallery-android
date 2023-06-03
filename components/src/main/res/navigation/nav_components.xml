@@ -101,9 +101,9 @@
 
     <fragment
         android:id="@+id/BottomNavigationScreen"
-        android:name="com.numero.material_gallery.components.bottomnavigation.BottomNavigationFragment"
+        android:name="com.numero.material_gallery.components.navigationbar.NavigationBarFragment"
         android:label="@string/bottom_navigation"
-        tools:layout="@layout/fragment_bottom_navigation" />
+        tools:layout="@layout/fragment_navigation_bar" />
 
     <fragment
         android:id="@+id/BottomSheetScreen"
