@@ -45,6 +45,7 @@ class ComponentItemViewHolder(
     private val MaterialComponent.transitionNameStringRes: Int
         @StringRes
         get() = when (this) {
+            MaterialComponent.BADGE -> R.string.badge_transition_name
             MaterialComponent.NAVIGATION_BAR -> R.string.bottom_navigation_transition_name
             MaterialComponent.BOTTOM_APP_BAR -> R.string.bottom_app_bar_transition_name
             MaterialComponent.BOTTOM_SHEET -> R.string.bottom_sheet_transition_name

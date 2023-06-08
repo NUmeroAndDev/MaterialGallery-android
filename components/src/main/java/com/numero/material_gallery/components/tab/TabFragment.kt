@@ -25,31 +25,10 @@ class TabFragment : ComponentFragment(R.layout.fragment_tab) {
     }
 
     private fun setupTab() {
-        binding.withBadgeTabLayout.getTabAt(0)?.apply {
-            orCreateBadge
-        }
-        binding.withBadgeTabLayout.getTabAt(1)?.apply {
-            orCreateBadge.apply {
-                number = 10
-            }
-        }
-        binding.withBadgeTabLayout.getTabAt(2)?.apply {
-            orCreateBadge.apply {
-                number = 1000
-            }
-        }
-        binding.withBadgeTabLayout.getTabAt(3)?.apply {
-            orCreateBadge.apply {
-                maxCharacterCount = 5
-                number = 5000
-            }
-        }
-
         val tabs = listOf(
             binding.defaultTab,
             binding.onSurfaceTab,
             binding.secondaryTab,
-            binding.withBadgeTabLayout,
         )
         binding.indicatorAnimationToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
             if (!isChecked) return@addOnButtonCheckedListener

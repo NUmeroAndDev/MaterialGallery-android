@@ -1,5 +1,5 @@
 <resources>
-    <string name="backdrop">Backdrop</string>
+    <string name="badge">Badge</string>
     <string name="bottom_app_bar">Bottom App Bar</string>
     <string name="bottom_navigation">Navigation Bar(Bottom Navigation)</string>
     <string name="bottom_sheet">Bottom Sheet</string>

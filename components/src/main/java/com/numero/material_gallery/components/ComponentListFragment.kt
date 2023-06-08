@@ -69,6 +69,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
     private val MaterialComponent.navigationId: Int
         get() = when (this) {
+            MaterialComponent.BADGE -> R.id.action_ComponentList_to_Badge
             MaterialComponent.NAVIGATION_BAR -> R.id.action_ComponentList_to_BottomNavigation
             MaterialComponent.BOTTOM_APP_BAR -> R.id.action_ComponentList_to_BottomAppBar
             MaterialComponent.BOTTOM_SHEET -> R.id.action_ComponentList_to_BottomSheet

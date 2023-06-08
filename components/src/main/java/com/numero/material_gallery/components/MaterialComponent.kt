@@ -6,9 +6,9 @@ enum class MaterialComponent(
     @StringRes val titleRes: Int
 ) {
 
-//    BACKDROP(
-//            R.string.backdrop
-//    ),
+    BADGE(
+        R.string.badge
+    ),
 
     BOTTOM_APP_BAR(
         R.string.bottom_app_bar
