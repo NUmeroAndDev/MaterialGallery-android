@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="badge_transition_name">badge</string>
     <string name="bottom_app_bar_transition_name">bottom_app_bar</string>
     <string name="bottom_navigation_transition_name">bottom_navigation</string>
     <string name="bottom_sheet_transition_name">bottom_sheet</string>

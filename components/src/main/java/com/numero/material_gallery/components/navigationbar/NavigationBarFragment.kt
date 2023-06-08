@@ -32,16 +32,6 @@ class NavigationBarFragment : ComponentFragment(R.layout.fragment_navigation_bar
             updateBottomNavigationItemCount(MenuItemAction.ADD)
         }
 
-        binding.withBadgeBottomNavigation.apply {
-            getOrCreateBadge(R.id.navigation_item_1)
-            getOrCreateBadge(R.id.navigation_item_2).apply {
-                number = 10
-            }
-            getOrCreateBadge(R.id.navigation_item_3).apply {
-                number = 1000
-            }
-        }
-
         binding.labelVisibilityRadioGroup.setOnCheckedChangeListener { _, id ->
             binding.bottomNavigation.labelVisibilityMode = when (id) {
                 R.id.labelVisibilityAutoRadioButton -> BottomNavigationView.LABEL_VISIBILITY_AUTO
@@ -61,6 +51,7 @@ class NavigationBarFragment : ComponentFragment(R.layout.fragment_navigation_bar
                 binding.removeItemButton.isEnabled = true
                 binding.addItemButton.isEnabled = currentItemCount + 1 < MAX_ITEM_COUNT
             }
+
             MenuItemAction.REMOVE -> {
                 binding.bottomNavigation.setVisibleItem(currentItemCount - 1, false)
                 binding.removeItemButton.isEnabled = currentItemCount - 1 > MIN_ITEM_COUNT

@@ -98,24 +98,6 @@
 
             </LinearLayout>
 
-            <!--  TODO:Move Badge component screen  -->
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="64dp"
-                android:layout_marginEnd="16dp"
-                android:text="with badge"
-                android:textAppearance="?attr/textAppearanceTitleMedium" />
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/withBadgeBottomNavigation"
-                style="@style/Widget.Material3.BottomNavigationView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:menu="@menu/bottom_navigation" />
-
         </LinearLayout>
 
     </ScrollView>

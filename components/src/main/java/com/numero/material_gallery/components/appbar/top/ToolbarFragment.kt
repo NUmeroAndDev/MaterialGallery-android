@@ -3,8 +3,6 @@ package com.numero.material_gallery.components.appbar.top
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import com.google.android.material.badge.BadgeDrawable
-import com.google.android.material.badge.BadgeUtils
 import com.numero.material_gallery.components.ComponentFragment
 import com.numero.material_gallery.components.R
 import com.numero.material_gallery.components.databinding.FragmentToolbarBinding
@@ -29,9 +27,6 @@ class ToolbarFragment : ComponentFragment(R.layout.fragment_toolbar) {
         )
         toolbarList.forEach { toolbar ->
             toolbar.inflateMenu(R.menu.menu_action_bar)
-
-            val badge = BadgeDrawable.create(requireContext())
-            BadgeUtils.attachBadgeDrawable(badge, toolbar, R.id.action_info)
         }
 
         binding.centerTitleSwitch.setOnCheckedChangeListener { _, isChecked ->

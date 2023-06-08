@@ -11,6 +11,9 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_component_list">
         <action
+            android:id="@+id/action_ComponentList_to_Badge"
+            app:destination="@id/BadgeScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_BottomAppBar"
             app:destination="@id/BottomAppBarScreen" />
         <action
@@ -98,6 +101,12 @@
             android:id="@+id/action_ComponentList_to_TopAppBar"
             app:destination="@id/TopAppBarTypeScreen" />
     </fragment>
+
+    <fragment
+        android:id="@+id/BadgeScreen"
+        android:name="com.numero.material_gallery.components.badge.BadgeFragment"
+        android:label="@string/badge"
+        tools:layout="@layout/fragment_badge" />
 
     <fragment
         android:id="@+id/BottomAppBarScreen"
