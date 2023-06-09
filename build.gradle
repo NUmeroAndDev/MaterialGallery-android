@@ -16,24 +16,9 @@ plugins {
     alias(libs.plugins.androidGradlePlugin) apply false
     alias(libs.plugins.kotlinPlugin) apply false
     alias(libs.plugins.hiltPlugin) apply false
-    id "com.diffplug.spotless" version "6.7.2"
 }
 
 subprojects {
-    // spotless
-    apply plugin: "com.diffplug.spotless"
-    spotless {
-        kotlin {
-            target("**/*.kt")
-            targetExclude("$buildDir/**/*.kt")
-            targetExclude("bin/**/*.kt")
-
-            ratchetFrom("origin/develop")
-
-            ktlint("0.39.0").userData(["disabled_rules": "no-wildcard-imports"])
-        }
-    }
-
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile)
             .configureEach {
                 kotlinOptions {
@@ -41,10 +26,6 @@ subprojects {
                 }
             }
 }
-
-//task clean(type: Delete) {
-//    delete rootProject.buildDir
-//}
 
 enum VersionSuffix {
     ALPHA(0, "alpha"), BETA(1, "beta"), PRODUCT(9, "")
