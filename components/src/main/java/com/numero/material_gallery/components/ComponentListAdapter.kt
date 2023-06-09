@@ -67,6 +67,7 @@ class ComponentItemViewHolder(
             MaterialComponent.NAVIGATION_RAIL -> R.string.navigation_rail_transition_name
             MaterialComponent.PROGRESS_INDICATOR -> R.string.progress_indicator_transition_name
             MaterialComponent.RADIO_BUTTON -> R.string.radio_button_transition_name
+            MaterialComponent.SEARCH_BAR -> R.string.search_bar_transition_name
             MaterialComponent.SIDE_SHEET -> R.string.side_sheet_transition_name
             MaterialComponent.SLIDER -> R.string.slider_transition_name
             MaterialComponent.SNACKBAR -> R.string.snackbar_transition_name

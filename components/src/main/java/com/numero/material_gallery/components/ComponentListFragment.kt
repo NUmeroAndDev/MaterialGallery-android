@@ -91,6 +91,7 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
             MaterialComponent.NAVIGATION_RAIL -> R.id.action_ComponentList_to_NavigationRail
             MaterialComponent.PROGRESS_INDICATOR -> R.id.action_ComponentList_to_ProgressIndicator
             MaterialComponent.RADIO_BUTTON -> R.id.action_ComponentList_to_RadioButton
+            MaterialComponent.SEARCH_BAR -> R.id.action_ComponentList_to_SearchBar
             MaterialComponent.SIDE_SHEET -> R.id.action_ComponentList_to_SideSheet
             MaterialComponent.SLIDER -> R.id.action_ComponentList_to_Slider
             MaterialComponent.SNACKBAR -> R.id.action_ComponentList_to_Snackbar
