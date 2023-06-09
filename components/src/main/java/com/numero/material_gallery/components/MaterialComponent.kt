@@ -94,6 +94,10 @@ enum class MaterialComponent(
         R.string.radio_button
     ),
 
+    SEARCH_BAR(
+        R.string.search_bar
+    ),
+
     SIDE_SHEET(
         R.string.side_sheet
     ),
