@@ -45,9 +45,11 @@ class ComponentItemViewHolder(
     private val MaterialComponent.transitionNameStringRes: Int
         @StringRes
         get() = when (this) {
-            MaterialComponent.BOTTOM_NAVIGATION -> R.string.bottom_navigation_transition_name
+            MaterialComponent.BADGE -> R.string.badge_transition_name
+            MaterialComponent.NAVIGATION_BAR -> R.string.bottom_navigation_transition_name
             MaterialComponent.BOTTOM_APP_BAR -> R.string.bottom_app_bar_transition_name
             MaterialComponent.BOTTOM_SHEET -> R.string.bottom_sheet_transition_name
+            MaterialComponent.Carousel -> R.string.carousel_transition_name
             MaterialComponent.CHECKBOX -> R.string.checkbox_transition_name
             MaterialComponent.CHIPS -> R.string.chips_transition_name
             MaterialComponent.DATE_PICKER -> R.string.date_picker_transition_name
@@ -65,6 +67,8 @@ class ComponentItemViewHolder(
             MaterialComponent.NAVIGATION_RAIL -> R.string.navigation_rail_transition_name
             MaterialComponent.PROGRESS_INDICATOR -> R.string.progress_indicator_transition_name
             MaterialComponent.RADIO_BUTTON -> R.string.radio_button_transition_name
+            MaterialComponent.SEARCH_BAR -> R.string.search_bar_transition_name
+            MaterialComponent.SIDE_SHEET -> R.string.side_sheet_transition_name
             MaterialComponent.SLIDER -> R.string.slider_transition_name
             MaterialComponent.SNACKBAR -> R.string.snackbar_transition_name
             MaterialComponent.SWITCH -> R.string.material_switch_transition_name

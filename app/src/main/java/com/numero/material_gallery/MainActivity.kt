@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
 
     private val hideAppBarDestinationIds = setOf(
         R.id.NavigationDrawerScreen,
+        R.id.SearchBarScreen,
         R.id.CollapsingScreen,
         R.id.ComponentListScreen,
         R.id.StudiesScreen,

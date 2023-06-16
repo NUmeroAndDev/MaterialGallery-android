@@ -4,44 +4,36 @@
     android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:transitionName="@string/navigation_rail_transition_name">
+    android:orientation="vertical"
+    android:transitionName="@string/bottom_navigation_transition_name">
 
-    <com.google.android.material.navigationrail.NavigationRailView
-        android:id="@+id/navigationRailView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:headerLayout="@layout/navigation_rail_header"
-        app:menu="@menu/menu_navigation_rail" />
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingVertical="16dp">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/labelVisibilityTextView"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text="Label visibility"
-                android:textAppearance="?attr/textAppearanceSubtitle2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textAppearance="?attr/textAppearanceTitleMedium" />
 
             <RadioGroup
                 android:id="@+id/labelVisibilityRadioGroup"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                android:checkedButton="@id/labelVisibilityAutoRadioButton"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/labelVisibilityTextView">
+                android:checkedButton="@id/labelVisibilityAutoRadioButton">
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/labelVisibilityAutoRadioButton"
@@ -81,8 +73,40 @@
 
             </RadioGroup>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-    </androidx.core.widget.NestedScrollView>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/removeItemButton"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:enabled="false"
+                    android:text="Remove Item" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addItemButton"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Item" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        style="@style/Widget.Material3.BottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation" />
 
 </LinearLayout>

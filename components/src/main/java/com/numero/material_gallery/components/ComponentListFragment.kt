@@ -69,9 +69,11 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
 
     private val MaterialComponent.navigationId: Int
         get() = when (this) {
-            MaterialComponent.BOTTOM_NAVIGATION -> R.id.action_ComponentList_to_BottomNavigation
+            MaterialComponent.BADGE -> R.id.action_ComponentList_to_Badge
+            MaterialComponent.NAVIGATION_BAR -> R.id.action_ComponentList_to_BottomNavigation
             MaterialComponent.BOTTOM_APP_BAR -> R.id.action_ComponentList_to_BottomAppBar
             MaterialComponent.BOTTOM_SHEET -> R.id.action_ComponentList_to_BottomSheet
+            MaterialComponent.Carousel -> R.id.action_ComponentList_to_Carousel
             MaterialComponent.CHECKBOX -> R.id.action_ComponentList_to_Checkbox
             MaterialComponent.CHIPS -> R.id.action_ComponentList_to_Chip
             MaterialComponent.DATE_PICKER -> R.id.action_ComponentList_to_DatePicker
@@ -89,6 +91,8 @@ class ComponentListFragment : Fragment(R.layout.fragment_component_list) {
             MaterialComponent.NAVIGATION_RAIL -> R.id.action_ComponentList_to_NavigationRail
             MaterialComponent.PROGRESS_INDICATOR -> R.id.action_ComponentList_to_ProgressIndicator
             MaterialComponent.RADIO_BUTTON -> R.id.action_ComponentList_to_RadioButton
+            MaterialComponent.SEARCH_BAR -> R.id.action_ComponentList_to_SearchBar
+            MaterialComponent.SIDE_SHEET -> R.id.action_ComponentList_to_SideSheet
             MaterialComponent.SLIDER -> R.id.action_ComponentList_to_Slider
             MaterialComponent.SNACKBAR -> R.id.action_ComponentList_to_Snackbar
             MaterialComponent.SWITCH -> R.id.action_ComponentList_to_Switch

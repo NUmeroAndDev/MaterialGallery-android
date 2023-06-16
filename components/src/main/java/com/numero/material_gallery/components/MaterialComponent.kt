@@ -6,12 +6,8 @@ enum class MaterialComponent(
     @StringRes val titleRes: Int
 ) {
 
-//    BACKDROP(
-//            R.string.backdrop
-//    ),
-
-    BOTTOM_NAVIGATION(
-        R.string.bottom_navigation
+    BADGE(
+        R.string.badge
     ),
 
     BOTTOM_APP_BAR(
@@ -20,6 +16,10 @@ enum class MaterialComponent(
 
     BOTTOM_SHEET(
         R.string.bottom_sheet
+    ),
+
+    Carousel(
+        R.string.carousel
     ),
 
     CHECKBOX(
@@ -74,6 +74,10 @@ enum class MaterialComponent(
         R.string.modal_bottom_sheet
     ),
 
+    NAVIGATION_BAR(
+        R.string.bottom_navigation
+    ),
+
     NAVIGATION_DRAWER(
         R.string.navigation_drawer
     ),
@@ -88,6 +92,14 @@ enum class MaterialComponent(
 
     RADIO_BUTTON(
         R.string.radio_button
+    ),
+
+    SEARCH_BAR(
+        R.string.search_bar
+    ),
+
+    SIDE_SHEET(
+        R.string.side_sheet
     ),
 
     SLIDER(

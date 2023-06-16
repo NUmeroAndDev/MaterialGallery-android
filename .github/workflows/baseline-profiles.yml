@@ -1,0 +1,33 @@
+name: baseline-profiles
+
+on: workflow_dispatch
+
+jobs:
+  generate-baseline-profiles:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: zulu
+          cache: gradle
+
+      - name: Generate baseline profile
+        run: |
+          ./gradlew :benchmark:cleanManagedDevices --unused-only
+          ./gradlew :benchmark:pixel2Api31BenchmarkAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect" -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.enabledRules=BaselineProfile
+          mv benchmark/build/outputs/managed_device_android_test_additional_output/pixel2Api31/BaselineProfileGenerator_startup-baseline-prof.txt app/src/main/baseline-prof.txt
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: Updated baseline profiles
+          title: Updated baseline profiles
+          body: ""
+          branch: update-baseline-profiles

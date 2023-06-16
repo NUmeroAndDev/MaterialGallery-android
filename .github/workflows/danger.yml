@@ -20,7 +20,7 @@ jobs:
       - name: Setup Ruby
         uses: actions/setup-ruby@v1.1.3
         with:
-          ruby-version: '2.6'
+          ruby-version: 3.0
 
       - name: Install bundler
         run: bundle install

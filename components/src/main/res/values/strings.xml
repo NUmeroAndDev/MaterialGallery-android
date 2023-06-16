@@ -1,8 +1,9 @@
 <resources>
-    <string name="backdrop">Backdrop</string>
+    <string name="badge">Badge</string>
     <string name="bottom_app_bar">Bottom App Bar</string>
-    <string name="bottom_navigation">Bottom Navigation</string>
+    <string name="bottom_navigation">Navigation Bar(Bottom Navigation)</string>
     <string name="bottom_sheet">Bottom Sheet</string>
+    <string name="carousel">Carousel</string>
     <string name="checkbox">Checkbox</string>
     <string name="chips">Chips</string>
     <string name="date_picker">Date Picker</string>
@@ -20,6 +21,8 @@
     <string name="navigation_rail">Navigation Rail</string>
     <string name="progress_indicator">Progress Indicator</string>
     <string name="radio_button">Radio Button</string>
+    <string name="search_bar">Search Bar</string>
+    <string name="side_sheet">Side Sheet</string>
     <string name="slider">Slider</string>
     <string name="snackbar">Snackbar</string>
     <string name="material_switch">Switch</string>

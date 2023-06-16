@@ -19,7 +19,7 @@ android {
         versionName rootProject.appVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "MATERIAL_COMPONENTS_VERSION", "\"$versions.material\"")
+        buildConfigField("String", "MATERIAL_COMPONENTS_VERSION", "\"${libs.versions.material.get()}\"")
     }
 
     buildTypes {
@@ -33,6 +33,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         benchmark {
+            initWith buildTypes.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-benchmark.pro'
             signingConfig signingConfigs.debug
             matchingFallbacks = ['release']
             debuggable false
@@ -44,12 +46,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
@@ -69,7 +67,7 @@ dependencies {
     implementation projects.core
     implementation projects.resource
 
-    implementation libs.coroutines
+    implementation libs.coroutines.android
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.activity
@@ -78,26 +76,27 @@ dependencies {
     implementation libs.androidx.preference
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.core
-    implementation libs.androidx.coreSplash
+    implementation libs.androidx.core.splashscreen
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
     implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.lifecycle.viewmodel
 
     implementation libs.material
 
     implementation libs.insetter
 
-    implementation libs.hilt.android
-    kapt libs.hilt.compiler
+    implementation libs.dagger.hilt.android
+    kapt libs.dagger.hilt.android.compiler
 
     implementation libs.licenses
 
     implementation libs.play.core
-    implementation libs.play.ktx
+    implementation libs.play.core.ktx
 
     implementation libs.androidx.profileinstaller
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test:runner:1.4.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

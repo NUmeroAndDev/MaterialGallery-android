@@ -443,11 +443,11 @@
                 android:layout_marginTop="32dp"
                 android:text="Switch" />
 
-            <com.google.android.material.switchmaterial.SwitchMaterial
+            <com.google.android.material.materialswitch.MaterialSwitch
+                style="@style/Widget.Material3.CompoundButton.MaterialSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:useMaterialThemeColors="true" />
+                android:layout_marginTop="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"

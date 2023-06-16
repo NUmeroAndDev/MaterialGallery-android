@@ -11,6 +11,9 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_component_list">
         <action
+            android:id="@+id/action_ComponentList_to_Badge"
+            app:destination="@id/BadgeScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_BottomAppBar"
             app:destination="@id/BottomAppBarScreen" />
         <action
@@ -19,6 +22,9 @@
         <action
             android:id="@+id/action_ComponentList_to_BottomSheet"
             app:destination="@id/BottomSheetScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_Carousel"
+            app:destination="@id/CarouselScreen" />
         <action
             android:id="@+id/action_ComponentList_to_Chip"
             app:destination="@id/ChipScreen" />
@@ -71,8 +77,14 @@
             android:id="@+id/action_ComponentList_to_ModalBottomSheet"
             app:destination="@id/ModalBottomSheetScreen" />
         <action
+            android:id="@+id/action_ComponentList_to_SearchBar"
+            app:destination="@id/SearchBarScreen" />
+        <action
             android:id="@+id/action_ComponentList_to_Switch"
             app:destination="@id/SwitchScreen" />
+        <action
+            android:id="@+id/action_ComponentList_to_SideSheet"
+            app:destination="@id/SideSheetScreen" />
         <action
             android:id="@+id/action_ComponentList_to_Slider"
             app:destination="@id/SliderScreen" />
@@ -94,6 +106,12 @@
     </fragment>
 
     <fragment
+        android:id="@+id/BadgeScreen"
+        android:name="com.numero.material_gallery.components.badge.BadgeFragment"
+        android:label="@string/badge"
+        tools:layout="@layout/fragment_badge" />
+
+    <fragment
         android:id="@+id/BottomAppBarScreen"
         android:name="com.numero.material_gallery.components.appbar.bottom.BottomAppBarFragment"
         android:label="@string/bottom_app_bar"
@@ -101,15 +119,21 @@
 
     <fragment
         android:id="@+id/BottomNavigationScreen"
-        android:name="com.numero.material_gallery.components.bottomnavigation.BottomNavigationFragment"
+        android:name="com.numero.material_gallery.components.navigationbar.NavigationBarFragment"
         android:label="@string/bottom_navigation"
-        tools:layout="@layout/fragment_bottom_navigation" />
+        tools:layout="@layout/fragment_navigation_bar" />
 
     <fragment
         android:id="@+id/BottomSheetScreen"
         android:name="com.numero.material_gallery.components.sheet.BottomSheetFragment"
         android:label="@string/bottom_sheet"
         tools:layout="@layout/fragment_bottom_sheet" />
+
+    <fragment
+        android:id="@+id/CarouselScreen"
+        android:name="com.numero.material_gallery.components.carousel.CarouselFragment"
+        android:label="@string/carousel"
+        tools:layout="@layout/fragment_carousel" />
 
     <fragment
         android:id="@+id/ChipScreen"
@@ -214,10 +238,22 @@
         tools:layout="@layout/fragment_modal_bottom_sheet" />
 
     <fragment
+        android:id="@+id/SearchBarScreen"
+        android:name="com.numero.material_gallery.components.searchbar.SearchBarFragment"
+        android:label="@string/search_bar"
+        tools:layout="@layout/fragment_search_bar" />
+
+    <fragment
         android:id="@+id/SwitchScreen"
         android:name="com.numero.material_gallery.components.selection.SwitchFragment"
         android:label="@string/material_switch"
         tools:layout="@layout/fragment_switch" />
+
+    <fragment
+        android:id="@+id/SideSheetScreen"
+        android:name="com.numero.material_gallery.components.sheet.side.SideSheetFragment"
+        android:label="@string/side_sheet"
+        tools:layout="@layout/fragment_side_sheet" />
 
     <fragment
         android:id="@+id/SliderScreen"
