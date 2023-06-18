@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.ContextThemeWrapper
 import android.view.View
-import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -38,9 +37,6 @@ class MaterialComponentFragment : Fragment(R.layout.fragment_material2_component
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        postponeEnterTransition()
-        view.doOnPreDraw { startPostponedEnterTransition() }
-
         binding.appbar.applyInsetter {
             type(statusBars = true) {
                 padding(top = true)
