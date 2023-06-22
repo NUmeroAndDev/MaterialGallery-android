@@ -13,7 +13,7 @@ material = "1.10.0-alpha04"
 coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
 
 androidx-appcompat = "androidx.appcompat:appcompat:1.7.0-alpha02"
-androidx-activity = "androidx.activity:activity-ktx:1.8.0-alpha05"
+androidx-activity = "androidx.activity:activity-ktx:1.8.0-alpha06"
 androidx-fragment = "androidx.fragment:fragment-ktx:1.7.0-alpha01"
 androidx-core = "androidx.core:core-ktx:1.12.0-alpha05"
 androidx-core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
