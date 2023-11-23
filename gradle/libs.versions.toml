@@ -1,6 +1,6 @@
 [versions]
 androidGradlePlugin = "7.4.2"
-kotlin = "1.9.10"
+kotlin = "1.9.21"
 
 androidxLifecycle = "2.6.2"
 androidxNavigation = "2.7.4"
