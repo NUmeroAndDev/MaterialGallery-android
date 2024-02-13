@@ -45,7 +45,7 @@ play-core-ktx = "com.google.android.play:core-ktx:1.8.1"
 licenses = "com.google.android.gms:play-services-oss-licenses:17.0.1"
 
 junit = "junit:junit:4.13.2"
-robolectric = "org.robolectric:robolectric:4.10.3"
+robolectric = "org.robolectric:robolectric:4.11.1"
 
 [plugins]
 androidGradlePlugin = { id = "com.android.application", version.ref = "androidGradlePlugin" }
