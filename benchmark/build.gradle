@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.test'
     id 'org.jetbrains.kotlin.android'
+    alias libs.plugins.baselineProfilePlugin
 }
 
 android {
@@ -9,21 +10,10 @@ android {
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
-        minSdk versions.minSdk
+        minSdk 28
         targetSdk versions.targetSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        // This benchmark buildType is used for benchmarking, and should function like your
-        // release build (for example, with minification on). It's signed with a debug key
-        // for easy local/CI testing.
-        benchmark {
-            debuggable = true
-            signingConfig = debug.signingConfig
-            matchingFallbacks = ["release"]
-        }
     }
 
     compileOptions {
@@ -47,16 +37,15 @@ android {
     }
 }
 
+baselineProfile {
+    managedDevices += "pixel2Api31"
+    useConnectedDevices = false
+}
+
 dependencies {
     implementation 'androidx.test.ext:junit:1.1.5'
     implementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'androidx.test.uiautomator:uiautomator:2.2.0'
-    implementation 'androidx.benchmark:benchmark-macro-junit4:1.2.3'
+    implementation libs.androidx.benchmark
     implementation libs.androidx.profileinstaller
-}
-
-androidComponents {
-    beforeVariants(selector().all()) {
-        enabled = buildType == "benchmark"
-    }
 }
