@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'com.google.android.gms.oss-licenses-plugin'
     id 'dagger.hilt.android.plugin'
-    id 'kotlin-kapt'
+    alias libs.plugins.kspPlugin
     alias libs.plugins.baselineProfilePlugin
 }
 
@@ -46,10 +46,6 @@ android {
     }
 }
 
-kapt {
-    correctErrorTypes true
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -82,7 +78,7 @@ dependencies {
     implementation libs.insetter
 
     implementation libs.dagger.hilt.android
-    kapt libs.dagger.hilt.android.compiler
+    ksp libs.dagger.hilt.android.compiler
 
     implementation libs.licenses
 
