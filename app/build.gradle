@@ -4,6 +4,7 @@ plugins {
     id 'com.google.android.gms.oss-licenses-plugin'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
+    alias libs.plugins.baselineProfilePlugin
 }
 
 android {
@@ -31,13 +32,6 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        benchmark {
-            initWith buildTypes.release
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-benchmark.pro'
-            signingConfig signingConfigs.debug
-            matchingFallbacks = ['release']
-            debuggable false
         }
     }
 
@@ -100,4 +94,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    "baselineProfile"(projects.benchmark)
 }
