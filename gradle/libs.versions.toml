@@ -2,7 +2,7 @@
 androidGradlePlugin = "7.4.2"
 kotlin = "1.9.22"
 
-androidxLifecycle = "2.6.2"
+androidxLifecycle = "2.7.0"
 androidxNavigation = "2.7.7"
 
 hilt = "2.50"
