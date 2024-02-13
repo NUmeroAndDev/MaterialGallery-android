@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StyleRes
-import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -61,9 +60,6 @@ abstract class ComponentGalleryFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        postponeEnterTransition()
-        view.doOnPreDraw { startPostponedEnterTransition() }
-
         binding.appbar.applyInsetter {
             type(statusBars = true) {
                 padding(top = true)
