@@ -9,7 +9,7 @@ hilt = "2.50"
 
 material = "1.11.0"
 
-baselineProfile = "1.2.3"
+baselineProfile = "1.2.4"
 
 [libraries]
 coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
