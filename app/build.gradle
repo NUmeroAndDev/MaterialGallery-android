@@ -3,7 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'com.google.android.gms.oss-licenses-plugin'
     id 'dagger.hilt.android.plugin'
-    id 'kotlin-kapt'
+    alias libs.plugins.kspPlugin
+    alias libs.plugins.baselineProfilePlugin
 }
 
 android {
@@ -32,27 +33,17 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        benchmark {
-            initWith buildTypes.release
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-benchmark.pro'
-            signingConfig signingConfigs.debug
-            matchingFallbacks = ['release']
-            debuggable false
-        }
     }
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-}
-
-kapt {
-    correctErrorTypes true
 }
 
 dependencies {
@@ -87,7 +78,7 @@ dependencies {
     implementation libs.insetter
 
     implementation libs.dagger.hilt.android
-    kapt libs.dagger.hilt.android.compiler
+    ksp libs.dagger.hilt.android.compiler
 
     implementation libs.licenses
 
@@ -99,4 +90,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.5.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    "baselineProfile"(projects.benchmark)
 }

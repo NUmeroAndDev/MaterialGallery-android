@@ -1,9 +1,9 @@
 buildscript {
     ext {
         versions = [
-                compileSdk: 33,
+                compileSdk: 34,
                 minSdk    : 23,
-                targetSdk : 33,
+                targetSdk : 34,
         ]
     }
 
@@ -16,6 +16,8 @@ plugins {
     alias(libs.plugins.androidGradlePlugin) apply false
     alias(libs.plugins.kotlinPlugin) apply false
     alias(libs.plugins.hiltPlugin) apply false
+    alias(libs.plugins.kspPlugin) apply false
+    alias(libs.plugins.baselineProfilePlugin) apply false
 }
 
 subprojects {
