@@ -12,7 +12,7 @@ material = "1.11.0"
 baselineProfile = "1.2.4"
 
 [libraries]
-coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"
 
 androidx-appcompat = "androidx.appcompat:appcompat:1.7.0-alpha03"
 androidx-activity = "androidx.activity:activity-ktx:1.8.2"
