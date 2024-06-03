@@ -14,7 +14,7 @@ baselineProfile = "1.2.4"
 [libraries]
 coroutines-android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"
 
-androidx-appcompat = "androidx.appcompat:appcompat:1.7.0-alpha03"
+androidx-appcompat = "androidx.appcompat:appcompat:1.7.0"
 androidx-activity = "androidx.activity:activity-ktx:1.8.2"
 androidx-fragment = "androidx.fragment:fragment-ktx:1.7.0-alpha10"
 androidx-core = "androidx.core:core-ktx:1.12.0"
