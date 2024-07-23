@@ -54,5 +54,5 @@ robolectric = "org.robolectric:robolectric:4.12.2"
 androidGradlePlugin = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 baselineProfilePlugin = { id = "androidx.baselineprofile", version.ref = "baselineProfile" }
 kotlinPlugin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kspPlugin = { id = "com.google.devtools.ksp", version = "1.9.22-1.0.17" }
+kspPlugin = { id = "com.google.devtools.ksp", version = "1.9.25-1.0.20" }
 hiltPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
