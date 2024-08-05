@@ -5,7 +5,7 @@ kotlin = "1.9.22"
 androidxLifecycle = "2.7.0"
 androidxNavigation = "2.7.7"
 
-hilt = "2.50"
+hilt = "2.52"
 
 material = "1.11.0"
 
