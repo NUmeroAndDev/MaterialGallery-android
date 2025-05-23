@@ -2,5 +2,15 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>NUmeroAndDev/renovate-config"
+  ],
+  "packageRules": [
+    {
+      "groupName": "Kotlin",
+      "matchPackageNames": [
+        "/^org\\.jetbrains\\.kotlin:/",
+        "/^org\\.jetbrains\\.kotlin\\./",
+        "/^com\\.google\\.devtools\\.ksp:/"
+      ]
+    }
   ]
 }

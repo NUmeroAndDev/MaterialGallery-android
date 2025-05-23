@@ -1,4 +1,10 @@
 Release <%= Time.now.strftime('%Y-%m-%d') %>
-<% pull_requests.each do |pr| -%>
+
+<% pull_requests.reject {|item| item.pr.user ? item.pr.user.login =~ /\A(renovate|dependabot)/ : false }.each do |pr| -%>
+<%=  "- ##{pr.pr.number}" + pr.mention %>
+<% end -%>
+
+## Dependency updates
+<% pull_requests.select {|item| item.pr.user ? item.pr.user.login =~ /\A(renovate|dependabot)/ : false }.each do |pr| -%>
 <%=  "- ##{pr.pr.number}" + pr.mention %>
 <% end -%>
